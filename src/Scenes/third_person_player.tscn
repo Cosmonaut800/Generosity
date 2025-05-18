@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfdpexhwuwrmg"]
+
+[ext_resource type="Script" uid="uid://fcvv8w6oypa6" path="res://src/Scripts/third_person_player.gd" id="1_b61l5"]
+[ext_resource type="PackedScene" uid="uid://cmrs264a1r0m6" path="res://src/Scenes/orbit_camera.tscn" id="2_oy5sk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7q8u8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_b61l5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_oy5sk"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[node name="ThirdPersonPlayer" type="CharacterBody3D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_b61l5")
+camera = NodePath("OrbitCamera")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_7q8u8")
+
+[node name="Graphics" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_b61l5")
+
+[node name="Face" type="MeshInstance3D" parent="Graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.5)
+mesh = SubResource("BoxMesh_oy5sk")
+
+[node name="OrbitCamera" parent="." instance=ExtResource("2_oy5sk")]

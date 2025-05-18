@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://dngkqbnkeunr"]
+
+[ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="1_we0ab"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cncp2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_we0ab"]
+
+[sub_resource type="Sky" id="Sky_cncp2"]
+sky_material = SubResource("ProceduralSkyMaterial_we0ab")
+
+[sub_resource type="Environment" id="Environment_we0ab"]
+background_mode = 2
+sky = SubResource("Sky_cncp2")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_we0ab"]
+size = Vector2(50, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_we0ab"]
+
+[node name="World" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_cncp2")
+
+[node name="ThirdPersonPlayer" parent="." instance=ExtResource("1_we0ab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213742, 1, -0.240603)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_we0ab")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.760802, -0.415211, -0.498779, 0.648985, 0.48675, 0.584716, 0, -0.768553, 0.639786, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_we0ab")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.71308, 0, -1.98989, 0, 2.05639, 0, 1.61961, 0, 2.10472, 5.22631, 0.669268, 1.67512)
+mesh = SubResource("BoxMesh_we0ab")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.71308, 0, -1.98989, -0.972861, 1.64407, -1.26426, 1.29487, 1.23522, 1.68271, 3.27764, 0.669268, -5.63809)
+mesh = SubResource("BoxMesh_we0ab")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.919781, 1.20945, 2.05193, -0.972861, 1.64407, -1.26426, -1.94044, -0.250981, 1.60647, -5.84014, 0.669268, 4.28047)
+mesh = SubResource("BoxMesh_we0ab")

@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b671mbiaxfrdb"]
+
+[node name="GrapplePoint" type="Node3D"]

@@ -30,3 +30,7 @@ func _physics_process(delta):
 	
 	if global_position.y < -50.0:
 		global_position = Vector3(0.0, 100.0, 0.0)
+
+func decelerate(delta):
+	velocity.x = move_toward(velocity.x, 0, abs(velocity.normalized().x) * decel * delta)
+	velocity.z = move_toward(velocity.z, 0, abs(velocity.normalized().z) * decel * delta)

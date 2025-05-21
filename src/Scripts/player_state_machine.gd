@@ -3,6 +3,7 @@ extends StateMachine
 @onready var player := $".."
 @onready var player_grounded := $PlayerGrounded
 @onready var player_aerial := $PlayerAerial
+@onready var player_focused := $PlayerFocused
 
 func _ready():
 	current_state = player_grounded

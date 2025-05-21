@@ -26,10 +26,8 @@ script = ExtResource("1_txh35")
 [node name="CameraPosTarget" type="Node3D" parent="YawPivot/PitchPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45519e-11, 1.45519e-11, 5)
 
-[node name="CameraShoulderTarget" type="Node3D" parent="YawPivot/PitchPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27948, 0.874221, 0)
-
 [node name="Graphics" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_tfmnw")
 
 [node name="Face" type="MeshInstance3D" parent="Graphics"]

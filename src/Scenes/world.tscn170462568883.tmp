@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dngkqbnkeunr"]
+[gd_scene load_steps=13 format=3 uid="uid://dngkqbnkeunr"]
 
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="1_we0ab"]
+[ext_resource type="Texture2D" uid="uid://bxxevd6kx7x8g" path="res://assets/Materials/Textures/curve_texture.tres" id="2_cks6v"]
 [ext_resource type="Material" uid="uid://fwdgib7583jy" path="res://assets/Materials/checker_32x.tres" id="2_cncp2"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cncp2"]
@@ -15,6 +16,7 @@ background_mode = 2
 sky = SubResource("Sky_cncp2")
 tonemap_mode = 3
 adjustment_enabled = true
+adjustment_color_correction = ExtResource("2_cks6v")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_we0ab"]
 size = Vector2(256, 256)

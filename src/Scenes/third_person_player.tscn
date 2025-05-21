@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://cfdpexhwuwrmg"]
+
+[ext_resource type="Script" uid="uid://fcvv8w6oypa6" path="res://src/Scripts/third_person_player.gd" id="1_b61l5"]
+[ext_resource type="PackedScene" uid="uid://cmrs264a1r0m6" path="res://src/Scenes/orbit_camera.tscn" id="2_oy5sk"]
+[ext_resource type="Script" uid="uid://c40ah4l5mu65d" path="res://src/Scripts/player_state_machine.gd" id="3_uwxpf"]
+[ext_resource type="Script" uid="uid://xk4arqqxnv8c" path="res://src/Scripts/PlayerStates/player_grounded.gd" id="4_tsc3g"]
+[ext_resource type="Script" uid="uid://bct3m2olqchtq" path="res://src/Scripts/PlayerStates/player_focused.gd" id="5_syjl4"]
+[ext_resource type="Script" uid="uid://0ytxwobfs56q" path="res://src/Scripts/PlayerStates/player_aerial.gd" id="5_t3wav"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7q8u8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_b61l5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_oy5sk"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[node name="ThirdPersonPlayer" type="CharacterBody3D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_b61l5")
+camera = NodePath("OrbitCamera")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_7q8u8")
+
+[node name="Graphics" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_b61l5")
+
+[node name="Face" type="MeshInstance3D" parent="Graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.5)
+mesh = SubResource("BoxMesh_oy5sk")
+
+[node name="OrbitCamera" parent="." instance=ExtResource("2_oy5sk")]
+
+[node name="CoyoteTime" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="PlayerStateMachine" type="Node" parent="."]
+script = ExtResource("3_uwxpf")
+metadata/_custom_type_script = "uid://dn0quhgyu2alb"
+
+[node name="PlayerGrounded" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("4_tsc3g")
+metadata/_custom_type_script = "uid://xk4arqqxnv8c"
+
+[node name="PlayerFocused" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("5_syjl4")
+metadata/_custom_type_script = "uid://bct3m2olqchtq"
+
+[node name="PlayerAerial" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("5_t3wav")
+metadata/_custom_type_script = "uid://0ytxwobfs56q"
+
+[connection signal="timeout" from="CoyoteTime" to="PlayerStateMachine/PlayerGrounded" method="_on_coyote_time_timeout"]

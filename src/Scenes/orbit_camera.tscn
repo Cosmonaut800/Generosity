@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmrs264a1r0m6"]
+
+[ext_resource type="Script" uid="uid://csmuxtqmmbdx1" path="res://src/Scripts/orbit_camera.gd" id="1_fb3q8"]
+[ext_resource type="Script" uid="uid://cb3rrmj43d7w4" path="res://src/Scripts/camera_collision.gd" id="1_txh35"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tfmnw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vvl4l"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[node name="OrbitCamera" type="Node3D"]
+script = ExtResource("1_fb3q8")
+
+[node name="YawPivot" type="Node3D" parent="."]
+
+[node name="PitchPivot" type="Node3D" parent="YawPivot"]
+
+[node name="CameraRay" type="RayCast3D" parent="YawPivot/PitchPivot"]
+target_position = Vector3(0, 0, 5.5)
+collision_mask = 2
+
+[node name="Camera3D" type="Camera3D" parent="YawPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+script = ExtResource("1_txh35")
+
+[node name="CameraPosTarget" type="Node3D" parent="YawPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45519e-11, 1.45519e-11, 5)
+
+[node name="Graphics" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_tfmnw")
+
+[node name="Face" type="MeshInstance3D" parent="Graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.5)
+mesh = SubResource("BoxMesh_vvl4l")

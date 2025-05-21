@@ -2,11 +2,8 @@ class_name PlayerFocused extends State
 
 var pivot_tween: Tween
 
-var unfocus_camera := false
-
 func initialize(parent_machine: StateMachine):
 	parent = parent_machine
-	unfocus_camera = false
 	if pivot_tween: pivot_tween.kill()
 	pivot_tween = create_tween()
 	pivot_tween.tween_property(parent.player.camera.camera.ray, "position", Vector3(parent.player.camera.SHOULDER_POS.x, parent.player.camera.SHOULDER_POS.y, -0.5), 0.1)
@@ -21,7 +18,7 @@ func initialize(parent_machine: StateMachine):
 
 func run_current_state(delta: float):
 	
-	if unfocus_camera:
+	if Input.is_action_just_released("focus_camera"):
 		if pivot_tween: pivot_tween.kill()
 		pivot_tween = create_tween()
 		pivot_tween.set_ease(Tween.EASE_OUT)
@@ -35,13 +32,9 @@ func run_current_state(delta: float):
 		parent.player_grounded.initialize(parent)
 		return parent.player_grounded
 	
+	if Input.is_action_just_pressed("fire"):
+		parent.player.fire_grappling_hook()
+	
 	if !parent.player.direction: parent.player.decelerate(delta)
 	
 	return self
-
-func _input(event):
-	if event.is_action_released("focus_camera"):
-		unfocus_camera = true
-	
-	if event.is_action_pressed("fire"):
-		parent.player.fire_grappling_hook()

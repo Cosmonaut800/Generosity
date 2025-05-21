@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fcvv8w6oypa6" path="res://src/Scripts/third_person_player.gd" id="1_b61l5"]
 [ext_resource type="PackedScene" uid="uid://cmrs264a1r0m6" path="res://src/Scenes/orbit_camera.tscn" id="2_oy5sk"]
-[ext_resource type="Script" uid="uid://c40ah4l5mu65d" path="res://src/Scripts/player_state_machine.gd" id="3_uwxpf"]
+[ext_resource type="Script" uid="uid://c40ah4l5mu65d" path="res://src/Scripts/PlayerStates/player_state_machine.gd" id="3_uwxpf"]
 [ext_resource type="Script" uid="uid://xk4arqqxnv8c" path="res://src/Scripts/PlayerStates/player_grounded.gd" id="4_tsc3g"]
 [ext_resource type="Script" uid="uid://bct3m2olqchtq" path="res://src/Scripts/PlayerStates/player_focused.gd" id="5_syjl4"]
 [ext_resource type="Script" uid="uid://0ytxwobfs56q" path="res://src/Scripts/PlayerStates/player_aerial.gd" id="5_t3wav"]

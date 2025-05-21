@@ -14,11 +14,9 @@ var yaw_input := 0.0
 var pitch_input := 0.0
 var focused := false
 var pivot_tween : Tween
-var hook_origin : Node3D
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	grappling_hook.hook_origin = hook_origin
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):

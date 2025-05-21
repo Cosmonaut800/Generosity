@@ -20,7 +20,7 @@ var direction : Vector3
 func _ready():
 	accel = ground_accel
 	speed = ground_speed
-	camera.hook_origin = hook_origin
+	camera.grappling_hook.hook_origin = hook_origin
 
 func _physics_process(delta):
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")

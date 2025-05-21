@@ -3,16 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvrjj7coeqa6a"
-path.s3tc="res://.godot/imported/watercolorN.png-364d91fba725c6c362bf27f9182d8787.s3tc.ctex"
-metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/Materials/Textures/watercolorN.png"
-dest_files=["res://.godot/imported/watercolorN.png-364d91fba725c6c362bf27f9182d8787.s3tc.ctex"]
 
 [params]
 

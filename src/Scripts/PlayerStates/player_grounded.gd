@@ -8,6 +8,7 @@ func initialize(parent_machine: StateMachine):
 	coyote_expired = false
 	focus_camera = false
 	parent.player.accel = parent.player.ground_accel
+	parent.player.speed = parent.player.ground_speed
 
 func run_current_state(delta: float) -> State:
 	if !parent.player.direction:

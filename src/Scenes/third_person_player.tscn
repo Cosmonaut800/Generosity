@@ -14,9 +14,10 @@
 [sub_resource type="BoxMesh" id="BoxMesh_oy5sk"]
 size = Vector3(0.25, 0.25, 0.25)
 
-[node name="ThirdPersonPlayer" type="CharacterBody3D" node_paths=PackedStringArray("camera")]
+[node name="ThirdPersonPlayer" type="CharacterBody3D" node_paths=PackedStringArray("camera", "hook_origin")]
 script = ExtResource("1_b61l5")
 camera = NodePath("OrbitCamera")
+hook_origin = NodePath("Graphics/Face")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_7q8u8")

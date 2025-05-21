@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmrs264a1r0m6"]
+[gd_scene load_steps=6 format=3 uid="uid://cmrs264a1r0m6"]
 
 [ext_resource type="Script" uid="uid://csmuxtqmmbdx1" path="res://src/Scripts/orbit_camera.gd" id="1_fb3q8"]
 [ext_resource type="Script" uid="uid://cb3rrmj43d7w4" path="res://src/Scripts/camera_collision.gd" id="1_txh35"]
+[ext_resource type="PackedScene" uid="uid://bbhexnglp5diq" path="res://src/Scenes/grappling_hook.tscn" id="3_vvl4l"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tfmnw"]
 
@@ -22,6 +23,9 @@ collision_mask = 2
 [node name="Camera3D" type="Camera3D" parent="YawPivot/PitchPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 script = ExtResource("1_txh35")
+
+[node name="GrapplingHook" parent="YawPivot/PitchPivot/Camera3D" instance=ExtResource("3_vvl4l")]
+travel_time = 0.5
 
 [node name="CameraPosTarget" type="Node3D" parent="YawPivot/PitchPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45519e-11, 1.45519e-11, 5)

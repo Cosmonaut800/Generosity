@@ -2,20 +2,25 @@ extends CharacterBody3D
 
 const JUMP_VELOCITY = 4.5
 
-@export var speed := 5.0
+@export var ground_speed := 5.0
+@export var focused_speed := 2.0
 @export var ground_accel := 25.0
 @export var air_accel := 5.0
 @export var decel := 25.0
 @export var camera : OrbitCamera
+@export var hook_origin : Node3D
 
 @onready var graphics := $Graphics
 @onready var coyote_time := $CoyoteTime
 
+var speed := 5.0
 var accel = 25.0
 var direction : Vector3
 
 func _ready():
 	accel = ground_accel
+	speed = ground_speed
+	camera.hook_origin = hook_origin
 
 func _physics_process(delta):
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
@@ -34,3 +39,6 @@ func _physics_process(delta):
 func decelerate(delta):
 	velocity.x = move_toward(velocity.x, 0, abs(velocity.normalized().x) * decel * delta)
 	velocity.z = move_toward(velocity.z, 0, abs(velocity.normalized().z) * decel * delta)
+
+func fire_grappling_hook():
+	camera.grappling_hook.fire()

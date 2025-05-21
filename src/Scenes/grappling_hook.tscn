@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbhexnglp5diq"]
+
+[ext_resource type="Script" uid="uid://dxq7vj8mc14op" path="res://src/Scripts/grappling_hook.gd" id="1_xyle6"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7jq4s"]
+radius = 0.2
+height = 0.4
+
+[sub_resource type="SphereMesh" id="SphereMesh_p37ot"]
+radius = 0.15
+height = 0.3
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7oaxt"]
+radius = 0.15
+
+[node name="GrapplingHook" type="Node3D"]
+script = ExtResource("1_xyle6")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(1.45519e-11, 1.45519e-11, -25)
+collision_mask = 6
+
+[node name="VisualizeTargetDistance" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45519e-11, 1.45519e-11, -25)
+mesh = SubResource("SphereMesh_7jq4s")
+
+[node name="Graphics" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_p37ot")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_7oaxt")

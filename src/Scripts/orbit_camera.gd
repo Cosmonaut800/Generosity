@@ -7,15 +7,18 @@ const SHOULDER_POS : Vector3 = Vector3(1.0, 0.0, 2.0)
 @onready var yaw_pivot := $YawPivot
 @onready var pitch_pivot := $YawPivot/PitchPivot
 @onready var camera := $YawPivot/PitchPivot/Camera3D
+@onready var grappling_hook := $YawPivot/PitchPivot/Camera3D/GrapplingHook
 
 var mouse_sensitivity := 0.001
 var yaw_input := 0.0
 var pitch_input := 0.0
 var focused := false
 var pivot_tween : Tween
+var hook_origin : Node3D
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	grappling_hook.hook_origin = hook_origin
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):

@@ -16,11 +16,13 @@ const JUMP_VELOCITY = 4.5
 var speed := 5.0
 var accel = 25.0
 var direction : Vector3
+var grappling_hook : Node3D
 
 func _ready():
 	accel = ground_accel
 	speed = ground_speed
-	camera.grappling_hook.hook_origin = hook_origin
+	grappling_hook = camera.grappling_hook
+	grappling_hook.hook_origin = hook_origin
 
 func _physics_process(delta):
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
@@ -30,6 +32,10 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, speed * direction.x, (abs(direction.x) if abs(direction.x) > 0.3 else 0.3) * accel * delta)
 		velocity.z = move_toward(velocity.z, speed * direction.z, (abs(direction.z) if abs(direction.z) > 0.3 else 0.3) * accel * delta)
 		graphics.look_at(position + (velocity * Vector3(1.0, 0.0, 1.0)))
+	
+	var displacement : Vector3 = (grappling_hook.graphics.global_position - global_position)
+	if grappling_hook.attached:
+		velocity += 3.0 * displacement.length() * delta * displacement.normalized()
 	
 	move_and_slide()
 	

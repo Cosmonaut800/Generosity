@@ -23,6 +23,12 @@ func _process(_delta):
 	
 	if attached:
 		graphics.global_position = attach_point
+		if Input.is_action_just_released("fire"):
+			if tween == null or !tween.is_running():
+				tween = create_tween()
+				detach()
+				tween.tween_property(graphics, "global_position", hook_origin.global_position, travel_time * to_local(destination).length() / ray.target_position.length())
+				tween.tween_callback(hide_hook)
 
 func _physics_process(delta):
 	pass

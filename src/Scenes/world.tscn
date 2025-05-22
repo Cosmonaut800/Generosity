@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dngkqbnkeunr"]
+[gd_scene load_steps=15 format=3 uid="uid://dngkqbnkeunr"]
 
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="1_we0ab"]
 [ext_resource type="Material" uid="uid://fwdgib7583jy" path="res://assets/Materials/checker_32x.tres" id="2_cncp2"]
+[ext_resource type="PackedScene" uid="uid://b671mbiaxfrdb" path="res://src/Scenes/grapple_point.tscn" id="3_cks6v"]
+[ext_resource type="Material" uid="uid://d22sp4h08cija" path="res://assets/Materials/green.tres" id="4_c7r1q"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cncp2"]
 
@@ -36,6 +38,9 @@ noise = SubResource("FastNoiseLite_cks6v")
 albedo_color = Color(0.3, 0.2376, 0.204, 1)
 albedo_texture = SubResource("NoiseTexture2D_c7r1q")
 
+[sub_resource type="BoxMesh" id="BoxMesh_c7r1q"]
+size = Vector3(0.37, 0.475, 0.46)
+
 [node name="World" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -67,6 +72,27 @@ collision_layer = 3
 size = Vector3(1, 5.12903, 16.4683)
 material = ExtResource("2_cncp2")
 
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.20591, 2.69407, 7.12661)
+use_collision = true
+collision_layer = 3
+size = Vector3(0.637695, 5.64432, 0.351476)
+material = ExtResource("2_cncp2")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.20591, 2.69407, -0.675374)
+use_collision = true
+collision_layer = 3
+size = Vector3(0.637695, 5.64432, 0.351476)
+material = ExtResource("2_cncp2")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.20591, 5.79325, 3.23144)
+use_collision = true
+collision_layer = 3
+size = Vector3(0.637695, 0.716797, 8.25586)
+material = ExtResource("2_cncp2")
+
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSG"]
 transform = Transform3D(0.999705, 0, 0.0242938, 0, 1, 0, -0.0242938, 0, 0.999705, 0.589176, 0.365719, -3.72498)
 use_collision = true
@@ -74,3 +100,12 @@ collision_layer = 3
 polygon = PackedVector2Array(-6.27272, -0.46082, 2.54967, 4.13631, 2.30526, -0.345478)
 depth = 5.5
 material = ExtResource("2_cncp2")
+
+[node name="GrapplePoint" parent="." instance=ExtResource("3_cks6v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.08485, 5.31328, 3.25193)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GrapplePoint"]
+mesh = SubResource("BoxMesh_c7r1q")
+surface_material_override/0 = ExtResource("4_c7r1q")
+
+[editable path="GrapplePoint"]

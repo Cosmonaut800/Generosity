@@ -4,6 +4,7 @@ extends StateMachine
 @onready var player_grounded := $PlayerGrounded
 @onready var player_aerial := $PlayerAerial
 @onready var player_focused := $PlayerFocused
+@onready var player_pushing := $PlayerPushing
 
 func _ready():
 	current_state = player_grounded

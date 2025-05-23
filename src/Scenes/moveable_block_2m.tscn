@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkglvypeexyb4"]
+
+[ext_resource type="Script" uid="uid://cs6qjglciutn3" path="res://src/Scripts/moveable_block.gd" id="1_osgdk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_usvjq"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_osgdk"]
+size = Vector3(2, 2, 2)
+
+[node name="MoveableBlock2m" type="CharacterBody3D"]
+process_priority = -8
+process_physics_priority = -8
+collision_layer = 16
+collision_mask = 145
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_osgdk")
+
+[node name="Graphics" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_usvjq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_osgdk")

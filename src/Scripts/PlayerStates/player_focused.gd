@@ -32,6 +32,8 @@ func run_current_state(delta: float):
 		parent.player_grounded.initialize(parent)
 		return parent.player_grounded
 	
+	parent.player.graphics.look_at(parent.player.grappling_hook.to_global(parent.player.grappling_hook.ray.target_position) * Vector3(1.0, 0.0, 1.0))
+	
 	if Input.is_action_just_pressed("fire"):
 		parent.player.fire_grappling_hook()
 	

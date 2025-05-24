@@ -64,6 +64,10 @@ focus_camera={
 3d_physics/layer_7="RigidBody Pullable"
 3d_physics/layer_8="Player"
 
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

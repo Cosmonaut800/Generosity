@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dngkqbnkeunr"]
+[gd_scene load_steps=18 format=3 uid="uid://dngkqbnkeunr"]
 
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="1_we0ab"]
 [ext_resource type="Material" uid="uid://fwdgib7583jy" path="res://assets/Materials/checker_32x.tres" id="2_cncp2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://d22sp4h08cija" path="res://assets/Materials/green.tres" id="4_c7r1q"]
 [ext_resource type="PackedScene" uid="uid://bkglvypeexyb4" path="res://src/Scenes/moveable_block_2m.tscn" id="5_2c7kl"]
 [ext_resource type="PackedScene" uid="uid://lp2ym1sutkha" path="res://src/Scenes/bridge.tscn" id="6_kudtg"]
+[ext_resource type="PackedScene" uid="uid://cwmq1au8jy8g4" path="res://src/Scenes/kodama.tscn" id="7_3q6tr"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cncp2"]
 
@@ -132,5 +133,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.57, 1, -10.9116)
 
 [node name="MoveableBlock2m" parent="." instance=ExtResource("5_2c7kl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.08751, 5.2171, -7.47173)
+
+[node name="Kodama" parent="." instance=ExtResource("7_3q6tr")]
+transform = Transform3D(0.567298, 0, -0.823513, 0, 1, 0, 0.823513, 0, 0.567298, -17.0358, 4.91915, 7.58552)
 
 [editable path="CSG/CSGBox3D4/GrapplePoint"]

@@ -59,6 +59,7 @@ focus_camera={
 3d_physics/layer_1="World Rough"
 3d_physics/layer_2="World Fine"
 3d_physics/layer_3="Grapple Point"
+3d_physics/layer_4="Switch"
 3d_physics/layer_5="Pushable"
 3d_physics/layer_6="Pullable"
 3d_physics/layer_7="RigidBody Pullable"

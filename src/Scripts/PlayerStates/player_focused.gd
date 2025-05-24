@@ -29,8 +29,12 @@ func run_current_state(delta: float):
 		parent.player.camera.focused = false
 		parent.player.accel = parent.player.ground_accel
 		
-		parent.player_grounded.initialize(parent)
-		return parent.player_grounded
+		if parent.player.is_on_floor():
+			parent.player_grounded.initialize(parent)
+			return parent.player_grounded
+		else:
+			parent.player_aerial.initialize(parent)
+			return parent.player_aerial
 	
 	parent.player.graphics.look_at(parent.player.grappling_hook.to_global(parent.player.grappling_hook.ray.target_position) * Vector3(1.0, 0.0, 1.0) + Vector3(0.0, parent.player.position.y, 0.0))
 	

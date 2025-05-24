@@ -16,5 +16,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	player = body
 	player_nearby = true
 
-func _on_area_3d_body_exited(body: Node3D) -> void:
+func _on_area_3d_body_exited(_body: Node3D) -> void:
 	player_nearby = false

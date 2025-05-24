@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfdpexhwuwrmg"]
+[gd_scene load_steps=11 format=3 uid="uid://cfdpexhwuwrmg"]
 
 [ext_resource type="Script" uid="uid://fcvv8w6oypa6" path="res://src/Scripts/third_person_player.gd" id="1_b61l5"]
 [ext_resource type="PackedScene" uid="uid://cmrs264a1r0m6" path="res://src/Scenes/orbit_camera.tscn" id="2_oy5sk"]
-[ext_resource type="Script" uid="uid://c40ah4l5mu65d" path="res://src/Scripts/player_state_machine.gd" id="3_uwxpf"]
+[ext_resource type="Script" uid="uid://c40ah4l5mu65d" path="res://src/Scripts/PlayerStates/player_state_machine.gd" id="3_uwxpf"]
 [ext_resource type="Script" uid="uid://xk4arqqxnv8c" path="res://src/Scripts/PlayerStates/player_grounded.gd" id="4_tsc3g"]
 [ext_resource type="Script" uid="uid://bct3m2olqchtq" path="res://src/Scripts/PlayerStates/player_focused.gd" id="5_syjl4"]
 [ext_resource type="Script" uid="uid://0ytxwobfs56q" path="res://src/Scripts/PlayerStates/player_aerial.gd" id="5_t3wav"]
+[ext_resource type="Script" uid="uid://bw7k3m2v2lly7" path="res://src/Scripts/PlayerStates/player_pushing.gd" id="7_gc466"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7q8u8"]
 
@@ -14,12 +15,19 @@
 [sub_resource type="BoxMesh" id="BoxMesh_oy5sk"]
 size = Vector3(0.25, 0.25, 0.25)
 
-[node name="ThirdPersonPlayer" type="CharacterBody3D" node_paths=PackedStringArray("camera")]
+[node name="ThirdPersonPlayer" type="CharacterBody3D" node_paths=PackedStringArray("camera", "hook_origin")]
+collision_layer = 128
+collision_mask = 113
 script = ExtResource("1_b61l5")
 camera = NodePath("OrbitCamera")
+hook_origin = NodePath("Graphics/Face")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_7q8u8")
+
+[node name="PushableRay" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -2)
+collision_mask = 16
 
 [node name="Graphics" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_b61l5")
@@ -32,6 +40,10 @@ mesh = SubResource("BoxMesh_oy5sk")
 
 [node name="CoyoteTime" type="Timer" parent="."]
 wait_time = 0.1
+one_shot = true
+
+[node name="PushTimer" type="Timer" parent="."]
+wait_time = 0.2
 one_shot = true
 
 [node name="PlayerStateMachine" type="Node" parent="."]
@@ -50,4 +62,9 @@ metadata/_custom_type_script = "uid://bct3m2olqchtq"
 script = ExtResource("5_t3wav")
 metadata/_custom_type_script = "uid://0ytxwobfs56q"
 
+[node name="PlayerPushing" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("7_gc466")
+metadata/_custom_type_script = "uid://bw7k3m2v2lly7"
+
 [connection signal="timeout" from="CoyoteTime" to="PlayerStateMachine/PlayerGrounded" method="_on_coyote_time_timeout"]
+[connection signal="timeout" from="PushTimer" to="PlayerStateMachine/PlayerPushing" method="_on_push_timer_timeout"]

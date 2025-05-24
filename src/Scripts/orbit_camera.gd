@@ -7,6 +7,7 @@ const SHOULDER_POS : Vector3 = Vector3(1.0, 0.0, 2.0)
 @onready var yaw_pivot := $YawPivot
 @onready var pitch_pivot := $YawPivot/PitchPivot
 @onready var camera := $YawPivot/PitchPivot/Camera3D
+@onready var grappling_hook := $YawPivot/PitchPivot/Camera3D/GrapplingHook
 
 var mouse_sensitivity := 0.001
 var yaw_input := 0.0

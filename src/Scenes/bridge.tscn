@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://lp2ym1sutkha"]
+
+[ext_resource type="Material" uid="uid://dcsxiv0pbir3c" path="res://assets/Materials/orange.tres" id="1_ux5ce"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w88jf"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_y8thn"]
+height = 1.0
+radial_segments = 12
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ux5ce"]
+size = Vector3(1, 10.1164, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ux5ce"]
+height = 10.105
+radial_segments = 12
+
+[node name="Bridge" type="Node3D"]
+
+[node name="Base" type="StaticBody3D" parent="."]
+collision_layer = 3
+collision_mask = 129
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_w88jf")
+
+[node name="BaseGraphics" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = ExtResource("1_ux5ce")
+mesh = SubResource("CylinderMesh_y8thn")
+skeleton = NodePath("../..")
+
+[node name="Trunk" type="RigidBody3D" parent="."]
+collision_layer = 64
+collision_mask = 243
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+mass = 20.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trunk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.05487, 0)
+shape = SubResource("BoxShape3D_ux5ce")
+
+[node name="TrunkGraphics" type="MeshInstance3D" parent="Trunk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.06, 0)
+material_override = ExtResource("1_ux5ce")
+mesh = SubResource("CylinderMesh_ux5ce")
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.01894, -0.498053)
+node_a = NodePath("../Base")
+node_b = NodePath("../Trunk")
+exclude_nodes_from_collision = false

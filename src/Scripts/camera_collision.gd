@@ -9,6 +9,7 @@ const REGULAR_TARGET_DISTANCE := 5.0
 @onready var target := $"../CameraPosTarget"
 @onready var yaw_pivot := $"../.."
 @onready var root := $"../../.."
+
 var distance := 4.6
 var hooke := 2.0
 
@@ -22,7 +23,7 @@ func _process(delta):
 	if ray.is_colliding():
 		#global_position = ray.get_collision_point()
 		target.global_position = ray.get_collision_point()
-		target.position -= camera_radius * ray.target_position.normalized()
+		target.position += camera_radius * ray.get_collision_normal()
 	else:
 		if root.focused:
 			target.position.z = root.SHOULDER_POS.z

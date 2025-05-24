@@ -38,8 +38,15 @@ func _physics_process(delta):
 		pushable_ray.target_position = direction * 1.0
 	
 	var displacement : Vector3 = (grappling_hook.graphics.global_position - global_position)
-	if grappling_hook.attached:
+	if grappling_hook.status == grappling_hook.GRAPPLE:
 		velocity += 3.0 * displacement.length() * delta * displacement.normalized()
+	if grappling_hook.status == grappling_hook.PULL:
+		grappling_hook.target.velocity -= 8.0 * displacement.length() * delta * displacement.normalized()
+	if grappling_hook.status == grappling_hook.PULL_PHYSICAL:
+		grappling_hook.target.set_axis_lock(PhysicsServer3D.BODY_AXIS_ANGULAR_X, false)
+		grappling_hook.target.set_axis_lock(PhysicsServer3D.BODY_AXIS_ANGULAR_Y, false)
+		grappling_hook.target.set_axis_lock(PhysicsServer3D.BODY_AXIS_ANGULAR_Z, false)
+		grappling_hook.target.apply_force(-8.0 * displacement.length() * displacement.normalized(), grappling_hook.attach_point.position)
 	
 	move_and_slide()
 	

@@ -50,7 +50,7 @@ func fire():
 		else:
 			graphics.global_position = hook_origin.global_position
 			tween.tween_property(graphics, "global_position", destination, travel_time * to_local(destination).length() / ray.target_position.length())
-			if !ray.is_colliding() or (!ray.get_collider().get_collision_layer_value(3) and !ray.get_collider().get_collision_layer_value(6) and !ray.get_collider().get_collision_layer_value(7)):
+			if !ray.is_colliding() or (!ray.get_collider().get_collision_layer_value(3) and !ray.get_collider().get_collision_layer_value(4) and !ray.get_collider().get_collision_layer_value(6) and !ray.get_collider().get_collision_layer_value(7)):
 				tween.tween_property(graphics, "global_position", hook_origin.global_position, travel_time * to_local(destination).length() / ray.target_position.length())
 				tween.tween_callback(hide_hook)
 			else:
@@ -72,6 +72,8 @@ func attach_to_point() -> void:
 	attached = true
 	if target.get_collision_layer_value(3):
 		status = GRAPPLE
+	elif target.get_collision_layer_value(4):
+		target.activate()
 	elif target.get_collision_layer_value(6):
 		status = PULL
 	elif target.get_collision_layer_value(7):

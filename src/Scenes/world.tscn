@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dngkqbnkeunr"]
+[gd_scene load_steps=21 format=3 uid="uid://dngkqbnkeunr"]
 
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="1_we0ab"]
 [ext_resource type="Material" uid="uid://fwdgib7583jy" path="res://assets/Materials/checker_32x.tres" id="2_cncp2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cwmq1au8jy8g4" path="res://src/Scenes/kodama.tscn" id="7_3q6tr"]
 [ext_resource type="PackedScene" uid="uid://brdh8um8v542x" path="res://src/Scenes/moving_platform.tscn" id="8_56fay"]
 [ext_resource type="Script" uid="uid://bqdr72a5tcp3w" path="res://src/Scripts/platform_waypoint.gd" id="9_wyao0"]
+[ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="10_qtmjw"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cncp2"]
 
@@ -149,7 +150,6 @@ transform = Transform3D(0.567298, 0, -0.823513, 0, 1, 0, 0.823513, 0, 0.567298, 
 [node name="MovingPlatform" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("8_56fay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9611, 12.0137, 11.0843)
 waypoints = [NodePath("../Waypoints/PlatformWaypoint2"), NodePath("../Waypoints/PlatformWaypoint4"), NodePath("../Waypoints/PlatformWaypoint3"), NodePath("../Waypoints/PlatformWaypoint")]
-active = true
 
 [node name="GrapplePoint" parent="MovingPlatform" instance=ExtResource("3_cks6v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.776637, 0)
@@ -184,5 +184,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9611, 1.65722, -13.3654)
 script = ExtResource("9_wyao0")
 transit_time = 8.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
+
+[node name="Switch" parent="." instance=ExtResource("10_qtmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71259, 4.48184, 8.49608)
+
+[connection signal="activated" from="Switch" to="MovingPlatform" method="_on_switch_activated"]
 
 [editable path="CSG/CSGBox3D4/GrapplePoint"]

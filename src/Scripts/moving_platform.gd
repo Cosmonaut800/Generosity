@@ -17,3 +17,6 @@ func activate() -> void:
 			tween.tween_property(self, "global_position", waypoints[i].global_position, waypoints[i].transit_time)
 			tween.tween_interval(waypoints[i].wait_time)
 	
+
+func _on_switch_activated(switch: Node3D) -> void:
+	activate()

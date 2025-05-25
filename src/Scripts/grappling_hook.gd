@@ -34,9 +34,6 @@ func _process(_delta):
 				tween.tween_property(graphics, "global_position", hook_origin.global_position, travel_time * to_local(destination).length() / ray.target_position.length())
 				tween.tween_callback(hide_hook)
 
-func _physics_process(delta):
-	pass
-
 func fire():
 	if ray.is_colliding():
 		destination = ray.get_collision_point()
@@ -53,11 +50,15 @@ func fire():
 		else:
 			graphics.global_position = hook_origin.global_position
 			tween.tween_property(graphics, "global_position", destination, travel_time * to_local(destination).length() / ray.target_position.length())
-			if !ray.is_colliding() or (!ray.get_collider().get_collision_layer_value(3) and !ray.get_collider().get_collision_layer_value(6) and !ray.get_collider().get_collision_layer_value(7)):
+			if !ray.is_colliding() or (!ray.get_collider().get_collision_layer_value(3) and !ray.get_collider().get_collision_layer_value(4) and !ray.get_collider().get_collision_layer_value(6) and !ray.get_collider().get_collision_layer_value(7)):
 				tween.tween_property(graphics, "global_position", hook_origin.global_position, travel_time * to_local(destination).length() / ray.target_position.length())
 				tween.tween_callback(hide_hook)
 			else:
-				tween.tween_callback(attach_to_point.bind(ray.get_collision_point()))
+				if attach_point == null: attach_point = Node3D.new()
+				target = ray.get_collider()
+				target.add_child(attach_point)
+				attach_point.global_position = ray.get_collision_point()
+				tween.tween_callback(attach_to_point)
 
 func hide_hook() -> void:
 	graphics.hide()
@@ -67,14 +68,12 @@ func show_hook() -> void:
 	graphics.show()
 	rope.show()
 
-func attach_to_point(point: Vector3) -> void:
+func attach_to_point() -> void:
 	attached = true
-	attach_point = Node3D.new()
-	target = ray.get_collider()
-	target.add_child(attach_point)
-	attach_point.global_position = point
 	if target.get_collision_layer_value(3):
 		status = GRAPPLE
+	elif target.get_collision_layer_value(4):
+		target.activate()
 	elif target.get_collision_layer_value(6):
 		status = PULL
 	elif target.get_collision_layer_value(7):

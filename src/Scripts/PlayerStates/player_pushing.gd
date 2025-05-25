@@ -19,7 +19,7 @@ func run_current_state(delta: float) -> State:
 	if target_pushable.is_on_floor():
 		#target_pushable.velocity = -parent.player.pushable_ray.get_collision_normal() * parent.player.speed * 0.5
 		#target_pushable.move_and_collide(delta * parent.player.velocity)
-		var creep_distance : Vector3 = 0.75 * parent.player.pushable_ray.target_position - parent.player.to_local(parent.player.pushable_ray.get_collision_point())
+		var creep_distance : Vector3 = 0.6 * parent.player.pushable_ray.target_position - parent.player.to_local(parent.player.pushable_ray.get_collision_point())
 		if creep_distance.dot(parent.player.pushable_ray.target_position) > 0.0:
 			target_pushable.move_and_collide(creep_distance.dot(parent.player.pushable_ray.get_collision_normal()) * parent.player.pushable_ray.get_collision_normal())
 	

@@ -7,9 +7,10 @@ extends AnimatableBody3D
 var tween : Tween = null
 
 func _ready():
-	activate()
+	if active: activate()
 
 func activate() -> void:
+		active = true
 		tween = create_tween()
 		if loop_path: tween.set_loops()
 		for i in waypoints.size():

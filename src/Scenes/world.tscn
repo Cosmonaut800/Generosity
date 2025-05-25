@@ -77,6 +77,13 @@ collision_layer = 3
 size = Vector3(4.29297, 4.60993, 18.4256)
 material = ExtResource("2_cncp2")
 
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05044, 2.12962, -19.0754)
+use_collision = true
+collision_layer = 3
+size = Vector3(4.29297, 4.51541, 5.09041)
+material = ExtResource("2_cncp2")
+
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSG"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7704, 2.61418, 2.83778)
 use_collision = true
@@ -134,14 +141,14 @@ material = ExtResource("2_cncp2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.57, 1, -10.9116)
 
 [node name="MoveableBlock2m" parent="." instance=ExtResource("5_2c7kl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.08751, 5.2171, -7.47173)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.08751, 1.05064, -10.5762)
 
 [node name="Kodama" parent="." instance=ExtResource("7_3q6tr")]
 transform = Transform3D(0.567298, 0, -0.823513, 0, 1, 0, 0.823513, 0, 0.567298, -17.0358, 4.91915, 7.58552)
 
 [node name="MovingPlatform" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("8_56fay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9611, 12.0137, 11.0843)
-waypoints = [NodePath("../Waypoints/PlatformWaypoint"), NodePath("../Waypoints/PlatformWaypoint2"), NodePath("../Waypoints/PlatformWaypoint4"), NodePath("../Waypoints/PlatformWaypoint3")]
+waypoints = [NodePath("../Waypoints/PlatformWaypoint2"), NodePath("../Waypoints/PlatformWaypoint4"), NodePath("../Waypoints/PlatformWaypoint3"), NodePath("../Waypoints/PlatformWaypoint")]
 active = true
 
 [node name="GrapplePoint" parent="MovingPlatform" instance=ExtResource("3_cks6v")]
@@ -157,21 +164,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.3565, 0)
 [node name="PlatformWaypoint" type="Node3D" parent="Waypoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9611, 1.65722, 11.0843)
 script = ExtResource("9_wyao0")
+transit_time = 8.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="PlatformWaypoint2" type="Node3D" parent="Waypoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.82723, 1.65722, 11.0843)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4638, 1.65722, 11.0843)
 script = ExtResource("9_wyao0")
+transit_time = 8.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="PlatformWaypoint4" type="Node3D" parent="Waypoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.827, 1.657, 16.225)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4636, 1.657, -13.3654)
 script = ExtResource("9_wyao0")
+transit_time = 8.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="PlatformWaypoint3" type="Node3D" parent="Waypoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9611, 1.65722, 16.225)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9611, 1.65722, -13.3654)
 script = ExtResource("9_wyao0")
+transit_time = 8.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [editable path="CSG/CSGBox3D4/GrapplePoint"]

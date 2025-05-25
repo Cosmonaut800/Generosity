@@ -20,13 +20,13 @@ script = ExtResource("1_fb3q8")
 target_position = Vector3(0, 0, 5.5)
 
 [node name="Camera3D" type="Camera3D" parent="YawPivot/PitchPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45519e-11, 1.45519e-11, 3.5)
 script = ExtResource("1_txh35")
 
 [node name="GrapplingHook" parent="YawPivot/PitchPivot/Camera3D" instance=ExtResource("3_vvl4l")]
 
 [node name="CameraPosTarget" type="Node3D" parent="YawPivot/PitchPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45519e-11, 1.45519e-11, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45519e-11, 1.45519e-11, 3.5)
 
 [node name="Graphics" type="MeshInstance3D" parent="."]
 visible = false

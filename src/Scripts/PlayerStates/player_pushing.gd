@@ -8,6 +8,7 @@ func initialize(parent_machine: StateMachine):
 	parent = parent_machine
 	stopped_pushing = false
 	target_pushable = parent.player.pushable_ray.get_collider()
+	parent.player.speed = parent.player.pushing_speed
 
 func run_current_state(delta: float) -> State:
 	parent.player.graphics.look_at(parent.player.position - parent.player.pushable_ray.get_collision_normal())

@@ -1,6 +1,6 @@
 class_name OrbitCamera extends Node3D
 
-const ORBIT_DISTANCE = 5.0
+const ORBIT_DISTANCE = 3.5
 const SHOULDER_POS : Vector3 = Vector3(1.0, 0.0, 2.0)
 
 @onready var actor: CharacterBody3D = get_parent()

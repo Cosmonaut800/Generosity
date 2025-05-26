@@ -7,20 +7,17 @@
 [ext_resource type="Script" uid="uid://bct3m2olqchtq" path="res://src/Scripts/PlayerStates/player_focused.gd" id="5_syjl4"]
 [ext_resource type="Script" uid="uid://0ytxwobfs56q" path="res://src/Scripts/PlayerStates/player_aerial.gd" id="5_t3wav"]
 [ext_resource type="Script" uid="uid://bw7k3m2v2lly7" path="res://src/Scripts/PlayerStates/player_pushing.gd" id="7_gc466"]
+[ext_resource type="PackedScene" uid="uid://baug8fq0okhe3" path="res://src/Scenes/wolf_traveller_2.tscn" id="8_itdtg"]
+[ext_resource type="Texture2D" uid="uid://bs5wiigrn3e47" path="res://assets/Materials/Textures/crosshair.png" id="9_5lae5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7q8u8"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_b61l5"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_oy5sk"]
-size = Vector3(0.25, 0.25, 0.25)
 
 [node name="ThirdPersonPlayer" type="CharacterBody3D" node_paths=PackedStringArray("camera", "hook_origin")]
 collision_layer = 128
 collision_mask = 113
 script = ExtResource("1_b61l5")
 camera = NodePath("OrbitCamera")
-hook_origin = NodePath("Graphics/Face")
+hook_origin = NodePath("Graphics/WolfTraveller2/root/Skeleton3D/BoneAttachment3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_7q8u8")
@@ -29,12 +26,10 @@ shape = SubResource("CapsuleShape3D_7q8u8")
 target_position = Vector3(0, 0, -2)
 collision_mask = 16
 
-[node name="Graphics" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_b61l5")
+[node name="Graphics" type="Node3D" parent="."]
 
-[node name="Face" type="MeshInstance3D" parent="Graphics"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.5)
-mesh = SubResource("BoxMesh_oy5sk")
+[node name="WolfTraveller2" parent="Graphics" instance=ExtResource("8_itdtg")]
+transform = Transform3D(-1.85, 0, -1.61732e-07, 0, 1.85, 0, 1.61732e-07, 0, -1.85, 1.45519e-11, -1, 1.45519e-11)
 
 [node name="OrbitCamera" parent="." instance=ExtResource("2_oy5sk")]
 
@@ -66,5 +61,33 @@ metadata/_custom_type_script = "uid://0ytxwobfs56q"
 script = ExtResource("7_gc466")
 metadata/_custom_type_script = "uid://bw7k3m2v2lly7"
 
+[node name="UI" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Crosshair" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_5lae5")
+stretch_mode = 3
+
 [connection signal="timeout" from="CoyoteTime" to="PlayerStateMachine/PlayerGrounded" method="_on_coyote_time_timeout"]
 [connection signal="timeout" from="PushTimer" to="PlayerStateMachine/PlayerPushing" method="_on_push_timer_timeout"]
+
+[editable path="Graphics/WolfTraveller2"]

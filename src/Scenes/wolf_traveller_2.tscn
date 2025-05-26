@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://baug8fq0okhe3"]
+
+[ext_resource type="PackedScene" uid="uid://b85fv3geogivt" path="res://assets/Models/WolfTraveller.glb" id="1_qdi3c"]
+
+[node name="WolfTraveller2" instance=ExtResource("1_qdi3c")]
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="root/Skeleton3D" index="1"]
+transform = Transform3D(-0.0495619, -0.998632, -0.0166241, -1.49186e-07, -0.0166446, 0.999861, -0.998771, 0.049555, 0.000824794, -0.355257, 0.635557, -0.00296042)
+bone_name = "RightHand"
+bone_idx = 38

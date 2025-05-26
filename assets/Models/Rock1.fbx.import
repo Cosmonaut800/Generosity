@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cd747k607ocp3"
-path="res://.godot/imported/Column.glb-59f425b4256c9e4f95329b70d8f9ac91.scn"
+uid="uid://bq84lhd64qyhs"
+path="res://.godot/imported/Rock1.fbx-8bd1c86f98bc270acf1b1796a626c1db.scn"
 
 [deps]
 
-source_file="res://assets/Models/Column.glb"
-dest_files=["res://.godot/imported/Column.glb-59f425b4256c9e4f95329b70d8f9ac91.scn"]
+source_file="res://assets/Models/Rock1.fbx"
+dest_files=["res://.godot/imported/Rock1.fbx-8bd1c86f98bc270acf1b1796a626c1db.scn"]
 
 [params]
 
@@ -28,26 +28,18 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"2048Pack": {
+"ColRock": {
 "use_external/enabled": true,
-"use_external/path": "uid://rfl5xqdlhfta"
-}
-},
-"nodes": {
-"PATH:Column512": {
-"generate/physics": true,
-"physics/layer": 3,
-"physics/mask": 255,
-"primitive/position": Vector3(1.45519e-11, 2, 1.45519e-11),
-"primitive/size": Vector3(2, 4, 2)
+"use_external/path": "uid://b45oobm2b4o3f"
 }
 }
 }
-gltf/naming_version=1
-gltf/embedded_image_handling=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

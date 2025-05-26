@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://dngkqbnkeunr"]
+[gd_scene load_steps=24 format=3 uid="uid://dngkqbnkeunr"]
 
+[ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_wbn2r"]
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="1_we0ab"]
 [ext_resource type="Material" uid="uid://fwdgib7583jy" path="res://assets/Materials/checker_32x.tres" id="2_cncp2"]
 [ext_resource type="PackedScene" uid="uid://b671mbiaxfrdb" path="res://src/Scenes/grapple_point.tscn" id="3_cks6v"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://brdh8um8v542x" path="res://src/Scenes/moving_platform.tscn" id="8_56fay"]
 [ext_resource type="Script" uid="uid://bqdr72a5tcp3w" path="res://src/Scripts/platform_waypoint.gd" id="9_wyao0"]
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="10_qtmjw"]
+[ext_resource type="Script" uid="uid://barah8wamrx8j" path="res://src/Scripts/level_transition.gd" id="12_x3jek"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cncp2"]
 
@@ -47,7 +49,11 @@ albedo_texture = SubResource("NoiseTexture2D_c7r1q")
 [sub_resource type="BoxMesh" id="BoxMesh_c7r1q"]
 size = Vector3(0.37, 0.475, 0.46)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_x3jek"]
+size = Vector3(1, 4.77957, 6.31656)
+
 [node name="World" type="Node3D"]
+script = ExtResource("1_wbn2r")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 3
@@ -90,6 +96,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7704, 2.61418, 2.83778)
 use_collision = true
 collision_layer = 3
 size = Vector3(4.29297, 4.60993, 11.0043)
+material = ExtResource("2_cncp2")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSG/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329477, -0.515656, 0.0512567)
+operation = 2
+use_collision = true
+collision_layer = 3
+size = Vector3(4.29297, 4.60993, 5.30977)
 material = ExtResource("2_cncp2")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSG"]
@@ -188,6 +202,19 @@ metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 [node name="Switch" parent="." instance=ExtResource("10_qtmjw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71259, 4.48184, 8.49608)
 
+[node name="LevelTransition" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1704, 1.39014, 2.94487)
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("12_x3jek")
+level_index = 1
+metadata/_custom_type_script = "uid://barah8wamrx8j"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelTransition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.976273, -0.155533)
+shape = SubResource("BoxShape3D_x3jek")
+
 [connection signal="activated" from="Switch" to="MovingPlatform" method="_on_switch_activated"]
+[connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
 
 [editable path="CSG/CSGBox3D4/GrapplePoint"]

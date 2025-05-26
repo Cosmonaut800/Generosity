@@ -5,3 +5,4 @@
 [resource]
 albedo_texture = ExtResource("1_dvd5u")
 texture_filter = 0
+distance_fade_min_distance = 5.0

@@ -14,6 +14,7 @@ func initialize(parent_machine: StateMachine):
 	parent.player.camera.camera.hooke = 10.0
 	parent.player.camera.focused = true
 	parent.player.speed = parent.player.focused_speed
+	parent.player.crosshair.show()
 	
 
 func run_current_state(delta: float):
@@ -30,9 +31,11 @@ func run_current_state(delta: float):
 		parent.player.accel = parent.player.ground_accel
 		
 		if parent.player.is_on_floor():
+			parent.player.crosshair.hide()
 			parent.player_grounded.initialize(parent)
 			return parent.player_grounded
 		else:
+			parent.player.crosshair.hide()
 			parent.player_aerial.initialize(parent)
 			return parent.player_aerial
 	

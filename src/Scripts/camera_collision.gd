@@ -11,7 +11,7 @@ const REGULAR_TARGET_DISTANCE := 5.0
 @onready var root := $"../../.."
 
 var distance := 4.6
-var hooke := 2.0
+var hooke := 4.0
 
 func _ready():
 	ray.target_position = position

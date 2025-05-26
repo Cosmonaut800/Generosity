@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://d18iy1ybkm65a"]
+
+[ext_resource type="Script" uid="uid://b3qg3ybr0eti0" path="res://src/Scripts/root_scene.gd" id="1_ygj5l"]
+
+[node name="RootScene" type="Node3D"]
+script = ExtResource("1_ygj5l")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Black" type="ColorRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -36.0
+offset_right = 64.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

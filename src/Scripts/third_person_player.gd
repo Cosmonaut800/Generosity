@@ -11,10 +11,12 @@ const JUMP_VELOCITY = 4.5
 @export var camera : OrbitCamera
 @export var hook_origin : Node3D
 
+
 @onready var graphics := $Graphics
 @onready var coyote_time := $CoyoteTime
 @onready var push_timer := $PushTimer
 @onready var pushable_ray := $PushableRay
+@onready var crosshair := $UI
 
 var speed := 5.0
 var accel = 25.0
@@ -29,6 +31,7 @@ func _ready():
 	speed = ground_speed
 	grappling_hook = camera.grappling_hook
 	grappling_hook.hook_origin = hook_origin
+	
 
 func _physics_process(delta):
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")

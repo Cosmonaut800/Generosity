@@ -1,5 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://lhw2idpdlgq3"]
+[gd_scene load_steps=20 format=3 uid="uid://lhw2idpdlgq3"]
 
+[ext_resource type="Texture2D" uid="uid://bdwb0guc5gp71" path="res://assets/Materials/Textures/sample_map_color_correction.tres" id="1_dmnc3"]
+[ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_lqlve"]
 [ext_resource type="PackedScene" uid="uid://dvysfu5fuad6k" path="res://assets/Models/sample_map.glb" id="1_vctss"]
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="2_hem4h"]
 [ext_resource type="Material" uid="uid://bldsqtsc6035j" path="res://assets/Materials/foliage.tres" id="3_i1bxj"]
@@ -9,23 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="7_hbqwk"]
 [ext_resource type="Script" uid="uid://bqdr72a5tcp3w" path="res://src/Scripts/platform_waypoint.gd" id="7_w4144"]
 [ext_resource type="PackedScene" uid="uid://lp2ym1sutkha" path="res://src/Scenes/bridge.tscn" id="9_hbqwk"]
-
-[sub_resource type="Curve" id="Curve_hbqwk"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.512727, 0.725904), 0.439513, 0.439513, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="Curve" id="Curve_dmnc3"]
-_data = [Vector2(0, 0.167922), 0.0, -2.56965, 0, 0, Vector2(0.247273, 0.207078), 1.44215, 1.44215, 0, 0, Vector2(1, 1), 0.538404, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="Curve" id="Curve_aa8bh"]
-_data = [Vector2(0, 0.158133), 0.0, -0.517696, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_lqlve"]
-curve_x = SubResource("Curve_hbqwk")
-curve_y = SubResource("Curve_dmnc3")
-curve_z = SubResource("Curve_aa8bh")
+[ext_resource type="PackedScene" uid="uid://cd747k607ocp3" path="res://assets/Models/Column.glb" id="12_cyceu"]
+[ext_resource type="Script" uid="uid://barah8wamrx8j" path="res://src/Scripts/level_transition.gd" id="13_cyceu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hbqwk"]
 sky_top_color = Color(0.2726, 0.29, 0.2755, 1)
@@ -45,14 +32,18 @@ ambient_light_color = Color(0.69, 1, 0.876, 1)
 glow_enabled = true
 glow_bloom = 0.3
 adjustment_enabled = true
-adjustment_color_correction = SubResource("CurveXYZTexture_lqlve")
+adjustment_color_correction = ExtResource("1_dmnc3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0v1ad"]
 size = Vector3(6.37579, 7.09659, 0.764771)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hoacc"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_sjq4n"]
+size = Vector3(1.57349, 2.56934, 2.99176)
+
 [node name="SampleMap" type="Node3D"]
+script = ExtResource("1_lqlve")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_aa8bh")
@@ -64,6 +55,7 @@ shadow_enabled = true
 
 [node name="sample_map" parent="." instance=ExtResource("1_vctss")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="sample_map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66297, 5.71426, -9.62383)
@@ -573,10 +565,10 @@ skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("3_i1bxj")
 
 [node name="MoveableBlock2m" parent="." instance=ExtResource("4_46hik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7695, 3.56, 2.86108)
+transform = Transform3D(0.0124237, 0, -0.999923, 0, 1, 0, 0.999923, 0, 0.0124237, 2.21156, 3.56, 1.39173)
 
 [node name="MoveableBlock2m2" parent="." instance=ExtResource("4_46hik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.92155, 6.76, 5.6257)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.68957, 6.76, 5.55678)
 
 [node name="GrapplePoint" parent="." instance=ExtResource("5_46hik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.68909, 14.9349, 6.6795)
@@ -585,8 +577,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.68909, 14.9349, 6.6795)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22029, 4.9109, -2.87029)
 waypoints = [NodePath("../Waypoints/PlatformWaypoint2"), NodePath("../Waypoints/PlatformWaypoint")]
 
-[node name="Switch" parent="MovingPlatform" instance=ExtResource("7_hbqwk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.481025, 0)
+[node name="Switch" parent="." instance=ExtResource("7_hbqwk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50285, 5.71254, -3.83347)
 
 [node name="Waypoints" type="Node3D" parent="."]
 
@@ -603,4 +595,19 @@ metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 [node name="Bridge" parent="Waypoints" instance=ExtResource("9_hbqwk")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.23684, 7.04, -8.83077)
 
-[connection signal="activated" from="MovingPlatform/Switch" to="MovingPlatform" method="_on_switch_activated"]
+[node name="Column" parent="." instance=ExtResource("12_cyceu")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.98788, 2.89126, 1.0756)
+
+[node name="LevelTransition" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.98476, 7.41136, -7.90544)
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("13_cyceu")
+metadata/_custom_type_script = "uid://barah8wamrx8j"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelTransition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.606323, 0.784668, 0.14682)
+shape = SubResource("BoxShape3D_sjq4n")
+
+[connection signal="activated" from="Switch" to="MovingPlatform" method="_on_switch_activated"]
+[connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]

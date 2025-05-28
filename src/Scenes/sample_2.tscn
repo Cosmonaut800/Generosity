@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dae38bkpy2eqy"]
+
+[ext_resource type="Material" uid="uid://dg6eobm2gmlqo" path="res://assets/Materials/checker_green_32x.tres" id="1_xx7u0"]
+[ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="2_rntji"]
+
+[node name="Sample2" type="Node3D"]
+
+[node name="ThirdPersonPlayer" parent="." instance=ExtResource("2_rntji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.91402, 1.37263, 12.781)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.392953, 0, 0.580561)
+material_override = ExtResource("1_xx7u0")
+use_collision = true
+size = Vector3(28.8646, 1, 28.0782)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.51792, 2.69233, -10.111)
+material_override = ExtResource("1_xx7u0")
+use_collision = true
+size = Vector3(6.34248, 4.66797, 5.80344)

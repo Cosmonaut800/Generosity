@@ -4,7 +4,7 @@ const JUMP_VELOCITY = 4.5
 
 @export var ground_speed := 5.0
 @export var focused_speed := 2.0
-@export var pushing_speed := 3.0
+@export var pushing_speed := 2.0
 @export var ground_accel := 25.0
 @export var air_accel := 5.0
 @export var decel := 25.0
@@ -17,6 +17,7 @@ const JUMP_VELOCITY = 4.5
 @onready var push_timer := $PushTimer
 @onready var pushable_ray := $PushableRay
 @onready var crosshair := $UI
+@export var anim_tree : AnimationTree
 
 var speed := 5.0
 var accel = 25.0

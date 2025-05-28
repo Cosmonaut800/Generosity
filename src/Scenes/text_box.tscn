@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6vb4ak58jaby"]
+
+[ext_resource type="Script" uid="uid://jh0vie7lsj7k" path="res://src/Scripts/text_box.gd" id="1_gndy0"]
+[ext_resource type="Texture2D" uid="uid://0u8h8cb588bx" path="res://assets/Materials/Textures/arrow.png" id="2_kvc7q"]
+[ext_resource type="Texture2D" uid="uid://06lrumo87eut" path="res://assets/Materials/Textures/stop.png" id="3_c4ns5"]
+
+[node name="TextBox" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gndy0")
+
+[node name="SpeechBox" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.718
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 217.0
+offset_top = 6.73596
+offset_right = -217.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SpeechLabel" type="Label" parent="SpeechBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = -7.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is a long paragraph of sample text so that I have an idea of what area the text takes up. The likelihood that I actually have an NPC say such a long paragraph is low, but this is nice for testing purposes."
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="SpeakerBox" type="Panel" parent="SpeechBox"]
+layout_mode = 1
+offset_left = 7.0
+offset_top = -43.0
+offset_right = 235.0
+offset_bottom = -6.0
+
+[node name="SpeakerLabel" type="Label" parent="SpeechBox/SpeakerBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Speaker Name"
+
+[node name="Arrow" type="TextureRect" parent="SpeechBox"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_kvc7q")
+
+[node name="Stop" type="TextureRect" parent="SpeechBox"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_c4ns5")

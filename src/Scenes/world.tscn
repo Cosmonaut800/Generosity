@@ -145,10 +145,10 @@ surface_material_override/0 = ExtResource("4_c7r1q")
 transform = Transform3D(-0.681219, 0, 0.732079, 0, 1, 0, -0.732079, 0, -0.681219, 9.89614, -7.22175, 5.12333)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSG"]
-transform = Transform3D(0.999705, 0, 0.0242938, 0, 1, 0, -0.0242938, 0, 0.999705, 0.589176, 0.365719, -3.72498)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.360392, 0.350267, -3.72498)
 use_collision = true
 collision_layer = 3
-polygon = PackedVector2Array(-6.27272, -0.46082, 2.54967, 4.13631, 2.30526, -0.345478)
+polygon = PackedVector2Array(-6.27272, -0.46082, 2.54967, 4.13631, 2.57527, -0.410657)
 depth = 5.5
 material = ExtResource("2_cncp2")
 

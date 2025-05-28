@@ -1,12 +1,14 @@
 extends Camera3D
 
 const CHARACTER_MAX_DISTANCE := 0.3
-const REGULAR_TARGET_DISTANCE := 5.0
+const REGULAR_TARGET_DISTANCE := 3.5
 
 @export var camera_radius : float = 0.3
 
 @onready var ray := $"../CameraRay"
+@onready var direct_ray := $"../DirectRay"
 @onready var target := $"../CameraPosTarget"
+@onready var target_fine := $"../CameraPosTarget/CameraPosTargetFine"
 @onready var yaw_pivot := $"../.."
 @onready var root := $"../../.."
 
@@ -19,18 +21,24 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var pivot_lateral_position := Vector2(yaw_pivot.position.x, yaw_pivot.position.z)
+	#ray.target_position = target.position
+	direct_ray.target_position = position
+	target_fine.position = Vector3.ZERO
 	
 	if ray.is_colliding():
-		#global_position = ray.get_collision_point()
 		target.global_position = ray.get_collision_point()
-		target.position += camera_radius * ray.get_collision_normal()
+		target_fine.position -= camera_radius * ray.target_position.normalized()#ray.get_collision_normal()if direct_ray.is_colliding():
 	else:
 		if root.focused:
 			target.position.z = root.SHOULDER_POS.z
 		else:
 			target.position.z = root.ORBIT_DISTANCE
 	
-	global_position = global_position + (hooke * delta * (target.global_position - global_position))
+	if direct_ray.is_colliding():
+			global_position = direct_ray.get_collision_point()
+			global_position -= root.actor.get_position_delta()
+	
+	global_position = global_position + (hooke * delta * (target_fine.global_position - global_position))
 	
 	if !root.focused:
 		if pivot_lateral_position.length() > CHARACTER_MAX_DISTANCE:

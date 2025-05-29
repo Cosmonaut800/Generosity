@@ -35,6 +35,11 @@ func run_current_state(delta: float) -> State:
 		parent.player.anim_tree.set("parameters/conditions/idling", false)
 		parent.player.anim_tree.set("parameters/conditions/pushing", true)
 	
+	if Input.is_action_pressed("focus_camera"):
+		parent.player_focused.initialize(parent)
+		parent.player.anim_tree.set("parameters/conditions/pushing", false)
+		return parent.player_focused
+	
 	return self
 
 

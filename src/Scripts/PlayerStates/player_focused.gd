@@ -41,6 +41,7 @@ func run_current_state(delta: float):
 		else:
 			parent.player.crosshair.hide()
 			parent.player_aerial.initialize(parent)
+			parent.player.anim_tree.set("parameters/conditions/walking", false)
 			return parent.player_aerial
 	
 	if parent.player.direction:

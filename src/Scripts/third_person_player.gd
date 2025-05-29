@@ -43,16 +43,17 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, speed * direction.z, (abs(direction.z) if abs(direction.z) > 0.3 else 0.3) * accel * delta)
 		pushable_ray.target_position = direction * 1.0
 	
-	var displacement : Vector3 = (grappling_hook.graphics.global_position - global_position)
+	var displacement : Vector3 = (global_position - grappling_hook.graphics.global_position)
 	if grappling_hook.status == grappling_hook.GRAPPLE:
-		velocity += 3.0 * displacement.length() * delta * displacement.normalized()
+		velocity -= 3.0 * displacement.length() * delta * displacement.normalized()
 	if grappling_hook.status == grappling_hook.PULL:
-		grappling_hook.target.velocity -= 8.0 * displacement.length() * delta * displacement.normalized()
+		var distance : float = clamp(displacement.length(), 0.0, 10.0)
+		grappling_hook.target.velocity += 8.0 * distance * delta * displacement.normalized()
 	if grappling_hook.status == grappling_hook.PULL_PHYSICAL:
 		grappling_hook.target.set_axis_lock(PhysicsServer3D.BODY_AXIS_ANGULAR_X, false)
 		grappling_hook.target.set_axis_lock(PhysicsServer3D.BODY_AXIS_ANGULAR_Y, false)
 		grappling_hook.target.set_axis_lock(PhysicsServer3D.BODY_AXIS_ANGULAR_Z, false)
-		grappling_hook.target.apply_force(-8.0 * displacement.length() * displacement.normalized(), grappling_hook.attach_point.position)
+		grappling_hook.target.apply_force(8.0 * displacement, grappling_hook.attach_point.global_position - grappling_hook.target.global_position)
 	
 	move_and_slide()
 	

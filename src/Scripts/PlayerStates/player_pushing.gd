@@ -25,6 +25,8 @@ func run_current_state(delta: float) -> State:
 		#target_pushable.move_and_collide(delta * parent.player.velocity)
 		var creep_distance : Vector3 = 0.85 * parent.player.pushable_ray.target_position - parent.player.to_local(parent.player.pushable_ray.get_collision_point())
 		if creep_distance.dot(parent.player.pushable_ray.target_position) > 0.0:
+			#target_pushable.velocity += creep_distance.dot(parent.player.pushable_ray.get_collision_normal()) * parent.player.pushable_ray.get_collision_normal() / delta
+			#target_pushable.move_and_slide()
 			target_pushable.move_and_collide(creep_distance.dot(parent.player.pushable_ray.get_collision_normal()) * parent.player.pushable_ray.get_collision_normal())
 	
 	if !parent.player.direction:

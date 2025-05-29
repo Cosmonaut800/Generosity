@@ -11,7 +11,7 @@ size = Vector3(2.2, 0.1, 2.2)
 size = Vector3(1.8, 0.2, 1.8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8eix8"]
-size = Vector3(1.8, 0.2, 1.8)
+size = Vector3(1.2, 0.2, 1.2)
 
 [node name="BoxButton" type="Node3D"]
 script = ExtResource("1_8d44d")

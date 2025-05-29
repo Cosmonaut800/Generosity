@@ -5,14 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://b5ssdtjw2nukg" path="res://assets/Models/InteractableTallColTop.fbx" id="3_1t26x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w88jf"]
-size = Vector3(1, 1.22949, 1)
+size = Vector3(1.3, 1.22949, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_y8thn"]
 height = 1.0
 radial_segments = 12
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ux5ce"]
-size = Vector3(1, 9.86386, 1)
+size = Vector3(1.3, 9.86386, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ux5ce"]
 height = 10.105
@@ -36,7 +36,7 @@ mesh = SubResource("CylinderMesh_y8thn")
 skeleton = NodePath("../..")
 
 [node name="InteractableTallColBase" parent="Base" instance=ExtResource("2_uj0yn")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1.3, 0, -1.50996e-07, 0, 1, 0, 1.96295e-07, 0, -1, 0, 0, 0)
 
 [node name="Trunk" type="RigidBody3D" parent="."]
 collision_layer = 64
@@ -57,7 +57,7 @@ material_override = ExtResource("1_ux5ce")
 mesh = SubResource("CylinderMesh_ux5ce")
 
 [node name="InteractableTallColTop" parent="Trunk" instance=ExtResource("3_1t26x")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1.3, 0, -1.50996e-07, 0, 1, 0, 1.96295e-07, 0, -1, 0, 0, 0)
 
 [node name="HingeJoint3D" type="HingeJoint3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.23564, -0.498053)

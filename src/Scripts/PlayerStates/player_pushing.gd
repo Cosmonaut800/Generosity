@@ -9,10 +9,6 @@ func initialize(parent_machine: StateMachine):
 	stopped_pushing = false
 	target_pushable = parent.player.pushable_ray.get_collider()
 	parent.player.speed = parent.player.pushing_speed
-	parent.player.anim_tree.set("parameters/Grounded/conditions/grounded", true)
-	parent.player.anim_tree.set("parameters/Grounded/conditions/aerial", false)
-	parent.player.anim_tree.set("parameters/Aerial/conditions/grounded", true)
-	parent.player.anim_tree.set("parameters/Aerial/conditions/aerial", false)
 	parent.player.anim_tree.set("parameters/conditions/grounded", true)
 	parent.player.anim_tree.set("parameters/conditions/aerial", false)
 
@@ -21,7 +17,7 @@ func run_current_state(delta: float) -> State:
 	
 	if !parent.player.pushable_ray.is_colliding():
 		parent.player_grounded.initialize(parent)
-		parent.player.anim_tree.set("parameters/Grounded/conditions/pushing", false)
+		parent.player.anim_tree.set("parameters/conditions/pushing", false)
 		return parent.player_grounded
 	
 	if target_pushable.is_on_floor():
@@ -33,11 +29,11 @@ func run_current_state(delta: float) -> State:
 	
 	if !parent.player.direction:
 		parent.player.decelerate(delta)
-		parent.player.anim_tree.set("parameters/Grounded/conditions/idling", true)
-		parent.player.anim_tree.set("parameters/Grounded/conditions/pushing", false)
+		parent.player.anim_tree.set("parameters/conditions/idling", true)
+		parent.player.anim_tree.set("parameters/conditions/pushing", false)
 	else:
-		parent.player.anim_tree.set("parameters/Grounded/conditions/idling", false)
-		parent.player.anim_tree.set("parameters/Grounded/conditions/pushing", true)
+		parent.player.anim_tree.set("parameters/conditions/idling", false)
+		parent.player.anim_tree.set("parameters/conditions/pushing", true)
 	
 	return self
 

@@ -7,4 +7,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("1_jue2u")
+emission_enabled = true
+rim = 0.03
 texture_filter = 0
+billboard_keep_scale = true

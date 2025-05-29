@@ -1,0 +1,14 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://d3wh41nlpkhf3"]
+
+[ext_resource type="Texture2D" uid="uid://bdwb0guc5gp71" path="res://assets/Materials/Textures/sample_map_color_correction.tres" id="1_uludk"]
+[ext_resource type="Sky" uid="uid://kikd5bdvfmcb" path="res://assets/sky.tres" id="2_ldkcb"]
+
+[resource]
+background_mode = 2
+sky = ExtResource("2_ldkcb")
+ambient_light_source = 2
+ambient_light_color = Color(0.69, 1, 0.876, 1)
+glow_enabled = true
+glow_bloom = 0.3
+adjustment_enabled = true
+adjustment_color_correction = ExtResource("1_uludk")

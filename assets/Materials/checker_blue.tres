@@ -1,9 +1,9 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bekd4kyvjet07"]
 
-[ext_resource type="Texture2D" uid="uid://c0pxgcwcsx36c" path="res://assets/Materials/Textures/checker_blue_32x.png" id="1_83a18"]
+[ext_resource type="Texture2D" uid="uid://cerah6j45auec" path="res://assets/Materials/Textures/checker_blue.png" id="1_7k8ei"]
 
 [resource]
-albedo_texture = ExtResource("1_83a18")
+albedo_texture = ExtResource("1_7k8ei")
 uv1_triplanar = true
 uv1_triplanar_sharpness = 150.0
 uv1_world_triplanar = true

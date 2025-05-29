@@ -8,6 +8,5 @@ alpha_scissor_threshold = 0.429
 alpha_antialiasing_mode = 0
 cull_mode = 2
 albedo_texture = ExtResource("1_dn0c1")
-backlight_enabled = true
 backlight = Color(0.370364, 0.370364, 0.370364, 1)
 texture_filter = 0

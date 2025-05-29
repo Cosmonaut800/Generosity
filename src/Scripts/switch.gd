@@ -5,6 +5,7 @@ extends Node3D
 var is_active := false
 
 signal activated(switch: Node3D)
+signal deactivated(switch: Node3D)
 
 func activate() -> void:
 	if toggle:
@@ -12,4 +13,7 @@ func activate() -> void:
 	else:
 		is_active = true
 	
-	activated.emit(self)
+	if is_active:
+		activated.emit(self)
+	else:
+		deactivated.emit(self)

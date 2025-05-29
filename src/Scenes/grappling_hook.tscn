@@ -29,7 +29,7 @@ disable_receive_shadows = true
 script = ExtResource("1_xyle6")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-target_position = Vector3(1.45519e-11, 1.45519e-11, -25)
+target_position = Vector3(1.45519e-11, 1.45519e-11, -20)
 collision_mask = 110
 
 [node name="VisualizeTargetDistance" type="MeshInstance3D" parent="."]

@@ -16,13 +16,8 @@ func initialize(parent_machine: StateMachine):
 	parent.player.camera.focused = true
 	parent.player.speed = parent.player.focused_speed
 	parent.player.crosshair.show()
-	parent.player.anim_tree.set("parameters/Grounded/conditions/grounded", true)
-	parent.player.anim_tree.set("parameters/Grounded/conditions/aerial", false)
-	parent.player.anim_tree.set("parameters/Aerial/conditions/grounded", true)
-	parent.player.anim_tree.set("parameters/Aerial/conditions/aerial", false)
 	parent.player.anim_tree.set("parameters/conditions/grounded", true)
-	parent.player.anim_tree.set("parameters/conditions/aerial", false)
-	
+	parent.player.anim_tree.set("parameters/conditions/aerial", false)	
 
 func run_current_state(delta: float):
 	
@@ -41,7 +36,7 @@ func run_current_state(delta: float):
 		if parent.player.is_on_floor():
 			parent.player.crosshair.hide()
 			parent.player_grounded.initialize(parent)
-			parent.player.anim_tree.set("parameters/Grounded/conditions/walking", false)
+			parent.player.anim_tree.set("parameters/conditions/walking", false)
 			return parent.player_grounded
 		else:
 			parent.player.crosshair.hide()
@@ -49,11 +44,11 @@ func run_current_state(delta: float):
 			return parent.player_aerial
 	
 	if parent.player.direction:
-		parent.player.anim_tree.set("parameters/Grounded/conditions/walking", true)
-		parent.player.anim_tree.set("parameters/Grounded/conditions/idling", false)
+		parent.player.anim_tree.set("parameters/conditions/walking", true)
+		parent.player.anim_tree.set("parameters/conditions/idling", false)
 	else:
-		parent.player.anim_tree.set("parameters/Grounded/conditions/walking", false)
-		parent.player.anim_tree.set("parameters/Grounded/conditions/idling", true)
+		parent.player.anim_tree.set("parameters/conditions/walking", false)
+		parent.player.anim_tree.set("parameters/conditions/idling", true)
 	
 	parent.player.graphics.look_at(parent.player.grappling_hook.to_global(parent.player.grappling_hook.ray.target_position) * Vector3(1.0, 0.0, 1.0) + Vector3(0.0, parent.player.position.y, 0.0))
 	

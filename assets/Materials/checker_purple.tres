@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bb74i5joxo66"]
+
+[ext_resource type="Texture2D" uid="uid://fnghjf6mndsh" path="res://assets/Materials/Textures/checker_purple.png" id="1_gcad1"]
+
+[resource]
+albedo_texture = ExtResource("1_gcad1")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 150.0
+uv1_world_triplanar = true
+texture_filter = 0

@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_wbn2r"]
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="1_we0ab"]
-[ext_resource type="Material" uid="uid://fwdgib7583jy" path="res://assets/Materials/checker_32x.tres" id="2_cncp2"]
+[ext_resource type="Material" uid="uid://fwdgib7583jy" path="res://assets/Materials/checker_gray.tres" id="2_cncp2"]
 [ext_resource type="PackedScene" uid="uid://b671mbiaxfrdb" path="res://src/Scenes/grapple_point.tscn" id="3_cks6v"]
-[ext_resource type="Material" uid="uid://d22sp4h08cija" path="res://assets/Materials/green.tres" id="4_c7r1q"]
 [ext_resource type="PackedScene" uid="uid://bkglvypeexyb4" path="res://src/Scenes/moveable_block_2m.tscn" id="5_2c7kl"]
 [ext_resource type="PackedScene" uid="uid://lp2ym1sutkha" path="res://src/Scenes/bridge.tscn" id="6_kudtg"]
 [ext_resource type="PackedScene" uid="uid://cwmq1au8jy8g4" path="res://src/Scenes/kodama.tscn" id="7_3q6tr"]
 [ext_resource type="PackedScene" uid="uid://brdh8um8v542x" path="res://src/Scenes/moving_platform.tscn" id="8_56fay"]
+[ext_resource type="PackedScene" uid="uid://bacgrc823sjog" path="res://src/Scenes/box_button.tscn" id="8_yp8kh"]
+[ext_resource type="Material" uid="uid://dg6eobm2gmlqo" path="res://assets/Materials/checker_green.tres" id="9_3a6ty"]
 [ext_resource type="Script" uid="uid://bqdr72a5tcp3w" path="res://src/Scripts/platform_waypoint.gd" id="9_wyao0"]
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="10_qtmjw"]
 [ext_resource type="Script" uid="uid://barah8wamrx8j" path="res://src/Scripts/level_transition.gd" id="12_x3jek"]
@@ -46,36 +47,36 @@ noise = SubResource("FastNoiseLite_cks6v")
 albedo_color = Color(0.3, 0.2376, 0.204, 1)
 albedo_texture = SubResource("NoiseTexture2D_c7r1q")
 
-[sub_resource type="BoxMesh" id="BoxMesh_c7r1q"]
-size = Vector3(0.37, 0.475, 0.46)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_x3jek"]
-size = Vector3(1, 4.77957, 6.31656)
+size = Vector3(1, 2.78627, 3.11015)
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_wbn2r")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.49787, 0, 2.99998)
 collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_cncp2")
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("1_we0ab")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21067, 5.61497, -2.68996)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16499, 1.27821, 4.16581)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_we0ab")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.760802, -0.415211, -0.498779, 0.648985, 0.48675, 0.584716, 0, -0.768553, 0.639786, 0, 0, 0)
+transform = Transform3D(-5.58802e-07, 0.768552, -0.639786, 0.648985, 0.48675, 0.584716, 0.760802, -0.415211, -0.498779, 5.49787, 0, 2.99998)
 shadow_enabled = true
 
 [node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.49787, 0, 2.99998)
 mesh = SubResource("PlaneMesh_we0ab")
 surface_material_override/0 = SubResource("StandardMaterial3D_2c7kl")
 
 [node name="CSG" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.49787, 0, 2.99998)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSG"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05044, 2.17688, -0.120474)
@@ -92,19 +93,61 @@ size = Vector3(4.29297, 4.51541, 5.09041)
 material = ExtResource("2_cncp2")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSG"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7704, 2.61418, 2.83778)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7704, 2.38995, 3.27898)
 use_collision = true
 collision_layer = 3
-size = Vector3(4.29297, 4.60993, 11.0043)
+size = Vector3(4.29297, 5.05838, 22.112)
 material = ExtResource("2_cncp2")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSG/CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329477, -0.515656, 0.0512567)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329477, -0.945548, 7.37872)
 operation = 2
 use_collision = true
 collision_layer = 3
-size = Vector3(4.29297, 4.60993, 5.30977)
+size = Vector3(4.29297, 2.92264, 3.03135)
 material = ExtResource("2_cncp2")
+
+[node name="LevelTransition" type="Area3D" parent="CSG/CSGBox3D2/CSGBox3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.270521, 0.135261, 0.18493)
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("12_x3jek")
+level_index = 1
+metadata/_custom_type_script = "uid://barah8wamrx8j"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSG/CSGBox3D2/CSGBox3D6/LevelTransition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0203773, -0.199581)
+shape = SubResource("BoxShape3D_x3jek")
+
+[node name="Label3D" type="Label3D" parent="CSG/CSGBox3D2/CSGBox3D6/LevelTransition"]
+billboard = 1
+text = "Sample Map"
+font_size = 48
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSG/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329477, -0.945548, 3.13286)
+operation = 2
+use_collision = true
+collision_layer = 3
+size = Vector3(4.29297, 2.92264, 3.03135)
+material = ExtResource("2_cncp2")
+
+[node name="LevelTransition" type="Area3D" parent="CSG/CSGBox3D2/CSGBox3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.270521, 0.135261, 0.18493)
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("12_x3jek")
+level_index = 2
+metadata/_custom_type_script = "uid://barah8wamrx8j"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSG/CSGBox3D2/CSGBox3D7/LevelTransition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0203773, -0.199581)
+shape = SubResource("BoxShape3D_x3jek")
+
+[node name="Label3D2" type="Label3D" parent="CSG/CSGBox3D2/CSGBox3D7/LevelTransition"]
+billboard = 1
+text = "Course 2"
+font_size = 48
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSG"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4174, 4.76633, 2.83778)
@@ -137,10 +180,6 @@ material = ExtResource("2_cncp2")
 [node name="GrapplePoint" parent="CSG/CSGBox3D4" instance=ExtResource("3_cks6v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12106, -0.47997, 0.0204899)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CSG/CSGBox3D4/GrapplePoint"]
-mesh = SubResource("BoxMesh_c7r1q")
-surface_material_override/0 = ExtResource("4_c7r1q")
-
 [node name="Bridge" parent="CSG/CSGBox3D4" instance=ExtResource("6_kudtg")]
 transform = Transform3D(-0.681219, 0, 0.732079, 0, 1, 0, -0.732079, 0, -0.681219, 9.89614, -7.22175, 5.12333)
 
@@ -153,27 +192,73 @@ depth = 5.5
 material = ExtResource("2_cncp2")
 
 [node name="MoveableBlock2m" parent="CSG" instance=ExtResource("5_2c7kl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.57, 1, -10.9116)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19703, 1.258, 1.21307)
+
+[node name="BoxButton" parent="CSG" instance=ExtResource("8_yp8kh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.51791, 0, -1.15669)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, 10)
+material_override = ExtResource("9_3a6ty")
+use_collision = true
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.625, 10)
+material_override = ExtResource("9_3a6ty")
+use_collision = true
+size = Vector3(1, 1.25, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.75, 10)
+material_override = ExtResource("9_3a6ty")
+use_collision = true
+size = Vector3(1, 1.5, 1)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.875, 10)
+material_override = ExtResource("9_3a6ty")
+use_collision = true
+size = Vector3(1, 1.75, 1)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 10)
+material_override = ExtResource("9_3a6ty")
+use_collision = true
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.375, 10)
+material_override = ExtResource("9_3a6ty")
+use_collision = true
+size = Vector3(1, 0.75, 1)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.25, 10)
+material_override = ExtResource("9_3a6ty")
+use_collision = true
+size = Vector3(1, 0.5, 1)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45519e-11, 0.125, 10)
+material_override = ExtResource("9_3a6ty")
+use_collision = true
+size = Vector3(1, 0.25, 1)
 
 [node name="MoveableBlock2m" parent="." instance=ExtResource("5_2c7kl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.08751, 1.05064, -10.5762)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.57653, 6.22033, 13.6026)
 
 [node name="Kodama" parent="." instance=ExtResource("7_3q6tr")]
-transform = Transform3D(0.567298, 0, -0.823513, 0, 1, 0, 0.823513, 0, 0.567298, -17.0358, 4.91915, 7.58552)
+transform = Transform3D(-0.823513, 0, -0.567298, 0, 1, 0, 0.567298, 0, -0.823513, -2.08765, 4.91915, -14.0358)
 
 [node name="MovingPlatform" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("8_56fay")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9611, 12.0137, 11.0843)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.58643, 4.54168, 13.9611)
 waypoints = [NodePath("../Waypoints/PlatformWaypoint2"), NodePath("../Waypoints/PlatformWaypoint4"), NodePath("../Waypoints/PlatformWaypoint3"), NodePath("../Waypoints/PlatformWaypoint")]
 
 [node name="GrapplePoint" parent="MovingPlatform" instance=ExtResource("3_cks6v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.776637, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MovingPlatform/GrapplePoint"]
-mesh = SubResource("BoxMesh_c7r1q")
-surface_material_override/0 = ExtResource("4_c7r1q")
-
 [node name="Waypoints" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.3565, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.49787, 2.88448, 2.99998)
 
 [node name="PlatformWaypoint" type="Node3D" parent="Waypoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9611, 1.65722, 11.0843)
@@ -200,21 +285,10 @@ transit_time = 8.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="Switch" parent="." instance=ExtResource("10_qtmjw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71259, 4.48184, 8.49608)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.99822, 4.48184, 9.71257)
 
-[node name="LevelTransition" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1704, 1.39014, 2.94487)
-collision_layer = 0
-collision_mask = 128
-script = ExtResource("12_x3jek")
-level_index = 1
-metadata/_custom_type_script = "uid://barah8wamrx8j"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelTransition"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.976273, -0.155533)
-shape = SubResource("BoxShape3D_x3jek")
-
+[connection signal="level_changed" from="CSG/CSGBox3D2/CSGBox3D6/LevelTransition" to="." method="_on_level_transition_level_changed"]
+[connection signal="level_changed" from="CSG/CSGBox3D2/CSGBox3D7/LevelTransition" to="." method="_on_level_transition_level_changed"]
 [connection signal="activated" from="Switch" to="MovingPlatform" method="_on_switch_activated"]
-[connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
 
 [editable path="CSG/CSGBox3D4/GrapplePoint"]

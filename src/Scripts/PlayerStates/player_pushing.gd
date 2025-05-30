@@ -20,14 +20,23 @@ func run_current_state(delta: float) -> State:
 		parent.player.anim_tree.set("parameters/conditions/pushing", false)
 		return parent.player_grounded
 	
+	if !parent.player.is_on_floor():
+		parent.player_aerial.initialize(parent)
+		parent.player.anim_tree.set("parameters/conditions/pushing", false)
+		return parent.player_aerial
+	
+	if Input.is_action_just_pressed("jump"):
+		parent.player.velocity.y += parent.player.JUMP_VELOCITY
+		parent.player_aerial.initialize(parent)
+		parent.player.anim_tree.set("parameters/conditions/pushing", false)
+		return parent.player_aerial
+	
 	if target_pushable.is_on_floor():
-		#target_pushable.velocity = -parent.player.pushable_ray.get_collision_normal() * parent.player.speed * 0.5
-		#target_pushable.move_and_collide(delta * parent.player.velocity)
 		var creep_distance : Vector3 = 0.85 * parent.player.pushable_ray.target_position - parent.player.to_local(parent.player.pushable_ray.get_collision_point())
 		if creep_distance.dot(parent.player.pushable_ray.target_position) > 0.0:
-			#target_pushable.velocity += creep_distance.dot(parent.player.pushable_ray.get_collision_normal()) * parent.player.pushable_ray.get_collision_normal() / delta
-			#target_pushable.move_and_slide()
+			target_pushable.move_and_collide(Vector3(0.0, 0.1, 0.0))
 			target_pushable.move_and_collide(creep_distance.dot(parent.player.pushable_ray.get_collision_normal()) * parent.player.pushable_ray.get_collision_normal())
+			target_pushable.move_and_collide(Vector3(0.0, -0.1, 0.0))
 	
 	if !parent.player.direction:
 		parent.player.decelerate(delta)

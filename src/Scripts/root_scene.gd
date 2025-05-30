@@ -5,6 +5,7 @@ extends Node3D
 var world_templates : Array[Resource] =\
 [	preload("res://src/Scenes/world.tscn"),
 	preload("res://src/Scenes/sample_map.tscn"),
+	preload("res://src/Scenes/course_1.tscn"),
 	preload("res://src/Scenes/course_2.tscn"),
 	preload("res://src/Scenes/course_3.tscn")]
 var world : Node3D

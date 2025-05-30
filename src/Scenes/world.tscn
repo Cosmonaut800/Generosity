@@ -130,8 +130,33 @@ billboard = 1
 text = "Sample Map"
 font_size = 48
 
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSG/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329477, -0.945548, 3.30772)
+operation = 2
+use_collision = true
+collision_layer = 3
+size = Vector3(4.29297, 2.92264, 3.03135)
+material = ExtResource("2_cncp2")
+
+[node name="LevelTransition" type="Area3D" parent="CSG/CSGBox3D2/CSGBox3D9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.270521, 0.135261, 0.18493)
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("12_x3jek")
+level_index = 2
+metadata/_custom_type_script = "uid://barah8wamrx8j"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSG/CSGBox3D2/CSGBox3D9/LevelTransition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0203773, -0.199581)
+shape = SubResource("BoxShape3D_x3jek")
+
+[node name="Label3D2" type="Label3D" parent="CSG/CSGBox3D2/CSGBox3D9/LevelTransition"]
+billboard = 1
+text = "Course 1"
+font_size = 48
+
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSG/CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329477, -0.945548, 3.13286)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329477, -0.945548, -0.656392)
 operation = 2
 use_collision = true
 collision_layer = 3
@@ -143,7 +168,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.270521, 0.135261, 0.18493)
 collision_layer = 0
 collision_mask = 128
 script = ExtResource("12_x3jek")
-level_index = 2
+level_index = 3
 metadata/_custom_type_script = "uid://barah8wamrx8j"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSG/CSGBox3D2/CSGBox3D7/LevelTransition"]
@@ -156,7 +181,7 @@ text = "Course 2"
 font_size = 48
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSG/CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329477, -0.945548, -1.00505)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329477, -0.945548, -4.79431)
 operation = 2
 use_collision = true
 collision_layer = 3
@@ -168,7 +193,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.270521, 0.135261, 0.18493)
 collision_layer = 0
 collision_mask = 128
 script = ExtResource("12_x3jek")
-level_index = 3
+level_index = 4
 metadata/_custom_type_script = "uid://barah8wamrx8j"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSG/CSGBox3D2/CSGBox3D8/LevelTransition"]
@@ -382,6 +407,7 @@ shape = SubResource("BoxShape3D_yp8kh")
 mesh = SubResource("BoxMesh_3a6ty")
 
 [connection signal="level_changed" from="CSG/CSGBox3D2/CSGBox3D6/LevelTransition" to="." method="_on_level_transition_level_changed"]
+[connection signal="level_changed" from="CSG/CSGBox3D2/CSGBox3D9/LevelTransition" to="." method="_on_level_transition_level_changed"]
 [connection signal="level_changed" from="CSG/CSGBox3D2/CSGBox3D7/LevelTransition" to="." method="_on_level_transition_level_changed"]
 [connection signal="level_changed" from="CSG/CSGBox3D2/CSGBox3D8/LevelTransition" to="." method="_on_level_transition_level_changed"]
 [connection signal="activated" from="Switch" to="MovingPlatform" method="_on_switch_activated"]

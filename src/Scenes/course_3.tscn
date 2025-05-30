@@ -104,7 +104,7 @@ metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="PlatformWaypoint2" type="Node3D" parent="Waypoints2"]
 script = ExtResource("9_tfigl")
-transit_time = 2.0
+transit_time = 1.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="Switch" parent="." instance=ExtResource("11_l5bnj")]
@@ -192,6 +192,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.94384, -0.737499, 0.061213
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.42617, -4.52435)
 billboard = 1
 text = "Possible Kodama hiding spot in here?"
+
+[node name="Label3D4" type="Label3D" parent="Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.71926, 9.64359, -0.151468)
+billboard = 1
+text = "The top part of the central column will be a
+separate model to show better that it spins"
 
 [node name="Label3D2" type="Label3D" parent="Labels"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.69997, 16.1355, -3.83053)

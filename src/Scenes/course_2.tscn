@@ -713,6 +713,9 @@ metadata/_custom_type_script = "uid://barah8wamrx8j"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00463867, 0.155334, 0)
 shape = SubResource("BoxShape3D_oouk5")
 
+[node name="Kodama2" parent="." instance=ExtResource("9_m1neg")]
+transform = Transform3D(0.999107, 0, 0.0422418, 0, 1, 0, -0.0422418, 0, 0.999107, 6.63152, -5.43999, -8.86636)
+
 [connection signal="activated" from="BoxButton" to="MovingPlatform" method="_on_switch_activated"]
 [connection signal="activated" from="Switch" to="MovingPlatform2" method="_on_switch_activated"]
 [connection signal="activated" from="BoxButton2" to="MovingPlatform5" method="_on_switch_activated"]

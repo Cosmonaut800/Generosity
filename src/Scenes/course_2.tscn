@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://udhhlalxkksx"]
 
-[ext_resource type="PackedScene" uid="uid://bnjt4akly04mb" path="res://assets/Models/course_2_blockout.glb" id="1_kvov2"]
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_oouk5"]
 [ext_resource type="Environment" uid="uid://d3wh41nlpkhf3" path="res://assets/environment.tres" id="1_ury6i"]
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="2_souxa"]
+[ext_resource type="PackedScene" uid="uid://d0dhudypg5sm5" path="res://assets/Models/course_2_blockout2.glb" id="3_oouk5"]
 [ext_resource type="PackedScene" uid="uid://brdh8um8v542x" path="res://src/Scenes/moving_platform.tscn" id="4_rwnne"]
 [ext_resource type="Script" uid="uid://bqdr72a5tcp3w" path="res://src/Scripts/platform_waypoint.gd" id="5_4oo4w"]
 [ext_resource type="PackedScene" uid="uid://bacgrc823sjog" path="res://src/Scenes/box_button.tscn" id="5_wsool"]
@@ -31,8 +31,7 @@ transform = Transform3D(0.836114, -0.529839, 0.14207, -0.0486009, 0.186421, 0.98
 light_color = Color(0.89, 0.862707, 0.4806, 1)
 shadow_enabled = true
 
-[node name="course_2_blockout" parent="." instance=ExtResource("1_kvov2")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.45519e-11, 1.45519e-11, 1.45519e-11)
+[node name="course_2_blockout2" parent="." instance=ExtResource("3_oouk5")]
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("2_souxa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6372, 1.00155, 21.1929)
@@ -62,11 +61,6 @@ transform = Transform3D(0.933352, 0.358963, 0, -0.358963, 0.933352, 0, 0, 0, 1, 
 use_collision = true
 size = Vector3(4.64278, 2.15039, 1.48535)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8922, 5.22426, -15.6111)
-use_collision = true
-size = Vector3(1.23247, 2.15039, 0.713501)
-
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65301, 4.22591, -13.7013)
 use_collision = true
@@ -80,19 +74,18 @@ waypoints = [NodePath("../Waypoints2/PlatformWaypoint"), NodePath("../Waypoints2
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -30.75, 1, 5.5)
 
 [node name="PlatformWaypoint" type="Node3D" parent="Waypoints2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.90789)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.22028)
 script = ExtResource("5_4oo4w")
-wait_time = 2.0
+wait_time = 3.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="PlatformWaypoint2" type="Node3D" parent="Waypoints2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("5_4oo4w")
-wait_time = 2.0
+wait_time = 3.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="MovingPlatform3" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("4_rwnne")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -24.7, 1, -14.8187)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -24.7, 1, -14.8188)
 waypoints = [NodePath("../Waypoints3/PlatformWaypoint"), NodePath("../Waypoints3/PlatformWaypoint2")]
 active = true
 
@@ -100,15 +93,15 @@ active = true
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -24.7, 1, -14.8188)
 
 [node name="PlatformWaypoint" type="Node3D" parent="Waypoints3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25201, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.16686, 0, 8.39233e-05)
 script = ExtResource("5_4oo4w")
-wait_time = 2.0
+wait_time = 3.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="PlatformWaypoint2" type="Node3D" parent="Waypoints3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.53674e-07)
 script = ExtResource("5_4oo4w")
-wait_time = 2.0
+wait_time = 3.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="MovingPlatform4" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("4_rwnne")]
@@ -119,15 +112,14 @@ waypoints = [NodePath("../Waypoints4/PlatformWaypoint"), NodePath("../Waypoints4
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -3.5, 1, -14.8188)
 
 [node name="PlatformWaypoint" type="Node3D" parent="Waypoints4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21855, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13677, 0, 0)
 script = ExtResource("5_4oo4w")
-wait_time = 2.0
+wait_time = 3.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="PlatformWaypoint2" type="Node3D" parent="Waypoints4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("5_4oo4w")
-wait_time = 2.0
+wait_time = 3.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="MoveableBlock2m2" parent="." instance=ExtResource("6_4oo4w")]
@@ -176,11 +168,8 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -28.5822, 2.65136, -
 [node name="Switch2" parent="." instance=ExtResource("7_m1neg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.74652, -3.69549e-06, -3.82301)
 
-[node name="Kodama" parent="." instance=ExtResource("9_m1neg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1901, -3.45707e-06, -2.26072)
-
 [node name="Bridge" parent="." instance=ExtResource("10_4oo4w")]
-transform = Transform3D(0.732989, 0, 0.68024, 0, 1, 0, -0.68024, 0, 0.732989, 10.8149, 3.52221, -3.37903)
+transform = Transform3D(0.427241, 0, 0.904138, 0, 1, 0, -0.904138, 0, 0.427241, 10.9409, 3.52221, -3.38484)
 
 [node name="Canopy" type="Node3D" parent="."]
 transform = Transform3D(-1.67615, 0, -2.53092e-07, 0, 1.67615, 0, 2.53092e-07, 0, -1.67615, -8.09609, -2.37533, 0.312225)
@@ -696,12 +685,6 @@ billboard = 1
 text = "Kodama next to small tree in
 hole?"
 
-[node name="Label3D4" type="Label3D" parent="Labels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.90312, -1.49131, -13.9575)
-billboard = 1
-text = "Possible second Kodama hiding spot?
---->"
-
 [node name="Label3D5" type="Label3D" parent="Labels"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.44902, 7.20871, 6.53161)
 billboard = 1
@@ -709,10 +692,16 @@ text = "Quest complete!
 Return to hub is ahead"
 
 [node name="GrapplePoint" parent="." instance=ExtResource("12_1djfy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8747, 5.24722, -15.2543)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8747, 5.24722, -15.5496)
 
 [node name="GrapplePoint2" parent="." instance=ExtResource("12_1djfy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0919, 4.23045, -7.90998)
+
+[node name="GrapplePoint3" parent="." instance=ExtResource("12_1djfy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.86627, 4.88249, -22.6325)
+
+[node name="Kodama" parent="." instance=ExtResource("9_m1neg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1901, -3.45707e-06, -2.26072)
 
 [node name="LevelTransition" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.44964, 6.84585, 12.403)

@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c61rjg34hy434"]
+
+[ext_resource type="Shader" uid="uid://cds75mp1wxim2" path="res://src/Shaders/interactable.gdshader" id="1_csidl"]
+[ext_resource type="Texture2D" uid="uid://dv653gp3wydng" path="res://assets/Materials/Textures/TallColRockTex.png" id="2_ywkys"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_csidl")
+shader_parameter/albedoTexture = ExtResource("2_ywkys")
+shader_parameter/pulseColor = Color(0.4525, 0.6, 0.45, 1)
+shader_parameter/timeScale = 1.0

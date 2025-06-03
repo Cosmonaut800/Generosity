@@ -10,5 +10,4 @@ ambient_light_source = 2
 ambient_light_color = Color(0.69, 1, 0.876, 1)
 glow_enabled = true
 glow_bloom = 0.3
-adjustment_enabled = true
 adjustment_color_correction = ExtResource("1_uludk")

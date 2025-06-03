@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtj0ym1dddhvx"]
+
+[ext_resource type="PackedScene" uid="uid://cwyfx4j75o5ry" path="res://assets/Models/Tree.fbx" id="1_nn451"]
+[ext_resource type="Material" uid="uid://dbloctvieors6" path="res://assets/Materials/Leaf1Dead.tres" id="2_64f3v"]
+
+[node name="Tree" instance=ExtResource("1_nn451")]
+
+[node name="Tree" parent="." index="0"]
+cast_shadow = 0
+surface_material_override/0 = ExtResource("2_64f3v")

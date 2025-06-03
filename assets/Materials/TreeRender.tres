@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cqsiq7o3b57hv"]
+
+[ext_resource type="Texture2D" uid="uid://dgpf125vs4rvh" path="res://assets/Materials/Textures/Tree Render.png" id="1_gaq3y"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_gaq3y")
+rim_tint = 0.0
+texture_filter = 0
+billboard_keep_scale = true

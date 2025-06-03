@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4wb0t8d5espv"]
+
+[ext_resource type="PackedScene" uid="uid://bexskv6q1yooh" path="res://assets/Models/Course_1_Floor.fbx" id="1_7ul7f"]
+[ext_resource type="Texture2D" uid="uid://cjxs4y7i1qb2m" path="res://assets/Materials/Textures/RockTex.png" id="2_px7fy"]
+[ext_resource type="Texture2D" uid="uid://82lptidaig5k" path="res://assets/Materials/Textures/SubGrass.png" id="3_20ldf"]
+[ext_resource type="Material" uid="uid://b8guiyaoi17mk" path="res://assets/Materials/Leaf3Dead.tres" id="4_px7fy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ul7f"]
+albedo_texture = ExtResource("3_20ldf")
+uv1_scale = Vector3(0.055, 0.055, 0.055)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px7fy"]
+albedo_texture = ExtResource("2_px7fy")
+uv1_scale = Vector3(0.095, 0.095, 0.095)
+uv1_triplanar = true
+texture_filter = 0
+
+[node name="Course_1_Floor" instance=ExtResource("1_7ul7f")]
+
+[node name="Course_1_Floor_002" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7ul7f")
+surface_material_override/1 = SubResource("StandardMaterial3D_7ul7f")
+surface_material_override/2 = SubResource("StandardMaterial3D_px7fy")
+surface_material_override/3 = ExtResource("4_px7fy")

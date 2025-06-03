@@ -1,0 +1,23 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://q0v8u0vbiwpp"]
+
+[ext_resource type="Texture2D" uid="uid://bdwb0guc5gp71" path="res://assets/Materials/Textures/sample_map_color_correction.tres" id="1_up8tk"]
+[ext_resource type="Sky" uid="uid://kikd5bdvfmcb" path="res://assets/sky.tres" id="2_kddl8"]
+
+[resource]
+background_mode = 2
+sky = ExtResource("2_kddl8")
+ambient_light_source = 2
+ambient_light_color = Color(0.69, 1, 0.876, 1)
+reflected_light_source = 2
+tonemap_white = 8.35
+glow_enabled = true
+glow_bloom = 0.3
+fog_enabled = true
+fog_light_color = Color(0, 0.653152, 0.832162, 1)
+fog_light_energy = 0.13
+fog_sun_scatter = 1.0
+fog_density = 0.003
+fog_sky_affect = 0.0
+fog_height_density = -0.07
+adjustment_enabled = true
+adjustment_color_correction = ExtResource("1_up8tk")

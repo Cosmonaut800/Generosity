@@ -34,10 +34,6 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"CHECKER_GREEN.003": {
-"use_external/enabled": true,
-"use_external/path": "uid://bgf5gc0dxl8qg"
-},
 "CHECKER_SANDY.002": {
 "use_external/enabled": true,
 "use_external/path": "uid://bgf5gc0dxl8qg"

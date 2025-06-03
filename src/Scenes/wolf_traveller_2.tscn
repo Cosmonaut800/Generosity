@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://baug8fq0okhe3"]
 
-[ext_resource type="PackedScene" uid="uid://cd735g1fmsl7b" path="res://assets/Models/WolfTraveller.fbx" id="1_qdi3c"]
+[ext_resource type="PackedScene" uid="uid://cd735g1fmsl7b" path="res://assets/Models/Characters/WolfTraveller.fbx" id="1_qdi3c"]
 
 [node name="WolfTraveller" instance=ExtResource("1_qdi3c")]
 

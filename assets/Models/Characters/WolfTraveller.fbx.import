@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cd735g1fmsl7b"
-path="res://.godot/imported/WolfTraveller.fbx-ba64424bf055e347947333c764bcffde.scn"
+path="res://.godot/imported/WolfTraveller.fbx-c7e6da7ceae914d6bf24fc925a3217d9.scn"
 
 [deps]
 
-source_file="res://assets/Models/WolfTraveller.fbx"
-dest_files=["res://.godot/imported/WolfTraveller.fbx-ba64424bf055e347947333c764bcffde.scn"]
+source_file="res://assets/Models/Characters/WolfTraveller.fbx"
+dest_files=["res://.godot/imported/WolfTraveller.fbx-c7e6da7ceae914d6bf24fc925a3217d9.scn"]
 
 [params]
 

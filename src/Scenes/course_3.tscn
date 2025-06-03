@@ -41,7 +41,7 @@ shadow_enabled = true
 [node name="course_3_blockout" parent="." instance=ExtResource("2_w2bir")]
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("3_13h7x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139777, -9.23845, 14.2977)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.89797, 17.2568, -1.41762)
 
 [node name="Bridge" parent="." instance=ExtResource("4_a2uxp")]
 transform = Transform3D(-0.975447, 0, -0.220234, 0, 1, 0, 0.220234, 0, -0.975447, 7.35772, -3.99778, -6.2005)

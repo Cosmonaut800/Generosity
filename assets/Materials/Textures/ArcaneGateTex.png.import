@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drgh4u3wojm3"
-path.s3tc="res://.godot/imported/BarkDark.png-4b196c1ca4232db4f6c0412ca4924f68.s3tc.ctex"
+uid="uid://c5ayhpnpv0db8"
+path.s3tc="res://.godot/imported/ArcaneGateTex.png-7e23a058cf105a5718e77bf3805b8f11.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Materials/Textures/BarkDark.png"
-dest_files=["res://.godot/imported/BarkDark.png-4b196c1ca4232db4f6c0412ca4924f68.s3tc.ctex"]
+source_file="res://assets/Materials/Textures/ArcaneGateTex.png"
+dest_files=["res://.godot/imported/ArcaneGateTex.png-7e23a058cf105a5718e77bf3805b8f11.s3tc.ctex"]
 
 [params]
 

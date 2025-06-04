@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5id56smrjsja"
-path="res://.godot/imported/Interactable Door.fbx-907810e8caaad1e0701c329c97e65413.scn"
+uid="uid://bpft1p627rwr0"
+path="res://.godot/imported/ColumnDeco.fbx-37bc9c20390348918fb91b9cb5e93edb.scn"
 
 [deps]
 
-source_file="res://assets/Models/Interactable Door.fbx"
-dest_files=["res://.godot/imported/Interactable Door.fbx-907810e8caaad1e0701c329c97e65413.scn"]
+source_file="res://assets/Models/ColumnDeco.fbx"
+dest_files=["res://.godot/imported/ColumnDeco.fbx-37bc9c20390348918fb91b9cb5e93edb.scn"]
 
 [params]
 
@@ -34,9 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Doorway": {
+"Coltile": {
 "use_external/enabled": true,
-"use_external/path": "uid://doo6gq1ausqtl"
+"use_external/path": "uid://dcp34qd3wcfgu"
 }
 }
 }

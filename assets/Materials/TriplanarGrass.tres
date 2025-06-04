@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://n6mhxn7dkdtg"]
+
+[ext_resource type="Texture2D" uid="uid://82lptidaig5k" path="res://assets/Materials/Textures/SubGrass.png" id="1_dopso"]
+
+[resource]
+albedo_texture = ExtResource("1_dopso")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0

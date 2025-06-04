@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dpvpaa7cf1kre"]
+
+[ext_resource type="Texture2D" uid="uid://cq6rs4q48byao" path="res://assets/Materials/Textures/DirtTex.png" id="1_t4ejf"]
+
+[resource]
+albedo_texture = ExtResource("1_t4ejf")
+uv1_scale = Vector3(0.125, 0.125, 0.125)
+uv1_triplanar = true
+texture_filter = 0

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5id56smrjsja"
-path="res://.godot/imported/Interactable Door.fbx-907810e8caaad1e0701c329c97e65413.scn"
+uid="uid://d0a68wlja2s13"
+path="res://.godot/imported/Button.fbx-e8b3cecba215293ea304b4361cbd374b.scn"
 
 [deps]
 
-source_file="res://assets/Models/Interactable Door.fbx"
-dest_files=["res://.godot/imported/Interactable Door.fbx-907810e8caaad1e0701c329c97e65413.scn"]
+source_file="res://assets/Models/Button.fbx"
+dest_files=["res://.godot/imported/Button.fbx-e8b3cecba215293ea304b4361cbd374b.scn"]
 
 [params]
 
@@ -34,9 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Doorway": {
+"Button": {
 "use_external/enabled": true,
-"use_external/path": "uid://doo6gq1ausqtl"
+"use_external/path": "uid://brh48jhkraxqq"
 }
 }
 }

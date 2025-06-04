@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://udhhlalxkksx"]
+[gd_scene load_steps=19 format=3 uid="uid://udhhlalxkksx"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_oouk5"]
 [ext_resource type="Environment" uid="uid://d3wh41nlpkhf3" path="res://assets/environment.tres" id="1_ury6i"]
@@ -16,6 +16,12 @@
 [ext_resource type="Script" uid="uid://barah8wamrx8j" path="res://src/Scripts/level_transition.gd" id="13_1djfy"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_oouk5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oouk5"]
+radius = 1.58115
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yrgin"]
+radius = 1.97143
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oouk5"]
 size = Vector3(2.52295, 1.31067, 1)
@@ -55,16 +61,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -28.833, -3.8147e-06, 1
 
 [node name="MoveableBlock2m" parent="." instance=ExtResource("6_4oo4w")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -30.6006, 1.05136, 18.6636)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(0.933352, 0.358963, 0, -0.358963, 0.933352, 0, 0, 0, 1, -31.3184, -0.222894, 11.1837)
-use_collision = true
-size = Vector3(4.64278, 2.15039, 1.48535)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65301, 4.22591, -13.7013)
-use_collision = true
-size = Vector3(3.04788, 3.30392, 0.713501)
 
 [node name="MovingPlatform2" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("4_rwnne")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -30.75, 1, 5.5)
@@ -701,7 +697,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0919, 4.23045, -7.90998)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.86627, 4.88249, -22.6325)
 
 [node name="Kodama" parent="." instance=ExtResource("9_m1neg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1901, -3.45707e-06, -2.26072)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3711, -3.45707e-06, -0.478122)
+
+[node name="Area3D" type="Area3D" parent="Kodama"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.15309)
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kodama/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1843)
+shape = SubResource("SphereShape3D_oouk5")
+
+[node name="Kodama2" parent="." instance=ExtResource("9_m1neg")]
+transform = Transform3D(0.999107, 0, 0.0422418, 0, 1, 0, -0.0422418, 0, 0.999107, 6.63152, -5.43999, -8.86636)
+
+[node name="Area3D" type="Area3D" parent="Kodama2"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 0, 0, 0)
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kodama2/Area3D"]
+shape = SubResource("SphereShape3D_yrgin")
 
 [node name="LevelTransition" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.44964, 6.84585, 12.403)
@@ -713,12 +727,13 @@ metadata/_custom_type_script = "uid://barah8wamrx8j"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00463867, 0.155334, 0)
 shape = SubResource("BoxShape3D_oouk5")
 
-[node name="Kodama2" parent="." instance=ExtResource("9_m1neg")]
-transform = Transform3D(0.999107, 0, 0.0422418, 0, 1, 0, -0.0422418, 0, 0.999107, 6.63152, -5.43999, -8.86636)
-
 [connection signal="activated" from="BoxButton" to="MovingPlatform" method="_on_switch_activated"]
 [connection signal="activated" from="Switch" to="MovingPlatform2" method="_on_switch_activated"]
 [connection signal="activated" from="BoxButton2" to="MovingPlatform5" method="_on_switch_activated"]
 [connection signal="activated" from="BoxButton3" to="MovingPlatform6" method="_on_switch_activated"]
 [connection signal="activated" from="Switch2" to="MovingPlatform4" method="_on_switch_activated"]
+[connection signal="body_entered" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Kodama2/Area3D" to="Kodama2" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Kodama2/Area3D" to="Kodama2" method="_on_area_3d_body_exited"]
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]

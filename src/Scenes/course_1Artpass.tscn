@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://1i4lx1t8c653"]
+[gd_scene load_steps=37 format=3 uid="uid://1i4lx1t8c653"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_oofx1"]
 [ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="2_kfbic"]
@@ -64,6 +64,8 @@ uv1_scale = Vector3(-0.07, -0.07, -0.07)
 uv1_triplanar = true
 uv1_world_triplanar = true
 texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w8ggu"]
 
 [node name="Course1" type="Node3D"]
 script = ExtResource("1_oofx1")
@@ -766,5 +768,8 @@ transform = Transform3D(-4.80422e-08, 0, 0.998267, 0, 1.29983, 0, -1.09908, 0, -
 
 [node name="Axe" parent="." instance=ExtResource("29_ge0i3")]
 transform = Transform3D(0.404932, 0.914346, 0.00131757, -0.00374614, 0.000218035, 0.999993, 0.914339, -0.404934, 0.00351352, -22.9818, 4.58498, 16.0013)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_w8ggu")
 
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]

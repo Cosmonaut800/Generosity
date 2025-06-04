@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b7c7fstwqmngf"
-path="res://.godot/imported/InteractableRock.glb-4b3d411bec73879ad264d46a70cd3595.scn"
+uid="uid://bmlqcfkkt6t7h"
+path="res://.godot/imported/DogMother.fbx-414f354d21fc0e5f3b142893d291a364.scn"
 
 [deps]
 
-source_file="res://assets/Models/InteractableRock.glb"
-dest_files=["res://.godot/imported/InteractableRock.glb-4b3d411bec73879ad264d46a70cd3595.scn"]
+source_file="res://assets/Models/Characters/DogMother.fbx"
+dest_files=["res://.godot/imported/DogMother.fbx-414f354d21fc0e5f3b142893d291a364.scn"]
 
 [params]
 
@@ -28,17 +28,11 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"materials": {
-"RockVar": {
-"use_external/enabled": true,
-"use_external/path": "uid://cq6a6nbiufrtu"
-}
-}
-}
-gltf/naming_version=1
-gltf/embedded_image_handling=1
+_subresources={}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

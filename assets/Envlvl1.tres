@@ -16,7 +16,6 @@ fog_enabled = true
 fog_light_color = Color(0, 0.653152, 0.832162, 1)
 fog_light_energy = 0.13
 fog_sun_scatter = 1.0
-fog_density = 0.003
 fog_sky_affect = 0.0
 fog_height_density = -0.07
 adjustment_enabled = true

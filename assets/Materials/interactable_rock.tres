@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cq6a6nbiufrtu"]
+
+[ext_resource type="Shader" uid="uid://cds75mp1wxim2" path="res://src/Shaders/interactable.gdshader" id="1_pg767"]
+[ext_resource type="Texture2D" uid="uid://b8hf2cxhvclhf" path="res://assets/Materials/Textures/RockVarTex.png" id="2_pg767"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_pg767")
+shader_parameter/albedoTexture = ExtResource("2_pg767")
+shader_parameter/pulseColor = Color(0.4525, 0.6, 0.45, 1)
+shader_parameter/timeScale = 1.0

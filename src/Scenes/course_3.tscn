@@ -1,16 +1,19 @@
-[gd_scene load_steps=17 format=3 uid="uid://1psdacwy3k02"]
+[gd_scene load_steps=24 format=3 uid="uid://1psdacwy3k02"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_wwxba"]
 [ext_resource type="Environment" uid="uid://d3wh41nlpkhf3" path="res://assets/environment.tres" id="2_a2uxp"]
-[ext_resource type="PackedScene" uid="uid://bfncqucxhoiqv" path="res://assets/Models/course_3_blockout.glb" id="2_w2bir"]
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="3_13h7x"]
+[ext_resource type="PackedScene" uid="uid://b4hsyf0fl1cgq" path="res://assets/Models/course_3_blockout2.glb" id="3_k42nb"]
 [ext_resource type="PackedScene" uid="uid://lp2ym1sutkha" path="res://src/Scenes/bridge.tscn" id="4_a2uxp"]
+[ext_resource type="PackedScene" uid="uid://ca8rmwlmq6ejx" path="res://assets/Models/course_3_blockout_elevator.glb" id="5_emupj"]
 [ext_resource type="PackedScene" uid="uid://b671mbiaxfrdb" path="res://src/Scenes/grapple_point.tscn" id="5_ifyfq"]
 [ext_resource type="PackedScene" uid="uid://bkglvypeexyb4" path="res://src/Scenes/moveable_block_2m.tscn" id="7_yxa70"]
 [ext_resource type="PackedScene" uid="uid://brdh8um8v542x" path="res://src/Scenes/moving_platform.tscn" id="8_tfigl"]
 [ext_resource type="PackedScene" uid="uid://bacgrc823sjog" path="res://src/Scenes/box_button.tscn" id="9_l5bnj"]
 [ext_resource type="Script" uid="uid://bqdr72a5tcp3w" path="res://src/Scripts/platform_waypoint.gd" id="9_tfigl"]
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="11_l5bnj"]
+[ext_resource type="PackedScene" uid="uid://cwmq1au8jy8g4" path="res://src/Scenes/kodama.tscn" id="13_emupj"]
+[ext_resource type="Script" uid="uid://barah8wamrx8j" path="res://src/Scripts/level_transition.gd" id="14_l5jef"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yxa70"]
 
@@ -27,6 +30,18 @@ size = Vector3(0.5, 0.5, 10)
 [sub_resource type="BoxMesh" id="BoxMesh_k42nb"]
 size = Vector3(0.5, 0.5, 10)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_l5jef"]
+radius = 1.60057
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_emupj"]
+radius = 1.61595
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qb5rw"]
+radius = 1.42646
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qb5rw"]
+size = Vector3(5.41699, 2.97644, 1)
+
 [node name="Course3" type="Node3D"]
 script = ExtResource("1_wwxba")
 
@@ -38,10 +53,27 @@ transform = Transform3D(0.836114, -0.529839, 0.14207, -0.0486009, 0.186421, 0.98
 light_color = Color(0.89, 0.862707, 0.4806, 1)
 shadow_enabled = true
 
-[node name="course_3_blockout" parent="." instance=ExtResource("2_w2bir")]
+[node name="course_3_blockout2" parent="." instance=ExtResource("3_k42nb")]
+
+[node name="Elevator" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("8_tfigl")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.6425, 14.5597, 10.6621)
+waypoints = [NodePath("../ElevatorWaypoint")]
+loop_path = false
+
+[node name="course_3_blockout_elevator" parent="Elevator" instance=ExtResource("5_emupj")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.45519e-11, 1.45519e-11, 1.45519e-11)
+
+[node name="Switch" parent="Elevator" instance=ExtResource("11_l5bnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41649, 1.23113, 0)
+
+[node name="ElevatorWaypoint" type="Node3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.6425, -5.91867, 10.6621)
+script = ExtResource("9_tfigl")
+transit_time = 7.5
+metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("3_13h7x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139777, -9.23845, 14.2977)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0353667, -9.08676, 16.5742)
 
 [node name="Bridge" parent="." instance=ExtResource("4_a2uxp")]
 transform = Transform3D(-0.975447, 0, -0.220234, 0, 1, 0, 0.220234, 0, -0.975447, 7.35772, -3.99778, -6.2005)
@@ -188,11 +220,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.94384, -0.737499, 0.061213
 
 [node name="Labels" type="Node3D" parent="."]
 
-[node name="Label3D" type="Label3D" parent="Labels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.42617, -4.52435)
-billboard = 1
-text = "Possible Kodama hiding spot in here?"
-
 [node name="Label3D4" type="Label3D" parent="Labels"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.71926, 9.64359, -0.151468)
 billboard = 1
@@ -210,5 +237,56 @@ billboard = 1
 text = "This blue platform will be a large elevator
 which takes the player down to the exit"
 
+[node name="GrapplePoint" parent="." instance=ExtResource("5_ifyfq")]
+transform = Transform3D(0.675695, 0, -0.737181, 0, 1, 0, 0.737181, 0, 0.675695, 10.0423, 21.0519, -7.90393)
+
+[node name="Kodama" parent="." instance=ExtResource("13_emupj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0225775, -10.24, -2.29894)
+
+[node name="Area3D" type="Area3D" parent="Kodama"]
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kodama/Area3D"]
+shape = SubResource("SphereShape3D_l5jef")
+
+[node name="Kodama2" parent="." instance=ExtResource("13_emupj")]
+transform = Transform3D(-0.93304, 0, -0.359773, 0, 1, 0, 0.359773, 0, -0.93304, -6.22929, 5.28, -15.1235)
+
+[node name="Area3D" type="Area3D" parent="Kodama2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, 0, -1.31028)
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kodama2/Area3D"]
+shape = SubResource("SphereShape3D_emupj")
+
+[node name="Kodama3" parent="." instance=ExtResource("13_emupj")]
+transform = Transform3D(0.431489, 0, -0.902118, 0, 1, 0, 0.902118, 0, 0.431489, 12.3719, 10.24, -5.07074)
+
+[node name="Area3D" type="Area3D" parent="Kodama3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 0, -1.35921)
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kodama3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49012e-08, 0, 0.474038)
+shape = SubResource("SphereShape3D_qb5rw")
+
+[node name="LevelTransition" type="Area3D" parent="."]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 15.1952, -4.96328, 15.1512)
+collision_mask = 128
+script = ExtResource("14_l5jef")
+metadata/_custom_type_script = "uid://barah8wamrx8j"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelTransition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98822, 0)
+shape = SubResource("BoxShape3D_qb5rw")
+
+[connection signal="activated" from="Elevator/Switch" to="Elevator" method="_on_switch_activated"]
 [connection signal="activated" from="MovingPlatform2/BoxButton" to="MovingPlatform2" method="_on_switch_activated"]
 [connection signal="activated" from="Switch" to="MovingPlatform" method="_on_switch_activated"]
+[connection signal="body_entered" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Kodama2/Area3D" to="Kodama2" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Kodama2/Area3D" to="Kodama2" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Kodama3/Area3D" to="Kodama3" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Kodama3/Area3D" to="Kodama3" method="_on_area_3d_body_exited"]
+[connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]

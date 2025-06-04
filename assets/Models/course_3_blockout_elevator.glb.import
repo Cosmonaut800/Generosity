@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b7c7fstwqmngf"
-path="res://.godot/imported/InteractableRock.glb-4b3d411bec73879ad264d46a70cd3595.scn"
+uid="uid://ca8rmwlmq6ejx"
+path="res://.godot/imported/course_3_blockout_elevator.glb-5bf2a6aef52ad4ea3d5df2a9f49553c7.scn"
 
 [deps]
 
-source_file="res://assets/Models/InteractableRock.glb"
-dest_files=["res://.godot/imported/InteractableRock.glb-4b3d411bec73879ad264d46a70cd3595.scn"]
+source_file="res://assets/Models/course_3_blockout_elevator.glb"
+dest_files=["res://.godot/imported/course_3_blockout_elevator.glb-5bf2a6aef52ad4ea3d5df2a9f49553c7.scn"]
 
 [params]
 
@@ -34,9 +34,14 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"RockVar": {
+"CHECKER_BLUE": {
 "use_external/enabled": true,
-"use_external/path": "uid://cq6a6nbiufrtu"
+"use_external/path": "uid://bekd4kyvjet07"
+}
+},
+"nodes": {
+"PATH:Entity1(worldspawn)_001": {
+"generate/physics": true
 }
 }
 }

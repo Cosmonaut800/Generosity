@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b7c7fstwqmngf"
-path="res://.godot/imported/InteractableRock.glb-4b3d411bec73879ad264d46a70cd3595.scn"
+uid="uid://b4hsyf0fl1cgq"
+path="res://.godot/imported/course_3_blockout2.glb-acaa987ff547f093cd3f2a0c602d5d1b.scn"
 
 [deps]
 
-source_file="res://assets/Models/InteractableRock.glb"
-dest_files=["res://.godot/imported/InteractableRock.glb-4b3d411bec73879ad264d46a70cd3595.scn"]
+source_file="res://assets/Models/course_3_blockout2.glb"
+dest_files=["res://.godot/imported/course_3_blockout2.glb-acaa987ff547f093cd3f2a0c602d5d1b.scn"]
 
 [params]
 
@@ -34,9 +34,18 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"RockVar": {
+"CHECKER_DGREEN": {
 "use_external/enabled": true,
-"use_external/path": "uid://cq6a6nbiufrtu"
+"use_external/path": "uid://bpokcklns02ha"
+},
+"CHECKER_GREEN": {
+"use_external/enabled": true,
+"use_external/path": "uid://dg6eobm2gmlqo"
+}
+},
+"nodes": {
+"PATH:Entity1(worldspawn)": {
+"generate/physics": true
 }
 }
 }

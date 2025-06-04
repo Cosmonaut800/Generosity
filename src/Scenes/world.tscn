@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dngkqbnkeunr"]
+[gd_scene load_steps=29 format=3 uid="uid://dngkqbnkeunr"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_wbn2r"]
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="1_we0ab"]
@@ -13,6 +13,9 @@
 [ext_resource type="Script" uid="uid://bqdr72a5tcp3w" path="res://src/Scripts/platform_waypoint.gd" id="9_wyao0"]
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="10_qtmjw"]
 [ext_resource type="Script" uid="uid://barah8wamrx8j" path="res://src/Scripts/level_transition.gd" id="12_x3jek"]
+[ext_resource type="PackedScene" uid="uid://ctq6cfbg2ahns" path="res://assets/Models/Characters/DogKid.fbx" id="14_bi15i"]
+[ext_resource type="PackedScene" uid="uid://wm5yaydwdetb" path="res://assets/Models/Characters/SquirrelLumberjack.fbx" id="15_6jdyp"]
+[ext_resource type="PackedScene" uid="uid://cafu0e7ah28gi" path="res://assets/Models/Characters/Kodama.fbx" id="16_6jdyp"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cncp2"]
 
@@ -405,6 +408,18 @@ shape = SubResource("BoxShape3D_yp8kh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 mesh = SubResource("BoxMesh_3a6ty")
+
+[node name="DogKid" parent="." instance=ExtResource("14_bi15i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5695, 0.00046642, -8.81261)
+
+[node name="SquirrelLumberjack2" parent="." instance=ExtResource("15_6jdyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.23508, 0.000581238, -5.23426)
+
+[node name="Kodama2" parent="." instance=ExtResource("16_6jdyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.86852, 0, -8.08706)
+
+[node name="Kodama3" parent="." instance=ExtResource("16_6jdyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.99916, 0, -6.65903)
 
 [connection signal="level_changed" from="CSG/CSGBox3D2/CSGBox3D6/LevelTransition" to="." method="_on_level_transition_level_changed"]
 [connection signal="level_changed" from="CSG/CSGBox3D2/CSGBox3D9/LevelTransition" to="." method="_on_level_transition_level_changed"]

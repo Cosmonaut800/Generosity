@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwmq1au8jy8g4"]
+[gd_scene load_steps=4 format=3 uid="uid://cwmq1au8jy8g4"]
 
 [ext_resource type="Script" uid="uid://xtq0p7h7w2rw" path="res://src/Scripts/kodama.gd" id="1_5lu2l"]
 
@@ -8,9 +8,6 @@ height = 1.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_5lu2l"]
 size = Vector3(0.125, 0.125, 0.125)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_e20ym"]
-radius = 2.5
 
 [node name="Kodama" type="Node3D"]
 script = ExtResource("1_5lu2l")
@@ -22,12 +19,3 @@ mesh = SubResource("CapsuleMesh_e20ym")
 [node name="Face" type="MeshInstance3D" parent="Graphics"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -0.25)
 mesh = SubResource("BoxMesh_5lu2l")
-
-[node name="Area3D" type="Area3D" parent="."]
-collision_mask = 128
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("SphereShape3D_e20ym")
-
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

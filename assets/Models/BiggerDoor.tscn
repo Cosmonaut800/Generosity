@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dng21f03agqo8"]
+
+[ext_resource type="PackedScene" uid="uid://5id56smrjsja" path="res://assets/Models/Interactable Door.fbx" id="1_dt2wm"]
+
+[node name="Interactable Door" instance=ExtResource("1_dt2wm")]
+transform = Transform3D(1.252, 0, 0, 0, 1.252, 0, 0, 0, 1.252, 0, 0, 0)

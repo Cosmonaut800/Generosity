@@ -1,0 +1,17 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjxqoj7ixju3x"]
+
+[ext_resource type="PackedScene" uid="uid://bu5uykjptf5hd" path="res://assets/Models/Course_2_Floor.fbx" id="1_25wbm"]
+[ext_resource type="Material" uid="uid://n6mhxn7dkdtg" path="res://assets/Materials/TriplanarGrass.tres" id="2_yhde4"]
+[ext_resource type="Material" uid="uid://b7tvka2xigdkr" path="res://assets/Materials/TriplanarStone.tres" id="3_13qhb"]
+[ext_resource type="Material" uid="uid://c3xk00c80t60c" path="res://assets/Materials/TriplanarDarkgrass.tres" id="4_sthu3"]
+[ext_resource type="Material" uid="uid://dpvpaa7cf1kre" path="res://assets/Materials/TriplanarDirt.tres" id="5_a5png"]
+[ext_resource type="Material" uid="uid://dcp34qd3wcfgu" path="res://assets/Materials/ColumnTile.tres" id="6_a5png"]
+
+[node name="Course_2_Floor" instance=ExtResource("1_25wbm")]
+
+[node name="Cours_2_Floor" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_yhde4")
+surface_material_override/1 = ExtResource("3_13qhb")
+surface_material_override/2 = ExtResource("4_sthu3")
+surface_material_override/3 = ExtResource("5_a5png")
+surface_material_override/4 = ExtResource("6_a5png")

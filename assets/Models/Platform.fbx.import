@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5id56smrjsja"
-path="res://.godot/imported/Interactable Door.fbx-907810e8caaad1e0701c329c97e65413.scn"
+uid="uid://bwr0jq08laubw"
+path="res://.godot/imported/Platform.fbx-0938d7c2c875f94404a32b185c256a11.scn"
 
 [deps]
 
-source_file="res://assets/Models/Interactable Door.fbx"
-dest_files=["res://.godot/imported/Interactable Door.fbx-907810e8caaad1e0701c329c97e65413.scn"]
+source_file="res://assets/Models/Platform.fbx"
+dest_files=["res://.godot/imported/Platform.fbx-0938d7c2c875f94404a32b185c256a11.scn"]
 
 [params]
 
@@ -34,9 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Doorway": {
+"Platform": {
 "use_external/enabled": true,
-"use_external/path": "uid://doo6gq1ausqtl"
+"use_external/path": "uid://bhcmigtfhjriu"
 }
 }
 }

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5id56smrjsja"
-path="res://.godot/imported/Interactable Door.fbx-907810e8caaad1e0701c329c97e65413.scn"
+uid="uid://bhdggn6f31ujc"
+path="res://.godot/imported/Interactive Hook Up.fbx-80a12e12b53dea4f4b6427b860738920.scn"
 
 [deps]
 
-source_file="res://assets/Models/Interactable Door.fbx"
-dest_files=["res://.godot/imported/Interactable Door.fbx-907810e8caaad1e0701c329c97e65413.scn"]
+source_file="res://assets/Models/Interactive Hook Up.fbx"
+dest_files=["res://.godot/imported/Interactive Hook Up.fbx-80a12e12b53dea4f4b6427b860738920.scn"]
 
 [params]
 
@@ -32,14 +32,7 @@ animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"materials": {
-"Doorway": {
-"use_external/enabled": true,
-"use_external/path": "uid://doo6gq1ausqtl"
-}
-}
-}
+_subresources={}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

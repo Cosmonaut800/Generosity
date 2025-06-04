@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqfeeuimu243j"]
+
+[ext_resource type="PackedScene" uid="uid://dn45mcmbvf2a8" path="res://assets/Models/Doorway.fbx" id="1_j8wty"]
+
+[node name="Doorway" instance=ExtResource("1_j8wty")]
+transform = Transform3D(1.252, 0, 0, 0, 1.252, 0, 0, 0, 1.252, 0, 0, 0)
+
+[node name="Doorway" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, -3.90426e-06, 100, 0, -89.319, -4.37114e-06, 0, 0, -0.00216124)

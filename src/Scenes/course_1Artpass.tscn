@@ -1,7 +1,7 @@
 [gd_scene load_steps=36 format=3 uid="uid://1i4lx1t8c653"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_oofx1"]
-[ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/EnvForest.tres" id="2_kfbic"]
+[ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="2_kfbic"]
 [ext_resource type="PackedScene" uid="uid://cc3n0ggth6gg4" path="res://assets/Models/course_1_blockout.glb" id="3_kfbic"]
 [ext_resource type="PackedScene" uid="uid://c4wb0t8d5espv" path="res://assets/Models/course_1_floor.tscn" id="3_q66gl"]
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="4_q66gl"]
@@ -25,8 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://di3of6lpj5uqx" path="res://assets/Models/RootSingle.fbx" id="14_n0bhd"]
 [ext_resource type="PackedScene" uid="uid://bhuy5d0t6jqqd" path="res://assets/Models/Branches.fbx" id="15_ge0i3"]
 [ext_resource type="PackedScene" uid="uid://lkcd6l333t04" path="res://assets/Models/Vine.fbx" id="16_akjmp"]
-[ext_resource type="PackedScene" uid="uid://dtj0ym1dddhvx" path="res://assets/Models/tree.tscn" id="22_j6onp"]
-[ext_resource type="PackedScene" uid="uid://c5x71u1uvp0gc" path="res://assets/Models/bush.tscn" id="22_ybjnu"]
+[ext_resource type="PackedScene" uid="uid://dtj0ym1dddhvx" path="res://assets/Models/TreeDead.tscn" id="22_j6onp"]
+[ext_resource type="PackedScene" uid="uid://c5x71u1uvp0gc" path="res://assets/Models/BushDead.tscn" id="22_ybjnu"]
 [ext_resource type="PackedScene" uid="uid://bnt0auahi0h13" path="res://assets/Models/Roots.fbx" id="24_ybjnu"]
 [ext_resource type="PackedScene" uid="uid://dg0tlbor7atts" path="res://assets/Models/Axe.fbx" id="29_ge0i3"]
 [ext_resource type="PackedScene" uid="uid://dn45mcmbvf2a8" path="res://assets/Models/Doorway.fbx" id="29_w8ggu"]
@@ -86,9 +86,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1353, 1.38274, 28.5997)
 
 [node name="InteractableTreeBot" parent="." instance=ExtResource("6_mp5ou")]
 transform = Transform3D(0.0367309, 0, -0.999325, 0, 1, 0, 0.999325, 0, 0.0367309, -22.4683, 4.01106, 13.7328)
+visible = false
 
 [node name="InteractableTreeTop" parent="." instance=ExtResource("7_akjmp")]
 transform = Transform3D(0.0367309, 0, -0.999325, 0, 1, 0, 0.999325, 0, 0.0367309, -22.4683, 4.01106, 13.7328)
+visible = false
 
 [node name="MoveableBlock2m" parent="." instance=ExtResource("6_ip7ft")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.331, -2.78864, 20.8069)
@@ -101,7 +103,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93948, 2.97136, 10.0968)
 
 [node name="Bridge" parent="." instance=ExtResource("7_ewjp4")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -22.1491, 4.5622, 13.8125)
-visible = false
 
 [node name="Kodama" parent="." instance=ExtResource("8_n0bhd")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -25.9079, 4.67494, 17.0546)

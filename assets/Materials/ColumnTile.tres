@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dcp34qd3wcfgu"]
+
+[ext_resource type="Texture2D" uid="uid://b8752f6g84fva" path="res://assets/Materials/Textures/ColTileTex.png" id="1_m55jf"]
+
+[resource]
+albedo_texture = ExtResource("1_m55jf")
+texture_filter = 0

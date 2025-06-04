@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5id56smrjsja"
-path="res://.godot/imported/Interactable Door.fbx-907810e8caaad1e0701c329c97e65413.scn"
+uid="uid://bu5uykjptf5hd"
+path="res://.godot/imported/Course_2_Floor.fbx-db9d44c5ced2f2f2f2e2419743c97b2c.scn"
 
 [deps]
 
-source_file="res://assets/Models/Interactable Door.fbx"
-dest_files=["res://.godot/imported/Interactable Door.fbx-907810e8caaad1e0701c329c97e65413.scn"]
+source_file="res://assets/Models/Course_2_Floor.fbx"
+dest_files=["res://.godot/imported/Course_2_Floor.fbx-db9d44c5ced2f2f2f2e2419743c97b2c.scn"]
 
 [params]
 
@@ -34,9 +34,29 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Doorway": {
+"Arcane Ring": {
 "use_external/enabled": true,
-"use_external/path": "uid://doo6gq1ausqtl"
+"use_external/path": "uid://dbiigwqbniwv7"
+},
+"Coltile": {
+"use_external/enabled": true,
+"use_external/path": "uid://dcp34qd3wcfgu"
+},
+"Darkgrass": {
+"use_external/enabled": true,
+"use_external/path": "uid://c3xk00c80t60c"
+},
+"Dirt": {
+"use_external/enabled": true,
+"use_external/path": "uid://dpvpaa7cf1kre"
+},
+"Grass": {
+"use_external/enabled": true,
+"use_external/path": "uid://n6mhxn7dkdtg"
+},
+"Stone": {
+"use_external/enabled": true,
+"use_external/path": "uid://b7tvka2xigdkr"
 }
 }
 }

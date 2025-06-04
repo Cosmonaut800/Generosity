@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drgh4u3wojm3"
-path.s3tc="res://.godot/imported/BarkDark.png-4b196c1ca4232db4f6c0412ca4924f68.s3tc.ctex"
+uid="uid://b8752f6g84fva"
+path.s3tc="res://.godot/imported/ColTileTex.png-e59dca5b6bc95d321d4d8f6490fd2eb5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Materials/Textures/BarkDark.png"
-dest_files=["res://.godot/imported/BarkDark.png-4b196c1ca4232db4f6c0412ca4924f68.s3tc.ctex"]
+source_file="res://assets/Materials/Textures/ColTileTex.png"
+dest_files=["res://.godot/imported/ColTileTex.png-e59dca5b6bc95d321d4d8f6490fd2eb5.s3tc.ctex"]
 
 [params]
 

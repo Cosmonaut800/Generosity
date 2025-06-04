@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctukpwwunnl8v"]
+[gd_scene load_steps=13 format=3 uid="uid://ctukpwwunnl8v"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_l0xxh"]
 [ext_resource type="Environment" uid="uid://d3wh41nlpkhf3" path="res://assets/environment.tres" id="2_mmrb0"]
@@ -11,6 +11,9 @@
 [ext_resource type="Script" uid="uid://barah8wamrx8j" path="res://src/Scripts/level_transition.gd" id="9_qu1o0"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qfdel"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qu1o0"]
+radius = 1.51447
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jcvbr"]
 size = Vector3(1, 4.44147, 4.20862)
@@ -541,6 +544,12 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -22.14
 [node name="Kodama" parent="." instance=ExtResource("8_83wfb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -25.9079, 4.67494, 17.0546)
 
+[node name="Area3D" type="Area3D" parent="Kodama"]
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kodama/Area3D"]
+shape = SubResource("SphereShape3D_qu1o0")
+
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4446, 5.98164, 16.1992)
 billboard = 1
@@ -558,4 +567,6 @@ metadata/_custom_type_script = "uid://barah8wamrx8j"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72073, -0.041687)
 shape = SubResource("BoxShape3D_jcvbr")
 
+[connection signal="body_entered" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_exited"]
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]

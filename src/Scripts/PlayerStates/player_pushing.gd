@@ -9,26 +9,26 @@ func initialize(parent_machine: StateMachine):
 	stopped_pushing = false
 	target_pushable = parent.player.pushable_ray.get_collider()
 	parent.player.speed = parent.player.pushing_speed
+	parent.reset_anim_conditions()
 	parent.player.anim_tree.set("parameters/conditions/grounded", true)
-	parent.player.anim_tree.set("parameters/conditions/aerial", false)
 
 func run_current_state(delta: float) -> State:
 	parent.player.graphics.look_at(parent.player.position - parent.player.pushable_ray.get_collision_normal())
 	
 	if !parent.player.pushable_ray.is_colliding():
 		parent.player_grounded.initialize(parent)
-		parent.player.anim_tree.set("parameters/conditions/pushing", false)
+		parent.reset_anim_conditions()
 		return parent.player_grounded
 	
 	if !parent.player.is_on_floor():
 		parent.player_aerial.initialize(parent)
-		parent.player.anim_tree.set("parameters/conditions/pushing", false)
+		parent.reset_anim_conditions()
 		return parent.player_aerial
 	
 	if Input.is_action_just_pressed("jump"):
 		parent.player.velocity.y += parent.player.JUMP_VELOCITY
 		parent.player_aerial.initialize(parent)
-		parent.player.anim_tree.set("parameters/conditions/pushing", false)
+		parent.reset_anim_conditions()
 		return parent.player_aerial
 	
 	if target_pushable.is_on_floor():
@@ -40,15 +40,15 @@ func run_current_state(delta: float) -> State:
 	
 	if !parent.player.direction:
 		parent.player.decelerate(delta)
+		parent.reset_anim_conditions()
 		parent.player.anim_tree.set("parameters/conditions/idling", true)
-		parent.player.anim_tree.set("parameters/conditions/pushing", false)
 	else:
-		parent.player.anim_tree.set("parameters/conditions/idling", false)
+		parent.reset_anim_conditions()
 		parent.player.anim_tree.set("parameters/conditions/pushing", true)
 	
 	if Input.is_action_pressed("focus_camera"):
 		parent.player_focused.initialize(parent)
-		parent.player.anim_tree.set("parameters/conditions/pushing", false)
+		parent.reset_anim_conditions()
 		return parent.player_focused
 	
 	return self

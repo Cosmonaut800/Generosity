@@ -8,4 +8,4 @@ render_priority = 0
 shader = ExtResource("1_q775s")
 shader_parameter/albedoTexture = ExtResource("2_q775s")
 shader_parameter/pulseColor = Color(0.4525, 0.6, 0.45, 1)
-shader_parameter/timeScale = 1.0
+shader_parameter/timeScale = 1.45519e-11

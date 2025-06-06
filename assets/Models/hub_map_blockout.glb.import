@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://8ggeujvhgl6e"
-path="res://.godot/imported/hub_map.glb-01c7d480c8627477b04ba721b12d1abc.scn"
+uid="uid://htjdcq5oo1h4"
+path="res://.godot/imported/hub_map_blockout.glb-ce6c616758ced6ed5cf916e4c777c4d6.scn"
 
 [deps]
 
-source_file="res://assets/Models/hub_map.glb"
-dest_files=["res://.godot/imported/hub_map.glb-01c7d480c8627477b04ba721b12d1abc.scn"]
+source_file="res://assets/Models/hub_map_blockout.glb"
+dest_files=["res://.godot/imported/hub_map_blockout.glb-ce6c616758ced6ed5cf916e4c777c4d6.scn"]
 
 [params]
 
@@ -34,7 +34,7 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"CHECKER_DGREEN": {
+"CHECKER_DGREEN.001": {
 "use_external/enabled": true,
 "use_external/path": "uid://bpokcklns02ha"
 },
@@ -42,7 +42,7 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "uid://fwdgib7583jy"
 },
-"CHECKER_GREEN": {
+"CHECKER_GREEN.001": {
 "use_external/enabled": true,
 "use_external/path": "uid://dg6eobm2gmlqo"
 },
@@ -53,7 +53,8 @@ _subresources={
 },
 "nodes": {
 "PATH:Entity1(worldspawn)": {
-"generate/physics": true
+"generate/physics": true,
+"physics/mask": 255
 }
 }
 }

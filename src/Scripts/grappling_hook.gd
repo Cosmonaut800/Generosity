@@ -58,6 +58,7 @@ func fire():
 				target = ray.get_collider()
 				target.add_child(attach_point)
 				attach_point.global_position = ray.get_collision_point()
+				print(global_position.distance_to(attach_point.global_position))
 				tween.tween_callback(attach_to_point)
 
 func hide_hook() -> void:

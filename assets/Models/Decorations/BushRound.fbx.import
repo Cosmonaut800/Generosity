@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bq84lhd64qyhs"
-path="res://.godot/imported/Rock1.fbx-8bd1c86f98bc270acf1b1796a626c1db.scn"
+uid="uid://ckiq63gy42g8q"
+path="res://.godot/imported/BushRound.fbx-1431e8f7eb2f5664f6166e3285a3cea6.scn"
 
 [deps]
 
-source_file="res://assets/Models/Rock1.fbx"
-dest_files=["res://.godot/imported/Rock1.fbx-8bd1c86f98bc270acf1b1796a626c1db.scn"]
+source_file="res://assets/Models/Decorations/BushRound.fbx"
+dest_files=["res://.godot/imported/BushRound.fbx-1431e8f7eb2f5664f6166e3285a3cea6.scn"]
 
 [params]
 
@@ -34,9 +34,14 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"ColRock": {
+"Leaf3": {
 "use_external/enabled": true,
-"use_external/path": "uid://b45oobm2b4o3f"
+"use_external/path": "uid://isbeyqrr2ytv"
+}
+},
+"nodes": {
+"PATH:BushRound": {
+"mesh_instance/cast_shadow": 0
 }
 }
 }

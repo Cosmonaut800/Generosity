@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cwyfx4j75o5ry"
-path="res://.godot/imported/Tree.fbx-b5659db741d720c90a9aa6811077379f.scn"
+uid="uid://di3of6lpj5uqx"
+path="res://.godot/imported/RootSingle.fbx-1733a75ce2eefb54e7d637d438352ffb.scn"
 
 [deps]
 
-source_file="res://assets/Models/Tree.fbx"
-dest_files=["res://.godot/imported/Tree.fbx-b5659db741d720c90a9aa6811077379f.scn"]
+source_file="res://assets/Models/Decorations/RootSingle.fbx"
+dest_files=["res://.godot/imported/RootSingle.fbx-1733a75ce2eefb54e7d637d438352ffb.scn"]
 
 [params]
 
@@ -34,13 +34,14 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Bark": {
+"DarkBark": {
 "use_external/enabled": true,
 "use_external/path": "uid://dlqvtpkmanj0r"
+}
 },
-"Leaf1Light": {
-"use_external/enabled": true,
-"use_external/path": "res://assets/Materials/Leaf1Light.tres"
+"nodes": {
+"PATH:RootSingle": {
+"mesh_instance/cast_shadow": 0
 }
 }
 }

@@ -2,6 +2,12 @@ class_name PlayerFocused extends State
 
 var pivot_tween: Tween
 
+var mats = [preload("res://assets/Materials/interactable_column.tres"),
+			preload("res://assets/Materials/interactable_rock.tres"),
+			preload("res://assets/Materials/interactable_hook.tres"),
+			preload("res://assets/Materials/interactable_switch.tres"),
+			preload("res://assets/Materials/interactable_checker.tres")]
+
 func initialize(parent_machine: StateMachine):
 	parent = parent_machine
 	if pivot_tween: pivot_tween.kill()
@@ -17,7 +23,9 @@ func initialize(parent_machine: StateMachine):
 	parent.player.speed = parent.player.focused_speed
 	parent.player.crosshair.show()
 	parent.player.anim_tree.set("parameters/conditions/grounded", true)
-	parent.player.anim_tree.set("parameters/conditions/aerial", false)	
+	parent.player.anim_tree.set("parameters/conditions/aerial", false)
+	for mat in mats:
+		mat.set_shader_parameter("timeScale", 1.0)
 
 func run_current_state(delta: float):
 	
@@ -37,11 +45,15 @@ func run_current_state(delta: float):
 			parent.player.crosshair.hide()
 			parent.player_grounded.initialize(parent)
 			parent.player.anim_tree.set("parameters/conditions/walking", false)
+			for mat in mats:
+				mat.set_shader_parameter("timeScale", 0.0)
 			return parent.player_grounded
 		else:
 			parent.player.crosshair.hide()
 			parent.player_aerial.initialize(parent)
 			parent.player.anim_tree.set("parameters/conditions/walking", false)
+			for mat in mats:
+				mat.set_shader_parameter("timeScale", 0.0)
 			return parent.player_aerial
 	
 	if parent.player.direction:

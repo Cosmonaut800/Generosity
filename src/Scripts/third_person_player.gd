@@ -45,7 +45,7 @@ func _physics_process(delta):
 	
 	var displacement : Vector3 = (global_position - grappling_hook.graphics.global_position)
 	if grappling_hook.status == grappling_hook.GRAPPLE:
-		velocity -= 4.0 * displacement.length() * delta * displacement.normalized()
+		velocity -= 3.5 * displacement.length() * delta * displacement.normalized()
 	if grappling_hook.status == grappling_hook.PULL:
 		var distance : float = clamp(displacement.length(), 0.0, 10.0)
 		grappling_hook.target.velocity += 8.0 * distance * delta * displacement.normalized()

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b55bhyvjnvrwf"
-path="res://.godot/imported/Flower 2.fbx-d07b4e890a7a8fea9b01e40e29596691.scn"
+uid="uid://lkcd6l333t04"
+path="res://.godot/imported/Vine.fbx-d21bfa3e5209c7bdb6ec668569e5165b.scn"
 
 [deps]
 
-source_file="res://assets/Models/Flower 2.fbx"
-dest_files=["res://.godot/imported/Flower 2.fbx-d07b4e890a7a8fea9b01e40e29596691.scn"]
+source_file="res://assets/Models/Decorations/Vine.fbx"
+dest_files=["res://.godot/imported/Vine.fbx-d21bfa3e5209c7bdb6ec668569e5165b.scn"]
 
 [params]
 
@@ -34,9 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Flower": {
+"Vines": {
 "use_external/enabled": true,
-"use_external/path": "uid://cdkdq36di0pdq"
+"use_external/path": "uid://c1vndxpwoop6q"
 }
 }
 }

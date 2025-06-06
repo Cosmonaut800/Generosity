@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bhuy5d0t6jqqd"
-path="res://.godot/imported/Branches.fbx-fab318d4a40233a4249368ff00c294ee.scn"
+uid="uid://b5fx24blmtvls"
+path="res://.godot/imported/Flower 3.fbx-53abbe11d1466d22d595d6fa1604cda3.scn"
 
 [deps]
 
-source_file="res://assets/Models/Branches.fbx"
-dest_files=["res://.godot/imported/Branches.fbx-fab318d4a40233a4249368ff00c294ee.scn"]
+source_file="res://assets/Models/Decorations/Flower 3.fbx"
+dest_files=["res://.godot/imported/Flower 3.fbx-53abbe11d1466d22d595d6fa1604cda3.scn"]
 
 [params]
 
@@ -34,9 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Bark": {
+"Flower": {
 "use_external/enabled": true,
-"use_external/path": "uid://dlqvtpkmanj0r"
+"use_external/path": "uid://cdkdq36di0pdq"
 }
 }
 }

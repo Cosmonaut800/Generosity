@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bnt0auahi0h13"
-path="res://.godot/imported/Roots.fbx-f0c61f8bcfd5548e134d2dbb0ac601b0.scn"
+uid="uid://bhuy5d0t6jqqd"
+path="res://.godot/imported/Branches.fbx-628eb9b41bc607d67a891e63a5ad4a40.scn"
 
 [deps]
 
-source_file="res://assets/Models/Roots.fbx"
-dest_files=["res://.godot/imported/Roots.fbx-f0c61f8bcfd5548e134d2dbb0ac601b0.scn"]
+source_file="res://assets/Models/Decorations/Branches.fbx"
+dest_files=["res://.godot/imported/Branches.fbx-628eb9b41bc607d67a891e63a5ad4a40.scn"]
 
 [params]
 
@@ -34,14 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"DarkBark": {
+"Bark": {
 "use_external/enabled": true,
-"use_external/path": "uid://ch85g4uj8u4m0"
-}
-},
-"nodes": {
-"PATH:Roots": {
-"mesh_instance/cast_shadow": 0
+"use_external/path": "uid://dlqvtpkmanj0r"
 }
 }
 }

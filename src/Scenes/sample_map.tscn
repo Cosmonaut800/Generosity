@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="7_hbqwk"]
 [ext_resource type="Script" uid="uid://bqdr72a5tcp3w" path="res://src/Scripts/platform_waypoint.gd" id="7_w4144"]
 [ext_resource type="PackedScene" uid="uid://lp2ym1sutkha" path="res://src/Scenes/bridge.tscn" id="9_hbqwk"]
-[ext_resource type="PackedScene" uid="uid://cd747k607ocp3" path="res://assets/Models/Column.glb" id="12_cyceu"]
+[ext_resource type="PackedScene" uid="uid://cd747k607ocp3" path="res://assets/Models/Decorations/Column.glb" id="12_cyceu"]
 [ext_resource type="Script" uid="uid://barah8wamrx8j" path="res://src/Scripts/level_transition.gd" id="13_cyceu"]
 [ext_resource type="PackedScene" uid="uid://bacgrc823sjog" path="res://src/Scenes/box_button.tscn" id="14_sjq4n"]
 

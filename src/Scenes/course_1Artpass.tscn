@@ -14,20 +14,20 @@
 [ext_resource type="PackedScene" uid="uid://lp2ym1sutkha" path="res://src/Scenes/bridge.tscn" id="7_ewjp4"]
 [ext_resource type="Material" uid="uid://xdjr51qhujft" path="res://assets/Materials/TreeRender2.tres" id="7_ugotd"]
 [ext_resource type="PackedScene" uid="uid://cwmq1au8jy8g4" path="res://src/Scenes/kodama.tscn" id="8_n0bhd"]
-[ext_resource type="PackedScene" uid="uid://ckiq63gy42g8q" path="res://assets/Models/BushRound.fbx" id="8_x8v73"]
+[ext_resource type="PackedScene" uid="uid://ckiq63gy42g8q" path="res://assets/Models/Decorations/BushRound.fbx" id="8_x8v73"]
 [ext_resource type="Texture2D" uid="uid://82lptidaig5k" path="res://assets/Materials/Textures/SubGrass.png" id="9_j6onp"]
 [ext_resource type="Script" uid="uid://barah8wamrx8j" path="res://src/Scripts/level_transition.gd" id="9_x8v73"]
 [ext_resource type="Material" uid="uid://dbloctvieors6" path="res://assets/Materials/Leaf1Dead.tres" id="10_j25c8"]
-[ext_resource type="PackedScene" uid="uid://cwyfx4j75o5ry" path="res://assets/Models/Tree.fbx" id="10_kfbic"]
+[ext_resource type="PackedScene" uid="uid://cwyfx4j75o5ry" path="res://assets/Models/Decorations/Tree.fbx" id="10_kfbic"]
 [ext_resource type="Texture2D" uid="uid://dff3kstpaf8b" path="res://assets/Materials/Textures/Leaf3.png" id="11_v448i"]
-[ext_resource type="PackedScene" uid="uid://casskcyhux32d" path="res://assets/Models/Bush.fbx" id="12_ip7ft"]
-[ext_resource type="PackedScene" uid="uid://d3132vcxghqj3" path="res://assets/Models/Stump.fbx" id="13_ewjp4"]
-[ext_resource type="PackedScene" uid="uid://di3of6lpj5uqx" path="res://assets/Models/RootSingle.fbx" id="14_n0bhd"]
-[ext_resource type="PackedScene" uid="uid://bhuy5d0t6jqqd" path="res://assets/Models/Branches.fbx" id="15_ge0i3"]
-[ext_resource type="PackedScene" uid="uid://lkcd6l333t04" path="res://assets/Models/Vine.fbx" id="16_akjmp"]
-[ext_resource type="PackedScene" uid="uid://dtj0ym1dddhvx" path="res://assets/Models/TreeDead.tscn" id="22_j6onp"]
-[ext_resource type="PackedScene" uid="uid://c5x71u1uvp0gc" path="res://assets/Models/BushDead.tscn" id="22_ybjnu"]
-[ext_resource type="PackedScene" uid="uid://bnt0auahi0h13" path="res://assets/Models/Roots.fbx" id="24_ybjnu"]
+[ext_resource type="PackedScene" uid="uid://casskcyhux32d" path="res://assets/Models/Decorations/Bush.fbx" id="12_ip7ft"]
+[ext_resource type="PackedScene" uid="uid://d3132vcxghqj3" path="res://assets/Models/Decorations/Stump.fbx" id="13_ewjp4"]
+[ext_resource type="PackedScene" uid="uid://di3of6lpj5uqx" path="res://assets/Models/Decorations/RootSingle.fbx" id="14_n0bhd"]
+[ext_resource type="PackedScene" uid="uid://bhuy5d0t6jqqd" path="res://assets/Models/Decorations/Branches.fbx" id="15_ge0i3"]
+[ext_resource type="PackedScene" uid="uid://lkcd6l333t04" path="res://assets/Models/Decorations/Vine.fbx" id="16_akjmp"]
+[ext_resource type="PackedScene" uid="uid://dtj0ym1dddhvx" path="res://assets/Models/Decorations/TreeDead.tscn" id="22_j6onp"]
+[ext_resource type="PackedScene" uid="uid://c5x71u1uvp0gc" path="res://assets/Models/Decorations/BushDead.tscn" id="22_ybjnu"]
+[ext_resource type="PackedScene" uid="uid://bnt0auahi0h13" path="res://assets/Models/Decorations/Roots.fbx" id="24_ybjnu"]
 [ext_resource type="PackedScene" uid="uid://dg0tlbor7atts" path="res://assets/Models/Axe.fbx" id="29_ge0i3"]
 [ext_resource type="PackedScene" uid="uid://dn45mcmbvf2a8" path="res://assets/Models/Doorway.fbx" id="29_w8ggu"]
 
@@ -502,11 +502,9 @@ transform = Transform3D(-0.888457, -0.0881138, 0.821752, 0.319121, 1.07636, 0.46
 
 [node name="Branches2" parent="Canopy Deco" instance=ExtResource("15_ge0i3")]
 transform = Transform3D(0.847815, -0.398494, -0.771239, 0.655965, 1.00018, 0.204308, 0.56861, -0.559674, 0.914245, -8.18014, 7.38972, 5.72309)
-metadata/_edit_lock_ = true
 
 [node name="Branches3" parent="Canopy Deco" instance=ExtResource("15_ge0i3")]
 transform = Transform3D(0.284574, 0.636503, -0.571869, -0.0214492, 0.607783, 0.665803, 0.855401, -0.196511, 0.206944, -18.4681, 6.06699, 5.5324)
-metadata/_edit_lock_ = true
 
 [node name="Vine" parent="Canopy Deco" instance=ExtResource("16_akjmp")]
 transform = Transform3D(-0.402409, 0, -0.0658896, 0, 0.407767, 0, 0.0658896, 0, -0.402409, -9.32723, 7.00882, 4.85971)

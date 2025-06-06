@@ -1,15 +1,23 @@
-[gd_scene load_steps=13 format=3 uid="uid://gf1pipuob658"]
+[gd_scene load_steps=21 format=3 uid="uid://gf1pipuob658"]
 
 [ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="1_imtj6"]
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_ow2xx"]
-[ext_resource type="PackedScene" uid="uid://8ggeujvhgl6e" path="res://assets/Models/hub_map.glb" id="2_hcg2q"]
 [ext_resource type="Material" uid="uid://bldsqtsc6035j" path="res://assets/Materials/foliage.tres" id="3_2ehf3"]
+[ext_resource type="PackedScene" uid="uid://bpyxou8kp4mxq" path="res://assets/Models/hub_map_floor.glb" id="3_205xv"]
+[ext_resource type="PackedScene" uid="uid://htjdcq5oo1h4" path="res://assets/Models/hub_map_blockout.glb" id="3_ow2xx"]
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="4_nu7ww"]
 [ext_resource type="PackedScene" uid="uid://lp2ym1sutkha" path="res://src/Scenes/bridge.tscn" id="5_hcg2q"]
 [ext_resource type="PackedScene" uid="uid://bkglvypeexyb4" path="res://src/Scenes/moveable_block_2m.tscn" id="6_2ehf3"]
-[ext_resource type="PackedScene" uid="uid://cd747k607ocp3" path="res://assets/Models/Column.glb" id="7_3fswy"]
+[ext_resource type="PackedScene" uid="uid://cd747k607ocp3" path="res://assets/Models/Decorations/Column.glb" id="7_3fswy"]
 [ext_resource type="PackedScene" uid="uid://b671mbiaxfrdb" path="res://src/Scenes/grapple_point.tscn" id="8_5qyx3"]
 [ext_resource type="Script" uid="uid://barah8wamrx8j" path="res://src/Scripts/level_transition.gd" id="10_205xv"]
+[ext_resource type="PackedScene" uid="uid://cwyfx4j75o5ry" path="res://assets/Models/Decorations/Tree.fbx" id="12_8r58n"]
+[ext_resource type="PackedScene" uid="uid://dpvuksuanyvjr" path="res://assets/Models/Decorations/Darktree.tscn" id="13_u0cad"]
+[ext_resource type="PackedScene" uid="uid://casskcyhux32d" path="res://assets/Models/Decorations/Bush.fbx" id="14_2jvde"]
+[ext_resource type="PackedScene" uid="uid://ckiq63gy42g8q" path="res://assets/Models/Decorations/BushRound.fbx" id="15_hnk0v"]
+[ext_resource type="PackedScene" uid="uid://dx808g8j6rl6m" path="res://assets/Models/Decorations/BushDark.tscn" id="16_geqvl"]
+[ext_resource type="PackedScene" uid="uid://c5x71u1uvp0gc" path="res://assets/Models/Decorations/BushDead.tscn" id="17_bbw0h"]
+[ext_resource type="PackedScene" uid="uid://dtj0ym1dddhvx" path="res://assets/Models/Decorations/TreeDead.tscn" id="18_xgg31"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_3fswy"]
 
@@ -30,10 +38,10 @@ directional_shadow_mode = 0
 directional_shadow_blend_splits = true
 directional_shadow_max_distance = 82.0
 
+[node name="hub_map_floor" parent="." instance=ExtResource("3_205xv")]
+
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("4_nu7ww")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71468, 1.16127, 17.9823)
-
-[node name="hub_map" parent="." instance=ExtResource("2_hcg2q")]
 
 [node name="Canopy" type="Node3D" parent="."]
 transform = Transform3D(-2.07, 0, -3.12561e-07, 0, 2.07, 0, 3.12561e-07, 0, -2.07, 10.2367, -9.6115, 2.416)
@@ -687,6 +695,47 @@ metadata/_custom_type_script = "uid://barah8wamrx8j"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6521, 0)
 shape = SubResource("BoxShape3D_23as8")
 debug_color = Color(1, 0.0129791, 0.0451424, 1)
+
+[node name="hub_map_blockout" parent="." instance=ExtResource("3_ow2xx")]
+visible = false
+
+[node name="GroundDeco" type="Node3D" parent="."]
+
+[node name="Tree" parent="." instance=ExtResource("12_8r58n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53625, -0.302957, 0.704211)
+
+[node name="Tree2" parent="." instance=ExtResource("13_u0cad")]
+transform = Transform3D(-0.342188, 0, -0.633886, 0, 0.72035, 0, 0.633886, 0, -0.342188, -12.5921, -0.614329, -0.546152)
+
+[node name="Bush" parent="." instance=ExtResource("14_2jvde")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7414, 1.14443, -0.45475)
+
+[node name="BushRound" parent="." instance=ExtResource("15_hnk0v")]
+transform = Transform3D(1.05236, 0, 0.72134, 0, 1.27585, 0, -0.72134, 0, 1.05236, -10.6731, 0, 0.642452)
+
+[node name="Bush2" parent="." instance=ExtResource("16_geqvl")]
+transform = Transform3D(-0.953082, 0, 0.302713, 0, 1, 0, -0.302713, 0, -0.953082, -9.10159, 0.670291, -1.3229)
+
+[node name="Bush3" parent="." instance=ExtResource("17_bbw0h")]
+transform = Transform3D(-0.0433861, 0, 0.999058, 0, 1, 0, -0.999058, 0, -0.0433861, -17.5074, 0, -1.66198)
+
+[node name="Tree3" parent="." instance=ExtResource("12_8r58n")]
+transform = Transform3D(-0.148245, 0, -1.19418, 0, 1.20335, 0, 1.19418, 0, -0.148245, -21.654, 0, -2.33914)
+
+[node name="BushRound2" parent="." instance=ExtResource("15_hnk0v")]
+transform = Transform3D(-0.549465, 0, 1.11184, 0.788276, 0.874619, 0.389562, -0.784095, 0.879283, -0.387496, -19.6091, -0.599241, -2.31752)
+
+[node name="Tree4" parent="." instance=ExtResource("18_xgg31")]
+transform = Transform3D(0.296577, 0, -0.838124, 0, 0.88905, 0, 0.838124, 0, 0.296577, -25.2176, 0.230115, -5.41839)
+
+[node name="Bush4" parent="." instance=ExtResource("16_geqvl")]
+transform = Transform3D(0.90835, 0, 0, 0, 0.90835, 0, 0, 0, 0.90835, -29.0902, 0.844647, -4.1889)
+
+[node name="Bush5" parent="." instance=ExtResource("16_geqvl")]
+transform = Transform3D(-0.868166, 0, 0.496274, 0, 1, 0, -0.496274, 0, -0.868166, -30.2836, 1.90531, -4.44089)
+
+[node name="BushRound3" parent="." instance=ExtResource("15_hnk0v")]
+transform = Transform3D(-0.057039, 0, -0.998372, 0, 1, 0, 0.998372, 0, -0.057039, -26.1268, 0.400716, -2.94196)
 
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
 [connection signal="level_changed" from="LevelTransition2" to="." method="_on_level_transition_level_changed"]

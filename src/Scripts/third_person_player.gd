@@ -16,7 +16,8 @@ const JUMP_VELOCITY = 4.5
 @onready var coyote_time := $CoyoteTime
 @onready var push_timer := $PushTimer
 @onready var pushable_ray := $PushableRay
-@onready var crosshair := $UI
+@onready var crosshair := $UI/Crosshair
+@onready var blackout := $UI/Black
 @export var anim_tree : AnimationTree
 
 var speed := 5.0
@@ -26,13 +27,14 @@ var grappling_hook : Node3D
 var pushable : RigidBody3D = null
 var push_force := 1000.0
 var kodama_count := 0
+var respawn_position := Vector3.ZERO
 
 func _ready():
 	accel = ground_accel
 	speed = ground_speed
 	grappling_hook = camera.grappling_hook
 	grappling_hook.hook_origin = hook_origin
-	
+	respawn_position = global_position
 
 func _physics_process(delta):
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
@@ -66,3 +68,11 @@ func decelerate(delta):
 
 func fire_grappling_hook():
 	camera.grappling_hook.fire()
+
+func respawn():
+	var tween = create_tween()
+	tween.tween_property(blackout, "color", Color(0.0, 0.0, 0.0, 1.0), 0.5)
+	tween.tween_interval(0.25)
+	tween.tween_callback(set_global_position.bind(respawn_position))
+	tween.tween_interval(0.25)
+	tween.tween_property(blackout, "color", Color(0.0, 0.0, 0.0, 0.0), 0.5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://gf1pipuob658"]
+[gd_scene load_steps=27 format=3 uid="uid://gf1pipuob658"]
 
 [ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="1_imtj6"]
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_ow2xx"]
@@ -21,11 +21,16 @@
 [ext_resource type="PackedScene" uid="uid://di3of6lpj5uqx" path="res://assets/Models/RootSingle.fbx" id="19_hnk0v"]
 [ext_resource type="PackedScene" uid="uid://bnt0auahi0h13" path="res://assets/Models/Roots.fbx" id="20_geqvl"]
 [ext_resource type="PackedScene" uid="uid://dqv7jxbwspwjy" path="res://assets/Models/DarkBranches.tscn" id="21_bbw0h"]
+[ext_resource type="Script" uid="uid://drkko5ju77rpw" path="res://src/Scripts/checkpoint.gd" id="22_geqvl"]
+[ext_resource type="PackedScene" uid="uid://ckhsp37mhgajp" path="res://src/Scenes/death_plane.tscn" id="23_bbw0h"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_3fswy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_23as8"]
 size = Vector3(2.71094, 3.1626, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bbw0h"]
+size = Vector3(3.88422, 3.75562, 1)
 
 [node name="HubMap" type="Node3D"]
 script = ExtResource("1_ow2xx")
@@ -772,6 +777,20 @@ transform = Transform3D(-0.278774, 0, -1.23226, 0, 1.2634, 0, 1.23226, 0, -0.278
 
 [node name="BushRound5" parent="." instance=ExtResource("15_hnk0v")]
 transform = Transform3D(0.470007, 0, 0.882663, 0, 1, 0, -0.882663, 0, 0.470007, -5.84174, -0.589361, -0.589879)
+
+[node name="Checkpoint" type="Area3D" parent="." node_paths=PackedStringArray("respawn_position")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.10276, 1.20681, 12.6104)
+collision_mask = 128
+script = ExtResource("22_geqvl")
+respawn_position = NodePath(".")
+metadata/_custom_type_script = "uid://drkko5ju77rpw"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.263519, 0.596313, 0)
+shape = SubResource("BoxShape3D_bbw0h")
+
+[node name="DeathPlane" parent="." instance=ExtResource("23_bbw0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.18158, -1.77043, 37.0505)
 
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
 [connection signal="level_changed" from="LevelTransition2" to="." method="_on_level_transition_level_changed"]

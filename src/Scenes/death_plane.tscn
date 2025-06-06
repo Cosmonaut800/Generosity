@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckhsp37mhgajp"]
+
+[ext_resource type="Script" uid="uid://br0qko5kmce2x" path="res://src/Scripts/death_plane.gd" id="1_8vajq"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_64f52"]
+
+[node name="DeathPlane" type="Area3D"]
+collision_layer = 256
+collision_mask = 144
+script = ExtResource("1_8vajq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("WorldBoundaryShape3D_64f52")

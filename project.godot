@@ -80,6 +80,7 @@ toggle_mouse={
 3d_physics/layer_7="RigidBody Pullable"
 3d_physics/layer_8="Player"
 3d_physics/layer_9="Death Plane"
+3d_physics/layer_10="Hard Hat"
 
 [physics]
 

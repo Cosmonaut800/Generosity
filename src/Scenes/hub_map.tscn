@@ -792,6 +792,9 @@ shape = SubResource("BoxShape3D_bbw0h")
 [node name="DeathPlane" parent="." instance=ExtResource("23_bbw0h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.18158, -1.77043, 37.0505)
 
+[node name="MoveableBlock2m2" parent="." instance=ExtResource("6_2ehf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.68805, 4.64575, 18.0023)
+
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
 [connection signal="level_changed" from="LevelTransition2" to="." method="_on_level_transition_level_changed"]
 [connection signal="level_changed" from="LevelTransition3" to="." method="_on_level_transition_level_changed"]

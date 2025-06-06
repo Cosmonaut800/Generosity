@@ -48,7 +48,7 @@
 [ext_resource type="PackedScene" uid="uid://oh8j8gbhtsfl" path="res://assets/Models/Interactive Hook Down.fbx" id="39_tkhw7"]
 [ext_resource type="PackedScene" uid="uid://dmiy8c1co27v7" path="res://assets/Models/Interactive Switch.fbx" id="40_apybx"]
 [ext_resource type="PackedScene" uid="uid://d0a68wlja2s13" path="res://assets/Models/Button.fbx" id="41_jff4t"]
-[ext_resource type="PackedScene" uid="uid://dxjxppqfmxodb" path="res://assets/QuestFlower.fbx" id="45_vp5nb"]
+[ext_resource type="PackedScene" uid="uid://dxjxppqfmxodb" path="res://assets/Models/QuestFlower.fbx" id="45_vp5nb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oouk5"]
 size = Vector3(2.52295, 1.31067, 1)

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dxjxppqfmxodb"
-path="res://.godot/imported/QuestFlower.fbx-fab1cfcf8cc2c6e37ec4ef2de9f1ac2a.scn"
+uid="uid://coa7p2dp2mdg4"
+path="res://.godot/imported/well.fbx-62e47aeec66e7c6c3ae625fe393022ca.scn"
 
 [deps]
 
-source_file="res://assets/QuestFlower.fbx"
-dest_files=["res://.godot/imported/QuestFlower.fbx-fab1cfcf8cc2c6e37ec4ef2de9f1ac2a.scn"]
+source_file="res://assets/Models/well.fbx"
+dest_files=["res://.godot/imported/well.fbx-62e47aeec66e7c6c3ae625fe393022ca.scn"]
 
 [params]
 
@@ -34,9 +34,17 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Flower": {
+"Bark": {
 "use_external/enabled": true,
-"use_external/path": "uid://cdkdq36di0pdq"
+"use_external/path": "uid://dlqvtpkmanj0r"
+},
+"Cliff": {
+"use_external/enabled": true,
+"use_external/path": "uid://cbig5cxb6id47"
+},
+"Grass": {
+"use_external/enabled": true,
+"use_external/path": "uid://dt85ufnim20p4"
 }
 }
 }

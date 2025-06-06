@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://scfgyp04kbwj"
-path="res://.godot/imported/OldHare.fbx-d60c8055f1ea38baf2219dff2373196d.scn"
+uid="uid://dxjxppqfmxodb"
+path="res://.godot/imported/QuestFlower.fbx-ccbd7286c1bf1ed62bd7b01b7131313d.scn"
 
 [deps]
 
-source_file="res://assets/Models/Characters/OldHare.fbx"
-dest_files=["res://.godot/imported/OldHare.fbx-d60c8055f1ea38baf2219dff2373196d.scn"]
+source_file="res://assets/Models/QuestFlower.fbx"
+dest_files=["res://.godot/imported/QuestFlower.fbx-ccbd7286c1bf1ed62bd7b01b7131313d.scn"]
 
 [params]
 
@@ -34,13 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"EyesMouth": {
+"Flower": {
 "use_external/enabled": true,
-"use_external/path": "uid://cbevk7upxx2ei"
-},
-"OldHare": {
-"use_external/enabled": true,
-"use_external/path": "uid://bfdoessvxbq3g"
+"use_external/path": "uid://cdkdq36di0pdq"
 }
 }
 }

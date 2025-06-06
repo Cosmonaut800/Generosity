@@ -3,10 +3,9 @@ extends Node3D
 @onready var blackout := $UI/Black
 
 var world_templates : Array[Resource] =\
-[	preload("res://src/Scenes/world.tscn"),
-	preload("res://src/Scenes/sample_map.tscn"),
-	preload("res://src/Scenes/course_1.tscn"),
-	preload("res://src/Scenes/course_2.tscn"),
+[	preload("res://src/Scenes/hub_map.tscn"),
+	preload("res://src/Scenes/course_1Artpass.tscn"),
+	preload("res://src/Scenes/course_2Artpass.tscn"),
 	preload("res://src/Scenes/course_3.tscn")]
 var world : Node3D
 var current_index := 0

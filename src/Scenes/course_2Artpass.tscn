@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://vj5nxyik36yq"]
+[gd_scene load_steps=51 format=3 uid="uid://vj5nxyik36yq"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_xe87j"]
 [ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="2_yfmkw"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bkglvypeexyb4" path="res://src/Scenes/moveable_block_2m.tscn" id="8_6s0rd"]
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="9_ounmu"]
 [ext_resource type="PackedScene" uid="uid://lp2ym1sutkha" path="res://src/Scenes/bridge.tscn" id="10_8ypfw"]
-[ext_resource type="PackedScene" uid="uid://bwr0jq08laubw" path="res://assets/Models/Platform.fbx" id="10_nfc8t"]
 [ext_resource type="Material" uid="uid://b1kmkp46yqxck" path="res://assets/Materials/Leaf1.tres" id="11_ttu8j"]
 [ext_resource type="PackedScene" uid="uid://b671mbiaxfrdb" path="res://src/Scenes/grapple_point.tscn" id="12_yfmkw"]
 [ext_resource type="PackedScene" uid="uid://cwmq1au8jy8g4" path="res://src/Scenes/kodama.tscn" id="13_ttu8j"]
@@ -45,9 +44,6 @@
 [ext_resource type="Material" uid="uid://pyva4u4016cn" path="res://assets/Materials/Dirt.tres" id="34_upwhy"]
 [ext_resource type="Material" uid="uid://cqsiq7o3b57hv" path="res://assets/Materials/TreeRender.tres" id="35_6cej2"]
 [ext_resource type="Material" uid="uid://n6mhxn7dkdtg" path="res://assets/Materials/TriplanarGrass.tres" id="37_lfq00"]
-[ext_resource type="PackedScene" uid="uid://oh8j8gbhtsfl" path="res://assets/Models/Interactive Hook Down.fbx" id="39_tkhw7"]
-[ext_resource type="PackedScene" uid="uid://dmiy8c1co27v7" path="res://assets/Models/Interactive Switch.fbx" id="40_apybx"]
-[ext_resource type="PackedScene" uid="uid://d0a68wlja2s13" path="res://assets/Models/Button.fbx" id="41_jff4t"]
 [ext_resource type="PackedScene" uid="uid://dxjxppqfmxodb" path="res://assets/QuestFlower.fbx" id="45_vp5nb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oouk5"]
@@ -68,9 +64,10 @@ script = ExtResource("1_xe87j")
 environment = ExtResource("2_yfmkw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.836114, -0.529839, 0.14207, -0.0486009, 0.186421, 0.981267, -0.546398, -0.827356, 0.130119, 0, 12.1965, 0)
+transform = Transform3D(0.834954, -0.542359, -0.0932695, 0.0573538, -0.0828001, 0.994915, -0.547324, -0.836057, -0.0380279, 0, 12.1965, 0)
 light_color = Color(0.89, 0.862707, 0.4806, 1)
 shadow_enabled = true
+directional_shadow_mode = 0
 
 [node name="Course_2_Floor" parent="." instance=ExtResource("3_ryhiu")]
 metadata/_edit_lock_ = true
@@ -87,6 +84,9 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -30.60
 waypoints = [NodePath("../Waypoints1/PlatformWaypoint")]
 loop_path = false
 
+[node name="Interactable Door" parent="MovingPlatform" instance=ExtResource("30_1p0k0")]
+transform = Transform3D(1.30126, 0, 0, 0, -5.47241e-08, 1.25194, 0, -1.25194, -5.47241e-08, -0.1436, -0.0226994, 1.62673)
+
 [node name="Waypoints1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -30.6028, 1.5, 16.5)
 
@@ -98,30 +98,16 @@ metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="BoxButton" parent="." instance=ExtResource("7_xajoc")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -28.833, -3.8147e-06, 18.0727)
-visible = false
 
 [node name="MoveableBlock2m" parent="." instance=ExtResource("8_6s0rd")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -30.6006, 1.05136, 18.6636)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(0.933352, 0.358963, 0, -0.358963, 0.933352, 0, 0, 0, 1, -31.3184, -0.222894, 11.1837)
-use_collision = true
-size = Vector3(4.64278, 2.15039, 1.48535)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65301, 4.22591, -13.7013)
-use_collision = true
-size = Vector3(3.04788, 3.30392, 0.713501)
-
-[node name="Platform" parent="." instance=ExtResource("10_nfc8t")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -30.75, 1, 5.5)
-
-[node name="MovingPlatform2" parent="Platform" node_paths=PackedStringArray("waypoints") instance=ExtResource("5_f7rrn")]
-visible = false
-waypoints = [NodePath("../../Waypoints2/PlatformWaypoint"), NodePath("../../Waypoints2/PlatformWaypoint2")]
+[node name="MovingPlatform2" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("5_f7rrn")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -30.75, 1.28311, 5.5)
+waypoints = [NodePath("../Waypoints2/PlatformWaypoint"), NodePath("../Waypoints2/PlatformWaypoint2")]
 
 [node name="Waypoints2" type="Node3D" parent="."]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -30.75, 1, 5.5)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -30.75, 1.28311, 5.5)
 
 [node name="PlatformWaypoint" type="Node3D" parent="Waypoints2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.22028)
@@ -134,16 +120,13 @@ script = ExtResource("6_eg7bf")
 wait_time = 3.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
-[node name="Platform2" parent="." instance=ExtResource("10_nfc8t")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -24.7, 1, -14.8188)
-
-[node name="MovingPlatform3" parent="Platform2" node_paths=PackedStringArray("waypoints") instance=ExtResource("5_f7rrn")]
-visible = false
-waypoints = [NodePath("../../Waypoints3/PlatformWaypoint"), NodePath("../../Waypoints3/PlatformWaypoint2")]
+[node name="MovingPlatform3" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("5_f7rrn")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -24.7, 1.27963, -14.8188)
+waypoints = [NodePath("../Waypoints3/PlatformWaypoint"), NodePath("../Waypoints3/PlatformWaypoint2")]
 active = true
 
 [node name="Waypoints3" type="Node3D" parent="."]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -24.7, 1, -14.8188)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -24.7, 1.27963, -14.8188)
 
 [node name="PlatformWaypoint" type="Node3D" parent="Waypoints3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.16686, 0, 8.39233e-05)
@@ -157,15 +140,12 @@ script = ExtResource("6_eg7bf")
 wait_time = 3.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
-[node name="Platform3" parent="." instance=ExtResource("10_nfc8t")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -3.5, 1, -14.8188)
-
-[node name="MovingPlatform4" parent="Platform3" node_paths=PackedStringArray("waypoints") instance=ExtResource("5_f7rrn")]
-visible = false
-waypoints = [NodePath("../../Waypoints4/PlatformWaypoint"), NodePath("../../Waypoints4/PlatformWaypoint2")]
+[node name="MovingPlatform4" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("5_f7rrn")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -3.5, 1.27963, -14.8188)
+waypoints = [NodePath("../Waypoints4/PlatformWaypoint"), NodePath("../Waypoints4/PlatformWaypoint2")]
 
 [node name="Waypoints4" type="Node3D" parent="."]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -3.5, 1, -14.8188)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -3.5, 1.27963, -14.8188)
 
 [node name="PlatformWaypoint" type="Node3D" parent="Waypoints4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13677, 0, 0)
@@ -182,20 +162,21 @@ metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -30.6427, 2.65136, 8.621)
 
 [node name="Switch" parent="." instance=ExtResource("9_ounmu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4596, 1.6, 7.57575)
-visible = false
+transform = Transform3D(0.706736, 0, -0.707477, 0, 1, 0, 0.707477, 0, 0.706736, -28.2466, 1.6, 7.94384)
 
 [node name="BoxButton2" parent="." instance=ExtResource("7_xajoc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.704825, 1.6, -14.6781)
-visible = false
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.10965, 1.6, -15.0351)
 
 [node name="MovingPlatform5" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("5_f7rrn")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.60582, 3.25, -13.5)
-waypoints = [NodePath("../Waypoints5/PlatformWaypoint")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.71839, 3.25, -13.5)
+waypoints = [NodePath("../Waypoints5/PlatformWaypoint"), NodePath("../Waypoints5/PlatformWaypoint2")]
 loop_path = false
 
+[node name="Interactable Door2" parent="MovingPlatform5" instance=ExtResource("33_3wt45")]
+transform = Transform3D(1.32077, 0, 0, 0, -5.64933e-08, 1.57115, 0, -1.29242, -6.8677e-08, -0.0193038, 0.498621, 1.55921)
+
 [node name="Waypoints5" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.60582, 3.25, -13.5)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.71839, 3.25, -13.5)
 
 [node name="PlatformWaypoint" type="Node3D" parent="Waypoints5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.98435)
@@ -203,10 +184,19 @@ script = ExtResource("6_eg7bf")
 transit_time = 1.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
+[node name="PlatformWaypoint2" type="Node3D" parent="Waypoints5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39448, 12.2693, 8.50349)
+script = ExtResource("6_eg7bf")
+transit_time = 0.1
+metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
+
 [node name="MovingPlatform6" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("5_f7rrn")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -30.7259, 3, -11.1283)
 waypoints = [NodePath("../Waypoints6/PlatformWaypoint")]
 loop_path = false
+
+[node name="Interactable Door3" parent="MovingPlatform6" instance=ExtResource("33_3wt45")]
+transform = Transform3D(1.01886, 0, 0, 0, -3.64737e-08, 1.01437, 0, -0.834421, -4.43396e-08, 0.00959778, 0.0569096, 1.54973)
 
 [node name="Waypoints6" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -30.7259, 3, -11.1283)
@@ -219,14 +209,12 @@ metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="BoxButton3" parent="." instance=ExtResource("7_xajoc")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -28.8769, 1.6, -9.66542)
-visible = false
 
 [node name="MoveableBlock2m3" parent="." instance=ExtResource("8_6s0rd")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -28.5822, 2.65136, -14.8987)
 
 [node name="Switch2" parent="." instance=ExtResource("9_ounmu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.74652, -3.69549e-06, -3.82301)
-visible = false
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.74652, -3.69549e-06, -3.82301)
 
 [node name="Bridge" parent="." instance=ExtResource("10_8ypfw")]
 transform = Transform3D(0.427241, 0, 0.904138, 0, 1, 0, -0.904138, 0, 0.427241, 10.9409, 3.52221, -3.38484)
@@ -258,15 +246,13 @@ text = "Quest complete!
 Return to hub is ahead"
 
 [node name="GrapplePoint" parent="." instance=ExtResource("12_yfmkw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8747, 5.24722, -15.5496)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6852, 6.44127, -15.9662)
 
 [node name="GrapplePoint2" parent="." instance=ExtResource("12_yfmkw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0919, 4.23045, -7.90998)
-visible = false
+transform = Transform3D(-3.0598e-08, -3.0598e-08, -0.7, -0.52034, 0.468237, 2.27751e-09, 0.468237, 0.52034, -4.32121e-08, -14.0919, 4.5737, -7.60936)
 
 [node name="GrapplePoint3" parent="." instance=ExtResource("12_yfmkw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.86627, 4.88249, -22.6325)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 7.88519, 5.7774, -22.849)
 
 [node name="Kodama" parent="." instance=ExtResource("13_ttu8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1901, -3.45707e-06, -2.26072)
@@ -316,6 +302,7 @@ transform = Transform3D(0.00438948, 0, -0.019867, 0, 0.0882543, 0, 0.0145644, 0,
 
 [node name="Dirt Ceiling" type="MeshInstance3D" parent="BelowGround"]
 transform = Transform3D(-0.128598, 8.65443e-09, 0, -7.22622e-08, -0.636307, 0, 0, 0, 0.126849, -0.153124, 3.10839, -0.155292)
+visible = false
 cast_shadow = 2
 mesh = SubResource("PlaneMesh_nfc8t")
 skeleton = NodePath("../../WorldEnvironment")
@@ -323,6 +310,7 @@ surface_material_override/0 = ExtResource("34_upwhy")
 
 [node name="Dirt Ceiling2" type="MeshInstance3D" parent="BelowGround"]
 transform = Transform3D(-0.0991033, 6.6695e-09, 0, -5.56885e-08, -0.490367, 0, 0, 0, 0.0977555, 0.0917068, 3.03571, -0.200664)
+visible = false
 cast_shadow = 2
 mesh = SubResource("PlaneMesh_nfc8t")
 skeleton = NodePath("../../WorldEnvironment")
@@ -1435,43 +1423,11 @@ transform = Transform3D(1.30126, 0, 0, 0, 1.25194, 0, 0, 0, 1.25194, -30.7464, -
 
 [node name="Doorway" parent="InteractableModels" instance=ExtResource("29_jfpw7")]
 
-[node name="Interactable Door" parent="InteractableModels" instance=ExtResource("30_1p0k0")]
-
-[node name="Interactable Door2" parent="InteractableModels" instance=ExtResource("33_3wt45")]
-transform = Transform3D(1.01499, 0, 0, 0, 1.03233, 0, 0, 0, 1.25497, 24.9339, 1.45177, -23.5464)
-
 [node name="Doorway2" parent="InteractableModels" instance=ExtResource("34_bb4tl")]
 transform = Transform3D(1.01499, 0, 0, 0, 1.03233, 0, 0, 0, 1.25497, 24.9339, 1.45177, -23.5464)
 
-[node name="Interactable Door3" parent="InteractableModels" instance=ExtResource("33_3wt45")]
-transform = Transform3D(0.78298, 0, 0, 0, 0.666502, 0, 0, 0, 0.810239, 0.0231323, 1.25965, -22.0048)
-
 [node name="Doorway3" parent="InteractableModels" instance=ExtResource("34_bb4tl")]
 transform = Transform3D(0.78298, 0, 0, 0, 0.666502, 0, 0, 0, 0.810239, 0.0231323, 1.25965, -22.0048)
-
-[node name="Interactive Hook Down" parent="InteractableModels" instance=ExtResource("39_tkhw7")]
-transform = Transform3D(-3.35916e-08, 0, 0.768486, 0, 0.79876, 0, -0.79876, 0, -3.49149e-08, 12.9808, 5.19578, -25.9479)
-
-[node name="Interactive Hook Down3" parent="InteractableModels" instance=ExtResource("39_tkhw7")]
-transform = Transform3D(-2.93912e-08, 0, 0.672392, 0.294531, 0.633788, 1.28743e-08, -0.633788, 0.294531, -2.77037e-08, 29.7132, 4.80175, -31.1969)
-
-[node name="Interactive Hook Down2" parent="InteractableModels" instance=ExtResource("39_tkhw7")]
-transform = Transform3D(-7.86673e-17, -2.61124e-08, -0.597381, -0.415216, 0.461662, -2.01799e-08, 0.461662, 0.415216, -1.81496e-08, 12.7708, 3.83976, -19.1651)
-
-[node name="Interactive Switch" parent="InteractableModels" instance=ExtResource("40_apybx")]
-transform = Transform3D(0.386637, 0, -0.151724, 0, 0.431704, 0, 0.157701, 0, 0.401869, 1.76401, 1.37924, -7.06046)
-
-[node name="Interactive Switch2" parent="InteractableModels" instance=ExtResource("40_apybx")]
-transform = Transform3D(0.00162377, 0, -0.415338, 0, 0.431704, 0, 0.4317, 0, 0.00168774, 16.1265, 0.0845184, -16.2202)
-
-[node name="Button" parent="InteractableModels" instance=ExtResource("41_jff4t")]
-transform = Transform3D(0.367663, 0, 0, 0, 0.382147, 0, 0, 0, 0.382147, 1.49596, 0.125901, 1.28539)
-
-[node name="Button2" parent="InteractableModels" instance=ExtResource("41_jff4t")]
-transform = Transform3D(0.367663, 0, 0, 0, 0.382147, 0, 0, 0, 0.382147, 1.39583, 1.384, -20.8641)
-
-[node name="Button3" parent="InteractableModels" instance=ExtResource("41_jff4t")]
-transform = Transform3D(0.367663, 0, 0, 0, 0.382147, 0, 0, 0, 0.382147, 24.1606, 1.384, -24.915)
 
 [node name="Flower 3" parent="InteractableModels" instance=ExtResource("32_upwhy")]
 transform = Transform3D(0.768486, 0, 0, 0, 0.79876, 0, 0, 0, 0.79876, -6.23771, 5.15431, -15.7264)
@@ -1480,8 +1436,8 @@ transform = Transform3D(0.768486, 0, 0, 0, 0.79876, 0, 0, 0, 0.79876, -6.23771, 
 transform = Transform3D(-0.246426, -7.0573e-18, -1.29844, 0.00946249, 1.32343, -0.00194012, 1.24919, -0.0100248, -0.256126, 28.6339, 5.22124, -7.9744)
 
 [connection signal="activated" from="BoxButton" to="MovingPlatform" method="_on_switch_activated"]
-[connection signal="activated" from="Switch" to="Platform/MovingPlatform2" method="_on_switch_activated"]
+[connection signal="activated" from="Switch" to="MovingPlatform2" method="_on_switch_activated"]
 [connection signal="activated" from="BoxButton2" to="MovingPlatform5" method="_on_switch_activated"]
 [connection signal="activated" from="BoxButton3" to="MovingPlatform6" method="_on_switch_activated"]
-[connection signal="activated" from="Switch2" to="Platform3/MovingPlatform4" method="_on_switch_activated"]
+[connection signal="activated" from="Switch2" to="MovingPlatform4" method="_on_switch_activated"]
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]

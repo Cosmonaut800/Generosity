@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bq84lhd64qyhs"
-path="res://.godot/imported/Rock1.fbx-624b0a53bd844f1178b062801d05246b.scn"
+uid="uid://b5fx24blmtvls"
+path="res://.godot/imported/Flower 3.fbx-faa8d4f4b48485a899bcb129da04603a.scn"
 
 [deps]
 
-source_file="res://assets/Models/Decorations/Rock1.fbx"
-dest_files=["res://.godot/imported/Rock1.fbx-624b0a53bd844f1178b062801d05246b.scn"]
+source_file="res://assets/Models/Flower 3.fbx"
+dest_files=["res://.godot/imported/Flower 3.fbx-faa8d4f4b48485a899bcb129da04603a.scn"]
 
 [params]
 
@@ -34,9 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"ColRock": {
+"Flower": {
 "use_external/enabled": true,
-"use_external/path": "uid://b45oobm2b4o3f"
+"use_external/path": "uid://cdkdq36di0pdq"
 }
 }
 }

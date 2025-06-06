@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bnt0auahi0h13"
-path="res://.godot/imported/Roots.fbx-cb8515773e2e040e0540b6446cd5218c.scn"
+uid="uid://bpft1p627rwr0"
+path="res://.godot/imported/ColumnDeco.fbx-37bc9c20390348918fb91b9cb5e93edb.scn"
 
 [deps]
 
-source_file="res://assets/Models/Decorations/Roots.fbx"
-dest_files=["res://.godot/imported/Roots.fbx-cb8515773e2e040e0540b6446cd5218c.scn"]
+source_file="res://assets/Models/ColumnDeco.fbx"
+dest_files=["res://.godot/imported/ColumnDeco.fbx-37bc9c20390348918fb91b9cb5e93edb.scn"]
 
 [params]
 
@@ -34,14 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"DarkBark": {
+"Coltile": {
 "use_external/enabled": true,
-"use_external/path": "uid://ch85g4uj8u4m0"
-}
-},
-"nodes": {
-"PATH:Roots": {
-"mesh_instance/cast_shadow": 0
+"use_external/path": "uid://dcp34qd3wcfgu"
 }
 }
 }

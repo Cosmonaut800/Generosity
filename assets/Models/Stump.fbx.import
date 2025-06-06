@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bn8xr3g26vfww"
-path="res://.godot/imported/Flower 1.fbx-545d3096851a4ab9a93096bc38243ad4.scn"
+uid="uid://d3132vcxghqj3"
+path="res://.godot/imported/Stump.fbx-aed0680330eecb016798ed8fedd4a080.scn"
 
 [deps]
 
-source_file="res://assets/Models/Decorations/Flower 1.fbx"
-dest_files=["res://.godot/imported/Flower 1.fbx-545d3096851a4ab9a93096bc38243ad4.scn"]
+source_file="res://assets/Models/Stump.fbx"
+dest_files=["res://.godot/imported/Stump.fbx-aed0680330eecb016798ed8fedd4a080.scn"]
 
 [params]
 
@@ -34,9 +34,14 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Flower": {
+"DarkBark": {
 "use_external/enabled": true,
-"use_external/path": "uid://cdkdq36di0pdq"
+"use_external/path": "uid://ch85g4uj8u4m0"
+}
+},
+"nodes": {
+"PATH:Stump": {
+"mesh_instance/cast_shadow": 0
 }
 }
 }

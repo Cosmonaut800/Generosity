@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bhuy5d0t6jqqd"
-path="res://.godot/imported/Branches.fbx-628eb9b41bc607d67a891e63a5ad4a40.scn"
+uid="uid://bq84lhd64qyhs"
+path="res://.godot/imported/Rock1.fbx-8bd1c86f98bc270acf1b1796a626c1db.scn"
 
 [deps]
 
-source_file="res://assets/Models/Decorations/Branches.fbx"
-dest_files=["res://.godot/imported/Branches.fbx-628eb9b41bc607d67a891e63a5ad4a40.scn"]
+source_file="res://assets/Models/Rock1.fbx"
+dest_files=["res://.godot/imported/Rock1.fbx-8bd1c86f98bc270acf1b1796a626c1db.scn"]
 
 [params]
 
@@ -34,9 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Bark": {
+"ColRock": {
 "use_external/enabled": true,
-"use_external/path": "uid://dlqvtpkmanj0r"
+"use_external/path": "uid://b45oobm2b4o3f"
 }
 }
 }

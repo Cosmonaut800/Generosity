@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ckiq63gy42g8q"
-path="res://.godot/imported/BushRound.fbx-1431e8f7eb2f5664f6166e3285a3cea6.scn"
+uid="uid://casskcyhux32d"
+path="res://.godot/imported/Bush.fbx-b0551ee32599e8ca3f5e6ff5695b43c9.scn"
 
 [deps]
 
-source_file="res://assets/Models/Decorations/BushRound.fbx"
-dest_files=["res://.godot/imported/BushRound.fbx-1431e8f7eb2f5664f6166e3285a3cea6.scn"]
+source_file="res://assets/Models/Bush.fbx"
+dest_files=["res://.godot/imported/Bush.fbx-b0551ee32599e8ca3f5e6ff5695b43c9.scn"]
 
 [params]
 
@@ -34,13 +34,23 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Leaf3": {
+"Leaf1Light": {
 "use_external/enabled": true,
-"use_external/path": "uid://isbeyqrr2ytv"
+"use_external/path": "uid://kt11bbi26ian"
+}
+},
+"meshes": {
+"Plane_013": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": ""
 }
 },
 "nodes": {
-"PATH:BushRound": {
+"PATH:Bush": {
 "mesh_instance/cast_shadow": 0
 }
 }

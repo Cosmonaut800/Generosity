@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d3132vcxghqj3"
-path="res://.godot/imported/Stump.fbx-fd06d388ef2243e186b7260b0d3237a5.scn"
+uid="uid://ckiq63gy42g8q"
+path="res://.godot/imported/BushRound.fbx-2a2ac0def5e6adfc85538cd7a8e55978.scn"
 
 [deps]
 
-source_file="res://assets/Models/Decorations/Stump.fbx"
-dest_files=["res://.godot/imported/Stump.fbx-fd06d388ef2243e186b7260b0d3237a5.scn"]
+source_file="res://assets/Models/BushRound.fbx"
+dest_files=["res://.godot/imported/BushRound.fbx-2a2ac0def5e6adfc85538cd7a8e55978.scn"]
 
 [params]
 
@@ -34,13 +34,13 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"DarkBark": {
+"Leaf3": {
 "use_external/enabled": true,
-"use_external/path": "uid://ch85g4uj8u4m0"
+"use_external/path": "uid://isbeyqrr2ytv"
 }
 },
 "nodes": {
-"PATH:Stump": {
+"PATH:BushRound": {
 "mesh_instance/cast_shadow": 0
 }
 }

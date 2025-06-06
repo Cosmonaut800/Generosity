@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://gf1pipuob658"]
+[gd_scene load_steps=24 format=3 uid="uid://gf1pipuob658"]
 
 [ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="1_imtj6"]
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_ow2xx"]
@@ -8,16 +8,19 @@
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="4_nu7ww"]
 [ext_resource type="PackedScene" uid="uid://lp2ym1sutkha" path="res://src/Scenes/bridge.tscn" id="5_hcg2q"]
 [ext_resource type="PackedScene" uid="uid://bkglvypeexyb4" path="res://src/Scenes/moveable_block_2m.tscn" id="6_2ehf3"]
-[ext_resource type="PackedScene" uid="uid://cd747k607ocp3" path="res://assets/Models/Decorations/Column.glb" id="7_3fswy"]
+[ext_resource type="PackedScene" uid="uid://cd747k607ocp3" path="res://assets/Models/Column.glb" id="7_3fswy"]
 [ext_resource type="PackedScene" uid="uid://b671mbiaxfrdb" path="res://src/Scenes/grapple_point.tscn" id="8_5qyx3"]
 [ext_resource type="Script" uid="uid://barah8wamrx8j" path="res://src/Scripts/level_transition.gd" id="10_205xv"]
-[ext_resource type="PackedScene" uid="uid://cwyfx4j75o5ry" path="res://assets/Models/Decorations/Tree.fbx" id="12_8r58n"]
-[ext_resource type="PackedScene" uid="uid://dpvuksuanyvjr" path="res://assets/Models/Decorations/Darktree.tscn" id="13_u0cad"]
-[ext_resource type="PackedScene" uid="uid://casskcyhux32d" path="res://assets/Models/Decorations/Bush.fbx" id="14_2jvde"]
-[ext_resource type="PackedScene" uid="uid://ckiq63gy42g8q" path="res://assets/Models/Decorations/BushRound.fbx" id="15_hnk0v"]
-[ext_resource type="PackedScene" uid="uid://dx808g8j6rl6m" path="res://assets/Models/Decorations/BushDark.tscn" id="16_geqvl"]
-[ext_resource type="PackedScene" uid="uid://c5x71u1uvp0gc" path="res://assets/Models/Decorations/BushDead.tscn" id="17_bbw0h"]
-[ext_resource type="PackedScene" uid="uid://dtj0ym1dddhvx" path="res://assets/Models/Decorations/TreeDead.tscn" id="18_xgg31"]
+[ext_resource type="PackedScene" uid="uid://cwyfx4j75o5ry" path="res://assets/Models/Tree.fbx" id="12_8r58n"]
+[ext_resource type="PackedScene" uid="uid://dpvuksuanyvjr" path="res://assets/Models/Darktree.tscn" id="13_u0cad"]
+[ext_resource type="PackedScene" uid="uid://casskcyhux32d" path="res://assets/Models/Bush.fbx" id="14_2jvde"]
+[ext_resource type="PackedScene" uid="uid://ckiq63gy42g8q" path="res://assets/Models/BushRound.fbx" id="15_hnk0v"]
+[ext_resource type="PackedScene" uid="uid://dx808g8j6rl6m" path="res://assets/Models/BushDark.tscn" id="16_geqvl"]
+[ext_resource type="PackedScene" uid="uid://c5x71u1uvp0gc" path="res://assets/Models/BushDead.tscn" id="17_bbw0h"]
+[ext_resource type="PackedScene" uid="uid://dtj0ym1dddhvx" path="res://assets/Models/TreeDead.tscn" id="18_xgg31"]
+[ext_resource type="PackedScene" uid="uid://di3of6lpj5uqx" path="res://assets/Models/RootSingle.fbx" id="19_hnk0v"]
+[ext_resource type="PackedScene" uid="uid://bnt0auahi0h13" path="res://assets/Models/Roots.fbx" id="20_geqvl"]
+[ext_resource type="PackedScene" uid="uid://dqv7jxbwspwjy" path="res://assets/Models/DarkBranches.tscn" id="21_bbw0h"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_3fswy"]
 
@@ -736,6 +739,39 @@ transform = Transform3D(-0.868166, 0, 0.496274, 0, 1, 0, -0.496274, 0, -0.868166
 
 [node name="BushRound3" parent="." instance=ExtResource("15_hnk0v")]
 transform = Transform3D(-0.057039, 0, -0.998372, 0, 1, 0, 0.998372, 0, -0.057039, -26.1268, 0.400716, -2.94196)
+
+[node name="RootSingle" parent="." instance=ExtResource("19_hnk0v")]
+transform = Transform3D(-1.17861, 0, 2.47367, 0, 2.7401, 0, -2.47367, 0, -1.17861, -24.4413, 0, -4.11923)
+
+[node name="Roots" parent="." instance=ExtResource("20_geqvl")]
+transform = Transform3D(1.35074, 0, 0.610495, 0, 1.4823, 0, -0.610495, 0, 1.35074, -13.8508, 0.525785, 0.439977)
+
+[node name="Tree5" parent="." instance=ExtResource("13_u0cad")]
+transform = Transform3D(1.45636, 0, 0.687082, 0, 1.6103, 0, -0.687082, 0, 1.45636, -14.5998, 0, -3.08428)
+
+[node name="Branches" parent="." instance=ExtResource("21_bbw0h")]
+transform = Transform3D(0.813003, 0, -0.794783, 0, 1.13695, 0, 0.794783, 0, 0.813003, -13.2599, 7.9031, -6.63437)
+
+[node name="Bush6" parent="." instance=ExtResource("16_geqvl")]
+transform = Transform3D(1.63975, 0, 0, 0, 1.63975, 0, 0, 0, 1.63975, -14.7128, 10.011, -8.25994)
+
+[node name="Bush7" parent="." instance=ExtResource("16_geqvl")]
+transform = Transform3D(-0.921751, 0, -1.35615, 0, 1.63975, 0, 1.35615, 0, -0.921751, -11.1898, 10.011, -6.46472)
+
+[node name="Bush8" parent="." instance=ExtResource("16_geqvl")]
+transform = Transform3D(-0.921751, 0, -1.35615, 0.66787, 1.42712, -0.453938, 1.1803, -0.807533, -0.802226, -12.9835, 11.784, -8.33571)
+
+[node name="Bush9" parent="." instance=ExtResource("14_2jvde")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.21512, 0.467788, 0.434975)
+
+[node name="BushRound4" parent="." instance=ExtResource("15_hnk0v")]
+transform = Transform3D(-0.266751, 0, 0.963766, 0, 1, 0, -0.963766, 0, -0.266751, -7.16479, 0.106181, 1.83217)
+
+[node name="Bush10" parent="." instance=ExtResource("16_geqvl")]
+transform = Transform3D(-0.278774, 0, -1.23226, 0, 1.2634, 0, 1.23226, 0, -0.278774, -5.44464, 0.507236, 2.45709)
+
+[node name="BushRound5" parent="." instance=ExtResource("15_hnk0v")]
+transform = Transform3D(0.470007, 0, 0.882663, 0, 1, 0, -0.882663, 0, 0.470007, -5.84174, -0.589361, -0.589879)
 
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
 [connection signal="level_changed" from="LevelTransition2" to="." method="_on_level_transition_level_changed"]

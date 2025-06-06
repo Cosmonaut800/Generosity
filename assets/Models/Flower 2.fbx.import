@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://casskcyhux32d"
-path="res://.godot/imported/Bush.fbx-2ab791259f997274a7ec4c6a136438b0.scn"
+uid="uid://b55bhyvjnvrwf"
+path="res://.godot/imported/Flower 2.fbx-d07b4e890a7a8fea9b01e40e29596691.scn"
 
 [deps]
 
-source_file="res://assets/Models/Decorations/Bush.fbx"
-dest_files=["res://.godot/imported/Bush.fbx-2ab791259f997274a7ec4c6a136438b0.scn"]
+source_file="res://assets/Models/Flower 2.fbx"
+dest_files=["res://.godot/imported/Flower 2.fbx-d07b4e890a7a8fea9b01e40e29596691.scn"]
 
 [params]
 
@@ -34,24 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Leaf1Light": {
+"Flower": {
 "use_external/enabled": true,
-"use_external/path": "uid://kt11bbi26ian"
-}
-},
-"meshes": {
-"Plane_013": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-}
-},
-"nodes": {
-"PATH:Bush": {
-"mesh_instance/cast_shadow": 0
+"use_external/path": "uid://cdkdq36di0pdq"
 }
 }
 }

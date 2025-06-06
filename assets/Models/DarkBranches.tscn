@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqv7jxbwspwjy"]
 
-[ext_resource type="PackedScene" uid="uid://bhuy5d0t6jqqd" path="res://assets/Models/Decorations/Branches.fbx" id="1_tkas0"]
+[ext_resource type="PackedScene" uid="uid://bhuy5d0t6jqqd" path="res://assets/Models/Branches.fbx" id="1_tkas0"]
 [ext_resource type="Material" uid="uid://cuqflatae7rr6" path="res://assets/Materials/BarkDark.tres" id="2_unh6i"]
 
 [node name="Branches" instance=ExtResource("1_tkas0")]

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpft1p627rwr0"
-path="res://.godot/imported/ColumnDeco.fbx-a90b4623ffcf8fbc47a2e39303d12de5.scn"
+uid="uid://bn8xr3g26vfww"
+path="res://.godot/imported/Flower 1.fbx-bf64d51baadf7c7bd13335d82816fc98.scn"
 
 [deps]
 
-source_file="res://assets/Models/Decorations/ColumnDeco.fbx"
-dest_files=["res://.godot/imported/ColumnDeco.fbx-a90b4623ffcf8fbc47a2e39303d12de5.scn"]
+source_file="res://assets/Models/Flower 1.fbx"
+dest_files=["res://.godot/imported/Flower 1.fbx-bf64d51baadf7c7bd13335d82816fc98.scn"]
 
 [params]
 
@@ -34,9 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Coltile": {
+"Flower": {
 "use_external/enabled": true,
-"use_external/path": "uid://dcp34qd3wcfgu"
+"use_external/path": "uid://cdkdq36di0pdq"
 }
 }
 }

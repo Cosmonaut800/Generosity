@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cafu0e7ah28gi"
+uid="uid://d1yjgnsebeeto"
 path="res://.godot/imported/Kodama.fbx-7006afcbf50121460870b2a4446b7a58.scn"
 
 [deps]
@@ -36,7 +36,11 @@ _subresources={
 "materials": {
 "Kodama": {
 "use_external/enabled": true,
-"use_external/path": "uid://bb74i5joxo66"
+"use_external/path": "uid://cdyxs5uwb17mt"
+},
+"Kodama Head": {
+"use_external/enabled": true,
+"use_external/path": "uid://dxk1xbotdt77a"
 }
 }
 }

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cd735g1fmsl7b"
+uid="uid://dv4khe3gm0cp"
 path="res://.godot/imported/WolfTraveller.fbx-c7e6da7ceae914d6bf24fc925a3217d9.scn"
 
 [deps]
@@ -16227,6 +16227,10 @@ _subresources={
 }
 },
 "materials": {
+"EyesMouth": {
+"use_external/enabled": true,
+"use_external/path": "uid://cbevk7upxx2ei"
+},
 "WolfTravellerBase": {
 "use_external/enabled": true,
 "use_external/path": "uid://b0jicrl6132th"

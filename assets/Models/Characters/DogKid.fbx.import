@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ctq6cfbg2ahns"
+uid="uid://dn03o2jn2cpih"
 path="res://.godot/imported/DogKid.fbx-66f0c4698873ff8a3571b46188f8e977.scn"
 
 [deps]
@@ -32,7 +32,18 @@ animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"DogBoy": {
+"use_external/enabled": true,
+"use_external/path": "uid://cbdgw6w44c50e"
+},
+"EyesMouth": {
+"use_external/enabled": true,
+"use_external/path": "uid://cbevk7upxx2ei"
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

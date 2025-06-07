@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv8md8ejf348j"
-path.s3tc="res://.godot/imported/SwitchMask.png-4a8f5b90004058bd73014504f9eae266.s3tc.ctex"
+uid="uid://cdnk34fvskhwc"
+path.s3tc="res://.godot/imported/ToyMask.png-c5bcd73a079cf28c3a3763439da57e0c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Materials/Textures/SwitchMask.png"
-dest_files=["res://.godot/imported/SwitchMask.png-4a8f5b90004058bd73014504f9eae266.s3tc.ctex"]
+source_file="res://assets/Materials/Textures/ToyMask.png"
+dest_files=["res://.godot/imported/ToyMask.png-c5bcd73a079cf28c3a3763439da57e0c.s3tc.ctex"]
 
 [params]
 

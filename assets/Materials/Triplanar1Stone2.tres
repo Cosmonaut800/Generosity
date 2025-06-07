@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c75honamufnm1"]
+
+[ext_resource type="Texture2D" uid="uid://cknddv5dsgh6u" path="res://assets/Materials/Textures/Stone2Tex.png" id="1_7gh66"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_7gh66")
+uv1_scale = Vector3(3.9, 3.9, 3.9)
+texture_filter = 0

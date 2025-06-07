@@ -3,5 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://b8752f6g84fva" path="res://assets/Materials/Textures/ColTileTex.png" id="1_m55jf"]
 
 [resource]
+cull_mode = 2
 albedo_texture = ExtResource("1_m55jf")
 texture_filter = 0

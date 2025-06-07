@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkb45y31vjod7"
-path.s3tc="res://.godot/imported/DoorMask.png-cb85b50a7d872dfb89a3082e44b5ab3e.s3tc.ctex"
+uid="uid://d121ttmoq365j"
+path.s3tc="res://.godot/imported/CogTex.png-1157f6794fc4891e8111f90ac66e925c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Materials/Textures/DoorMask.png"
-dest_files=["res://.godot/imported/DoorMask.png-cb85b50a7d872dfb89a3082e44b5ab3e.s3tc.ctex"]
+source_file="res://assets/Materials/Textures/CogTex.png"
+dest_files=["res://.godot/imported/CogTex.png-1157f6794fc4891e8111f90ac66e925c.s3tc.ctex"]
 
 [params]
 

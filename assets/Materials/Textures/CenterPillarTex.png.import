@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkb45y31vjod7"
-path.s3tc="res://.godot/imported/DoorMask.png-cb85b50a7d872dfb89a3082e44b5ab3e.s3tc.ctex"
+uid="uid://bbw7ipanahpl4"
+path.s3tc="res://.godot/imported/CenterPillarTex.png-fff00436828387c28a5396cb8c34966d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Materials/Textures/DoorMask.png"
-dest_files=["res://.godot/imported/DoorMask.png-cb85b50a7d872dfb89a3082e44b5ab3e.s3tc.ctex"]
+source_file="res://assets/Materials/Textures/CenterPillarTex.png"
+dest_files=["res://.godot/imported/CenterPillarTex.png-fff00436828387c28a5396cb8c34966d.s3tc.ctex"]
 
 [params]
 

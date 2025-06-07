@@ -191,6 +191,7 @@ visible = false
 
 [node name="MovingPlatform5" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("5_f7rrn")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.60582, 3.25, -13.5)
+visible = false
 waypoints = [NodePath("../Waypoints5/PlatformWaypoint")]
 loop_path = false
 

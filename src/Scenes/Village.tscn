@@ -55,11 +55,6 @@ transform = Transform3D(0.992427, -0.12284, -4.52733e-10, 0.12284, 0.992427, 7.3
 mesh = SubResource("PlaneMesh_eelmq")
 surface_material_override/0 = ExtResource("3_5mxyq")
 
-[node name="TreeWall5" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(0.0930734, 1.6416, -9.27253e-08, -1.6416, 0.093073, -9.81314e-08, -9.27253e-08, 9.81314e-08, 1.64424, -3.18617, 5.33693, 1.28664)
-mesh = SubResource("PlaneMesh_eelmq")
-surface_material_override/0 = ExtResource("2_abasj")
-
 [node name="TreeWall6" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(0.688656, -1.15753, -3.93479e-08, 1.15753, 0.688657, 6.91945e-08, -3.9348e-08, -6.91945e-08, 1.34689, 1.67004, 2.84413, 0.915233)
 mesh = SubResource("PlaneMesh_eelmq")

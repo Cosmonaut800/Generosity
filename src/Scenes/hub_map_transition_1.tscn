@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cnsqxupk8kmv5"]
+[gd_scene load_steps=9 format=3 uid="uid://cnsqxupk8kmv5"]
 
 [ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="1_8aqpu"]
 [ext_resource type="PackedScene" uid="uid://dn45mcmbvf2a8" path="res://assets/Models/Doorway.fbx" id="2_gxr6d"]
 [ext_resource type="PackedScene" uid="uid://5id56smrjsja" path="res://assets/Models/Interactable Door.fbx" id="3_g58it"]
 [ext_resource type="PackedScene" uid="uid://brdh8um8v542x" path="res://src/Scenes/moving_platform.tscn" id="3_gfqrb"]
-[ext_resource type="PackedScene" uid="uid://r02mp7080g46" path="res://src/Scenes/hub_map2.tscn" id="5_6h2cs"]
 [ext_resource type="Script" uid="uid://bqdr72a5tcp3w" path="res://src/Scripts/platform_waypoint.gd" id="5_o7dau"]
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="6_o7dau"]
 [ext_resource type="PackedScene" uid="uid://bacgrc823sjog" path="res://src/Scenes/box_button.tscn" id="8_o7dau"]
@@ -76,9 +75,6 @@ collision_mask = 128
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorFrames/Doorway3/Interactable Door/StaticBody3D"]
 transform = Transform3D(1, 2.98023e-08, 2.4869e-14, 2.98023e-08, 1, -3.33955e-13, 1.77636e-15, 6.21725e-15, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_6h2cs")
-
-[node name="HubMap" parent="." instance=ExtResource("5_6h2cs")]
-visible = false
 
 [node name="Switch" parent="." instance=ExtResource("6_o7dau")]
 transform = Transform3D(-0.170777, 0, -0.98531, 0, 1, 0, 0.98531, 0, -0.170777, -6.96287, 2, -4.3446)

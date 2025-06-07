@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://bwgjhohqvc5fo" path="res://assets/Models/RuneArchway.fbx" id="2_72rq4"]
 [ext_resource type="Material" uid="uid://n6mhxn7dkdtg" path="res://assets/Materials/TriplanarGrass.tres" id="2_lfpqf"]
 [ext_resource type="PackedScene" uid="uid://cvp61in5o8wx7" path="res://assets/Models/Interactive Cog.fbx" id="2_r81ws"]
+[ext_resource type="PackedScene" uid="uid://jr3d3kbfh4m5" path="res://assets/Models/course_3_collision.glb" id="2_t7jn1"]
 [ext_resource type="PackedScene" uid="uid://b01qeyqny7ui6" path="res://assets/Models/Course_3_Floor.fbx" id="2_v027g"]
 [ext_resource type="Texture2D" uid="uid://c5ayhpnpv0db8" path="res://assets/Materials/Textures/ArcaneGateTex.png" id="2_w2hi7"]
 [ext_resource type="Environment" uid="uid://cu2xs3e5kkbc1" path="res://assets/Envlvl3.tres" id="3_25knx"]
 [ext_resource type="PackedScene" uid="uid://dwem4d1j0m7o4" path="res://assets/Models/SpinRing.fbx" id="3_r81ws"]
-[ext_resource type="PackedScene" uid="uid://b4hsyf0fl1cgq" path="res://assets/Models/course_3_blockout2.glb" id="3_v027g"]
 [ext_resource type="PackedScene" uid="uid://brdh8um8v542x" path="res://src/Scenes/moving_platform.tscn" id="4_72rq4"]
 [ext_resource type="PackedScene" uid="uid://ca8rmwlmq6ejx" path="res://assets/Models/course_3_blockout_elevator.glb" id="5_r81ws"]
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="6_w2hi7"]
@@ -72,6 +72,9 @@ size = Vector3(5.41699, 2.97644, 1)
 [node name="Course3" type="Node3D"]
 script = ExtResource("1_48aqv")
 
+[node name="course_3_collision" parent="." instance=ExtResource("2_t7jn1")]
+visible = false
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(52.0354, 0, 0, 0, 68.5537, 0, 0, 0, 120.405, 0, -10.8065, 0)
 material_override = ExtResource("2_lfpqf")
@@ -110,9 +113,6 @@ transform = Transform3D(0.647211, -0.659321, -0.38264, -0.585859, -0.751354, 0.3
 light_color = Color(0.89, 0.862707, 0.4806, 1)
 shadow_enabled = true
 directional_shadow_mode = 0
-
-[node name="course_3_blockout2" parent="." instance=ExtResource("3_v027g")]
-visible = false
 
 [node name="Elevator" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("4_72rq4")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.6425, 14.5597, 10.6621)

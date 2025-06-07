@@ -10,7 +10,7 @@ var world_templates : Array[Resource] =\
 var world : Node3D
 var subworld : Node3D
 var current_index := 0
-var current_config := 1
+var current_config := 2
 
 func _ready():
 	load_world(world_templates[current_index])

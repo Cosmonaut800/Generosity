@@ -10,15 +10,21 @@ const JUMP_VELOCITY = 4.5
 @export var decel := 25.0
 @export var camera : OrbitCamera
 @export var hook_origin : Node3D
+@export var anim_tree : AnimationTree
 
 
 @onready var graphics := $Graphics
+@onready var model := $Graphics/WolfTraveller
 @onready var coyote_time := $CoyoteTime
 @onready var push_timer := $PushTimer
 @onready var pushable_ray := $PushableRay
 @onready var crosshair := $UI/Crosshair
 @onready var blackout := $UI/Black
-@export var anim_tree : AnimationTree
+@onready var footsteps: Array[AudioStreamPlayer3D] =\
+[	$Audio/Step1,
+	$Audio/Step2,
+	$Audio/Step3,
+	$Audio/Step4]
 
 var speed := 5.0
 var accel = 25.0
@@ -26,7 +32,6 @@ var direction : Vector3
 var grappling_hook : Node3D
 var pushable : RigidBody3D = null
 var push_force := 1000.0
-var kodama_count := 0
 var respawn_position := Vector3.ZERO
 
 func _ready():
@@ -76,3 +81,8 @@ func respawn():
 	tween.tween_callback(set_global_position.bind(respawn_position))
 	tween.tween_interval(0.25)
 	tween.tween_property(blackout, "color", Color(0.0, 0.0, 0.0, 0.0), 0.5)
+
+func play_footstep():
+	var index = randi_range(0, footsteps.size()-1)
+	footsteps[index].pitch_scale = randf_range(0.9, 1.1)
+	footsteps[index].play()

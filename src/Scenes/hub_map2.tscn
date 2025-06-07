@@ -1,13 +1,10 @@
-[gd_scene load_steps=44 format=3 uid="uid://gf1pipuob658"]
+[gd_scene load_steps=43 format=3 uid="uid://r02mp7080g46"]
 
+[ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="1_imtj6"]
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_ow2xx"]
-[ext_resource type="PackedScene" uid="uid://ce2kl2udxtysh" path="res://src/Scenes/hub_map_transition_0.tscn" id="2_i8y87"]
 [ext_resource type="PackedScene" uid="uid://bpyxou8kp4mxq" path="res://assets/Models/hub_map_floor.glb" id="3_205xv"]
 [ext_resource type="PackedScene" uid="uid://htjdcq5oo1h4" path="res://assets/Models/hub_map_blockout.glb" id="3_ow2xx"]
-[ext_resource type="PackedScene" uid="uid://cnsqxupk8kmv5" path="res://src/Scenes/hub_map_transition_1.tscn" id="3_yovjk"]
-[ext_resource type="PackedScene" uid="uid://ca0pgttl62l8" path="res://src/Scenes/hub_map_transition_2.tscn" id="4_ceref"]
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="4_nu7ww"]
-[ext_resource type="PackedScene" uid="uid://dkdjo5054nh2f" path="res://src/Scenes/hub_map_transition_3.tscn" id="5_f35yh"]
 [ext_resource type="PackedScene" uid="uid://lp2ym1sutkha" path="res://src/Scenes/bridge.tscn" id="5_hcg2q"]
 [ext_resource type="PackedScene" uid="uid://bkglvypeexyb4" path="res://src/Scenes/moveable_block_2m.tscn" id="6_2ehf3"]
 [ext_resource type="PackedScene" uid="uid://cd747k607ocp3" path="res://assets/Models/Column.glb" id="7_3fswy"]
@@ -29,6 +26,8 @@
 [ext_resource type="Material" uid="uid://cqsiq7o3b57hv" path="res://assets/Materials/TreeRender.tres" id="23_xgg31"]
 [ext_resource type="Material" uid="uid://xdjr51qhujft" path="res://assets/Materials/TreeRender2.tres" id="24_wie4v"]
 [ext_resource type="Material" uid="uid://ce8ungq22oiil" path="res://assets/Materials/TreeRender3.tres" id="25_wie4v"]
+[ext_resource type="PackedScene" uid="uid://5id56smrjsja" path="res://assets/Models/Interactable Door.fbx" id="26_kxbgj"]
+[ext_resource type="PackedScene" uid="uid://dn45mcmbvf2a8" path="res://assets/Models/Doorway.fbx" id="26_phgxy"]
 [ext_resource type="PackedScene" uid="uid://bn8xr3g26vfww" path="res://assets/Models/Flower 1.fbx" id="28_3lcd8"]
 [ext_resource type="PackedScene" uid="uid://b55bhyvjnvrwf" path="res://assets/Models/Flower 2.fbx" id="29_ceref"]
 [ext_resource type="PackedScene" uid="uid://b5fx24blmtvls" path="res://assets/Models/Flower 3.fbx" id="30_f35yh"]
@@ -69,7 +68,17 @@ uv1_scale = Vector3(2.17, 2.17, 2.17)
 
 [node name="HubMap" type="Node3D"]
 script = ExtResource("1_ow2xx")
-subworlds = Array[Resource]([ExtResource("2_i8y87"), ExtResource("3_yovjk"), ExtResource("4_ceref"), ExtResource("5_f35yh")])
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_imtj6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.836114, -0.529839, 0.14207, -0.0486009, 0.186421, 0.981267, -0.546398, -0.827356, 0.130119, 0, 12.1965, 0)
+light_color = Color(0.89, 0.89, 0.4806, 1)
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 82.0
 
 [node name="hub_map_floor" parent="." instance=ExtResource("3_205xv")]
 
@@ -244,7 +253,7 @@ transform = Transform3D(0.542435, 0, 0.47801, 0, 0.723, 0, -0.47801, 0, 0.542435
 transform = Transform3D(0.119909, 0, 0.915178, 0, 0.923, 0, -0.915178, 0, 0.119909, 23.1268, -0.200982, 16.4933)
 
 [node name="Tree31" parent="Trees" instance=ExtResource("12_8r58n")]
-transform = Transform3D(0.22319, 0, 1.70344, 0, 1.718, 0, -1.70344, 0, 0.22319, 22.6835, -2.50161, 28.386)
+transform = Transform3D(0.22319, 0, 1.70344, 0, 1.718, 0, -1.70344, 0, 0.22319, 22.6835, 2.8737, 28.386)
 
 [node name="Tree4" parent="Trees" instance=ExtResource("18_xgg31")]
 transform = Transform3D(0.296577, 0, -0.838124, 0, 0.88905, 0, 0.838124, 0, 0.296577, -21.8298, 0.230115, -2.70665)
@@ -976,6 +985,23 @@ mesh = SubResource("PlaneMesh_gwt2o")
 skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("25_wie4v")
 
+[node name="DoorFrames" type="Node3D" parent="."]
+
+[node name="Doorway" parent="DoorFrames" instance=ExtResource("26_phgxy")]
+transform = Transform3D(-0.55, 0, -0.952628, 0, 1.1, 0, 0.952628, 0, -0.55, -7.289, 1.8646, -6.74291)
+
+[node name="Interactable Door" parent="DoorFrames/Doorway" instance=ExtResource("26_kxbgj")]
+
+[node name="Doorway2" parent="DoorFrames" instance=ExtResource("26_phgxy")]
+transform = Transform3D(0.777817, 0, -0.777817, 0, 1.1, 0, 0.777817, 0, 0.777817, 24.8722, 2.23172, -16.6188)
+
+[node name="Interactable Door" parent="DoorFrames/Doorway2" instance=ExtResource("26_kxbgj")]
+
+[node name="Doorway3" parent="DoorFrames" instance=ExtResource("26_phgxy")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 9.13672, 2.23172, -26.8732)
+
+[node name="Interactable Door" parent="DoorFrames/Doorway3" instance=ExtResource("26_kxbgj")]
+
 [node name="RootSingle" parent="." instance=ExtResource("19_hnk0v")]
 transform = Transform3D(3.5173, -0.044555, -1.35629, -0.114876, 3.74467, -0.420926, 1.35215, 0.434039, 3.49231, -6.86706, 0.0438766, -16.7671)
 
@@ -1032,9 +1058,6 @@ transform = Transform3D(0.947372, 0, -0.320134, 0, 1, 0, 0.320134, 0, 0.947372, 
 
 [node name="Rock1" parent="." instance=ExtResource("34_3lcd8")]
 transform = Transform3D(0.950239, 0, -0.311522, 0, 1, 0, 0.311522, 0, 0.950239, 12.8571, -0.234358, 2.23915)
-
-[node name="MoveableBlock2m2" parent="." instance=ExtResource("6_2ehf3")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 19.4029, 3.42988, -14.3583)
 
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
 [connection signal="level_changed" from="LevelTransition2" to="." method="_on_level_transition_level_changed"]

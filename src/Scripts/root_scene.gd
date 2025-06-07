@@ -6,7 +6,7 @@ var world_templates : Array[Resource] =\
 [	preload("res://src/Scenes/hub_map.tscn"),
 	preload("res://src/Scenes/course_1Artpass.tscn"),
 	preload("res://src/Scenes/course_2Artpass.tscn"),
-	preload("res://src/Scenes/course_3.tscn")]
+	preload("res://src/Scenes/course_3Artpass.tscn")]
 var world : Node3D
 var subworld : Node3D
 var current_index := 0

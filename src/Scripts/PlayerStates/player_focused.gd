@@ -30,7 +30,7 @@ func run_current_state(delta: float):
 	parent.player.anim_tree.set("parameters/conditions/grounded", true)
 	parent.player.anim_tree.set("parameters/conditions/aiming", true)
 	
-	if Input.is_action_just_released("focus_camera") or !parent.player.is_on_floor():
+	if !Input.is_action_pressed("focus_camera") or !parent.player.is_on_floor():
 		if pivot_tween: pivot_tween.kill()
 		pivot_tween = create_tween()
 		pivot_tween.set_ease(Tween.EASE_OUT)

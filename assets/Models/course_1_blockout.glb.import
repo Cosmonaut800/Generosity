@@ -50,7 +50,6 @@ _subresources={
 "nodes": {
 "PATH:Entity1(worldspawn)": {
 "generate/physics": true,
-"physics/layer": 3,
 "physics/mask": 255
 }
 }

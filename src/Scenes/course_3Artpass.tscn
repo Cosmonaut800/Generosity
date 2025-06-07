@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://fgefl2sohcrl"]
+[gd_scene load_steps=63 format=3 uid="uid://fgefl2sohcrl"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_48aqv"]
 [ext_resource type="Material" uid="uid://sxxsxlut4a4d" path="res://assets/Materials/TriplanarGrass2.tres" id="2_35xuu"]
@@ -64,17 +64,20 @@ texture_filter = 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_yxa70"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_yxa70"]
-height = 3.85542
-radius = 3.95264
+height = 1.15569
+radius = 3.33301
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tfigl"]
-size = Vector3(10.6592, 1, 1)
+size = Vector3(13.4097, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l5bnj"]
-size = Vector3(0.5, 0.5, 10)
+size = Vector3(1.07886, 0.930176, 11.3425)
 
-[sub_resource type="BoxMesh" id="BoxMesh_k42nb"]
-size = Vector3(0.5, 0.5, 10)
+[sub_resource type="BoxShape3D" id="BoxShape3D_xtobq"]
+size = Vector3(1.07886, 0.930176, 10.1493)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8w2d0"]
+size = Vector3(1.07886, 0.930176, 10.6009)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_l5jef"]
 radius = 1.60057
@@ -90,13 +93,16 @@ size = Vector3(5.41699, 2.97644, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_t7jn1"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_lkxph"]
+size = Vector3(11.7025, 11.3127, 1)
+
 [node name="Course3" type="Node3D"]
 script = ExtResource("1_48aqv")
 
-[node name="Floor" type="MeshInstance3D" parent="."]
-
 [node name="course_3_collision" parent="." instance=ExtResource("2_t7jn1")]
 visible = false
+
+[node name="Floor" type="MeshInstance3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(52.0354, 0, 0, 0, 68.5537, 0, 0, 0, 120.405, 0, -10.8065, 0)
@@ -109,18 +115,15 @@ metadata/_edit_lock_ = true
 transform = Transform3D(0.310368, -3.61295, -0.709467, 8.13687, 1.84237, -0.0118094, 1.3138, -10.557, 0.240743, 8.47232, 1.06353, -14.1007)
 cast_shadow = 3
 mesh = SubResource("PlaneMesh_ac6rh")
-skeleton = NodePath("../Interactive Cog")
+skeleton = NodePath("../Turnstile/RigidBody3D/Interactive Cog")
 surface_material_override/0 = SubResource("StandardMaterial3D_q4ojf")
 
 [node name="SHADE2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.19115, -10.5554, -2.95097, 29.9154, 5.38254, -0.0437573, 4.81308, -30.8425, 1.00229, -16.523, -0.83253, -4.52753)
 cast_shadow = 3
 mesh = SubResource("PlaneMesh_ac6rh")
-skeleton = NodePath("../Interactive Cog")
+skeleton = NodePath("../Turnstile/RigidBody3D/Interactive Cog")
 surface_material_override/0 = SubResource("StandardMaterial3D_q4ojf")
-
-[node name="Interactive Cog" parent="." instance=ExtResource("2_r81ws")]
-transform = Transform3D(-0.00645769, 0, -0.999979, 0, 1, 0, 0.999979, 0, -0.00645769, 0, 0, 0)
 
 [node name="SpinRing" parent="." instance=ExtResource("3_r81ws")]
 
@@ -196,17 +199,17 @@ transit_time = 3.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="MovingPlatform2" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("4_72rq4")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -4.2827, 3.17537, -4.17679)
+transform = Transform3D(0.848528, 0, 0.848528, 0, 1.2, 0, -0.848528, 0, 0.848528, -4.283, 3.49, -4.177)
 waypoints = [NodePath("../Waypoints2/PlatformWaypoint2"), NodePath("../Waypoints2/PlatformWaypoint")]
 
 [node name="GrapplePoint" parent="MovingPlatform2" instance=ExtResource("10_62jce")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.690256, 0)
+transform = Transform3D(0.834, 0, 0, 0, 0.834, 0, 0, 0, 0.834, 0, -0.0734552, 0)
 
 [node name="BoxButton" parent="MovingPlatform2" instance=ExtResource("12_thcts")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.45519e-11, 0.45464, 0.5)
+transform = Transform3D(0.417, 0, 0, 0, 0.417, 0, 0, 0, 0.417, 0, 0.218266, 0.642457)
 
 [node name="Waypoints2" type="Node3D" parent="."]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -4.2827, 3.17537, -4.17679)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -4.283, 3.49, -4.177)
 
 [node name="PlatformWaypoint" type="Node3D" parent="Waypoints2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.12505, 0)
@@ -238,7 +241,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -33.1333, 0)
 shape = SubResource("BoxShape3D_yxa70")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Turnstile"]
-visible = false
+transform = Transform3D(0.587912, 0, -0.808925, 0, 1, 0, 0.808925, 0, 0.587912, 0, 0, 0)
 collision_layer = 64
 collision_mask = 252
 mass = 200.0
@@ -246,59 +249,33 @@ gravity_scale = 0.0
 angular_damp = 0.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Turnstile/RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07607, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12701, 0)
 shape = SubResource("CylinderShape3D_yxa70")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Turnstile/RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82959, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.48071, 0, 0)
 shape = SubResource("BoxShape3D_tfigl")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Turnstile/RigidBody3D"]
 shape = SubResource("BoxShape3D_l5bnj")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Turnstile/RigidBody3D"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
-shape = SubResource("BoxShape3D_l5bnj")
-
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Turnstile/RigidBody3D"]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0, 0)
-shape = SubResource("BoxShape3D_l5bnj")
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.163257, 0, 0.163257)
+shape = SubResource("BoxShape3D_xtobq")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="Turnstile/RigidBody3D"]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0, 0, 0)
-shape = SubResource("BoxShape3D_l5bnj")
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -0.156525, 0, 0.156525)
+shape = SubResource("BoxShape3D_8w2d0")
 
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="Turnstile/RigidBody3D"]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0.0267029)
 shape = SubResource("BoxShape3D_l5bnj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Turnstile/RigidBody3D"]
-mesh = SubResource("BoxMesh_k42nb")
-skeleton = NodePath("")
+[node name="Interactive Cog" parent="Turnstile/RigidBody3D" instance=ExtResource("2_r81ws")]
+transform = Transform3D(-0.00645769, 0, -0.999979, 0, 1, 0, 0.999979, 0, -0.00645769, 0, -19.7022, 0)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Turnstile/RigidBody3D"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
-mesh = SubResource("BoxMesh_k42nb")
-skeleton = NodePath("")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Turnstile/RigidBody3D"]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0, 0)
-mesh = SubResource("BoxMesh_k42nb")
-skeleton = NodePath("")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Turnstile/RigidBody3D"]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0, 0, 0)
-mesh = SubResource("BoxMesh_k42nb")
-skeleton = NodePath("")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Turnstile/RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.83423, 0, 0)
-collision_layer = 64
-collision_mask = 191
-size = Vector3(10.6685, 1, 1)
-
-[node name="GrapplePoint" parent="Turnstile/RigidBody3D/CSGBox3D" instance=ExtResource("10_62jce")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.94384, -0.737499, 0.061213)
+[node name="GrapplePoint" parent="Turnstile/RigidBody3D" instance=ExtResource("10_62jce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.58774, -0.260637, 0)
 
 [node name="Labels" type="Node3D" parent="."]
 
@@ -912,7 +889,6 @@ transform = Transform3D(1.18427, 0, 0, 0, 1.18427, 0, 0, 0, 1.18427, -21.5323, 0
 transform = Transform3D(1.18427, 0, 0, 0, 1.18427, 0, 0, 0, 1.18427, -19.0398, 0, -48.9411)
 
 [node name="Tree5" parent="Trees" instance=ExtResource("31_5efmu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Tree11" parent="Trees" instance=ExtResource("31_5efmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95221, 1.43051e-06, -2.82924)
@@ -1830,6 +1806,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.522503)
 
 [node name="Toy" parent="." instance=ExtResource("47_xtobq")]
 transform = Transform3D(0.272485, 0, -0.158253, 0, 0.315107, 0, 0.158253, 0, 0.272485, 11.7934, 14.9545, -4.32135)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.783097, 0.2739, -0.558335, 1.49012e-08, 0.897789, 0.440425, 0.6219, 0.344895, -0.703056, -7.27987, 26.41, -8.90676)
+shape = SubResource("BoxShape3D_lkxph")
 
 [connection signal="activated" from="Elevator/Switch" to="Elevator" method="_on_switch_activated"]
 [connection signal="activated" from="MovingPlatform2/BoxButton" to="MovingPlatform2" method="_on_switch_activated"]

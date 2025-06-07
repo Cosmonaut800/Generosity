@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://baug8fq0okhe3"]
 
-[ext_resource type="PackedScene" uid="uid://cd735g1fmsl7b" path="res://assets/Models/Characters/WolfTraveller.fbx" id="1_qdi3c"]
+[ext_resource type="PackedScene" uid="uid://dv4khe3gm0cp" path="res://assets/Models/Characters/WolfTraveller.fbx" id="1_qdi3c"]
 
 [node name="WolfTraveller" instance=ExtResource("1_qdi3c")]
 
@@ -40,7 +40,6 @@ bones/11/rotation = Quaternion(-0.0191167, 0.997575, 0.0667825, -0.00433354)
 bones/11/scale = Vector3(1, 1, 1)
 bones/12/position = Vector3(5.33397e-11, 0.00107836, -1.02679e-10)
 bones/12/rotation = Quaternion(-1.4501e-07, 0.242485, 3.95814e-07, 0.970155)
-bones/12/scale = Vector3(1, 1, 1)
 bones/13/position = Vector3(-7.50464e-12, 3.56269e-15, -3.29375e-12)
 bones/13/rotation = Quaternion(-8.20549e-09, 0.211125, -3.03847e-08, 0.977459)
 bones/13/scale = Vector3(1, 1, 1)

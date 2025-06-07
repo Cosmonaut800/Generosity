@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwmq1au8jy8g4"]
 
 [ext_resource type="Script" uid="uid://xtq0p7h7w2rw" path="res://src/Scripts/kodama.gd" id="1_5lu2l"]
-[ext_resource type="PackedScene" uid="uid://cafu0e7ah28gi" path="res://assets/Models/Characters/Kodama.fbx" id="2_teu5t"]
+[ext_resource type="PackedScene" uid="uid://d1yjgnsebeeto" path="res://assets/Models/Characters/Kodama.fbx" id="2_teu5t"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_e20ym"]
 radius = 0.25

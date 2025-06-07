@@ -66,6 +66,12 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "uid://c75honamufnm1"
 }
+},
+"nodes": {
+"PATH:Course_3_Floor": {
+"physics/layer": 3,
+"physics/mask": 255
+}
 }
 }
 fbx/importer=0

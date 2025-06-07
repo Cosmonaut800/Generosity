@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://1i4lx1t8c653"]
+[gd_scene load_steps=37 format=3 uid="uid://1i4lx1t8c653"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_oofx1"]
 [ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="2_kfbic"]
@@ -30,6 +30,9 @@
 [ext_resource type="PackedScene" uid="uid://bnt0auahi0h13" path="res://assets/Models/Roots.fbx" id="24_ybjnu"]
 [ext_resource type="PackedScene" uid="uid://dg0tlbor7atts" path="res://assets/Models/Axe.fbx" id="29_ge0i3"]
 [ext_resource type="PackedScene" uid="uid://dn45mcmbvf2a8" path="res://assets/Models/Doorway.fbx" id="29_w8ggu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w8ggu"]
+size = Vector3(6.17487, 7.96558, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jcvbr"]
 size = Vector3(1, 4.44147, 4.20862)
@@ -84,6 +87,13 @@ directional_shadow_max_distance = 82.0
 [node name="course_1_blockout" parent="." instance=ExtResource("3_kfbic")]
 visible = false
 
+[node name="StaticBody3D" type="StaticBody3D" parent="course_1_blockout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0169, 2.54761, 30.6428)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="course_1_blockout/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.704498, 1.8241, 0)
+shape = SubResource("BoxShape3D_w8ggu")
+
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("4_q66gl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1353, 1.38274, 28.5997)
 
@@ -122,6 +132,7 @@ will play when the player knocks the tree over"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.594, 4.99446, 23.8245)
 collision_mask = 128
 script = ExtResource("9_x8v73")
+config = 3
 metadata/_custom_type_script = "uid://barah8wamrx8j"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LevelTransition"]

@@ -44,7 +44,7 @@
 [ext_resource type="Material" uid="uid://pyva4u4016cn" path="res://assets/Materials/Dirt.tres" id="34_upwhy"]
 [ext_resource type="Material" uid="uid://cqsiq7o3b57hv" path="res://assets/Materials/TreeRender.tres" id="35_6cej2"]
 [ext_resource type="Material" uid="uid://n6mhxn7dkdtg" path="res://assets/Materials/TriplanarGrass.tres" id="37_lfq00"]
-[ext_resource type="PackedScene" uid="uid://dxjxppqfmxodb" path="res://assets/QuestFlower.fbx" id="45_vp5nb"]
+[ext_resource type="PackedScene" uid="uid://dxjxppqfmxodb" path="res://assets/Models/QuestFlower.fbx" id="45_vp5nb"]
 [ext_resource type="PackedScene" uid="uid://ckhsp37mhgajp" path="res://src/Scenes/death_plane.tscn" id="46_upwhy"]
 [ext_resource type="Script" uid="uid://drkko5ju77rpw" path="res://src/Scripts/checkpoint.gd" id="47_nfc8t"]
 

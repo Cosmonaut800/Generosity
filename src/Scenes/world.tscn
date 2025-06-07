@@ -13,9 +13,9 @@
 [ext_resource type="Script" uid="uid://bqdr72a5tcp3w" path="res://src/Scripts/platform_waypoint.gd" id="9_wyao0"]
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="10_qtmjw"]
 [ext_resource type="Script" uid="uid://barah8wamrx8j" path="res://src/Scripts/level_transition.gd" id="12_x3jek"]
-[ext_resource type="PackedScene" uid="uid://ctq6cfbg2ahns" path="res://assets/Models/Characters/DogKid.fbx" id="14_bi15i"]
-[ext_resource type="PackedScene" uid="uid://wm5yaydwdetb" path="res://assets/Models/Characters/SquirrelLumberjack.fbx" id="15_6jdyp"]
-[ext_resource type="PackedScene" uid="uid://cafu0e7ah28gi" path="res://assets/Models/Characters/Kodama.fbx" id="16_6jdyp"]
+[ext_resource type="PackedScene" uid="uid://dn03o2jn2cpih" path="res://assets/Models/Characters/DogKid.fbx" id="14_bi15i"]
+[ext_resource type="PackedScene" uid="uid://bw8pq6pfyihem" path="res://assets/Models/Characters/SquirrelLumberjack.fbx" id="15_6jdyp"]
+[ext_resource type="PackedScene" uid="uid://d1yjgnsebeeto" path="res://assets/Models/Characters/Kodama.fbx" id="16_6jdyp"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cncp2"]
 

@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bnrj2iuqck4s2"]
+
+[ext_resource type="Texture2D" uid="uid://rakkppar8ghg" path="res://assets/Materials/Textures/ToyTex.png" id="1_id35o"]
+[ext_resource type="Texture2D" uid="uid://cdnk34fvskhwc" path="res://assets/Materials/Textures/ToyMask.png" id="2_kdppm"]
+
+[resource]
+albedo_texture = ExtResource("1_id35o")
+emission_enabled = true
+emission = Color(0.0871842, 0.86094, 0, 1)
+emission_energy_multiplier = 3.0
+emission_operator = 1
+emission_texture = ExtResource("2_kdppm")
+rim = 0.0
+texture_filter = 0

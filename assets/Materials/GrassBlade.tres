@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://j6e276huc7sa"]
+
+[ext_resource type="Shader" uid="uid://clc14oiiae3np" path="res://assets/Materials/grass_particle.gdshader" id="1_thi4y"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_thi4y")
+shader_parameter/waveIntensity = 0.0
+shader_parameter/waveSpeed = 0.0
+shader_parameter/waveDirectionRatio = 0.0
+shader_parameter/colorTip = Color(0.36, 0.35016, 0.2124, 1)
+shader_parameter/colorBase = Color(0.215686, 0.243137, 0.180392, 1)
+shader_parameter/lightIntensity = 0.0

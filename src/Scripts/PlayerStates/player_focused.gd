@@ -2,6 +2,12 @@ class_name PlayerFocused extends State
 
 var pivot_tween: Tween
 
+var mats = [preload("res://assets/Materials/interactable_column.tres"),
+			preload("res://assets/Materials/interactable_rock.tres"),
+			preload("res://assets/Materials/interactable_hook.tres"),
+			preload("res://assets/Materials/interactable_switch.tres"),
+			preload("res://assets/Materials/interactable_checker.tres")]
+
 func initialize(parent_machine: StateMachine):
 	parent = parent_machine
 	if pivot_tween: pivot_tween.kill()
@@ -16,10 +22,13 @@ func initialize(parent_machine: StateMachine):
 	parent.player.camera.focused = true
 	parent.player.speed = parent.player.focused_speed
 	parent.player.crosshair.show()
-	parent.player.anim_tree.set("parameters/conditions/grounded", true)
-	parent.player.anim_tree.set("parameters/conditions/aerial", false)	
+	for mat in mats:
+		mat.set_shader_parameter("timeScale", 1.0)
 
 func run_current_state(delta: float):
+	parent.reset_anim_conditions()
+	parent.player.anim_tree.set("parameters/conditions/grounded", true)
+	parent.player.anim_tree.set("parameters/conditions/aiming", true)
 	
 	if Input.is_action_just_released("focus_camera") or !parent.player.is_on_floor():
 		if pivot_tween: pivot_tween.kill()
@@ -36,20 +45,24 @@ func run_current_state(delta: float):
 		if parent.player.is_on_floor():
 			parent.player.crosshair.hide()
 			parent.player_grounded.initialize(parent)
-			parent.player.anim_tree.set("parameters/conditions/walking", false)
+			parent.reset_anim_conditions()
+			for mat in mats:
+				mat.set_shader_parameter("timeScale", 0.0)
 			return parent.player_grounded
 		else:
 			parent.player.crosshair.hide()
 			parent.player_aerial.initialize(parent)
-			parent.player.anim_tree.set("parameters/conditions/walking", false)
+			parent.reset_anim_conditions()
+			for mat in mats:
+				mat.set_shader_parameter("timeScale", 0.0)
 			return parent.player_aerial
 	
 	if parent.player.direction:
+		parent.player.anim_tree.set("parameters/conditions/aiming", true)
 		parent.player.anim_tree.set("parameters/conditions/walking", true)
-		parent.player.anim_tree.set("parameters/conditions/idling", false)
 	else:
-		parent.player.anim_tree.set("parameters/conditions/walking", false)
-		parent.player.anim_tree.set("parameters/conditions/idling", true)
+		parent.player.anim_tree.set("parameters/conditions/aiming", true)
+		parent.player.anim_tree.set("parameters/conditions/aimidling", true)
 	
 	parent.player.graphics.look_at(parent.player.grappling_hook.to_global(parent.player.grappling_hook.ray.target_position) * Vector3(1.0, 0.0, 1.0) + Vector3(0.0, parent.player.position.y, 0.0))
 	

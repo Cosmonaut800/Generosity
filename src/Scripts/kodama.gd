@@ -8,8 +8,8 @@ func _input(event):
 		increment_kodama_count()
 
 func increment_kodama_count() -> void:
-	player.kodama_count += 1
-	print(player.kodama_count)
+	Utility.kodama_count += 1
+	print(Utility.kodama_count)
 	self.queue_free()
 
 func _on_area_3d_body_entered(body: Node3D) -> void:

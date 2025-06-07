@@ -10,14 +10,21 @@ const JUMP_VELOCITY = 4.5
 @export var decel := 25.0
 @export var camera : OrbitCamera
 @export var hook_origin : Node3D
+@export var anim_tree : AnimationTree
 
 
 @onready var graphics := $Graphics
+@onready var model := $Graphics/WolfTraveller
 @onready var coyote_time := $CoyoteTime
 @onready var push_timer := $PushTimer
 @onready var pushable_ray := $PushableRay
-@onready var crosshair := $UI
-@export var anim_tree : AnimationTree
+@onready var crosshair := $UI/Crosshair
+@onready var blackout := $UI/Black
+@onready var footsteps: Array[AudioStreamPlayer3D] =\
+[	$Audio/Step1,
+	$Audio/Step2,
+	$Audio/Step3,
+	$Audio/Step4]
 
 var speed := 5.0
 var accel = 25.0
@@ -25,14 +32,14 @@ var direction : Vector3
 var grappling_hook : Node3D
 var pushable : RigidBody3D = null
 var push_force := 1000.0
-var kodama_count := 0
+var respawn_position := Vector3.ZERO
 
 func _ready():
 	accel = ground_accel
 	speed = ground_speed
 	grappling_hook = camera.grappling_hook
 	grappling_hook.hook_origin = hook_origin
-	
+	respawn_position = global_position
 
 func _physics_process(delta):
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
@@ -45,7 +52,7 @@ func _physics_process(delta):
 	
 	var displacement : Vector3 = (global_position - grappling_hook.graphics.global_position)
 	if grappling_hook.status == grappling_hook.GRAPPLE:
-		velocity -= 3.0 * displacement.length() * delta * displacement.normalized()
+		velocity -= 3.5 * displacement.length() * delta * displacement.normalized()
 	if grappling_hook.status == grappling_hook.PULL:
 		var distance : float = clamp(displacement.length(), 0.0, 10.0)
 		grappling_hook.target.velocity += 8.0 * distance * delta * displacement.normalized()
@@ -66,3 +73,16 @@ func decelerate(delta):
 
 func fire_grappling_hook():
 	camera.grappling_hook.fire()
+
+func respawn():
+	var tween = create_tween()
+	tween.tween_property(blackout, "color", Color(0.0, 0.0, 0.0, 1.0), 0.5)
+	tween.tween_interval(0.25)
+	tween.tween_callback(set_global_position.bind(respawn_position))
+	tween.tween_interval(0.25)
+	tween.tween_property(blackout, "color", Color(0.0, 0.0, 0.0, 0.0), 0.5)
+
+func play_footstep():
+	var index = randi_range(0, footsteps.size()-1)
+	footsteps[index].pitch_scale = randf_range(0.9, 1.1)
+	footsteps[index].play()

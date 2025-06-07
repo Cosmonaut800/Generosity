@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bus6igd6ci50j"]
+
+[ext_resource type="Shader" uid="uid://cds75mp1wxim2" path="res://src/Shaders/interactable.gdshader" id="1_0tib6"]
+[ext_resource type="Texture2D" uid="uid://dfiyal5i2o3yr" path="res://assets/Materials/Textures/SwitchTex.png" id="2_0tib6"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0tib6")
+shader_parameter/albedoTexture = ExtResource("2_0tib6")
+shader_parameter/pulseColor = Color(0.4525, 0.6, 0.45, 1)
+shader_parameter/timeScale = 1.45519e-11

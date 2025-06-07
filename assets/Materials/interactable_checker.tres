@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cuqakps4cbhcg"]
+
+[ext_resource type="Shader" uid="uid://cds75mp1wxim2" path="res://src/Shaders/interactable.gdshader" id="1_pwp3n"]
+[ext_resource type="Texture2D" uid="uid://cerah6j45auec" path="res://assets/Materials/Textures/checker_blue.png" id="2_pwp3n"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_pwp3n")
+shader_parameter/albedoTexture = ExtResource("2_pwp3n")
+shader_parameter/pulseColor = Color(0.4525, 0.6, 0.45, 1)
+shader_parameter/timeScale = 1.45519e-11

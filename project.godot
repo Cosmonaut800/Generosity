@@ -16,6 +16,15 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
 config/icon="res://icon.svg"
 
+[autoload]
+
+Utility="*res://src/Scripts/game_manager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [input]
 
 move_forward={
@@ -74,6 +83,8 @@ toggle_mouse={
 3d_physics/layer_6="Pullable"
 3d_physics/layer_7="RigidBody Pullable"
 3d_physics/layer_8="Player"
+3d_physics/layer_9="Death Plane"
+3d_physics/layer_10="Hard Hat"
 
 [physics]
 

@@ -14,7 +14,6 @@ func _ready():
 	button_default_height = button_graphics.position.y
 
 func activate() -> void:
-	print("Activated!")
 	is_active = true
 	activated.emit(self)
 	var tween = create_tween()

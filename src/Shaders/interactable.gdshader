@@ -10,7 +10,7 @@ void vertex() {
 
 void fragment() {
 	ALBEDO = texture(albedoTexture, UV).rgb;
-	EMISSION = (pulseColor * sin(TIME * timeScale)*sin(TIME * timeScale)).rgb;
+	EMISSION = (pulseColor * 0.5 * (1.0 + sin(TIME * timeScale)*sin(TIME * timeScale))).rgb;
 }
 
 //void light() {

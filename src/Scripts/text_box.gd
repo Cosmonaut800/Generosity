@@ -46,6 +46,7 @@ func display_text_box(text_index: String):
 func display_next_text():
 	if text_queue.size() <= 0:
 		hide_text()
+		#Triggers for events can go here
 	else:
 		show_text(text_queue.pop_front())
 

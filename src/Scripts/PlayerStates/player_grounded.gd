@@ -7,22 +7,21 @@ func initialize(parent_machine: StateMachine):
 	coyote_expired = false
 	parent.player.accel = parent.player.ground_accel
 	parent.player.speed = parent.player.ground_speed
-	parent.player.anim_tree.set("parameters/conditions/grounded", true)
-	parent.player.anim_tree.set("parameters/conditions/aerial", false)
 
 func run_current_state(delta: float) -> State:
+	parent.reset_anim_conditions()
+	parent.player.anim_tree.set("parameters/conditions/grounded", true)
+	
 	if !parent.player.direction:
 		parent.player.decelerate(delta)
 		parent.player.anim_tree.set("parameters/conditions/idling", true)
-		parent.player.anim_tree.set("parameters/conditions/running", false)
 	else:
 		parent.player.graphics.look_at(parent.player.position + (parent.player.velocity * Vector3(1.0, 0.0, 1.0)))
-		parent.player.anim_tree.set("parameters/conditions/idling", false)
 		parent.player.anim_tree.set("parameters/conditions/running", true)
 	
 	if parent.player.pushable_ray.is_colliding():
 		parent.player_pushing.initialize(parent)
-		parent.player.anim_tree.set("parameters/conditions/running", false)
+		parent.reset_anim_conditions()
 		return parent.player_pushing
 	
 	if !parent.player.is_on_floor():
@@ -39,7 +38,7 @@ func run_current_state(delta: float) -> State:
 	
 	if Input.is_action_pressed("focus_camera"):
 		parent.player_focused.initialize(parent)
-		parent.player.anim_tree.set("parameters/conditions/running", false)
+		parent.reset_anim_conditions()
 		return parent.player_focused
 	
 	return self

@@ -30,7 +30,7 @@ script = ExtResource("1_xyle6")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 visible = false
-target_position = Vector3(1.45519e-11, 1.45519e-11, -20)
+target_position = Vector3(0, 0, -15)
 collision_mask = 110
 
 [node name="VisualizeTargetDistance" type="MeshInstance3D" parent="."]

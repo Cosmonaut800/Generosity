@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ca0pgttl62l8"]
+[gd_scene load_steps=11 format=3 uid="uid://ca0pgttl62l8"]
 
 [ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="1_346ag"]
 [ext_resource type="PackedScene" uid="uid://dn45mcmbvf2a8" path="res://assets/Models/Doorway.fbx" id="2_vbk3l"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bqdr72a5tcp3w" path="res://src/Scripts/platform_waypoint.gd" id="5_l8khe"]
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="6_8y2gh"]
 [ext_resource type="PackedScene" uid="uid://bacgrc823sjog" path="res://src/Scenes/box_button.tscn" id="7_y0wjf"]
+[ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="9_4d7gy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8y2gh"]
 size = Vector3(2.34766, 1, 3.48267)
@@ -75,6 +76,9 @@ transform = Transform3D(0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, 0.353553
 
 [node name="Switch2" parent="." instance=ExtResource("6_8y2gh")]
 transform = Transform3D(0.900395, 0, 0.435074, 0, 1, 0, -0.435074, 0, 0.900395, 7.26967, 2.42474, -25.4771)
+
+[node name="ThirdPersonPlayer" parent="." instance=ExtResource("9_4d7gy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71468, 1.16127, 17.9823)
 
 [connection signal="activated" from="BoxButton" to="DoorFrames/Doorway2/MovingPlatform" method="_on_switch_activated"]
 

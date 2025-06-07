@@ -6,6 +6,7 @@ var mats = [preload("res://assets/Materials/interactable_column.tres"),
 			preload("res://assets/Materials/interactable_rock.tres"),
 			preload("res://assets/Materials/interactable_hook.tres"),
 			preload("res://assets/Materials/interactable_switch.tres"),
+			preload("res://assets/Materials/interactable_cog.tres"),
 			preload("res://assets/Materials/interactable_checker.tres")]
 
 func initialize(parent_machine: StateMachine):

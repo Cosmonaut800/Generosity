@@ -1,7 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://1i4lx1t8c653"]
+[gd_scene load_steps=42 format=3 uid="uid://1i4lx1t8c653"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_oofx1"]
-[ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="2_kfbic"]
+[ext_resource type="Environment" uid="uid://dh6qujnbw0ffl" path="res://assets/Envlvl1.tres" id="2_w8ggu"]
 [ext_resource type="PackedScene" uid="uid://cc3n0ggth6gg4" path="res://assets/Models/course_1_blockout.glb" id="3_kfbic"]
 [ext_resource type="PackedScene" uid="uid://c4wb0t8d5espv" path="res://assets/Models/course_1_floor.tscn" id="3_q66gl"]
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="4_q66gl"]
@@ -30,9 +30,16 @@
 [ext_resource type="PackedScene" uid="uid://bnt0auahi0h13" path="res://assets/Models/Roots.fbx" id="24_ybjnu"]
 [ext_resource type="PackedScene" uid="uid://dg0tlbor7atts" path="res://assets/Models/Axe.fbx" id="29_ge0i3"]
 [ext_resource type="PackedScene" uid="uid://dn45mcmbvf2a8" path="res://assets/Models/Doorway.fbx" id="29_w8ggu"]
+[ext_resource type="Script" uid="uid://bbtk6x56blpc1" path="res://src/Scripts/music_loop.gd" id="31_nqe4l"]
+[ext_resource type="AudioStream" uid="uid://v5qa1ta006rt" path="res://assets/Audio/BGM_Serene_Intro.ogg" id="31_uynjs"]
+[ext_resource type="AudioStream" uid="uid://c7rs76xs4ydm0" path="res://assets/Audio/BGM_Serene_Loop.ogg" id="32_nqe4l"]
+[ext_resource type="PackedScene" uid="uid://ckhsp37mhgajp" path="res://src/Scenes/death_plane.tscn" id="34_k06x0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w8ggu"]
 size = Vector3(6.17487, 7.96558, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nqe4l"]
+radius = 2.49585
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jcvbr"]
 size = Vector3(1, 4.44147, 4.20862)
@@ -72,7 +79,7 @@ texture_filter = 0
 script = ExtResource("1_oofx1")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("2_kfbic")
+environment = ExtResource("2_w8ggu")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.836114, -0.529839, 0.14207, -0.0486009, 0.186421, 0.981267, -0.546398, -0.827356, 0.130119, 0, 12.1965, 0)
@@ -117,8 +124,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93948, 2.97136, 10.0968)
 [node name="Bridge" parent="." instance=ExtResource("7_ewjp4")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -22.1491, 4.5622, 13.8125)
 
-[node name="Kodama" parent="." instance=ExtResource("8_n0bhd")]
+[node name="Kodama" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_n0bhd")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -25.9079, 4.67494, 17.0546)
+player = NodePath("../ThirdPersonPlayer")
+
+[node name="Area3D" type="Area3D" parent="Kodama"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.653675)
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kodama/Area3D"]
+shape = SubResource("SphereShape3D_nqe4l")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4446, 5.98164, 16.1992)
@@ -779,4 +794,28 @@ transform = Transform3D(-4.80422e-08, 0, 0.998267, 0, 1.29983, 0, -1.09908, 0, -
 [node name="Axe" parent="." instance=ExtResource("29_ge0i3")]
 transform = Transform3D(0.404932, 0.914346, 0.00131757, -0.00374614, 0.000218035, 0.999993, 0.914339, -0.404934, 0.00351352, -22.9818, 4.58498, 16.0013)
 
+[node name="Audio" type="Node3D" parent="."]
+script = ExtResource("31_nqe4l")
+
+[node name="MusicIntro" type="AudioStreamPlayer3D" parent="Audio"]
+stream = ExtResource("31_uynjs")
+attenuation_model = 3
+autoplay = true
+panning_strength = 0.0
+bus = &"Music"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="MusicLoop" type="AudioStreamPlayer3D" parent="Audio"]
+stream = ExtResource("32_nqe4l")
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"Music"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="DeathPlane" parent="." instance=ExtResource("34_k06x0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.8208, 0)
+
+[connection signal="body_entered" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_exited"]
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
+[connection signal="finished" from="Audio/MusicIntro" to="Audio" method="_on_music_intro_finished"]

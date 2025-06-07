@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://gf1pipuob658"]
+[gd_scene load_steps=45 format=3 uid="uid://gf1pipuob658"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_ow2xx"]
 [ext_resource type="PackedScene" uid="uid://ce2kl2udxtysh" path="res://src/Scenes/hub_map_transition_0.tscn" id="2_i8y87"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://htjdcq5oo1h4" path="res://assets/Models/hub_map_blockout.glb" id="3_ow2xx"]
 [ext_resource type="PackedScene" uid="uid://cnsqxupk8kmv5" path="res://src/Scenes/hub_map_transition_1.tscn" id="3_yovjk"]
 [ext_resource type="PackedScene" uid="uid://ca0pgttl62l8" path="res://src/Scenes/hub_map_transition_2.tscn" id="4_ceref"]
-[ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="4_nu7ww"]
 [ext_resource type="PackedScene" uid="uid://dkdjo5054nh2f" path="res://src/Scenes/hub_map_transition_3.tscn" id="5_f35yh"]
 [ext_resource type="PackedScene" uid="uid://lp2ym1sutkha" path="res://src/Scenes/bridge.tscn" id="5_hcg2q"]
 [ext_resource type="PackedScene" uid="uid://bkglvypeexyb4" path="res://src/Scenes/moveable_block_2m.tscn" id="6_2ehf3"]
@@ -67,14 +66,18 @@ uv1_scale = Vector3(2.17, 2.17, 2.17)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gwt2o"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ceref"]
+height = 2.55591
+radius = 1.3418
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3lcd8"]
+size = Vector3(4.55566, 10.2978, 8.49219)
+
 [node name="HubMap" type="Node3D"]
 script = ExtResource("1_ow2xx")
 subworlds = Array[Resource]([ExtResource("2_i8y87"), ExtResource("3_yovjk"), ExtResource("4_ceref"), ExtResource("5_f35yh")])
 
 [node name="hub_map_floor" parent="." instance=ExtResource("3_205xv")]
-
-[node name="ThirdPersonPlayer" parent="." instance=ExtResource("4_nu7ww")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71468, 1.16127, 17.9823)
 
 [node name="Bridge" parent="." instance=ExtResource("5_hcg2q")]
 transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, -13.1123, 2.5622, 6.07921)
@@ -1035,6 +1038,30 @@ transform = Transform3D(0.950239, 0, -0.311522, 0, 1, 0, 0.311522, 0, 0.950239, 
 
 [node name="MoveableBlock2m2" parent="." instance=ExtResource("6_2ehf3")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 19.4029, 3.42988, -14.3583)
+
+[node name="RockCollision" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9471, -4.76837e-07, 2.2501)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.277954, 0)
+shape = SubResource("CylinderShape3D_ceref")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -38.031, 2.19545, -1.58668)
+collision_layer = 2
+collision_mask = 255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.590263, 1.35298, -6.10594)
+shape = SubResource("BoxShape3D_3lcd8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.590263, 1.35298, 5.19224)
+shape = SubResource("BoxShape3D_3lcd8")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.22851, 1.35298, -0.474826)
+shape = SubResource("BoxShape3D_3lcd8")
 
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
 [connection signal="level_changed" from="LevelTransition2" to="." method="_on_level_transition_level_changed"]

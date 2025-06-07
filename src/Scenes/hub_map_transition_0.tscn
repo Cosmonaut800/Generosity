@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ce2kl2udxtysh"]
+[gd_scene load_steps=9 format=3 uid="uid://ce2kl2udxtysh"]
 
 [ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="1_qa1ry"]
 [ext_resource type="PackedScene" uid="uid://dn45mcmbvf2a8" path="res://assets/Models/Doorway.fbx" id="3_lpdmg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://di6ptsrj0yeha" path="res://assets/Materials/DoorDoorwayOff.tres" id="4_lpdmg"]
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="4_qa1ry"]
 [ext_resource type="PackedScene" uid="uid://bacgrc823sjog" path="res://src/Scenes/box_button.tscn" id="6_lpdmg"]
+[ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="8_y2md3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3edl0"]
 size = Vector3(2.34766, 1, 3.48267)
@@ -82,6 +83,81 @@ transform = Transform3D(0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, 0.353553
 [node name="Switch2" parent="." instance=ExtResource("4_qa1ry")]
 transform = Transform3D(0.900395, 0, 0.435074, 0, 1, 0, -0.435074, 0, 0.900395, 7.26967, 2.42474, -25.4771)
 
+[node name="ThirdPersonPlayer" parent="." instance=ExtResource("8_y2md3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.289, 3.54646, -1.21323)
+
+[node name="Graphics" parent="ThirdPersonPlayer" index="2"]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 0, 0, 0)
+
+[node name="Skeleton3D" parent="ThirdPersonPlayer/Graphics/WolfTraveller/root" index="0"]
+bones/1/position = Vector3(-2.50618e-11, 0.00379498, 1.01734e-05)
+bones/1/rotation = Quaternion(0.000591561, -0.00570685, 0.00149487, 0.999982)
+bones/2/rotation = Quaternion(0.701087, 0.0630706, 0.710248, 0.00680388)
+bones/3/rotation = Quaternion(3.91736e-08, -1.84364e-08, 0.20401, 0.978969)
+bones/4/rotation = Quaternion(0.613486, 0.217145, -0.409023, 0.639675)
+bones/5/rotation = Quaternion(0.0189045, 0.99955, 0.0226869, 0.0051733)
+bones/6/rotation = Quaternion(-1.00739e-07, -0.435297, -6.92649e-08, 0.900287)
+bones/7/rotation = Quaternion(3.3453e-08, -0.20735, -1.65553e-07, 0.978267)
+bones/8/rotation = Quaternion(0.725771, -0.0796325, -0.682396, 0.0353777)
+bones/9/rotation = Quaternion(1.91362e-08, 3.28266e-08, -0.238582, 0.971122)
+bones/10/rotation = Quaternion(-0.568568, 0.274111, -0.448225, -0.632999)
+bones/11/rotation = Quaternion(-0.0191084, 0.997576, 0.0667734, -0.00433347)
+bones/12/rotation = Quaternion(-1.91093e-08, 0.363733, 5.82219e-08, 0.931503)
+bones/13/rotation = Quaternion(-1.9292e-09, 0.17451, 1.07161e-08, 0.984656)
+bones/14/position = Vector3(1.68266e-10, 0.000806044, 2.43365e-05)
+bones/14/rotation = Quaternion(0.0554465, 3.45097e-06, -1.91678e-07, 0.998462)
+bones/15/position = Vector3(4.84223e-05, 0.000681583, -0.000257723)
+bones/15/rotation = Quaternion(-0.00660016, -1.34452e-09, 1.60603e-09, 0.999978)
+bones/16/position = Vector3(-5.20616e-05, 0.000743148, 0.000469302)
+bones/16/rotation = Quaternion(-0.140474, 1.42898e-14, 2.02745e-15, 0.990084)
+bones/17/position = Vector3(3.02149e-12, 0.000803724, -2.02799e-10)
+bones/17/rotation = Quaternion(0.0870804, -0.0188636, 0.000422964, 0.996023)
+bones/18/rotation = Quaternion(-0.0300457, 0.00146433, -4.40245e-05, 0.999547)
+bones/19/position = Vector3(-0.000459528, 0.000266417, -0.000118671)
+bones/19/rotation = Quaternion(-0.491635, 0.456821, 0.512779, 0.535413)
+bones/20/rotation = Quaternion(-0.5522, -0.251634, -0.212428, 0.765918)
+bones/21/rotation = Quaternion(3.36475e-08, -5.93682e-08, 0.50641, 0.862293)
+bones/22/rotation = Quaternion(0.0466204, -0.198592, 0.00162953, 0.978972)
+bones/23/rotation = Quaternion(-0.126747, -0.656605, 0.236856, 0.704772)
+bones/24/rotation = Quaternion(-0.142544, -0.0213863, -0.0556561, 0.987991)
+bones/26/position = Vector3(-0.000214326, 0.000502337, -2.44691e-05)
+bones/26/rotation = Quaternion(0.0122504, -0.0405832, -0.0250062, 0.998788)
+bones/27/rotation = Quaternion(-0.0966549, 0.0510887, 0.0409683, 0.993161)
+bones/28/rotation = Quaternion(-0.29593, 0.157345, -0.269514, 0.902791)
+bones/29/position = Vector3(-2.98535e-05, 0.000113964, -4.95265e-06)
+bones/30/rotation = Quaternion(0.0258986, 0.895142, -0.0035909, -0.445015)
+bones/31/rotation = Quaternion(-0.14667, 0.0024912, -0.0371634, 0.988484)
+bones/32/rotation = Quaternion(-0.424562, 0.00261747, -0.00514835, 0.90538)
+bones/33/rotation = Quaternion(-1.85543e-07, -0.198462, 3.9015e-08, 0.980109)
+bones/34/rotation = Quaternion(1.76206e-08, 0.206978, 4.42634e-08, 0.978346)
+bones/35/position = Vector3(0.000267876, 0.000212498, -6.37043e-05)
+bones/35/rotation = Quaternion(-0.471343, -0.47761, -0.497647, 0.54961)
+bones/36/rotation = Quaternion(-0.517594, 0.363784, 0.100639, 0.767874)
+bones/37/rotation = Quaternion(3.33468e-08, 7.71411e-08, -0.528895, 0.848687)
+bones/38/rotation = Quaternion(0.0361561, -0.0640202, 0.047924, 0.996141)
+bones/39/rotation = Quaternion(0.0353987, 0.613956, -0.232322, 0.753546)
+bones/40/rotation = Quaternion(-0.0974449, 0.0159175, 0.0202413, 0.994908)
+bones/42/position = Vector3(0.000201606, 0.000510382, -2.46987e-05)
+bones/42/rotation = Quaternion(-0.050931, 0.00166633, -0.0358987, 0.998055)
+bones/43/rotation = Quaternion(-0.0749452, -0.00730216, 0.0548797, 0.99565)
+bones/44/rotation = Quaternion(-0.292791, 0.00714712, 0.109201, 0.949894)
+bones/47/rotation = Quaternion(-0.205444, 0.00996482, 0.00957459, 0.978571)
+bones/48/rotation = Quaternion(-0.295718, 0.030675, -0.0371462, 0.95406)
+bones/49/rotation = Quaternion(2.69679e-08, -0.0659213, -3.38228e-08, 0.997825)
+bones/50/rotation = Quaternion(2.31995e-08, -0.344394, 8.96548e-08, 0.938825)
+bones/51/rotation = Quaternion(-0.738013, -0.0521773, -0.0574503, 0.670309)
+bones/52/rotation = Quaternion(0.454325, 0.0418332, -0.0653722, 0.887449)
+
+[node name="BoneAttachment3D" parent="ThirdPersonPlayer/Graphics/WolfTraveller/root/Skeleton3D" index="1"]
+transform = Transform3D(-0.529246, -0.281311, -0.800477, 0.801964, -0.473908, -0.363683, -0.277044, -0.834431, 0.476415, -0.00161279, -3.79171e-05, 0.00382658)
+
+[node name="YawPivot" parent="ThirdPersonPlayer/OrbitCamera" index="0"]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 0, 0, 0)
+
 [editable path="DoorFrames/Doorway/Interactable Door"]
 [editable path="DoorFrames/Doorway2/Interactable Door"]
 [editable path="DoorFrames/Doorway3/Interactable Door"]
+[editable path="ThirdPersonPlayer"]
+[editable path="ThirdPersonPlayer/Graphics/WolfTraveller"]
+[editable path="ThirdPersonPlayer/OrbitCamera"]
+[editable path="ThirdPersonPlayer/OrbitCamera/YawPivot/PitchPivot/Camera3D/GrapplingHook"]

@@ -1,7 +1,7 @@
 extends Node3D
 
 var player_nearby := false
-var player : Node3D = null
+@export var player : Node3D = null
 var true_position := Vector3.ZERO
 var time := 0.0
 
@@ -9,6 +9,8 @@ func _ready():
 	true_position = position
 
 func _process(delta):
+	if player:
+		look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z))
 	time += delta
 	position.y = true_position.y + 0.1 * sin(time)
 

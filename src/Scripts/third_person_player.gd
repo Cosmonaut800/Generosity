@@ -33,6 +33,7 @@ var grappling_hook : Node3D
 var pushable : RigidBody3D = null
 var push_force := 1000.0
 var respawn_position := Vector3.ZERO
+var kodama_count := 0
 
 func _ready():
 	accel = ground_accel

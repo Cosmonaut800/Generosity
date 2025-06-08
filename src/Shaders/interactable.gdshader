@@ -12,8 +12,18 @@ void vertex() {
 }
 
 void fragment() {
+	//vec4 col = texture(albedoTexture, UV);
+	/*if (col.r <= 0.0031308) col.r = clamp(col.r*12.92, 0.0f, 1.0f);
+	else col.r = clamp(1.055*pow(col.r,1.0f/2.4f)-0.055, 0.0f, 1.0f);
+	
+	if (col.g <= 0.0031308) col.g = clamp(col.g*12.92, 0.0f, 1.0f);
+	else col.g = clamp(1.055*pow(col.g,1.0f/2.4f)-0.055, 0.0f, 1.0f);
+	
+	if (col.b <= 0.0031308) col.b = clamp(col.b*12.92, 0.0f, 1.0f);
+	else col.b = clamp(1.055*pow(col.b,1.0f/2.4f)-0.055, 0.0f, 1.0f);*/
+	
 	ALBEDO = texture(albedoTexture, UV).rgb;
-	EMISSION = emissionIntensity * emissionColor.rgb * texture(emissionTexture, UV).rgb + (pulseColor * 0.5 * (1.0 + sin(TIME * timeScale)*sin(TIME * timeScale))).rgb;
+	EMISSION = emissionIntensity * emissionColor.rgb * texture(emissionTexture, UV).rgb + (pulseColor * 0.5 * (timeScale + sin(TIME * timeScale)*sin(TIME * timeScale))).rgb;
 }
 
 //void light() {

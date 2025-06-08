@@ -1,15 +1,15 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bus6igd6ci50j"]
 
 [ext_resource type="Shader" uid="uid://cds75mp1wxim2" path="res://src/Shaders/interactable.gdshader" id="1_0tib6"]
-[ext_resource type="Texture2D" uid="uid://dfiyal5i2o3yr" path="res://assets/Materials/Textures/SwitchTex.png" id="2_0tib6"]
-[ext_resource type="Texture2D" uid="uid://dv8md8ejf348j" path="res://assets/Materials/Textures/SwitchMask.png" id="3_y7crk"]
+[ext_resource type="Texture2D" uid="uid://dfiyal5i2o3yr" path="res://assets/Materials/Textures/SwitchTex.png" id="2_y7crk"]
+[ext_resource type="Texture2D" uid="uid://dv8md8ejf348j" path="res://assets/Materials/Textures/SwitchMask.png" id="3_b0lcq"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_0tib6")
-shader_parameter/albedoTexture = ExtResource("2_0tib6")
-shader_parameter/emissionTexture = ExtResource("3_y7crk")
-shader_parameter/emissionColor = Color(0.106702, 0.875328, 0, 1)
+shader_parameter/albedoTexture = ExtResource("2_y7crk")
+shader_parameter/emissionTexture = ExtResource("3_b0lcq")
+shader_parameter/emissionColor = Color(0.196078, 1, 0, 1)
 shader_parameter/emissionIntensity = 2.0
 shader_parameter/pulseColor = Color(0.4525, 0.6, 0.45, 1)
-shader_parameter/timeScale = 1.45519e-11
+shader_parameter/timeScale = 0.0

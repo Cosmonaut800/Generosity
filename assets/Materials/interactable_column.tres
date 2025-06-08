@@ -1,13 +1,15 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c61rjg34hy434"]
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://c61rjg34hy434"]
 
 [ext_resource type="Shader" uid="uid://cds75mp1wxim2" path="res://src/Shaders/interactable.gdshader" id="1_csidl"]
-[ext_resource type="Texture2D" uid="uid://dv653gp3wydng" path="res://assets/Materials/Textures/TallColRockTex.png" id="2_ywkys"]
+[ext_resource type="Texture2D" uid="uid://dv653gp3wydng" path="res://assets/Materials/Textures/TallColRockTex.png" id="2_e8k8o"]
+[ext_resource type="Texture2D" uid="uid://bjjqf8alxc0lt" path="res://assets/Materials/Textures/TallColMask.png" id="3_pw2yk"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_csidl")
-shader_parameter/albedoTexture = ExtResource("2_ywkys")
-shader_parameter/emissionColor = Color(0, 0, 0, 1)
-shader_parameter/emissionIntensity = 0.0
+shader_parameter/albedoTexture = ExtResource("2_e8k8o")
+shader_parameter/emissionTexture = ExtResource("3_pw2yk")
+shader_parameter/emissionColor = Color(0.196078, 1, 0, 1)
+shader_parameter/emissionIntensity = 2.0
 shader_parameter/pulseColor = Color(0.4525, 0.6, 0.45, 1)
 shader_parameter/timeScale = 0.0

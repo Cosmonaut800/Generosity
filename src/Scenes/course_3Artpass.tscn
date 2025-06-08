@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://fgefl2sohcrl"]
+[gd_scene load_steps=73 format=3 uid="uid://fgefl2sohcrl"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_48aqv"]
 [ext_resource type="Material" uid="uid://sxxsxlut4a4d" path="res://assets/Materials/TriplanarGrass2.tres" id="2_35xuu"]
@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://bn8xr3g26vfww" path="res://assets/Models/Flower 1.fbx" id="13_0jpog"]
 [ext_resource type="PackedScene" uid="uid://cwmq1au8jy8g4" path="res://src/Scenes/kodama.tscn" id="13_lfpqf"]
 [ext_resource type="Script" uid="uid://barah8wamrx8j" path="res://src/Scripts/level_transition.gd" id="14_jok3q"]
+[ext_resource type="Script" uid="uid://dwka8hyr5cun1" path="res://src/Scripts/turnstile.gd" id="17_noxx6"]
+[ext_resource type="AudioStream" uid="uid://cyhmneooi1ps" path="res://assets/Audio/ratchet.ogg" id="19_r1pcr"]
 [ext_resource type="PackedScene" uid="uid://bpft1p627rwr0" path="res://assets/Models/ColumnDeco.fbx" id="21_jok3q"]
 [ext_resource type="PackedScene" uid="uid://b6r1ca0y07d5j" path="res://assets/Models/Tower3.fbx" id="22_t7jn1"]
 [ext_resource type="PackedScene" uid="uid://lkcd6l333t04" path="res://assets/Models/Vine.fbx" id="23_cjc1j"]
@@ -51,6 +53,7 @@
 [ext_resource type="AudioStream" uid="uid://cnqv7q8h7foxo" path="res://assets/Audio/BGM_Choral_Intro.ogg" id="49_dgk8n"]
 [ext_resource type="AudioStream" uid="uid://idaykai5h2t8" path="res://assets/Audio/BGM_Choral_Loop.ogg" id="50_pp5jt"]
 [ext_resource type="PackedScene" uid="uid://ckhsp37mhgajp" path="res://src/Scenes/death_plane.tscn" id="51_dgk8n"]
+[ext_resource type="Script" uid="uid://drkko5ju77rpw" path="res://src/Scripts/checkpoint.gd" id="52_pp5jt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5efmu"]
 
@@ -105,6 +108,9 @@ size = Vector3(5.2627, 9.51538, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pp5jt"]
 size = Vector3(10.0114, 32.6349, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_noxx6"]
+size = Vector3(1, 4.72778, 4.5293)
 
 [node name="Course3" type="Node3D"]
 script = ExtResource("1_48aqv")
@@ -167,7 +173,7 @@ transit_time = 7.5
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("8_q4ojf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0353667, -9.12116, 15.3959)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0353667, 12.4611, 9.11908)
 
 [node name="Bridge" parent="." instance=ExtResource("9_eudii")]
 transform = Transform3D(-0.975447, 0, -0.220234, 0, 1, 0, 0.220234, 0, -0.975447, 7.35772, -3.99778, -6.2005)
@@ -238,6 +244,7 @@ transform = Transform3D(0.911905, 0, 0.410401, 0, 1, 0, -0.410401, 0, 0.911905, 
 
 [node name="Turnstile" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.657, 0)
+script = ExtResource("17_noxx6")
 
 [node name="HingeJoint3D" type="HingeJoint3D" parent="Turnstile"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.14778, 0)
@@ -286,6 +293,12 @@ transform = Transform3D(-0.00645769, 0, -0.999979, 0, 1, 0, 0.999979, 0, -0.0064
 
 [node name="GrapplePoint" parent="Turnstile/RigidBody3D" instance=ExtResource("10_62jce")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.58774, -0.260637, 0)
+
+[node name="SFX" type="AudioStreamPlayer3D" parent="Turnstile/RigidBody3D"]
+stream = ExtResource("19_r1pcr")
+volume_db = 6.0
+pitch_scale = 0.3
+attenuation_filter_cutoff_hz = 20500.0
 
 [node name="GrapplePoint" parent="." instance=ExtResource("10_62jce")]
 transform = Transform3D(0.217623, -0.706827, 0.673079, 0.956938, 0.290256, -0.00459306, -0.192119, 0.645095, 0.739556, 10.3795, 21.0962, -8.21344)
@@ -1827,7 +1840,7 @@ bus = &"Music"
 attenuation_filter_cutoff_hz = 20500.0
 
 [node name="DeathPlane" parent="." instance=ExtResource("51_dgk8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16.5455, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.9489, 0)
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 collision_layer = 2
@@ -1863,6 +1876,16 @@ shape = SubResource("BoxShape3D_pp5jt")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D3"]
 transform = Transform3D(0.696777, 0, 0.717288, 0, 1, 0, -0.717288, 0, 0.696777, 3.99955, 12.1642, 3.11042)
 shape = SubResource("BoxShape3D_pp5jt")
+
+[node name="Checkpoint" type="Area3D" parent="." node_paths=PackedStringArray("respawn_position")]
+transform = Transform3D(0.913034, 0, 0.407884, 0, 1, 0, -0.407884, 0, 0.913034, 12.4108, 16.5686, -4.10331)
+script = ExtResource("52_pp5jt")
+respawn_position = NodePath(".")
+metadata/_custom_type_script = "uid://drkko5ju77rpw"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.906128, 0)
+shape = SubResource("BoxShape3D_noxx6")
 
 [connection signal="activated" from="Elevator/Switch" to="Elevator" method="_on_switch_activated"]
 [connection signal="activated" from="MovingPlatform2/BoxButton" to="MovingPlatform2" method="_on_switch_activated"]

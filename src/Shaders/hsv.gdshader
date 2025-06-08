@@ -27,6 +27,6 @@ void fragment() {
 	color_hsv.y = min((color_hsv.y * sat_mul), 1.01);
 	color_hsv.z = min((color_hsv.z * val_mul), 1.01);
 	vec3 color_rgb = hsv2rgb(color_hsv);
-	
+
 	ALBEDO.rgb = color_rgb.rgb;
 }

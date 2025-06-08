@@ -10,13 +10,11 @@ signal activated(switch: Node3D)
 signal deactivated(switch: Node3D)
 
 func activate() -> void:
-	if toggle:
-		is_active = !is_active
-	else:
-		is_active = true
 	
-	if is_active:
+	if !is_active:
+		is_active = true
 		sfx.play()
 		activated.emit(self)
-	else:
+	elif toggle:
+		is_active = false
 		deactivated.emit(self)

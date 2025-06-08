@@ -29,6 +29,8 @@
 [ext_resource type="PackedScene" uid="uid://bnt0auahi0h13" path="res://assets/Models/Roots.fbx" id="24_ybjnu"]
 [ext_resource type="PackedScene" uid="uid://dg0tlbor7atts" path="res://assets/Models/Axe.fbx" id="29_ge0i3"]
 [ext_resource type="PackedScene" uid="uid://dn45mcmbvf2a8" path="res://assets/Models/Doorway.fbx" id="29_w8ggu"]
+[ext_resource type="PackedScene" uid="uid://bllt8odmykx0g" path="res://assets/Materials/Particles/Dust.tscn" id="31_py842"]
+[ext_resource type="PackedScene" uid="uid://c0type32q1fqs" path="res://assets/Materials/Particles/god_ray.tscn" id="32_uynjs"]
 [ext_resource type="Script" uid="uid://bbtk6x56blpc1" path="res://src/Scripts/music_loop.gd" id="31_nqe4l"]
 [ext_resource type="AudioStream" uid="uid://v5qa1ta006rt" path="res://assets/Audio/BGM_Serene_Intro.ogg" id="31_uynjs"]
 [ext_resource type="AudioStream" uid="uid://c7rs76xs4ydm0" path="res://assets/Audio/BGM_Serene_Loop.ogg" id="32_nqe4l"]
@@ -823,6 +825,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.8208, 0)
 
 [node name="Tree" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4412, 9.57463, 13.4023)
+
+[node name="Fragment" parent="." instance=ExtResource("31_py842")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12083, 5.46532, 13.4779)
+
+[node name="Fragment2" parent="." instance=ExtResource("31_py842")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9639, 8.88882, 18.6417)
+
+[node name="GodRay" parent="." instance=ExtResource("32_uynjs")]
+transform = Transform3D(-5.85889, 3.26896, -34.5951, -5.25018, 46.7889, 15.7692, 7.12885, 37.1452, -16.8187, -22.6162, 9.6228, 17.7601)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Tree"]
 visible = false

@@ -1,0 +1,29 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=4 format=3 uid="uid://c4hev7473g6cm"]
+
+[ext_resource type="Texture2D" uid="uid://d4elib0phudl" path="res://assets/Materials/Particles/BellCurve.tres" id="1_e12qm"]
+
+[sub_resource type="Curve" id="Curve_ejmbe"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.0326336, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_merd1"]
+curve = SubResource("Curve_ejmbe")
+
+[resource]
+emission_shape_scale = Vector3(2.585, 0.755, 2.62)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 2, 0)
+radial_accel_min = 2.0
+radial_accel_max = 2.0
+scale_min = 0.2
+scale_max = 0.5
+alpha_curve = ExtResource("1_e12qm")
+turbulence_enabled = true
+turbulence_noise_strength = 20.0
+turbulence_noise_scale = 7.685
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.368
+turbulence_initial_displacement_min = 1.49012e-06
+turbulence_initial_displacement_max = 1.49012e-06
+turbulence_influence_over_life = SubResource("CurveTexture_merd1")

@@ -34,6 +34,10 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
+"Dirt": {
+"use_external/enabled": true,
+"use_external/path": "uid://cbig5cxb6id47"
+},
 "grass1": {
 "use_external/enabled": true,
 "use_external/path": "uid://bgf5gc0dxl8qg"

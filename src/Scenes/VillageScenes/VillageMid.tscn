@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://krlwrcmldcmr"]
+
+[ext_resource type="Environment" uid="uid://wsy8fj751nfs" path="res://assets/VillageMid.tres" id="1_5fml7"]
+[ext_resource type="PackedScene" uid="uid://br27m7mb1g3r2" path="res://assets/Models/Characters/DogNPC.fbx" id="2_n7y5h"]
+[ext_resource type="PackedScene" uid="uid://v5s1gch7apbr" path="res://assets/Models/Characters/SquirrelNPC.fbx" id="3_tfqqy"]
+[ext_resource type="PackedScene" uid="uid://b47nmpt8vhlg3" path="res://assets/Models/Characters/BunnyNPC.fbx" id="4_p5n4h"]
+
+[node name="VillageMid" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_5fml7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.834954, -0.542359, -0.0932695, 0.0573538, -0.0828001, 0.994915, -0.547324, -0.836057, -0.0380279, 0, 12.1965, 0)
+light_color = Color(0.89, 0.862707, 0.4806, 1)
+shadow_enabled = true
+directional_shadow_mode = 0
+
+[node name="DogNPC" parent="." instance=ExtResource("2_n7y5h")]
+transform = Transform3D(0.773531, 0, 0.633759, 0, 1, 0, -0.633759, 0, 0.773531, 29.2728, 0, -2.51163)
+
+[node name="DogNPC2" parent="." instance=ExtResource("2_n7y5h")]
+transform = Transform3D(-0.241735, 0, 1.18902, 0, 1.21334, 0, -1.18902, 0, -0.241735, 28.8242, 0, -2.13888)
+
+[node name="SquirrelNPC" parent="." instance=ExtResource("3_tfqqy")]
+transform = Transform3D(0.971442, 0, -0.237279, 0, 1, 0, 0.237279, 0, 0.971442, 14.5204, -0.0444586, 4.54807)
+
+[node name="BunnyNPC" parent="." instance=ExtResource("4_p5n4h")]
+transform = Transform3D(0.873849, 0, 0.486198, 0, 1, 0, -0.486198, 0, 0.873849, 23.2781, -0.148768, 19.0026)

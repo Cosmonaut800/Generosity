@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyj0bhq10kyce"
-path.s3tc="res://.godot/imported/MultiVinesPurp.png-be40876769570fbbe9843646a5a5d6c1.s3tc.ctex"
+uid="uid://c8itgokyyqe3w"
+path.s3tc="res://.godot/imported/WellTex.png-43a045c3f37841843ce1a6e5c48e82e3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Materials/Textures/MultiVinesPurp.png"
-dest_files=["res://.godot/imported/MultiVinesPurp.png-be40876769570fbbe9843646a5a5d6c1.s3tc.ctex"]
+source_file="res://assets/Materials/Textures/WellTex.png"
+dest_files=["res://.godot/imported/WellTex.png-43a045c3f37841843ce1a6e5c48e82e3.s3tc.ctex"]
 
 [params]
 

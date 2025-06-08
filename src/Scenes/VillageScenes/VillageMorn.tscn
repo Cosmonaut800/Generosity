@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4rvmblkeug6b"]
+
+[ext_resource type="Environment" uid="uid://c5qu6qq326wkt" path="res://assets/VillageNight.tres" id="1_jxp5o"]
+[ext_resource type="PackedScene" uid="uid://v5s1gch7apbr" path="res://assets/Models/Characters/SquirrelNPC.fbx" id="3_b0cvk"]
+[ext_resource type="PackedScene" uid="uid://b47nmpt8vhlg3" path="res://assets/Models/Characters/BunnyNPC.fbx" id="4_k4ugi"]
+
+[node name="VillageMorn" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_jxp5o")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.37943, 0.802931, 0.459712, 0.74219, -0.560813, 0.366937, 0.552438, 0.201966, -0.808716, 0, 12.1965, 0)
+light_color = Color(0.73417, 0.813643, 0.570072, 1)
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 82.0
+
+[node name="SquirrelNPC" parent="." instance=ExtResource("3_b0cvk")]
+transform = Transform3D(0.987253, 0, -0.159158, 0, 1, 0, 0.159158, 0, 0.987253, 21.5446, 1.11601, -0.901118)
+
+[node name="BunnyNPC" parent="." instance=ExtResource("4_k4ugi")]
+transform = Transform3D(0.529742, 0, 0.848159, 0, 1, 0, -0.848159, 0, 0.529742, 13.7442, -4.76837e-07, 4.36276)

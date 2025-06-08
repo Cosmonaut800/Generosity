@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdf52mv3bipoq"
-path.s3tc="res://.godot/imported/DogKid_0.png-9881146ace2ac8cadf55206f099c4108.s3tc.ctex"
+uid="uid://bhq56asd1ihla"
+path.s3tc="res://.godot/imported/DustPart.png-6c61abf0779539ceedf7ff958310c84f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "2927f41f1cac0fda764ba90c7601671e"
-}
 
 [deps]
 
-source_file="res://assets/Models/Characters/DogKid_0.png"
-dest_files=["res://.godot/imported/DogKid_0.png-9881146ace2ac8cadf55206f099c4108.s3tc.ctex"]
+source_file="res://assets/Materials/Textures/DustPart.png"
+dest_files=["res://.godot/imported/DustPart.png-6c61abf0779539ceedf7ff958310c84f.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dxc0gp22nilcw"]
+
+[ext_resource type="Texture2D" uid="uid://y0bknf3k8bfk" path="res://assets/Materials/Textures/GodrayTex.png" id="1_4eppr"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.91, 0.8554, 0.8008, 0.14902)
+albedo_texture = ExtResource("1_4eppr")
+disable_receive_shadows = true
+billboard_keep_scale = true
+proximity_fade_distance = 2675.44
+distance_fade_mode = 1
+distance_fade_max_distance = 30.0

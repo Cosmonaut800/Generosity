@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ckgxr4l2gm7i4"]
+[gd_scene load_steps=27 format=3 uid="uid://ckgxr4l2gm7i4"]
 
 [ext_resource type="PackedScene" uid="uid://dtj0ym1dddhvx" path="res://assets/Models/TreeDead.tscn" id="1_kjven"]
 [ext_resource type="PackedScene" uid="uid://cwyfx4j75o5ry" path="res://assets/Models/Tree.fbx" id="2_e7lcl"]
@@ -7,9 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://duptw1xs14d14" path="res://assets/Models/GrassBlades.tscn" id="5_61kcn"]
 [ext_resource type="PackedScene" uid="uid://c80vmfej6t7mp" path="res://assets/Models/vinepurp.tscn" id="7_up3tf"]
 [ext_resource type="PackedScene" uid="uid://bn8xr3g26vfww" path="res://assets/Models/Flower 1.fbx" id="8_1vbsk"]
-[ext_resource type="Texture2D" uid="uid://iqyrgeai3d53" path="res://assets/BellCurve.tres" id="8_61kcn"]
+[ext_resource type="Texture2D" uid="uid://iqyrgeai3d53" path="res://assets/WavyCurve.tres" id="8_61kcn"]
 [ext_resource type="Texture2D" uid="uid://bqoqweij6c4mc" path="res://assets/Materials/Textures/Fragments.png" id="9_i5rxb"]
 [ext_resource type="PackedScene" uid="uid://b55bhyvjnvrwf" path="res://assets/Models/Flower 2.fbx" id="9_wqyi8"]
+[ext_resource type="PackedScene" uid="uid://0an3vhevx8eh" path="res://assets/Materials/Particles/fragment.tscn" id="10_jg4yq"]
 [ext_resource type="PackedScene" uid="uid://b5fx24blmtvls" path="res://assets/Models/Flower 3.fbx" id="10_noif7"]
 [ext_resource type="Material" uid="uid://b0brdkq045t6t" path="res://assets/Materials/Glow.tres" id="10_op7od"]
 [ext_resource type="PackedScene" uid="uid://br27m7mb1g3r2" path="res://assets/Models/Characters/DogNPC.fbx" id="14_jg4yq"]
@@ -965,13 +966,8 @@ transform = Transform3D(-0.279009, -0.215384, -0.404856, -0.264647, 0.462648, -0
 
 [node name="Particle Effects" type="Node3D" parent="."]
 
-[node name="Fragment" type="GPUParticles3D" parent="Particle Effects"]
+[node name="Fragment" parent="Particle Effects" instance=ExtResource("10_jg4yq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4972, 0.770324, 9.45962)
-amount = 5
-lifetime = 2.0
-randomness = 1.0
-process_material = SubResource("ParticleProcessMaterial_up3tf")
-draw_pass_1 = SubResource("QuadMesh_wqyi8")
 
 [node name="Fragment2" type="GPUParticles3D" parent="Particle Effects"]
 transform = Transform3D(7.79664, 0, 0, 0, 4.79169, 0, 0, 0, 8.73182, 19.871, 4.43009, 9.06186)

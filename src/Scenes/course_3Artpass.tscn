@@ -298,6 +298,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.58774, -0.260637, 0)
 stream = ExtResource("19_r1pcr")
 volume_db = 6.0
 pitch_scale = 0.3
+bus = &"SFX"
 attenuation_filter_cutoff_hz = 20500.0
 
 [node name="GrapplePoint" parent="." instance=ExtResource("10_62jce")]

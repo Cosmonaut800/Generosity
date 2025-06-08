@@ -27,7 +27,7 @@ func _process(_delta):
 	
 	if attached:
 		graphics.global_position = attach_point.global_position
-		if Input.is_action_just_released("fire"):
+		if !Input.is_action_pressed("fire"):
 			if tween == null or !tween.is_running():
 				tween = create_tween()
 				detach()

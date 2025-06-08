@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://coa7p2dp2mdg4"
-path="res://.godot/imported/well.fbx-62e47aeec66e7c6c3ae625fe393022ca.scn"
+uid="uid://v5s1gch7apbr"
+path="res://.godot/imported/SquirrelNPC.fbx-c27afd845e041e8a361b58afede07a30.scn"
 
 [deps]
 
-source_file="res://assets/Models/well.fbx"
-dest_files=["res://.godot/imported/well.fbx-62e47aeec66e7c6c3ae625fe393022ca.scn"]
+source_file="res://assets/Models/Characters/SquirrelNPC.fbx"
+dest_files=["res://.godot/imported/SquirrelNPC.fbx-c27afd845e041e8a361b58afede07a30.scn"]
 
 [params]
 
@@ -34,9 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Well": {
+"NPC": {
 "use_external/enabled": true,
-"use_external/path": "uid://bhovutqmkyed"
+"use_external/path": "uid://3r4x7rskddct"
 }
 }
 }

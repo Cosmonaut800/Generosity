@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c80vmfej6t7mp"]
+
+[ext_resource type="PackedScene" uid="uid://lkcd6l333t04" path="res://assets/Models/Vine.fbx" id="1_kcwx4"]
+[ext_resource type="Material" uid="uid://bvdrym8gbmh7x" path="res://assets/Materials/MultiVinePurp.tres" id="2_hehru"]
+
+[node name="Vine" instance=ExtResource("1_kcwx4")]
+
+[node name="Vines" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_hehru")

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dn03o2jn2cpih"
-path="res://.godot/imported/DogKid.fbx-66f0c4698873ff8a3571b46188f8e977.scn"
+uid="uid://bmc1g0j1wjvqu"
+path="res://.godot/imported/InteractableBox2.fbx-ae656bd0ae6bfc38c51cb3ee69d03ec0.scn"
 
 [deps]
 
-source_file="res://assets/Models/Characters/DogKid.fbx"
-dest_files=["res://.godot/imported/DogKid.fbx-66f0c4698873ff8a3571b46188f8e977.scn"]
+source_file="res://assets/Models/InteractableBox2.fbx"
+dest_files=["res://.godot/imported/InteractableBox2.fbx-ae656bd0ae6bfc38c51cb3ee69d03ec0.scn"]
 
 [params]
 
@@ -34,9 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"NPC": {
+"ZenUV_Generic_Material.002": {
 "use_external/enabled": true,
-"use_external/path": "uid://cbdgw6w44c50e"
+"use_external/path": "uid://cq6a6nbiufrtu"
 }
 }
 }

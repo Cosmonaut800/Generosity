@@ -173,7 +173,7 @@ transit_time = 7.5
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("8_q4ojf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0353667, 12.4611, 9.11908)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0353657, -9.25325, 15.7219)
 
 [node name="Bridge" parent="." instance=ExtResource("9_eudii")]
 transform = Transform3D(-0.975447, 0, -0.220234, 0, 1, 0, 0.220234, 0, -0.975447, 7.35772, -3.99778, -6.2005)

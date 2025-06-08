@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkdjo5054nh2f"]
+[gd_scene load_steps=12 format=3 uid="uid://dkdjo5054nh2f"]
 
 [ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="1_0doxx"]
+[ext_resource type="Script" uid="uid://des8xe3t7ejar" path="res://src/Scripts/subworld.gd" id="1_r3too"]
 [ext_resource type="PackedScene" uid="uid://dn45mcmbvf2a8" path="res://assets/Models/Doorway.fbx" id="2_5xtms"]
 [ext_resource type="PackedScene" uid="uid://5id56smrjsja" path="res://assets/Models/Interactable Door.fbx" id="3_721m0"]
 [ext_resource type="PackedScene" uid="uid://brdh8um8v542x" path="res://src/Scenes/moving_platform.tscn" id="4_5xtms"]
@@ -14,6 +15,7 @@
 size = Vector3(2.34766, 1, 3.48267)
 
 [node name="HubMapTransition3" type="Node3D"]
+script = ExtResource("1_r3too")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_0doxx")

@@ -6,7 +6,8 @@ var world_templates : Array[Resource] =\
 [	preload("res://src/Scenes/hub_map.tscn"),
 	preload("res://src/Scenes/course_1Artpass.tscn"),
 	preload("res://src/Scenes/course_2Artpass.tscn"),
-	preload("res://src/Scenes/course_3Artpass.tscn")]
+	preload("res://src/Scenes/course_3Artpass.tscn"),
+	preload("res://src/Scenes/VillageScenes/Villagebase.tscn")]
 var world : Node3D
 var subworld : Node3D
 var current_index := 0
@@ -41,6 +42,7 @@ func load_world(world_template: Resource):
 		subworld = world.subworlds[current_config-1].instantiate()
 		subworld.set_process_mode(Node.PROCESS_MODE_PAUSABLE)
 		world.add_child(subworld)
+		subworld.world_changed.connect(_on_world_changed)
 	
 	#Do something similar for the village to account for kodama
 	#if current_index == 1: //or whatever the village index is

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkglvypeexyb4"]
 
 [ext_resource type="Script" uid="uid://cs6qjglciutn3" path="res://src/Scripts/moveable_block.gd" id="1_osgdk"]
-[ext_resource type="PackedScene" uid="uid://b7c7fstwqmngf" path="res://assets/Models/InteractableRock.glb" id="2_rtx3p"]
+[ext_resource type="PackedScene" uid="uid://bmc1g0j1wjvqu" path="res://assets/Models/InteractableBox2.fbx" id="3_atonl"]
 [ext_resource type="AudioStream" uid="uid://bko0vsxx2hxjj" path="res://assets/Audio/rock_push.ogg" id="3_qm2p5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_osgdk"]
@@ -20,11 +20,11 @@ script = ExtResource("1_osgdk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_osgdk")
 
-[node name="Graphics" parent="." instance=ExtResource("2_rtx3p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45519e-11, -1, 1.45519e-11)
-
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.20513, 0)
 stream = ExtResource("3_qm2p5")
 bus = &"SFX"
 attenuation_filter_cutoff_hz = 20500.0
+
+[node name="InteractableBox2" parent="." instance=ExtResource("3_atonl")]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, -1.015, 0)

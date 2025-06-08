@@ -4,8 +4,12 @@ extends Control
 @onready var speaker_label := $SpeechBox/SpeakerBox/SpeakerLabel
 @onready var arrow_image := $SpeechBox/Arrow
 @onready var stop_image := $SpeechBox/Stop
+@onready var filter_timer := $Filter
 
+var can_advance := false
 var text_queue = []
+
+signal finished
 
 const TEXTS = {"LUMBERJACK_1": {speaker = "Lumberjack", speech = "I wish I didn't lose my axe. I was out chopping wood when I heard a noise that scared me off. I left my axe behind in the hurry, I don't know how I'm going to find it...", is_end = false},
 	"LUMBERJACK_2": {speaker = "Traveler", speech = "(I saw an axe on the way into town, that can't be a coincidence. I should go fetch it.)", is_end = true},
@@ -39,31 +43,24 @@ func hide_text():
 	speech_label.visible_ratio = 0.0
 
 func display_text_box(text_index: String):
+	can_advance = true
 	text_queue.push_back(text_index)
 	if !visible:
 		show_text(text_queue.pop_front())
 
 func display_next_text():
+	can_advance = false
+	filter_timer.start()
 	if text_queue.size() <= 0:
 		hide_text()
-		#Triggers for events can go here
+		finished.emit()
 	else:
 		show_text(text_queue.pop_front())
 
 func _input(event):
-	if event.is_action_pressed("jump"):
-		display_text_box("LUMBERJACK_1")
-		display_text_box("LUMBERJACK_2")
-		display_text_box("LUMBERJACK_3")
-		display_text_box("OLD_WOMAN_1")
-		display_text_box("OLD_WOMAN_2")
-		display_text_box("OLD_WOMAN_3")
-		display_text_box("FAMILY_1")
-		display_text_box("FAMILY_2")
-		display_text_box("FAMILY_3")
-		display_text_box("FAMILY_4")
-		display_text_box("FAMILY_5")
-		display_text_box("FAMILY_6")
-	
-	if event.is_action_pressed("fire"):
+	if can_advance and event.is_action_pressed("fire"):
 		display_next_text()
+
+func _on_filter_timeout() -> void:
+	print("Can advance")
+	can_advance = true

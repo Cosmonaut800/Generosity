@@ -4,7 +4,7 @@ render_mode world_vertex_coords;
 uniform sampler2D albedoTexture : source_color, filter_nearest;
 uniform sampler2D emissionTexture : source_color, filter_nearest;
 uniform vec4 emissionColor : source_color = vec4(0.0f, 0.0f, 0.0f, 1.0f);
-uniform float emissionIntensity;
+uniform float emissionIntensity = 1.0f;
 uniform vec4 pulseColor : source_color = vec4(1.0f, 1.0f, 1.0f, 1.0f);
 uniform float timeScale = 1.0f;
 

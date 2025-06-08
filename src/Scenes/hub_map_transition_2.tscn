@@ -42,6 +42,7 @@ transform = Transform3D(-0.777817, 0, 0.777817, 0, 1.1, 0, -0.777817, 0, -0.7778
 [node name="MovingPlatform" parent="DoorFrames/Doorway2" node_paths=PackedStringArray("waypoints") instance=ExtResource("4_ecrvf")]
 transform = Transform3D(1, -2.98023e-08, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.44089e-16, 1.64811, 9.9341e-09)
 waypoints = [NodePath("../PlatformWaypoint")]
+loop_path = false
 
 [node name="Interactable Door" parent="DoorFrames/Doorway2/MovingPlatform" instance=ExtResource("3_ecrvf")]
 transform = Transform3D(1, 0, -5.96046e-08, 2.98023e-08, -4.37114e-08, -1, 1.77636e-15, 1, -4.37114e-08, 0, 0, -1.64811)

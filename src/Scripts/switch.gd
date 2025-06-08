@@ -2,6 +2,8 @@ extends Node3D
 
 @export var toggle := false
 
+@onready var sfx := $AudioStreamPlayer3D
+
 var is_active := false
 
 signal activated(switch: Node3D)
@@ -14,6 +16,7 @@ func activate() -> void:
 		is_active = true
 	
 	if is_active:
+		sfx.play()
 		activated.emit(self)
 	else:
 		deactivated.emit(self)

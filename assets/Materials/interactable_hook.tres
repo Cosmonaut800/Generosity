@@ -1,11 +1,15 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cu5ipqit4rw3h"]
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cu5ipqit4rw3h"]
 
 [ext_resource type="Shader" uid="uid://cds75mp1wxim2" path="res://src/Shaders/interactable.gdshader" id="1_q775s"]
 [ext_resource type="Texture2D" uid="uid://wr8nr3ff6n73" path="res://assets/Materials/Textures/HookHandleTex.png" id="2_q775s"]
+[ext_resource type="Texture2D" uid="uid://dyaelxcldky7r" path="res://assets/Materials/Textures/HandleMask.png" id="3_coktq"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_q775s")
 shader_parameter/albedoTexture = ExtResource("2_q775s")
+shader_parameter/emissionTexture = ExtResource("3_coktq")
+shader_parameter/emissionColor = Color(0.12791, 0.997364, 0, 1)
+shader_parameter/emissionIntensity = 2.0
 shader_parameter/pulseColor = Color(0.4525, 0.6, 0.45, 1)
 shader_parameter/timeScale = 1.45519e-11

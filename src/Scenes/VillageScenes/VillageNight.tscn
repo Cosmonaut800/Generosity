@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://7h72qffof2bi"]
+[gd_scene load_steps=5 format=3 uid="uid://7h72qffof2bi"]
 
 [ext_resource type="Environment" uid="uid://c5qu6qq326wkt" path="res://assets/VillageNight.tres" id="1_febhs"]
 [ext_resource type="PackedScene" uid="uid://v5s1gch7apbr" path="res://assets/Models/Characters/SquirrelNPC.fbx" id="2_a4v5l"]
 [ext_resource type="PackedScene" uid="uid://br27m7mb1g3r2" path="res://assets/Models/Characters/DogNPC.fbx" id="3_cbxwu"]
 [ext_resource type="PackedScene" uid="uid://b47nmpt8vhlg3" path="res://assets/Models/Characters/BunnyNPC.fbx" id="4_0jmgn"]
-[ext_resource type="PackedScene" uid="uid://cql7itdc5wul8" path="res://src/Scenes/VillageScenes/Villagebase.tscn" id="5_cbxwu"]
 
 [node name="VillageNight" type="Node3D"]
 
@@ -62,5 +61,3 @@ transform = Transform3D(-0.984941, 0, 0.172892, 0, 1, 0, -0.172892, 0, -0.984941
 
 [node name="BunnyNPC2" parent="." instance=ExtResource("4_0jmgn")]
 transform = Transform3D(0.288564, 0, 0.957461, 0, 1, 0, -0.957461, 0, 0.288564, 12.9752, 0, 4.07873)
-
-[node name="VillageBase" parent="." instance=ExtResource("5_cbxwu")]

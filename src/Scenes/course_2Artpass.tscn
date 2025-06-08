@@ -103,7 +103,7 @@ environment = ExtResource("2_yfmkw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.834954, -0.542359, -0.0932695, 0.0573538, -0.0828001, 0.994915, -0.547324, -0.836057, -0.0380279, 0, 12.1965, 0)
-light_color = Color(0.89, 0.862707, 0.4806, 1)
+light_color = Color(0.847839, 0.861578, 0.686279, 1)
 shadow_enabled = true
 directional_shadow_mode = 0
 

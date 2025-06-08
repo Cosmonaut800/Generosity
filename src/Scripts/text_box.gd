@@ -62,5 +62,4 @@ func _input(event):
 		display_next_text()
 
 func _on_filter_timeout() -> void:
-	print("Can advance")
 	can_advance = true

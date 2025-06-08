@@ -92,7 +92,7 @@ environment = ExtResource("2_w8ggu")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.836114, -0.529839, 0.14207, -0.0486009, 0.186421, 0.981267, -0.546398, -0.827356, 0.130119, 0, 12.1965, 0)
-light_color = Color(0.89, 0.89, 0.4806, 1)
+light_color = Color(0.76565, 0.754838, 0.714615, 1)
 shadow_enabled = true
 directional_shadow_mode = 0
 directional_shadow_blend_splits = true

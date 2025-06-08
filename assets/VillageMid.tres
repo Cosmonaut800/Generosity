@@ -1,7 +1,7 @@
 [gd_resource type="Environment" load_steps=3 format=3 uid="uid://wsy8fj751nfs"]
 
-[ext_resource type="Texture2D" uid="uid://bdwb0guc5gp71" path="res://assets/Materials/Textures/sample_map_color_correction.tres" id="1_oa45p"]
-[ext_resource type="Sky" uid="uid://kikd5bdvfmcb" path="res://assets/sky.tres" id="2_oteje"]
+[ext_resource type="Texture2D" uid="uid://b4i13cl3oltjs" path="res://assets/Materials/Textures/midday_color_correction.tres" id="1_oa45p"]
+[ext_resource type="Sky" uid="uid://d1ti1l4kqywul" path="res://assets/middaysky.tres" id="2_oteje"]
 
 [resource]
 background_mode = 2

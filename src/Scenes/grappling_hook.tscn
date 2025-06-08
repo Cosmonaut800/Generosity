@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbhexnglp5diq"]
+[gd_scene load_steps=9 format=3 uid="uid://bbhexnglp5diq"]
 
 [ext_resource type="Script" uid="uid://dxq7vj8mc14op" path="res://src/Scripts/grappling_hook.gd" id="1_xyle6"]
+[ext_resource type="AudioStream" uid="uid://c8b8ort7axjfu" path="res://assets/Audio/click3.ogg" id="2_7oaxt"]
+[ext_resource type="AudioStream" uid="uid://dg2s2y4xygepm" path="res://assets/Audio/zip1.ogg" id="3_r1mrt"]
+[ext_resource type="AudioStream" uid="uid://ti2vwwo3hpqk" path="res://assets/Audio/zip2.ogg" id="4_ggirt"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_7jq4s"]
 radius = 0.2
@@ -30,7 +33,7 @@ script = ExtResource("1_xyle6")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 visible = false
-target_position = Vector3(1.45519e-11, 1.45519e-11, -20)
+target_position = Vector3(0, 0, -15)
 collision_mask = 110
 
 [node name="VisualizeTargetDistance" type="MeshInstance3D" parent="."]
@@ -41,6 +44,12 @@ mesh = SubResource("SphereMesh_7jq4s")
 [node name="Graphics" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_p37ot")
 
+[node name="Attach" type="AudioStreamPlayer3D" parent="Graphics"]
+stream = ExtResource("2_7oaxt")
+max_distance = 20.0
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 20500.0
+
 [node name="RopeParent" type="Node3D" parent="."]
 
 [node name="Rope" type="MeshInstance3D" parent="RopeParent"]
@@ -48,3 +57,17 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 mesh = SubResource("CylinderMesh_xyle6")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_7jq4s")
+
+[node name="Extend" type="AudioStreamPlayer3D" parent="RopeParent/Rope"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, -2.18557e-08)
+stream = ExtResource("3_r1mrt")
+volume_db = -18.0
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="Retract" type="AudioStreamPlayer3D" parent="RopeParent/Rope"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, -2.18557e-08)
+stream = ExtResource("4_ggirt")
+volume_db = -18.0
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 20500.0

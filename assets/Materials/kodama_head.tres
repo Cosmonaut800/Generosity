@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cugb4whi2rely"]
+
+[ext_resource type="Shader" uid="uid://do6jftkmahrb6" path="res://src/Shaders/thermal_view.gdshader" id="1_prxrj"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_prxrj")
+shader_parameter/hotspotPos = 0.0
+shader_parameter/hotspotRadius = 0.25
+shader_parameter/hotspotAtten = 1.0

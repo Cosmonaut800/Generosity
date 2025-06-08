@@ -1,11 +1,11 @@
 [gd_resource type="Environment" load_steps=3 format=3 uid="uid://q0v8u0vbiwpp"]
 
-[ext_resource type="Texture2D" uid="uid://bdwb0guc5gp71" path="res://assets/Materials/Textures/sample_map_color_correction.tres" id="1_8v60v"]
-[ext_resource type="Sky" uid="uid://kikd5bdvfmcb" path="res://assets/sky.tres" id="2_04fh8"]
+[ext_resource type="Texture2D" uid="uid://b4i13cl3oltjs" path="res://assets/Materials/Textures/midday_color_correction.tres" id="1_8v60v"]
+[ext_resource type="Sky" uid="uid://d1ti1l4kqywul" path="res://assets/middaysky.tres" id="2_8v60v"]
 
 [resource]
 background_mode = 2
-sky = ExtResource("2_04fh8")
+sky = ExtResource("2_8v60v")
 ambient_light_source = 2
 ambient_light_color = Color(0.56961, 0.797003, 1, 1)
 reflected_light_source = 2

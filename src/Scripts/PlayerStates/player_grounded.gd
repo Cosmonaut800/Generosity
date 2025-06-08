@@ -12,7 +12,7 @@ func run_current_state(delta: float) -> State:
 	parent.reset_anim_conditions()
 	parent.player.anim_tree.set("parameters/conditions/grounded", true)
 	
-	if !parent.player.direction:
+	if !parent.player.direction or parent.player.velocity.length() < 0.01:
 		parent.player.decelerate(delta)
 		parent.player.anim_tree.set("parameters/conditions/idling", true)
 	else:

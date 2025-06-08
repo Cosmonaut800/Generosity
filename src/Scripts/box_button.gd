@@ -1,8 +1,9 @@
 extends Node3D
 
-@export var stay_activated := false
+@export var stay_activated := true
 
 @onready var button_graphics := $BaseGraphics/ButtonGraphics
+@onready var sfx := $AudioStreamPlayer3D
 
 var is_active := false
 var button_default_height := 0.1
@@ -18,6 +19,7 @@ func activate() -> void:
 	activated.emit(self)
 	var tween = create_tween()
 	tween.tween_property(button_graphics, "position:y", button_default_height - 0.12, 0.1)
+	sfx.play()
 
 func deactivate() -> void:
 	is_active = false
@@ -26,7 +28,7 @@ func deactivate() -> void:
 	tween.tween_property(button_graphics, "position:y", button_default_height, 0.1)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	activate()
+	if !is_active: activate()
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
-	deactivate()
+	if ! stay_activated: deactivate()

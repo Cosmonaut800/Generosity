@@ -1,12 +1,12 @@
 [gd_resource type="Environment" load_steps=3 format=3 uid="uid://c5qu6qq326wkt"]
 
-[ext_resource type="Texture2D" uid="uid://bdwb0guc5gp71" path="res://assets/Materials/Textures/sample_map_color_correction.tres" id="1_lie5g"]
-[ext_resource type="Sky" uid="uid://kikd5bdvfmcb" path="res://assets/sky.tres" id="2_64eqt"]
+[ext_resource type="Texture2D" uid="uid://f0qt0dp4nmwt" path="res://assets/Materials/Textures/night_color_correction.tres" id="1_lie5g"]
+[ext_resource type="Sky" uid="uid://clrcbsoh1qhav" path="res://assets/nightsky.tres" id="2_lie5g"]
 
 [resource]
 background_mode = 2
 background_energy_multiplier = 0.9
-sky = ExtResource("2_64eqt")
+sky = ExtResource("2_lie5g")
 ambient_light_source = 2
 ambient_light_color = Color(0.56961, 0.797003, 1, 1)
 ambient_light_energy = 0.9

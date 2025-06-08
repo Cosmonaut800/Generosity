@@ -1,9 +1,13 @@
-[gd_scene load_steps=29 format=3 uid="uid://cql7itdc5wul8"]
+[gd_scene load_steps=33 format=3 uid="uid://cql7itdc5wul8"]
 
+[ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_dwcof"]
 [ext_resource type="Material" uid="uid://n6mhxn7dkdtg" path="res://assets/Materials/TriplanarGrass.tres" id="1_ytd28"]
 [ext_resource type="Material" uid="uid://ce8ungq22oiil" path="res://assets/Materials/TreeRender3.tres" id="2_dwcof"]
+[ext_resource type="PackedScene" uid="uid://b4rvmblkeug6b" path="res://src/Scenes/VillageScenes/VillageMorn.tscn" id="2_okwkb"]
 [ext_resource type="Material" uid="uid://cqsiq7o3b57hv" path="res://assets/Materials/TreeRender.tres" id="3_okwkb"]
+[ext_resource type="PackedScene" uid="uid://krlwrcmldcmr" path="res://src/Scenes/VillageScenes/VillageMid.tscn" id="3_pjvn5"]
 [ext_resource type="Material" uid="uid://cbig5cxb6id47" path="res://assets/Materials/Stone.tres" id="4_pjvn5"]
+[ext_resource type="PackedScene" uid="uid://7h72qffof2bi" path="res://src/Scenes/VillageScenes/VillageNight.tscn" id="5_5k7dg"]
 [ext_resource type="PackedScene" uid="uid://crwsk8qekur3g" path="res://assets/Models/ColArray.fbx" id="5_b16jr"]
 [ext_resource type="PackedScene" uid="uid://coa7p2dp2mdg4" path="res://assets/Models/well.fbx" id="8_y3f4b"]
 [ext_resource type="PackedScene" uid="uid://cwyfx4j75o5ry" path="res://assets/Models/Tree.fbx" id="9_4hu4j"]
@@ -31,6 +35,8 @@
 [sub_resource type="PlaneMesh" id="PlaneMesh_eelmq"]
 
 [node name="VillageBase" type="Node3D"]
+script = ExtResource("1_dwcof")
+subworlds = Array[Resource]([ExtResource("2_okwkb"), ExtResource("3_pjvn5"), ExtResource("24_6525c"), ExtResource("5_5k7dg")])
 
 [node name="kodama Number" type="Node3D" parent="."]
 
@@ -289,4 +295,6 @@ transform = Transform3D(-0.921259, 0, -0.672459, 0, 0.789181, 0, 1.62713, 0, -0.
 [node name="House6" parent="Houses" instance=ExtResource("28_gv2e0")]
 transform = Transform3D(-1.67622, 0, -0.342438, 0, 0.789181, 0, 0.828586, 0, -0.692747, -21.515, 0.590831, -35.3522)
 
-[node name="VillageAfter" parent="." instance=ExtResource("24_6525c")]
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.244377, 0.055278, 0.968103, 9.31323e-10, 0.998374, -0.0570064, -0.96968, 0.013931, 0.243979, 35.3246, 0.965176, 11.3865)
+fov = 52.3

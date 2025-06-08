@@ -15,8 +15,9 @@
 [ext_resource type="Material" uid="uid://b0brdkq045t6t" path="res://assets/Materials/Glow.tres" id="10_op7od"]
 [ext_resource type="PackedScene" uid="uid://br27m7mb1g3r2" path="res://assets/Models/Characters/DogNPC.fbx" id="14_jg4yq"]
 [ext_resource type="PackedScene" uid="uid://v5s1gch7apbr" path="res://assets/Models/Characters/SquirrelNPC.fbx" id="15_2e44a"]
+[ext_resource type="PackedScene" uid="uid://cwmq1au8jy8g4" path="res://src/Scenes/kodama.tscn" id="16_jg4yq"]
 [ext_resource type="PackedScene" uid="uid://b47nmpt8vhlg3" path="res://assets/Models/Characters/BunnyNPC.fbx" id="16_jjrvg"]
-[ext_resource type="PackedScene" uid="uid://d1yjgnsebeeto" path="res://assets/Models/Characters/Kodama.fbx" id="17_pmfka"]
+[ext_resource type="PackedScene" uid="uid://cql7itdc5wul8" path="res://src/Scenes/VillageScenes/Villagebase.tscn" id="17_2e44a"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_up3tf"]
 emission_shape = 3
@@ -63,6 +64,8 @@ material = SubResource("StandardMaterial3D_1vbsk")
 [sub_resource type="SphereMesh" id="SphereMesh_jjrvg"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_pmfka"]
+radial_segments = 8
+rings = 4
 
 [sub_resource type="SphereMesh" id="SphereMesh_gjppv"]
 
@@ -1274,20 +1277,22 @@ transform = Transform3D(0.0177141, 0, 0.999843, 0, 1, 0, -0.999843, 0, 0.0177141
 [node name="BunnyNPC14" parent="." instance=ExtResource("16_jjrvg")]
 transform = Transform3D(-0.971301, 0, 0.237855, 0, 1, 0, -0.237855, 0, -0.971301, 23.191, 1.43051e-06, 10.848)
 
-[node name="Kodama" parent="." instance=ExtResource("17_pmfka")]
-transform = Transform3D(-0.158365, 0, 0.987381, 0, 1, 0, -0.987381, 0, -0.158365, 26.1676, 0.235179, 15.256)
+[node name="Kodama7" parent="." instance=ExtResource("16_jg4yq")]
+transform = Transform3D(0.157779, 0, -0.987475, 0, 1, 0, 0.987475, 0, 0.157779, 26.1676, 0.359114, 15.256)
 
-[node name="Kodama6" parent="." instance=ExtResource("17_pmfka")]
-transform = Transform3D(0.921226, 0, 0.389027, 0, 1, 0, -0.389027, 0, 0.921226, 26.2127, 1.33303, -4.46439)
+[node name="Kodama" parent="." instance=ExtResource("16_jg4yq")]
+transform = Transform3D(-0.920811, 0, -0.390008, 0, 1, 0, 0.390008, 0, -0.920811, 26.2127, 1.46063, -4.46439)
 
-[node name="Kodama2" parent="." instance=ExtResource("17_pmfka")]
-transform = Transform3D(-0.30518, 0, 0.952295, 0, 1, 0, -0.952295, 0, -0.30518, 18.2922, 7.1906, 19.2489)
+[node name="Kodama6" parent="." instance=ExtResource("16_jg4yq")]
+transform = Transform3D(0.300939, 0, -0.953644, 0, 1, 0, 0.953644, 0, 0.300939, 18.2922, 7.31635, 19.2489)
 
-[node name="Kodama3" parent="." instance=ExtResource("17_pmfka")]
-transform = Transform3D(0.572174, 0, 0.820132, 0, 1, 0, -0.820132, 0, 0.572174, 12.9498, 3.78083, 2.26463)
+[node name="Kodama2" parent="." instance=ExtResource("16_jg4yq")]
+transform = Transform3D(-0.568375, 0, -0.82277, 0, 1, 0, 0.82277, 0, -0.568375, 12.9498, 3.90983, 2.26463)
 
-[node name="Kodama4" parent="." instance=ExtResource("17_pmfka")]
-transform = Transform3D(0.663639, 0, 0.748053, 0, 1, 0, -0.748053, 0, 0.663639, 15.3412, -0.233283, 5.32689)
+[node name="Kodama3" parent="." instance=ExtResource("16_jg4yq")]
+transform = Transform3D(-0.662751, 0, -0.74884, 0, 1, 0, 0.74884, 0, -0.662751, 15.3412, -0.108472, 5.32689)
 
-[node name="Kodama5" parent="." instance=ExtResource("17_pmfka")]
-transform = Transform3D(0.814318, 0, 0.580419, 0, 1, 0, -0.580419, 0, 0.814318, 22.56, -0.233284, -1.69188)
+[node name="Kodama4" parent="." instance=ExtResource("16_jg4yq")]
+transform = Transform3D(-0.822313, 0, -0.569036, 0, 1, 0, 0.569036, 0, -0.822313, 22.56, -0.111287, -1.69188)
+
+[node name="VillageBase" parent="." instance=ExtResource("17_2e44a")]

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b5ssdtjw2nukg" path="res://assets/Models/InteractableTallColTop.fbx" id="3_1t26x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w88jf"]
-size = Vector3(1.3, 1.22949, 1)
+size = Vector3(1.3, 0.895873, 0.851562)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_y8thn"]
 height = 1.0

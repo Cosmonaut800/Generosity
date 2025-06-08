@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b5fx24blmtvls" path="res://assets/Models/Flower 3.fbx" id="10_xju7d"]
 [ext_resource type="PackedScene" uid="uid://b47nmpt8vhlg3" path="res://assets/Models/Characters/BunnyNPC.fbx" id="11_cnk3j"]
 [ext_resource type="PackedScene" uid="uid://v5s1gch7apbr" path="res://assets/Models/Characters/SquirrelNPC.fbx" id="12_wog2a"]
-[ext_resource type="PackedScene" uid="uid://d1yjgnsebeeto" path="res://assets/Models/Characters/Kodama.fbx" id="13_cnk3j"]
 [ext_resource type="PackedScene" uid="uid://br27m7mb1g3r2" path="res://assets/Models/Characters/DogNPC.fbx" id="13_qjdwh"]
+[ext_resource type="PackedScene" uid="uid://cwmq1au8jy8g4" path="res://src/Scenes/kodama.tscn" id="13_wog2a"]
 
 [node name="VillageK3" type="Node3D"]
 
@@ -864,11 +864,11 @@ transform = Transform3D(0.595087, 0, -0.505296, 0, 0.780675, 0, 0.505296, 0, 0.5
 [node name="DogNPC2" parent="." instance=ExtResource("13_qjdwh")]
 transform = Transform3D(0.312252, 0, 0.949999, 0, 1, 0, -0.949999, 0, 0.312252, 24.8329, 0, 15.5792)
 
-[node name="Kodama" parent="." instance=ExtResource("13_cnk3j")]
-transform = Transform3D(-0.625243, 0, 0.78043, 0, 1, 0, -0.78043, 0, -0.625243, 16.8737, 3.65166, 18.4925)
+[node name="Kodama4" parent="." instance=ExtResource("13_wog2a")]
+transform = Transform3D(0.692143, 0, -0.72176, 0, 1, 0, 0.72176, 0, 0.692143, 16.8737, 3.81779, 18.4925)
 
-[node name="Kodama2" parent="." instance=ExtResource("13_cnk3j")]
-transform = Transform3D(0.722545, 0, 0.691324, 0, 1, 0, -0.691324, 0, 0.722545, 22.537, 0.770876, -5.44063)
+[node name="Kodama" parent="." instance=ExtResource("13_wog2a")]
+transform = Transform3D(-0.617654, 0, -0.78645, 0, 1, 0, 0.78645, 0, -0.617654, 22.537, 0.898879, -5.44063)
 
-[node name="Kodama3" parent="." instance=ExtResource("13_cnk3j")]
-transform = Transform3D(0.724088, 0, 0.689708, 0, 1, 0, -0.689708, 0, 0.724088, 14.0458, 1.97534, 0.565516)
+[node name="Kodama2" parent="." instance=ExtResource("13_wog2a")]
+transform = Transform3D(-0.721845, 0, -0.692055, 0, 1, 0, 0.692055, 0, -0.721845, 14.0458, 2.10746, 0.565516)

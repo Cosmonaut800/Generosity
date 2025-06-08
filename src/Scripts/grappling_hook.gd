@@ -5,6 +5,9 @@ extends Node3D
 @onready var ray := $RayCast3D
 @onready var graphics := $Graphics
 @onready var rope := $RopeParent
+@onready var extend_sfx := $RopeParent/Rope/Extend
+@onready var attach_sfx := $Graphics/Attach
+@onready var retract_sfx := $RopeParent/Rope/Retract
 
 var tween : Tween
 var destination := Vector3.ZERO
@@ -58,7 +61,6 @@ func fire():
 				target = ray.get_collider()
 				target.add_child(attach_point)
 				attach_point.global_position = ray.get_collision_point()
-				print(global_position.distance_to(attach_point.global_position))
 				tween.tween_callback(attach_to_point)
 
 func hide_hook() -> void:
@@ -68,9 +70,11 @@ func hide_hook() -> void:
 func show_hook() -> void:
 	graphics.show()
 	rope.show()
+	play_sfx(extend_sfx)
 
 func attach_to_point() -> void:
 	attached = true
+	play_sfx(attach_sfx)
 	if target.get_collision_layer_value(3):
 		status = GRAPPLE
 	elif target.get_collision_layer_value(4):
@@ -82,5 +86,10 @@ func attach_to_point() -> void:
 
 func detach() -> void:
 	attached = false
+	play_sfx(retract_sfx)
 	attach_point.queue_free()
 	status = FREE
+
+func play_sfx(sfx: AudioStreamPlayer3D):
+	sfx.pitch_scale = randf_range(0.9, 1.1)
+	sfx.play()

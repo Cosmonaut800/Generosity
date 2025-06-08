@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://1i4lx1t8c653"]
+[gd_scene load_steps=44 format=3 uid="uid://1i4lx1t8c653"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_oofx1"]
 [ext_resource type="Environment" uid="uid://dh6qujnbw0ffl" path="res://assets/Envlvl1.tres" id="2_w8ggu"]
@@ -31,9 +31,6 @@
 [ext_resource type="PackedScene" uid="uid://dn45mcmbvf2a8" path="res://assets/Models/Doorway.fbx" id="29_w8ggu"]
 [ext_resource type="PackedScene" uid="uid://bllt8odmykx0g" path="res://assets/Materials/Particles/Dust.tscn" id="31_py842"]
 [ext_resource type="PackedScene" uid="uid://c0type32q1fqs" path="res://assets/Materials/Particles/god_ray.tscn" id="32_uynjs"]
-[ext_resource type="Script" uid="uid://bbtk6x56blpc1" path="res://src/Scripts/music_loop.gd" id="31_nqe4l"]
-[ext_resource type="AudioStream" uid="uid://v5qa1ta006rt" path="res://assets/Audio/BGM_Serene_Intro.ogg" id="31_uynjs"]
-[ext_resource type="AudioStream" uid="uid://c7rs76xs4ydm0" path="res://assets/Audio/BGM_Serene_Loop.ogg" id="32_nqe4l"]
 [ext_resource type="Material" uid="uid://qh4av6x4nd2b" path="res://assets/Materials/interactable_tree.tres" id="34_am6rt"]
 [ext_resource type="PackedScene" uid="uid://ckhsp37mhgajp" path="res://src/Scenes/death_plane.tscn" id="34_k06x0"]
 
@@ -113,7 +110,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.704498, 1.8241, 0)
 shape = SubResource("BoxShape3D_w8ggu")
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("4_q66gl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1353, 1.38274, 28.5997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9547, 6.17085, 22.6268)
 
 [node name="InteractableTreeBot" parent="." instance=ExtResource("6_mp5ou")]
 transform = Transform3D(0.0367309, 0, -0.999325, 0, 1, 0, 0.999325, 0, 0.0367309, -22.4683, 4.01106, 13.7328)
@@ -802,38 +799,11 @@ transform = Transform3D(-4.80422e-08, 0, 0.998267, 0, 1.29983, 0, -1.09908, 0, -
 [node name="Axe" parent="." instance=ExtResource("29_ge0i3")]
 transform = Transform3D(0.607398, 1.37152, 0.00196698, -0.00559252, 0.0003255, 1.49999, 1.37151, -0.607401, 0.0052453, -22.9818, 4.58498, 16.0013)
 
-[node name="Audio" type="Node3D" parent="."]
-script = ExtResource("31_nqe4l")
-
-[node name="MusicIntro" type="AudioStreamPlayer3D" parent="Audio"]
-stream = ExtResource("31_uynjs")
-attenuation_model = 3
-autoplay = true
-panning_strength = 0.0
-bus = &"Music"
-attenuation_filter_cutoff_hz = 20500.0
-
-[node name="MusicLoop" type="AudioStreamPlayer3D" parent="Audio"]
-stream = ExtResource("32_nqe4l")
-attenuation_model = 3
-panning_strength = 0.0
-bus = &"Music"
-attenuation_filter_cutoff_hz = 20500.0
-
 [node name="DeathPlane" parent="." instance=ExtResource("34_k06x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.8208, 0)
 
 [node name="Tree" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4412, 9.57463, 13.4023)
-
-[node name="Fragment" parent="." instance=ExtResource("31_py842")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12083, 5.46532, 13.4779)
-
-[node name="Fragment2" parent="." instance=ExtResource("31_py842")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9639, 8.88882, 18.6417)
-
-[node name="GodRay" parent="." instance=ExtResource("32_uynjs")]
-transform = Transform3D(-5.85889, 3.26896, -34.5951, -5.25018, 46.7889, 15.7692, 7.12885, 37.1452, -16.8187, -22.6162, 9.6228, 17.7601)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Tree"]
 visible = false
@@ -878,10 +848,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.536173, -4.28223, 0)
 node_a = NodePath("../Stump")
 node_b = NodePath("../Trunk")
 
+[node name="Fragment" parent="." instance=ExtResource("31_py842")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12083, 5.46532, 13.4779)
+
+[node name="Fragment2" parent="." instance=ExtResource("31_py842")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9639, 8.88882, 18.6417)
+
+[node name="GodRay" parent="." instance=ExtResource("32_uynjs")]
+transform = Transform3D(-5.85889, 3.26896, -34.5951, -5.25018, 46.7889, 15.7692, 7.12885, 37.1452, -16.8187, -22.6162, 9.6228, 17.7601)
+
 [connection signal="body_entered" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_exited"]
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
-[connection signal="finished" from="Audio/MusicIntro" to="Audio" method="_on_music_intro_finished"]
 
 [editable path="Tree/Stump/InteractableTreeBot"]
 [editable path="Tree/Trunk/InteractableTreeTop"]

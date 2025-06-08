@@ -92,7 +92,6 @@ grow_vertical = 0
 texture = ExtResource("3_c4ns5")
 
 [node name="Filter" type="Timer" parent="."]
-wait_time = 0.2
 one_shot = true
 
 [connection signal="timeout" from="Filter" to="." method="_on_filter_timeout"]

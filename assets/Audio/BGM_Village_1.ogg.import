@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/BGM_Village_1.ogg-9b8412222062ad1f1ad4378861a
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

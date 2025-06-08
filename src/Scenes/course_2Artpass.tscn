@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://vj5nxyik36yq"]
+[gd_scene load_steps=64 format=3 uid="uid://vj5nxyik36yq"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_xe87j"]
 [ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="2_yfmkw"]
@@ -47,9 +47,6 @@
 [ext_resource type="PackedScene" uid="uid://dxjxppqfmxodb" path="res://assets/Models/QuestFlower.fbx" id="45_vp5nb"]
 [ext_resource type="PackedScene" uid="uid://ckhsp37mhgajp" path="res://src/Scenes/death_plane.tscn" id="46_upwhy"]
 [ext_resource type="Script" uid="uid://drkko5ju77rpw" path="res://src/Scripts/checkpoint.gd" id="47_nfc8t"]
-[ext_resource type="Script" uid="uid://bbtk6x56blpc1" path="res://src/Scripts/music_loop.gd" id="48_lfq00"]
-[ext_resource type="AudioStream" uid="uid://bx407ohk7a380" path="res://assets/Audio/BGM_Erhu_Intro.ogg" id="49_lfq00"]
-[ext_resource type="AudioStream" uid="uid://x4jp1b5yjh5t" path="res://assets/Audio/BGM_Erhu_Loop.ogg" id="50_fhqsr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nfc8t"]
 size = Vector3(5.13049, 0.599243, 1.26917)
@@ -197,7 +194,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90043, 17.2093, -0.112793)
 shape = SubResource("BoxShape3D_jtpj6")
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("4_ynt0j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6372, 1.00155, 21.1929)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53238, 7.91524, 6.53724)
 
 [node name="MovingPlatform" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("5_f7rrn")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -30.6028, 1.5, 16.5)
@@ -408,7 +405,7 @@ shape = SubResource("SphereShape3D_lfq00")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.44964, 6.84585, 12.403)
 collision_mask = 128
 script = ExtResource("14_ldhgw")
-config = 4
+config = 5
 metadata/_custom_type_script = "uid://barah8wamrx8j"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LevelTransition"]
@@ -1640,24 +1637,6 @@ debug_color = Color(0.126704, 0.647552, 3.85046e-07, 1)
 [node name="Checkpoint3Pos" type="Node3D" parent="Checkpoint3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.230469, 0, 6.89122)
 
-[node name="Audio" type="Node3D" parent="."]
-script = ExtResource("48_lfq00")
-
-[node name="MusicIntro" type="AudioStreamPlayer3D" parent="Audio"]
-stream = ExtResource("49_lfq00")
-attenuation_model = 3
-autoplay = true
-panning_strength = 0.0
-bus = &"Music"
-attenuation_filter_cutoff_hz = 20500.0
-
-[node name="MusicLoop" type="AudioStreamPlayer3D" parent="Audio"]
-stream = ExtResource("50_fhqsr")
-attenuation_model = 3
-panning_strength = 0.0
-bus = &"Music"
-attenuation_filter_cutoff_hz = 20500.0
-
 [connection signal="activated" from="BoxButton" to="MovingPlatform" method="_on_switch_activated"]
 [connection signal="activated" from="Switch" to="MovingPlatform2" method="_on_switch_activated"]
 [connection signal="activated" from="BoxButton2" to="MovingPlatform5" method="_on_switch_activated"]
@@ -1668,4 +1647,3 @@ attenuation_filter_cutoff_hz = 20500.0
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
 [connection signal="body_entered" from="Kodama2/Area3D" to="Kodama2" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Kodama2/Area3D" to="Kodama2" method="_on_area_3d_body_exited"]
-[connection signal="finished" from="Audio/MusicIntro" to="Audio" method="_on_music_intro_finished"]

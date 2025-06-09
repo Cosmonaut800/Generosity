@@ -1,21 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://bs835xu2koieu"]
+[gd_scene load_steps=10 format=3 uid="uid://bs835xu2koieu"]
 
 [ext_resource type="Script" uid="uid://des8xe3t7ejar" path="res://src/Scripts/subworld.gd" id="1_6ueuw"]
 [ext_resource type="Environment" uid="uid://c5qu6qq326wkt" path="res://assets/VillageNight.tres" id="2_4q1n6"]
 [ext_resource type="PackedScene" uid="uid://v5s1gch7apbr" path="res://assets/Models/Characters/SquirrelNPC.fbx" id="3_ghma3"]
 [ext_resource type="PackedScene" uid="uid://br27m7mb1g3r2" path="res://assets/Models/Characters/DogNPC.fbx" id="4_q5dge"]
 [ext_resource type="PackedScene" uid="uid://b47nmpt8vhlg3" path="res://assets/Models/Characters/BunnyNPC.fbx" id="5_lq32b"]
+[ext_resource type="FontFile" uid="uid://c1ot76kbac2wm" path="res://assets/Fragmentcore.otf" id="7_khjv2"]
 [ext_resource type="Script" uid="uid://c5yeog5w6yfhn" path="res://src/Scenes/VillageScenes/score.gd" id="7_oputj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_khjv2"]
+font = ExtResource("7_khjv2")
 font_size = 46
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8gwd7"]
+font = ExtResource("7_khjv2")
 font_size = 32
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="VillageNight" type="Node3D"]
 script = ExtResource("1_6ueuw")
@@ -99,7 +106,7 @@ offset_right = 29.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.105882)
+color = Color(0, 0, 0, 0.0980392)
 
 [node name="Label" type="Label" parent="Control/ColorRect"]
 layout_mode = 1
@@ -132,9 +139,9 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 386.0
+offset_left = 323.0
 offset_top = -122.0
-offset_right = 677.0
+offset_right = 614.0
 offset_bottom = -58.0
 grow_vertical = 0
 text = "#/6"

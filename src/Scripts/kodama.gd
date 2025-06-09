@@ -16,10 +16,10 @@ func _ready():
 func _process(delta):
 	if player:
 		look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z))
-		if player.can_anything:
-			player.kodama_text.visible = player_nearby
-		else:
-			player.kodama_text.hide()
+		#if player.can_anything:
+			#player.kodama_text.visible = player_nearby
+		#else:
+			#player.kodama_text.hide()
 	time += delta
 	position = Vector3(true_position.x, true_position.y + 0.1 * sin(time), true_position.z)
 
@@ -31,6 +31,7 @@ func _input(event):
 			var tween = create_tween()
 			particles.burst()
 			graphics.hide()
+			player.kodama_text.hide()
 			tween.tween_interval(2.0)
 			tween.tween_callback(queue_free)
 
@@ -41,6 +42,8 @@ func increment_kodama_count() -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	player = body
 	player_nearby = true
+	player.kodama_text.show()
 
 func _on_area_3d_body_exited(_body: Node3D) -> void:
 	player_nearby = false
+	player.kodama_text.hide()

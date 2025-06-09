@@ -195,9 +195,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.02995, -11.1199, 0.0154423)
 transform = Transform3D(-0.765336, 0, 1.84777, 0, 2, 0, -1.84777, 0, -0.765336, -2.45096, 0.863222, 1.62189)
 
 [node name="ElevatorWaypoint" type="Node3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.6425, -5.91867, 10.6621)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.6425, -4.72855, 10.6621)
 script = ExtResource("7_ac6rh")
-transit_time = 7.5
+transit_time = 8.0
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("8_q4ojf")]
@@ -324,7 +324,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.58774, -0.260637, 0)
 
 [node name="SFX" type="AudioStreamPlayer3D" parent="Turnstile/RigidBody3D"]
 stream = ExtResource("19_r1pcr")
-volume_db = 6.0
+volume_db = 12.0
 pitch_scale = 0.3
 bus = &"SFX"
 attenuation_filter_cutoff_hz = 20500.0
@@ -1889,11 +1889,13 @@ transform = Transform3D(0.828246, 0, -0.560364, 0, 1, 0, 0.560364, 0, 0.828246, 
 shape = SubResource("BoxShape3D_pp5jt")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D3"]
-transform = Transform3D(0.696777, 0, 0.717288, 0, 1, 0, -0.717288, 0, 0.696777, 3.99955, 12.1642, 3.11042)
+transform = Transform3D(0.696777, 0, 0.717288, 0, 1, 0, -0.717288, 0, 0.696777, 3.09061, 12.1642, 2.22747)
 shape = SubResource("BoxShape3D_pp5jt")
 
 [node name="Checkpoint" type="Area3D" parent="." node_paths=PackedStringArray("respawn_position")]
 transform = Transform3D(0.913034, 0, 0.407884, 0, 1, 0, -0.407884, 0, 0.913034, 12.4108, 16.5686, -4.10331)
+collision_layer = 0
+collision_mask = 128
 script = ExtResource("52_pp5jt")
 respawn_position = NodePath(".")
 

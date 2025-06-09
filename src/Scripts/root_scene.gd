@@ -16,11 +16,12 @@ extends Node3D
 	$Music/Course3/MusicLoop]
 
 var world_templates : Array[Resource] =\
-[	preload("res://src/Scenes/hub_map.tscn"),
-	preload("res://src/Scenes/course_1Artpass.tscn"),
-	preload("res://src/Scenes/course_2Artpass.tscn"),
-	preload("res://src/Scenes/course_3Artpass.tscn"),
-	preload("res://src/Scenes/VillageScenes/Villagebase.tscn")]
+[	preload("res://src/Scenes/hub_map.tscn"), #0
+	preload("res://src/Scenes/course_1Artpass.tscn"), #1
+	preload("res://src/Scenes/course_2Artpass.tscn"), #2
+	preload("res://src/Scenes/course_3Artpass.tscn"), #3
+	preload("res://src/Scenes/VillageScenes/Villagebase.tscn"), #4
+	preload("res://src/Scenes/start_menu.tscn")] #5
 var kodama_templates : Array[Resource] =\
 [	preload("res://src/Scenes/VillageScenes/VillageK0.tscn"),
 	preload("res://src/Scenes/VillageScenes/VillageK1.tscn"),
@@ -29,14 +30,21 @@ var kodama_templates : Array[Resource] =\
 var world : Node3D
 var subworld : Node3D
 var kodamaworld : Node3D
-var current_index := 0
-var current_config := 1
+var current_index := 5
+var current_config := 0
 
 var buses = {1:"MusicCourse1", 2:"MusicCourse2", 3:"MusicCourse3", 4:"MusicVillage"}
 var music_index
 
 func _ready():
 	load_world(world_templates[current_index])
+
+func _input(event):
+	if current_index != 5:
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and event.is_action_pressed("ui_cancel"):
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE and event.is_action_pressed("fire"):
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_world_reset():
 	var tween = create_tween()
@@ -48,7 +56,7 @@ func _on_world_reset():
 	tween.tween_property(blackout, "color", Color(0.0, 0.0, 0.0, 0.0), 0.5)
 
 func _on_world_changed(index: int, config: int):
-	if current_index == 0 and index != 4:
+	if (current_index == 0 or current_index == 5) and index != 4:
 		Utility.evaluate_kodama_level()
 		var tween = create_tween()
 		tween.tween_method(change_village_volume, 1.0, 0.0, 3.0)

@@ -897,6 +897,7 @@ surface_material_override/0 = ExtResource("34_am6rt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.536173, -4.28223, 0)
 node_a = NodePath("../Stump")
 node_b = NodePath("../Trunk")
+exclude_nodes_from_collision = false
 
 [node name="Fragment" parent="." instance=ExtResource("31_py842")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12083, 5.46532, 13.4779)

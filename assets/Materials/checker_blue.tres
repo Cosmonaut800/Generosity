@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bekd4kyvjet07"]
+
+[ext_resource type="Texture2D" uid="uid://cerah6j45auec" path="res://assets/Materials/Textures/checker_blue.png" id="1_7k8ei"]
+
+[resource]
+albedo_texture = ExtResource("1_7k8ei")
+uv1_triplanar_sharpness = 150.0
+uv1_world_triplanar = true

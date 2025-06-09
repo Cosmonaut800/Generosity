@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cdkdq36di0pdq"]
+
+[ext_resource type="Texture2D" uid="uid://3vfxok0ttoor" path="res://assets/Materials/Textures/Flowers.png" id="1_y8qkc"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.429
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_y8qkc")
+emission = Color(0.904636, 0.175538, 0.60022, 1)
+emission_energy_multiplier = 0.4
+emission_operator = 1
+rim_tint = 1.0
+ao_light_affect = 1.0
+ao_texture_channel = 2
+subsurf_scatter_strength = 1.0
+backlight = Color(3.08037e-06, 0.708328, 0.653367, 1)
+texture_filter = 0
+texture_repeat = false

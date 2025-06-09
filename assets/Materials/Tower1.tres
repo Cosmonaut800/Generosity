@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ctqshtk1f3c4x"]
+
+[ext_resource type="Texture2D" uid="uid://c6hm8m4k1w1g7" path="res://assets/Materials/Textures/TowerTex1.png" id="1_d7erw"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_d7erw")
+texture_filter = 0

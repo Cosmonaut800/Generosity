@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bhcmigtfhjriu"]
+
+[ext_resource type="Texture2D" uid="uid://i0ghwd0drxpu" path="res://assets/Materials/Textures/PlatformTex.png" id="1_3j3u1"]
+[ext_resource type="Texture2D" uid="uid://cwj3x5i8ghp3l" path="res://assets/Materials/Textures/PlatformMask.png" id="2_i8a21"]
+
+[resource]
+albedo_texture = ExtResource("1_3j3u1")
+emission_enabled = true
+emission = Color(0.366667, 1, 0, 1)
+emission_energy_multiplier = 4.0
+emission_operator = 1
+emission_texture = ExtResource("2_i8a21")
+texture_filter = 0

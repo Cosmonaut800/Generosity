@@ -1,13 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmrs264a1r0m6"]
+[gd_scene load_steps=4 format=3 uid="uid://cmrs264a1r0m6"]
 
 [ext_resource type="Script" uid="uid://csmuxtqmmbdx1" path="res://src/Scripts/orbit_camera.gd" id="1_fb3q8"]
 [ext_resource type="Script" uid="uid://cb3rrmj43d7w4" path="res://src/Scripts/camera_collision.gd" id="1_txh35"]
 [ext_resource type="PackedScene" uid="uid://bbhexnglp5diq" path="res://src/Scenes/grappling_hook.tscn" id="3_vvl4l"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_tfmnw"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_vvl4l"]
-size = Vector3(0.25, 0.25, 0.25)
 
 [node name="OrbitCamera" type="Node3D"]
 script = ExtResource("1_fb3q8")
@@ -17,21 +12,19 @@ script = ExtResource("1_fb3q8")
 [node name="PitchPivot" type="Node3D" parent="YawPivot"]
 
 [node name="CameraRay" type="RayCast3D" parent="YawPivot/PitchPivot"]
+visible = false
 target_position = Vector3(0, 0, 5.5)
 
+[node name="DirectRay" type="RayCast3D" parent="YawPivot/PitchPivot"]
+visible = false
+
 [node name="Camera3D" type="Camera3D" parent="YawPivot/PitchPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45519e-11, 1.45519e-11, 3.5)
 script = ExtResource("1_txh35")
 
 [node name="GrapplingHook" parent="YawPivot/PitchPivot/Camera3D" instance=ExtResource("3_vvl4l")]
 
 [node name="CameraPosTarget" type="Node3D" parent="YawPivot/PitchPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45519e-11, 1.45519e-11, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45519e-11, 1.45519e-11, 3.5)
 
-[node name="Graphics" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("CapsuleMesh_tfmnw")
-
-[node name="Face" type="MeshInstance3D" parent="Graphics"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.5)
-mesh = SubResource("BoxMesh_vvl4l")
+[node name="CameraPosTargetFine" type="Node3D" parent="YawPivot/PitchPivot/CameraPosTarget"]

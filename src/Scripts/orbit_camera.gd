@@ -1,6 +1,6 @@
 class_name OrbitCamera extends Node3D
 
-const ORBIT_DISTANCE = 5.0
+const ORBIT_DISTANCE = 3.5
 const SHOULDER_POS : Vector3 = Vector3(1.0, 0.0, 2.0)
 
 @onready var actor: CharacterBody3D = get_parent()
@@ -17,10 +17,6 @@ var pivot_tween : Tween
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _unhandled_input(event):
 		if event is InputEventMouseMotion:

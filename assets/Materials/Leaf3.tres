@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://isbeyqrr2ytv"]
+
+[ext_resource type="Texture2D" uid="uid://dff3kstpaf8b" path="res://assets/Materials/Textures/Leaf3.png" id="1_8f607"]
+
+[resource]
+resource_name = "Leaf3"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("1_8f607")
+emission_enabled = true
+texture_filter = 0

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5x71u1uvp0gc"]
+
+[ext_resource type="PackedScene" uid="uid://casskcyhux32d" path="res://assets/Models/Bush.fbx" id="1_tfqk2"]
+[ext_resource type="Material" uid="uid://dbloctvieors6" path="res://assets/Materials/Leaf1Dead.tres" id="2_daetn"]
+
+[node name="Bush" instance=ExtResource("1_tfqk2")]
+
+[node name="Bush" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_daetn")

@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://qh4av6x4nd2b"]
+
+[ext_resource type="Shader" uid="uid://cds75mp1wxim2" path="res://src/Shaders/interactable.gdshader" id="1_sgoni"]
+[ext_resource type="Texture2D" uid="uid://ly6e7iglmvde" path="res://assets/Materials/Textures/BarkLight.png" id="2_sgoni"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_sgoni")
+shader_parameter/albedoTexture = ExtResource("2_sgoni")
+shader_parameter/emissionColor = Color(0.0509804, 0.109804, 0, 1)
+shader_parameter/emissionIntensity = 2.0
+shader_parameter/pulseColor = Color(0.4525, 0.6, 0.45, 1)
+shader_parameter/timeScale = 0.0

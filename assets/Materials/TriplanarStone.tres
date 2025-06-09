@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b7tvka2xigdkr"]
+
+[ext_resource type="Texture2D" uid="uid://cjxs4y7i1qb2m" path="res://assets/Materials/Textures/RockTex.png" id="1_ff5bj"]
+
+[resource]
+albedo_texture = ExtResource("1_ff5bj")
+uv1_scale = Vector3(0.095, 0.095, 0.095)
+uv1_triplanar = true
+texture_filter = 0

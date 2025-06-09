@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://0an3vhevx8eh"]
+
+[ext_resource type="Material" uid="uid://u847jtw06rvj" path="res://assets/Materials/Particles/fragmentParticleProc.tres" id="1_36v43"]
+[ext_resource type="Material" uid="uid://5plshxwpcb28" path="res://assets/Materials/Particles/FragmentMat.tres" id="2_f2f03"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_wqyi8"]
+material = ExtResource("2_f2f03")
+
+[node name="Fragment" type="GPUParticles3D"]
+amount = 5
+lifetime = 2.0
+process_material = ExtResource("1_36v43")
+draw_pass_1 = SubResource("QuadMesh_wqyi8")

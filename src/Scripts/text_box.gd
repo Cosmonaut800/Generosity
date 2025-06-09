@@ -22,7 +22,12 @@ const TEXTS = {"LUMBERJACK_1": {speaker = "Lumberjack", speech = "I wish I didn'
 	"FAMILY_3" : {speaker = "Traveler", speech = "(A toy from the Ruins? Hmm... Well, it's worth a shot. I'll see if I can find anything for these two.)", is_end = true},
 	"FAMILY_4" : {speaker = "Young Child", speech = "Wow! It's just like the one Dad used to have!", is_end = false},
 	"FAMILY_5" : {speaker = "Traveler", speech = "(They're pointing at my glove! Well... Fine, they can have it, they look too excited to say no... I can find another one... Eventually... Probably...)", is_end = false},
-	"FAMILY_6" : {speaker = "Mother", speech = "Thank you, this means a lot to them. Their father used to study the technology at the ruins, this really brings back memories...", is_end = true}}
+	"FAMILY_6" : {speaker = "Mother", speech = "Thank you, this means a lot to them. Their father used to study the technology at the ruins, this really brings back memories...", is_end = true},
+	"GOAL_1_1" : {speaker = "Traveler", speech = "That must be his axe. Time to bring it back to the village.", is_end = true},
+	"GOAL_1_2" : {speaker = "Traveler", speech = "!!", is_end = false},
+	"GOAL_1_3" : {speaker = "Tree Spirit", speech = "I am a spirit of these woods. That gauntlet you are wearing is from the old era. I ask that you share its energy with us whenever you find us. The good it does will find its way back to you.", is_end = true},
+	"GOAL_2" : {speaker = "Traveler", speech = "Ahh, she should be able to brew some medicinal tea from this. I'll some to her.", is_end = true},
+	"GOAL_3" : {speaker = "Traveler", speech = "Hmm... Seems to still work, doesn't seem too dangerous... Those kids should be able to have some fun with this.", is_end = true}}
 
 func show_text(text_index: String):
 	speaker_label.text = TEXTS[text_index].speaker

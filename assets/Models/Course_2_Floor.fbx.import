@@ -58,6 +58,13 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "uid://b7tvka2xigdkr"
 }
+},
+"nodes": {
+"PATH:Cours_2_Floor": {
+"generate/physics": true,
+"physics/layer": 2,
+"physics/mask": 191
+}
 }
 }
 fbx/importer=0

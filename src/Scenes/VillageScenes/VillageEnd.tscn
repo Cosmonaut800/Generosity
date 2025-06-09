@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs835xu2koieu"]
+
+[ext_resource type="Script" uid="uid://des8xe3t7ejar" path="res://src/Scripts/subworld.gd" id="1_6ueuw"]
+[ext_resource type="Environment" uid="uid://c5qu6qq326wkt" path="res://assets/VillageNight.tres" id="2_4q1n6"]
+[ext_resource type="PackedScene" uid="uid://v5s1gch7apbr" path="res://assets/Models/Characters/SquirrelNPC.fbx" id="3_ghma3"]
+[ext_resource type="PackedScene" uid="uid://br27m7mb1g3r2" path="res://assets/Models/Characters/DogNPC.fbx" id="4_q5dge"]
+[ext_resource type="PackedScene" uid="uid://b47nmpt8vhlg3" path="res://assets/Models/Characters/BunnyNPC.fbx" id="5_lq32b"]
+
+[node name="VillageNight" type="Node3D"]
+script = ExtResource("1_6ueuw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_4q1n6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.788015, -0.597778, 0.147291, -0.612131, -0.786316, 0.0836779, 0.0657966, -0.156101, -0.985547, -6.46218, 14.4702, -10.0908)
+light_color = Color(0.426261, 0.812573, 0.88243, 1)
+light_energy = 0.665
+light_indirect_energy = 0.0
+shadow_enabled = true
+directional_shadow_mode = 0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3543, 2.31099, -1.01485)
+light_energy = 0.5
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9705, 2.69278, 3.32922)
+light_energy = 0.5
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5736, 0.666612, 19.212)
+light_energy = 0.5
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.0409, 2.76734, 20.8212)
+light_energy = 0.5
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8968, 2.73985, -0.954289)
+light_energy = 0.5
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8968, 0.949005, -0.983081)
+light_energy = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3543, 2.31099, -3.01485)
+light_energy = 0.5
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3032, 5.35386, -2.02558)
+light_energy = 0.5
+
+[node name="SquirrelNPC" parent="." instance=ExtResource("3_ghma3")]
+transform = Transform3D(-0.28132, 0, 0.959614, 0, 1, 0, -0.959614, 0, -0.28132, 25.1857, 0, -1.42794)
+
+[node name="DogNPC" parent="." instance=ExtResource("4_q5dge")]
+transform = Transform3D(0.775253, 0, -0.631651, 0, 1, 0, 0.631651, 0, 0.775253, 26.3359, 0, -1.95467)
+
+[node name="BunnyNPC" parent="." instance=ExtResource("5_lq32b")]
+transform = Transform3D(-0.984941, 0, 0.172892, 0, 1, 0, -0.172892, 0, -0.984941, 30.5199, 0, -0.512013)
+
+[node name="BunnyNPC2" parent="." instance=ExtResource("5_lq32b")]
+transform = Transform3D(0.288564, 0, 0.957461, 0, 1, 0, -0.957461, 0, 0.288564, 12.9752, 0, 4.07873)

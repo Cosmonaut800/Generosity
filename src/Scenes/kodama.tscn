@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwmq1au8jy8g4"]
+[gd_scene load_steps=9 format=3 uid="uid://cwmq1au8jy8g4"]
 
 [ext_resource type="Script" uid="uid://xtq0p7h7w2rw" path="res://src/Scripts/kodama.gd" id="1_5lu2l"]
 [ext_resource type="PackedScene" uid="uid://d1yjgnsebeeto" path="res://assets/Models/Characters/Kodama.fbx" id="2_teu5t"]
 [ext_resource type="Material" uid="uid://cugb4whi2rely" path="res://assets/Materials/kodama_head.tres" id="3_3g3ex"]
+[ext_resource type="PackedScene" uid="uid://bim86qlbgmnce" path="res://assets/Materials/Particles/FragmentBurst.tscn" id="4_mcl1q"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_e20ym"]
 radius = 0.25
@@ -36,63 +37,66 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 [node name="Skeleton3D" parent="Kodama/Rig" index="0"]
 bones/0/position = Vector3(0, 0, 0.00724604)
 bones/1/position = Vector3(0.00077614, -0.000782475, 0.000536432)
-bones/1/rotation = Quaternion(-0.682653, 0.0658999, 0.703794, -0.185247)
+bones/1/rotation = Quaternion(-0.683289, 0.0574236, 0.704282, -0.183865)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/position = Vector3(-9.9222e-11, 0.00156392, -5.05586e-11)
-bones/2/rotation = Quaternion(0.0413863, 0.00910791, -0.0764881, 0.99617)
+bones/2/rotation = Quaternion(0.0389712, 0.00917524, -0.0731673, 0.996516)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/position = Vector3(7.88784e-11, 0.0014649, 5.83847e-11)
-bones/3/rotation = Quaternion(0.0377435, -0.000387414, -0.0642306, 0.997221)
+bones/3/rotation = Quaternion(0.0362191, -0.000376804, -0.0612134, 0.997467)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/position = Vector3(-8.38165e-11, 0.00143345, -8.85852e-11)
-bones/4/rotation = Quaternion(0.0348199, -0.00711388, -0.0611739, 0.997494)
+bones/4/rotation = Quaternion(0.033343, -0.00711175, -0.0584721, 0.997707)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/position = Vector3(1.41851e-10, 0.00144323, 8.84029e-11)
-bones/5/rotation = Quaternion(-0.000220991, 3.17332e-06, 0.00017437, 1)
+bones/5/rotation = Quaternion(-0.000255083, 3.64053e-06, 0.000201293, 1)
 bones/5/scale = Vector3(1, 1, 1)
 bones/7/position = Vector3(-1.3481e-08, -0.000501655, -0.000620038)
-bones/7/rotation = Quaternion(-0.685004, -0.174818, 0.685288, 0.174896)
+bones/7/rotation = Quaternion(-0.684768, -0.175737, 0.685053, 0.175815)
 bones/7/scale = Vector3(1, 1, 0.999999)
 bones/8/position = Vector3(-1.14922e-10, 0.00161211, -9.3054e-14)
-bones/8/rotation = Quaternion(6.52604e-08, 3.31742e-08, 0.0860668, 0.996289)
+bones/8/rotation = Quaternion(6.53954e-08, 3.29072e-08, 0.0819937, 0.996633)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/position = Vector3(-2.46639e-10, 0.00168159, 2.14014e-14)
-bones/9/rotation = Quaternion(-1.21577e-07, 3.42945e-07, 0.170791, 0.985307)
+bones/9/rotation = Quaternion(-1.07265e-07, 3.45801e-07, 0.163117, 0.986607)
 bones/9/scale = Vector3(1, 1, 1)
 bones/10/position = Vector3(1.41343e-10, 0.00169583, 5.67337e-14)
-bones/10/rotation = Quaternion(1.49546e-07, -2.75842e-08, 0.146025, 0.989281)
+bones/10/rotation = Quaternion(1.49368e-07, -2.85298e-08, 0.139763, 0.990185)
 bones/10/scale = Vector3(1, 1, 1)
 bones/11/position = Vector3(1.34035e-10, 0.00110107, -1.07088e-13)
-bones/11/rotation = Quaternion(9.31342e-11, 3.30498e-10, -0.00110649, 0.999999)
+bones/11/rotation = Quaternion(9.32496e-11, 3.30466e-10, -0.00145572, 0.999999)
 bones/11/scale = Vector3(1, 1, 1)
 bones/13/position = Vector3(-0.00077614, -0.000782475, 0.000536432)
-bones/13/rotation = Quaternion(0.682653, 0.0658999, 0.703794, 0.185247)
+bones/13/rotation = Quaternion(0.683289, 0.0574236, 0.704282, 0.183865)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/position = Vector3(9.9222e-11, 0.00156392, -5.05586e-11)
-bones/14/rotation = Quaternion(0.0413863, -0.00910791, 0.0764881, 0.99617)
+bones/14/rotation = Quaternion(0.0389712, -0.00917524, 0.0731673, 0.996516)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(-7.88784e-11, 0.0014649, 5.83847e-11)
-bones/15/rotation = Quaternion(0.0377435, 0.000387414, 0.0642306, 0.997221)
+bones/15/rotation = Quaternion(0.0362191, 0.000376804, 0.0612134, 0.997467)
 bones/15/scale = Vector3(1, 1, 1)
 bones/16/position = Vector3(8.38165e-11, 0.00143345, -8.85852e-11)
-bones/16/rotation = Quaternion(0.0348199, 0.00711388, 0.0611739, 0.997494)
+bones/16/rotation = Quaternion(0.033343, 0.00711175, 0.0584721, 0.997707)
 bones/16/scale = Vector3(1, 1, 1)
 bones/17/position = Vector3(-1.41851e-10, 0.00144323, 8.84029e-11)
-bones/17/rotation = Quaternion(-0.000220991, -3.17332e-06, -0.00017437, 1)
+bones/17/rotation = Quaternion(-0.000255083, -3.64053e-06, -0.000201293, 1)
 bones/17/scale = Vector3(1, 1, 1)
+
+[node name="Head" type="MeshInstance3D" parent="Kodama"]
+transform = Transform3D(-2, 0, 8.74228e-08, 0, 1, 0, -1.74846e-07, 0, -1, 0, 0.858234, 0)
+mesh = SubResource("SphereMesh_mcl1q")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("3_3g3ex")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.879502, 0)
 light_color = Color(1.11663e-05, 0.978411, 0.533741, 1)
 
-[node name="Head" type="MeshInstance3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.858234, 0)
-mesh = SubResource("SphereMesh_mcl1q")
-surface_material_override/0 = ExtResource("3_3g3ex")
-
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../Kodama")
 tree_root = SubResource("AnimationNodeAnimation_3g3ex")
 anim_player = NodePath("../Kodama/AnimationPlayer")
+
+[node name="FragmentBurst" parent="." instance=ExtResource("4_mcl1q")]
 
 [editable path="Kodama"]

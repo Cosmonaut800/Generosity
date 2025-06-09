@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://iqyrgeai3d53" path="res://assets/WavyCurve.tres" id="8_61kcn"]
 [ext_resource type="Texture2D" uid="uid://bqoqweij6c4mc" path="res://assets/Materials/Textures/Fragments.png" id="9_i5rxb"]
 [ext_resource type="PackedScene" uid="uid://b55bhyvjnvrwf" path="res://assets/Models/Flower 2.fbx" id="9_wqyi8"]
-[ext_resource type="PackedScene" uid="uid://0an3vhevx8eh" path="res://assets/Materials/Particles/Fragment.tscn" id="10_jg4yq"]
+[ext_resource type="PackedScene" uid="uid://0an3vhevx8eh" path="res://assets/Materials/Particles/fragment.tscn" id="10_jg4yq"]
 [ext_resource type="PackedScene" uid="uid://b5fx24blmtvls" path="res://assets/Models/Flower 3.fbx" id="10_noif7"]
 [ext_resource type="Material" uid="uid://b0brdkq045t6t" path="res://assets/Materials/Glow.tres" id="10_op7od"]
 [ext_resource type="PackedScene" uid="uid://br27m7mb1g3r2" path="res://assets/Models/Characters/DogNPC.fbx" id="14_jg4yq"]

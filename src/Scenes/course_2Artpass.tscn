@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://vj5nxyik36yq"]
+[gd_scene load_steps=69 format=3 uid="uid://vj5nxyik36yq"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_xe87j"]
 [ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="2_yfmkw"]
@@ -46,6 +46,12 @@
 [ext_resource type="Material" uid="uid://n6mhxn7dkdtg" path="res://assets/Materials/TriplanarGrass.tres" id="37_lfq00"]
 [ext_resource type="PackedScene" uid="uid://dxjxppqfmxodb" path="res://assets/Models/QuestFlower.fbx" id="45_vp5nb"]
 [ext_resource type="PackedScene" uid="uid://ckhsp37mhgajp" path="res://src/Scenes/death_plane.tscn" id="46_upwhy"]
+[ext_resource type="Script" path="res://src/Scripts/checkpoint.gd" id="47_nfc8t"]
+[ext_resource type="Script" uid="uid://bbtk6x56blpc1" path="res://src/Scripts/music_loop.gd" id="48_lfq00"]
+[ext_resource type="AudioStream" uid="uid://bx407ohk7a380" path="res://assets/Audio/BGM_Erhu_Intro.ogg" id="49_lfq00"]
+[ext_resource type="AudioStream" uid="uid://x4jp1b5yjh5t" path="res://assets/Audio/BGM_Erhu_Loop.ogg" id="50_fhqsr"]
+[ext_resource type="PackedScene" uid="uid://c0type32q1fqs" path="res://assets/Materials/Particles/god_ray.tscn" id="51_pxuoj"]
+[ext_resource type="PackedScene" uid="uid://bllt8odmykx0g" path="res://assets/Materials/Particles/Dust.tscn" id="52_dsaln"]
 [ext_resource type="Script" uid="uid://drkko5ju77rpw" path="res://src/Scripts/checkpoint.gd" id="47_nfc8t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nfc8t"]
@@ -1596,7 +1602,6 @@ collision_layer = 256
 collision_mask = 128
 script = ExtResource("47_nfc8t")
 respawn_position = NodePath("Checkpoint1Pos")
-metadata/_custom_type_script = "uid://drkko5ju77rpw"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint1"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
@@ -1611,7 +1616,6 @@ collision_layer = 256
 collision_mask = 128
 script = ExtResource("47_nfc8t")
 respawn_position = NodePath("Checkpoint2Pos")
-metadata/_custom_type_script = "uid://drkko5ju77rpw"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint2"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.59883, 0, 2.70227)
@@ -1627,7 +1631,6 @@ collision_layer = 256
 collision_mask = 128
 script = ExtResource("47_nfc8t")
 respawn_position = NodePath("Checkpoint3Pos")
-metadata/_custom_type_script = "uid://drkko5ju77rpw"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.0183)
@@ -1636,6 +1639,37 @@ debug_color = Color(0.126704, 0.647552, 3.85046e-07, 1)
 
 [node name="Checkpoint3Pos" type="Node3D" parent="Checkpoint3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.230469, 0, 6.89122)
+
+[node name="Audio" type="Node3D" parent="."]
+script = ExtResource("48_lfq00")
+
+[node name="MusicIntro" type="AudioStreamPlayer3D" parent="Audio"]
+stream = ExtResource("49_lfq00")
+attenuation_model = 3
+autoplay = true
+panning_strength = 0.0
+bus = &"Music"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="MusicLoop" type="AudioStreamPlayer3D" parent="Audio"]
+stream = ExtResource("50_fhqsr")
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"Music"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="GodRay" parent="." instance=ExtResource("51_pxuoj")]
+transform = Transform3D(-6.00096, 17.3777, -8.92225, 3.15847, 35.9263, 1.20973, 2.17346, -4.22802, -26.3923, 8.6015, 12.1917, 5.59516)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.942806, -0.0441416, 0.330408, -0.333297, -0.141378, 0.932162, 0.00556534, -0.988971, -0.148004, 8.29288, 15.2253, 6.00737)
+light_energy = 10.29
+light_specular = 0.774
+spot_range = 10.766
+spot_angle = 28.7557
+
+[node name="Fragment" parent="." instance=ExtResource("52_dsaln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.91933, 12.1944, 6.00737)
 
 [connection signal="activated" from="BoxButton" to="MovingPlatform" method="_on_switch_activated"]
 [connection signal="activated" from="Switch" to="MovingPlatform2" method="_on_switch_activated"]

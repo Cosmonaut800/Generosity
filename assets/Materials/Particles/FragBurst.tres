@@ -1,0 +1,23 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=2 format=3 uid="uid://do46e7gcogx5f"]
+
+[ext_resource type="Texture2D" uid="uid://d4elib0phudl" path="res://assets/Materials/Particles/BellCurve.tres" id="1_ovaka"]
+
+[resource]
+emission_shape_scale = Vector3(0.545, 0.11, 0.535)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+spread = 61.463
+gravity = Vector3(0, 2, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = 3.0
+scale_min = 0.1
+scale_max = 0.3
+scale_curve = ExtResource("1_ovaka")
+alpha_curve = ExtResource("1_ovaka")
+anim_speed_min = 1.0
+anim_speed_max = 5.0
+anim_offset_max = 1.0
+turbulence_noise_strength = 10.82
+turbulence_noise_scale = 0.0
+turbulence_noise_speed_random = 0.14
+turbulence_influence_min = 0.05

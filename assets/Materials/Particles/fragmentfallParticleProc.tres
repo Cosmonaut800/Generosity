@@ -1,0 +1,22 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=2 format=3 uid="uid://nca0crobrmxs"]
+
+[ext_resource type="Texture2D" uid="uid://iqyrgeai3d53" path="res://assets/WavyCurve.tres" id="2_ybs1e"]
+
+[resource]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -246.6
+angle_max = 394.5
+spread = 61.463
+gravity = Vector3(0, -3, 0)
+scale_min = 0.1
+scale_max = 0.3
+scale_curve = ExtResource("2_ybs1e")
+color = Color(0.177333, 0.56, 0, 1)
+anim_speed_min = 15.0
+anim_speed_max = 20.0
+anim_offset_max = 1.0
+turbulence_noise_strength = 10.82
+turbulence_noise_scale = 0.0
+turbulence_noise_speed_random = 0.14
+turbulence_influence_min = 0.05

@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cnsqxupk8kmv5"]
+[gd_scene load_steps=13 format=3 uid="uid://cnsqxupk8kmv5"]
 
-[ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="1_8aqpu"]
 [ext_resource type="Script" uid="uid://des8xe3t7ejar" path="res://src/Scripts/subworld.gd" id="1_sqhj5"]
+[ext_resource type="Environment" uid="uid://dh6qujnbw0ffl" path="res://assets/Envlvl1.tres" id="2_ahixe"]
 [ext_resource type="PackedScene" uid="uid://dn45mcmbvf2a8" path="res://assets/Models/Doorway.fbx" id="2_gxr6d"]
 [ext_resource type="PackedScene" uid="uid://5id56smrjsja" path="res://assets/Models/Interactable Door.fbx" id="3_g58it"]
 [ext_resource type="PackedScene" uid="uid://brdh8um8v542x" path="res://src/Scenes/moving_platform.tscn" id="3_gfqrb"]
@@ -10,23 +10,20 @@
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="6_o7dau"]
 [ext_resource type="PackedScene" uid="uid://bacgrc823sjog" path="res://src/Scenes/box_button.tscn" id="8_o7dau"]
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="9_n3xc1"]
-[ext_resource type="Script" uid="uid://barah8wamrx8j" path="res://src/Scripts/level_transition.gd" id="11_sqhj5"]
+[ext_resource type="AudioStream" uid="uid://bq2irrtftwrsc" path="res://assets/Audio/birds_loop.ogg" id="11_ahixe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6h2cs"]
 size = Vector3(2.34766, 1, 3.48267)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mnbru"]
-size = Vector3(16.4883, 7.17395, 2.2832)
 
 [node name="HubMapTransition1" type="Node3D"]
 script = ExtResource("1_sqhj5")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_8aqpu")
+environment = ExtResource("2_ahixe")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.836114, -0.529839, 0.14207, -0.0486009, 0.186421, 0.981267, -0.546398, -0.827356, 0.130119, 0, 12.1965, 0)
-light_color = Color(0.89, 0.89, 0.4806, 1)
+transform = Transform3D(0.647448, 0.588573, -0.484142, 0.691735, -0.187218, 0.697461, 0.319867, -0.786468, -0.52835, 8.96191, 11.2622, -2.73886)
+light_color = Color(0.76565, 0.754838, 0.714615, 1)
 shadow_enabled = true
 directional_shadow_mode = 0
 directional_shadow_blend_splits = true
@@ -103,21 +100,15 @@ transform = Transform3D(0.900395, 0, 0.435074, 0, 1, 0, -0.435074, 0, 0.900395, 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("9_n3xc1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71468, 1.16127, 17.9823)
 
-[node name="LevelTransition" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.87061, 0, 23.4032)
-collision_layer = 0
-collision_mask = 128
-script = ExtResource("11_sqhj5")
-level_index = 4
-config = 3
-metadata/_custom_type_script = "uid://barah8wamrx8j"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelTransition"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.08698, -0.641602)
-shape = SubResource("BoxShape3D_mnbru")
+[node name="Ambiance" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_ahixe")
+attenuation_model = 3
+volume_db = 6.0
+autoplay = true
+panning_strength = 0.0
+attenuation_filter_cutoff_hz = 20500.0
 
 [connection signal="activated" from="Switch" to="DoorFrames/Doorway/MovingPlatform" method="_on_switch_activated"]
-[connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
 
 [editable path="DoorFrames/Doorway2/Interactable Door"]
 [editable path="DoorFrames/Doorway3/Interactable Door"]

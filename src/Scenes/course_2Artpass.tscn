@@ -52,6 +52,7 @@
 [ext_resource type="AudioStream" uid="uid://x4jp1b5yjh5t" path="res://assets/Audio/BGM_Erhu_Loop.ogg" id="50_fhqsr"]
 [ext_resource type="PackedScene" uid="uid://c0type32q1fqs" path="res://assets/Materials/Particles/god_ray.tscn" id="51_pxuoj"]
 [ext_resource type="PackedScene" uid="uid://bllt8odmykx0g" path="res://assets/Materials/Particles/Dust.tscn" id="52_dsaln"]
+[ext_resource type="Script" uid="uid://drkko5ju77rpw" path="res://src/Scripts/checkpoint.gd" id="47_nfc8t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nfc8t"]
 size = Vector3(5.13049, 0.599243, 1.26917)
@@ -199,7 +200,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90043, 17.2093, -0.112793)
 shape = SubResource("BoxShape3D_jtpj6")
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("4_ynt0j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6372, 1.00155, 21.1929)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53238, 7.91524, 6.53724)
 
 [node name="MovingPlatform" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("5_f7rrn")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -30.6028, 1.5, 16.5)
@@ -410,7 +411,7 @@ shape = SubResource("SphereShape3D_lfq00")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.44964, 6.84585, 12.403)
 collision_mask = 128
 script = ExtResource("14_ldhgw")
-config = 4
+config = 5
 metadata/_custom_type_script = "uid://barah8wamrx8j"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LevelTransition"]
@@ -1680,4 +1681,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.91933, 12.1944, 6.00737)
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
 [connection signal="body_entered" from="Kodama2/Area3D" to="Kodama2" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Kodama2/Area3D" to="Kodama2" method="_on_area_3d_body_exited"]
-[connection signal="finished" from="Audio/MusicIntro" to="Audio" method="_on_music_intro_finished"]

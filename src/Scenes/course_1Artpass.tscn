@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bllt8odmykx0g" path="res://assets/Materials/Particles/Dust.tscn" id="31_py842"]
 [ext_resource type="AudioStream" uid="uid://v5qa1ta006rt" path="res://assets/Audio/BGM_Serene_Intro.ogg" id="31_uynjs"]
 [ext_resource type="AudioStream" uid="uid://c7rs76xs4ydm0" path="res://assets/Audio/BGM_Serene_Loop.ogg" id="32_nqe4l"]
+[ext_resource type="PackedScene" uid="uid://bllt8odmykx0g" path="res://assets/Materials/Particles/Dust.tscn" id="31_py842"]
 [ext_resource type="PackedScene" uid="uid://c0type32q1fqs" path="res://assets/Materials/Particles/god_ray.tscn" id="32_uynjs"]
 [ext_resource type="Material" uid="uid://qh4av6x4nd2b" path="res://assets/Materials/interactable_tree.tres" id="34_am6rt"]
 [ext_resource type="PackedScene" uid="uid://ckhsp37mhgajp" path="res://src/Scenes/death_plane.tscn" id="34_k06x0"]
@@ -113,7 +114,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.704498, 1.8241, 0)
 shape = SubResource("BoxShape3D_w8ggu")
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("4_q66gl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1353, 1.38274, 28.5997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9547, 6.17085, 22.6268)
 
 [node name="InteractableTreeBot" parent="." instance=ExtResource("6_mp5ou")]
 transform = Transform3D(0.0367309, 0, -0.999325, 0, 1, 0, 0.999325, 0, 0.0367309, -22.4683, 4.01106, 13.7328)
@@ -802,24 +803,6 @@ transform = Transform3D(-4.80422e-08, 0, 0.998267, 0, 1.29983, 0, -1.09908, 0, -
 [node name="Axe" parent="." instance=ExtResource("29_ge0i3")]
 transform = Transform3D(0.607398, 1.37152, 0.00196698, -0.00559252, 0.0003255, 1.49999, 1.37151, -0.607401, 0.0052453, -22.9818, 4.58498, 16.0013)
 
-[node name="Audio" type="Node3D" parent="."]
-script = ExtResource("31_nqe4l")
-
-[node name="MusicIntro" type="AudioStreamPlayer3D" parent="Audio"]
-stream = ExtResource("31_uynjs")
-attenuation_model = 3
-autoplay = true
-panning_strength = 0.0
-bus = &"Music"
-attenuation_filter_cutoff_hz = 20500.0
-
-[node name="MusicLoop" type="AudioStreamPlayer3D" parent="Audio"]
-stream = ExtResource("32_nqe4l")
-attenuation_model = 3
-panning_strength = 0.0
-bus = &"Music"
-attenuation_filter_cutoff_hz = 20500.0
-
 [node name="DeathPlane" parent="." instance=ExtResource("34_k06x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.8208, 0)
 
@@ -881,7 +864,6 @@ transform = Transform3D(-5.85889, 3.26896, -34.5951, -5.25018, 46.7889, 15.7692,
 [connection signal="body_entered" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_exited"]
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
-[connection signal="finished" from="Audio/MusicIntro" to="Audio" method="_on_music_intro_finished"]
 
 [editable path="Tree/Stump/InteractableTreeBot"]
 [editable path="Tree/Trunk/InteractableTreeTop"]

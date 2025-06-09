@@ -11,4 +11,4 @@ func _on_entrance_timeout() -> void:
 	text_box.display_text_box("FAMILY_3")
 
 func _on_text_box_finished() -> void:
-	level_changed.emit(0, 2)
+	level_changed.emit(0, 6)

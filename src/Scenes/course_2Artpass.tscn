@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://vj5nxyik36yq"]
+[gd_scene load_steps=69 format=3 uid="uid://vj5nxyik36yq"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_xe87j"]
 [ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="2_yfmkw"]
@@ -47,9 +47,6 @@
 [ext_resource type="PackedScene" uid="uid://dxjxppqfmxodb" path="res://assets/Models/QuestFlower.fbx" id="45_vp5nb"]
 [ext_resource type="PackedScene" uid="uid://ckhsp37mhgajp" path="res://src/Scenes/death_plane.tscn" id="46_upwhy"]
 [ext_resource type="Script" uid="uid://drkko5ju77rpw" path="res://src/Scripts/checkpoint.gd" id="47_nfc8t"]
-[ext_resource type="Script" uid="uid://bbtk6x56blpc1" path="res://src/Scripts/music_loop.gd" id="48_lfq00"]
-[ext_resource type="AudioStream" uid="uid://bx407ohk7a380" path="res://assets/Audio/BGM_Erhu_Intro.ogg" id="49_lfq00"]
-[ext_resource type="AudioStream" uid="uid://x4jp1b5yjh5t" path="res://assets/Audio/BGM_Erhu_Loop.ogg" id="50_fhqsr"]
 [ext_resource type="PackedScene" uid="uid://c0type32q1fqs" path="res://assets/Materials/Particles/god_ray.tscn" id="51_pxuoj"]
 [ext_resource type="PackedScene" uid="uid://bllt8odmykx0g" path="res://assets/Materials/Particles/Dust.tscn" id="52_dsaln"]
 [ext_resource type="Script" uid="uid://ewcd11nnkn6r" path="res://src/Scripts/c2_cutscene.gd" id="53_dsaln"]
@@ -1644,24 +1641,6 @@ debug_color = Color(0.126704, 0.647552, 3.85046e-07, 1)
 
 [node name="Checkpoint3Pos" type="Node3D" parent="Checkpoint3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.230469, 0, 6.89122)
-
-[node name="Audio" type="Node3D" parent="."]
-script = ExtResource("48_lfq00")
-
-[node name="MusicIntro" type="AudioStreamPlayer3D" parent="Audio"]
-stream = ExtResource("49_lfq00")
-attenuation_model = 3
-autoplay = true
-panning_strength = 0.0
-bus = &"Music"
-attenuation_filter_cutoff_hz = 20500.0
-
-[node name="MusicLoop" type="AudioStreamPlayer3D" parent="Audio"]
-stream = ExtResource("50_fhqsr")
-attenuation_model = 3
-panning_strength = 0.0
-bus = &"Music"
-attenuation_filter_cutoff_hz = 20500.0
 
 [node name="GodRay" parent="." instance=ExtResource("51_pxuoj")]
 transform = Transform3D(-6.00096, 17.3777, -8.92225, 3.15847, 35.9263, 1.20973, 2.17346, -4.22802, -26.3923, 8.6015, 12.1917, 5.59516)

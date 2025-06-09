@@ -25,4 +25,5 @@ func _on_text_box_finished() -> void:
 		tween.tween_callback(text_box.display_text_box.bind("FAMILY_1"))
 		tween.tween_callback(text_box.display_text_box.bind("FAMILY_2"))
 		tween.tween_callback(text_box.display_text_box.bind("FAMILY_3"))
-	level_changed.emit(0, 6)
+	elif step == 2:
+		level_changed.emit(0, 6)

@@ -1919,6 +1919,7 @@ transform = Transform3D(0.907968, 0, 0.41904, 0, 1, 0, -0.41904, 0, 0.907968, 11
 script = ExtResource("56_nxs1f")
 
 [node name="TextBox" parent="Cutscene" instance=ExtResource("57_e8yj5")]
+visible = false
 
 [node name="Area3D" type="Area3D" parent="Cutscene"]
 collision_layer = 0

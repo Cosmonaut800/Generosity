@@ -24,14 +24,15 @@ func _process(delta):
 	position = Vector3(true_position.x, true_position.y + 0.1 * sin(time), true_position.z)
 
 func _input(event):
-	if player.can_anything and player_nearby and event.is_action_pressed("fire"):
-		increment_kodama_count()
-		player_nearby = false
-		var tween = create_tween()
-		particles.burst()
-		graphics.hide()
-		tween.tween_interval(2.0)
-		tween.tween_callback(queue_free)
+	if player:
+		if player.can_anything and player_nearby and event.is_action_pressed("fire"):
+			increment_kodama_count()
+			player_nearby = false
+			var tween = create_tween()
+			particles.burst()
+			graphics.hide()
+			tween.tween_interval(2.0)
+			tween.tween_callback(queue_free)
 
 func increment_kodama_count() -> void:
 	Utility.kodama_count += 1

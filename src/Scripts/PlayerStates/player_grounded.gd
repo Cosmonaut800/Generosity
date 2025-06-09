@@ -36,7 +36,7 @@ func run_current_state(delta: float) -> State:
 		parent.player_aerial.initialize(parent)
 		return parent.player_aerial
 	
-	if Input.is_action_pressed("focus_camera"):
+	if parent.player.can_anything and Input.is_action_pressed("focus_camera"):
 		parent.player_focused.initialize(parent)
 		parent.reset_anim_conditions()
 		return parent.player_focused

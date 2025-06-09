@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://cfdpexhwuwrmg"]
+[gd_scene load_steps=60 format=3 uid="uid://cfdpexhwuwrmg"]
 
 [ext_resource type="Script" uid="uid://fcvv8w6oypa6" path="res://src/Scripts/third_person_player.gd" id="1_b61l5"]
 [ext_resource type="PackedScene" uid="uid://cmrs264a1r0m6" path="res://src/Scenes/orbit_camera.tscn" id="2_oy5sk"]
@@ -228,6 +228,9 @@ states/root|Run/position = Vector2(397, -1)
 transitions = ["root|Fall 2", "root|JumpPose", SubResource("AnimationNodeStateMachineTransition_wsyoa"), "root|JumpPose", "root|Fall", SubResource("AnimationNodeStateMachineTransition_1jiyc"), "root|Run", "Pushing", SubResource("AnimationNodeStateMachineTransition_5lae5"), "Pushing", "root|Run", SubResource("AnimationNodeStateMachineTransition_fqbe7"), "root|Run", "root|Fall 2", SubResource("AnimationNodeStateMachineTransition_4skry"), "root|Idle", "root|Run", SubResource("AnimationNodeStateMachineTransition_cq7h2"), "root|Run", "root|Idle", SubResource("AnimationNodeStateMachineTransition_vja2a"), "root|Idle", "root|Gauntlet Walk", SubResource("AnimationNodeStateMachineTransition_qrdg7"), "root|Gauntlet Walk", "root|Idle", SubResource("AnimationNodeStateMachineTransition_j4vu5"), "root|Idle", "root|Fall 2", SubResource("AnimationNodeStateMachineTransition_jr6dl"), "root|Fall", "root|Idle", SubResource("AnimationNodeStateMachineTransition_wh5sn"), "Start", "root|Idle", SubResource("AnimationNodeStateMachineTransition_wayh5"), "root|Idle", "Pushing", SubResource("AnimationNodeStateMachineTransition_2b1a1"), "Pushing", "root|Idle", SubResource("AnimationNodeStateMachineTransition_oc30e"), "AimIdle", "root|Gauntlet Walk", SubResource("AnimationNodeStateMachineTransition_hlgrf"), "root|Gauntlet Walk", "AimIdle", SubResource("AnimationNodeStateMachineTransition_0tswy"), "AimIdle", "root|Idle", SubResource("AnimationNodeStateMachineTransition_0j5vv"), "root|Run", "AimIdle", SubResource("AnimationNodeStateMachineTransition_vps83"), "root|Gauntlet Walk", "root|Run", SubResource("AnimationNodeStateMachineTransition_w1dsd"), "root|Run", "root|Gauntlet Walk", SubResource("AnimationNodeStateMachineTransition_uudeu"), "Pushing", "root|Gauntlet Walk", SubResource("AnimationNodeStateMachineTransition_q8ofr"), "root|Gauntlet Walk", "Pushing", SubResource("AnimationNodeStateMachineTransition_ftrng"), "root|Gauntlet Walk", "root|Fall 2", SubResource("AnimationNodeStateMachineTransition_k03jg"), "Pushing", "root|Fall 2", SubResource("AnimationNodeStateMachineTransition_j7f8b"), "root|Idle", "AimIdle", SubResource("AnimationNodeStateMachineTransition_3vnkr"), "AimIdle", "root|Fall 2", SubResource("AnimationNodeStateMachineTransition_1igs2"), "AimIdle", "root|Run", SubResource("AnimationNodeStateMachineTransition_55yu1"), "root|Fall", "Pushing", SubResource("AnimationNodeStateMachineTransition_awd5l")]
 graph_offset = Vector2(8, 100)
 
+[sub_resource type="LabelSettings" id="LabelSettings_4skry"]
+font_size = 14
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5lae5"]
 height = 0.0461502
 
@@ -254,19 +257,19 @@ transform = Transform3D(-1.85, 0, -1.61732e-07, 0, 1.85, 0, 1.61732e-07, 0, -1.8
 
 [node name="Skeleton3D" parent="Graphics/WolfTraveller/root" index="0"]
 bones/1/position = Vector3(-2.50618e-11, 0.00379498, 1.01734e-05)
-bones/1/rotation = Quaternion(-0.003367, -0.0106746, -0.00154625, 0.999936)
-bones/2/rotation = Quaternion(0.71386, 0.0643132, 0.697311, 0.00508532)
-bones/3/rotation = Quaternion(1.6929e-08, -2.13237e-08, 0.21127, 0.977428)
-bones/4/rotation = Quaternion(0.613017, 0.224709, -0.418, 0.631658)
+bones/1/rotation = Quaternion(0.000228835, 0.0167123, 0.00838155, 0.999825)
+bones/2/rotation = Quaternion(0.701437, 0.0646371, 0.709794, 0.000273252)
+bones/3/rotation = Quaternion(4.57377e-08, -3.3722e-08, 0.187638, 0.982238)
+bones/4/rotation = Quaternion(0.597752, 0.239775, -0.417062, 0.641296)
 bones/5/rotation = Quaternion(0.0189045, 0.99955, 0.0226869, 0.0051733)
-bones/6/rotation = Quaternion(-2.25489e-07, -0.42334, -1.56453e-07, 0.905971)
-bones/7/rotation = Quaternion(5.04423e-09, -0.189777, 2.21e-08, 0.981827)
-bones/8/rotation = Quaternion(0.724506, -0.0762013, -0.684368, 0.0304183)
-bones/9/rotation = Quaternion(2.34774e-08, 2.40243e-08, -0.233124, 0.972447)
-bones/10/rotation = Quaternion(-0.563797, 0.27727, -0.449004, -0.635334)
+bones/6/rotation = Quaternion(-2.53922e-07, -0.413305, -1.3742e-07, 0.910592)
+bones/7/rotation = Quaternion(7.36494e-09, -0.207844, -9.34069e-08, 0.978162)
+bones/8/rotation = Quaternion(0.736967, -0.0783536, -0.670387, 0.0363588)
+bones/9/rotation = Quaternion(7.97376e-09, 6.85145e-08, -0.24745, 0.968901)
+bones/10/rotation = Quaternion(-0.579581, 0.266595, -0.446691, -0.62728)
 bones/11/rotation = Quaternion(-0.0191084, 0.997576, 0.0667734, -0.00433347)
-bones/12/rotation = Quaternion(-1.49421e-07, 0.360601, 6.99908e-08, 0.93272)
-bones/13/rotation = Quaternion(1.11204e-08, 0.177098, 1.53214e-09, 0.984193)
+bones/12/rotation = Quaternion(-4.44534e-08, 0.370754, 5.65804e-08, 0.928731)
+bones/13/rotation = Quaternion(-8.56581e-09, 0.15776, 1.13569e-08, 0.987478)
 bones/14/position = Vector3(1.68266e-10, 0.000806044, 2.43365e-05)
 bones/14/rotation = Quaternion(0.0554465, 3.45097e-06, -1.91678e-07, 0.998462)
 bones/15/position = Vector3(4.84223e-05, 0.000681583, -0.000257723)
@@ -274,13 +277,13 @@ bones/15/rotation = Quaternion(-0.00660016, -1.34452e-09, 1.60603e-09, 0.999978)
 bones/16/position = Vector3(-5.20616e-05, 0.000743148, 0.000469302)
 bones/16/rotation = Quaternion(-0.140474, 1.42898e-14, 2.02745e-15, 0.990084)
 bones/17/position = Vector3(3.02149e-12, 0.000803724, -2.02799e-10)
-bones/17/rotation = Quaternion(0.125089, -0.0189336, -0.00309895, 0.99196)
-bones/18/rotation = Quaternion(-0.0300455, 0.00129794, -3.9072e-05, 0.999548)
+bones/17/rotation = Quaternion(0.120285, -0.0243222, -0.00496369, 0.992429)
+bones/18/rotation = Quaternion(-0.0300455, 0.000109711, -3.34066e-06, 0.999549)
 bones/19/position = Vector3(-0.000459528, 0.000266417, -0.000118671)
-bones/19/rotation = Quaternion(-0.470024, 0.444941, 0.544317, 0.533689)
-bones/20/rotation = Quaternion(-0.540768, -0.178278, -0.156293, 0.807069)
-bones/21/rotation = Quaternion(1.25794e-07, -2.95234e-08, 0.436292, 0.899805)
-bones/22/rotation = Quaternion(0.0154039, -0.192239, -0.00626975, 0.981207)
+bones/19/rotation = Quaternion(-0.476883, 0.42773, 0.53484, 0.550977)
+bones/20/rotation = Quaternion(-0.552998, -0.242013, -0.0797108, 0.793265)
+bones/21/rotation = Quaternion(6.38208e-08, -2.60342e-08, 0.410748, 0.911749)
+bones/22/rotation = Quaternion(0.0966794, -0.135294, 0.00316862, 0.986072)
 bones/23/rotation = Quaternion(-0.126747, -0.656605, 0.236856, 0.704772)
 bones/24/rotation = Quaternion(-0.142544, -0.0213863, -0.0556561, 0.987991)
 bones/26/position = Vector3(-0.000214326, 0.000502337, -2.44691e-05)
@@ -291,13 +294,13 @@ bones/29/position = Vector3(-2.98535e-05, 0.000113964, -4.95265e-06)
 bones/30/rotation = Quaternion(0.0258986, 0.895142, -0.0035909, -0.445015)
 bones/31/rotation = Quaternion(-0.14667, 0.0024912, -0.0371634, 0.988484)
 bones/32/rotation = Quaternion(-0.424562, 0.00261747, -0.00514835, 0.90538)
-bones/33/rotation = Quaternion(-2.26956e-07, -0.192141, -3.74839e-08, 0.981367)
-bones/34/rotation = Quaternion(8.52045e-08, 0.140575, 1.1906e-08, 0.99007)
+bones/33/rotation = Quaternion(-2.26089e-07, -0.135734, -3.55164e-08, 0.990745)
+bones/34/rotation = Quaternion(2.23439e-08, 0.227739, -1.34423e-08, 0.973722)
 bones/35/position = Vector3(0.000267876, 0.000212498, -6.37043e-05)
-bones/35/rotation = Quaternion(-0.461307, -0.459876, -0.519785, 0.552751)
-bones/36/rotation = Quaternion(-0.483743, 0.378291, 0.0899947, 0.784085)
-bones/37/rotation = Quaternion(2.02213e-08, -4.549e-08, -0.485264, 0.874368)
-bones/38/rotation = Quaternion(0.0602367, -0.129193, 0.0519128, 0.988426)
+bones/35/rotation = Quaternion(-0.452744, -0.45748, -0.520975, 0.560642)
+bones/36/rotation = Quaternion(-0.49542, 0.340601, 0.0400219, 0.798091)
+bones/37/rotation = Quaternion(8.44987e-08, 4.66351e-09, -0.417778, 0.908549)
+bones/38/rotation = Quaternion(0.0403398, -0.117332, -0.0641755, 0.990196)
 bones/39/rotation = Quaternion(0.0353987, 0.613956, -0.232322, 0.753546)
 bones/40/rotation = Quaternion(-0.0974449, 0.0159175, 0.0202413, 0.994908)
 bones/42/position = Vector3(0.000201606, 0.000510382, -2.46987e-05)
@@ -306,13 +309,13 @@ bones/43/rotation = Quaternion(-0.0749452, -0.00730216, 0.0548797, 0.99565)
 bones/44/rotation = Quaternion(-0.292791, 0.00714712, 0.109201, 0.949894)
 bones/47/rotation = Quaternion(-0.205444, 0.00996482, 0.00957459, 0.978571)
 bones/48/rotation = Quaternion(-0.295718, 0.030675, -0.0371462, 0.95406)
-bones/49/rotation = Quaternion(-1.28875e-08, -0.13254, -5.60151e-08, 0.991178)
-bones/50/rotation = Quaternion(-4.14837e-08, -0.356586, 1.02731e-07, 0.934263)
-bones/51/rotation = Quaternion(-0.682947, -0.0657965, -0.0619962, 0.724853)
-bones/52/rotation = Quaternion(0.521356, 0.0426646, -0.0797061, 0.848537)
+bones/49/rotation = Quaternion(-4.81889e-08, -0.116199, -5.44041e-08, 0.993226)
+bones/50/rotation = Quaternion(1.62e-07, -0.331193, 1.23942e-07, 0.943563)
+bones/51/rotation = Quaternion(-0.706058, -0.052207, -0.0523289, 0.704285)
+bones/52/rotation = Quaternion(0.495468, 0.0368816, -0.0640635, 0.865475)
 
 [node name="BoneAttachment3D" parent="Graphics/WolfTraveller/root/Skeleton3D" index="1"]
-transform = Transform3D(-0.54459, -0.290342, -0.786844, 0.807914, -0.433464, -0.399228, -0.225156, -0.853118, 0.470632, -0.00180101, -0.000191913, 0.00376816)
+transform = Transform3D(-0.568288, -0.268767, -0.777697, 0.785021, -0.460304, -0.414562, -0.246556, -0.846099, 0.472573, -0.00160299, -0.000209313, 0.00364301)
 
 [node name="OrbitCamera" parent="." instance=ExtResource("2_oy5sk")]
 
@@ -378,6 +381,32 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
+
+[node name="KodamaText" type="Panel" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 537.0
+offset_top = -101.0
+offset_right = -537.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="UI/KodamaText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[Left Click] to Share Energy"
+label_settings = SubResource("LabelSettings_4skry")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource("3_uwxpf")

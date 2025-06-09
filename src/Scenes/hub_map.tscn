@@ -110,28 +110,6 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 1.90108, 1
 [node name="GrapplePoint" parent="." instance=ExtResource("8_5qyx3")]
 transform = Transform3D(0.41809, -0.529119, 0.0293054, -0.467448, -0.350646, 0.337883, -0.249636, -0.229577, -0.583611, 18.1724, 5.52011, -8.44867)
 
-[node name="Labels" type="Node3D" parent="."]
-
-[node name="Label3D" type="Label3D" parent="Labels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.78475, 0.887025, 19.55)
-billboard = 1
-text = "To Village Cutscenes (Not implemented)"
-
-[node name="Label3D2" type="Label3D" parent="Labels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96127, 2.9627, -5.88169)
-billboard = 1
-text = "To Course 1"
-
-[node name="Label3D3" type="Label3D" parent="Labels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.194, 4.05265, -15.9965)
-billboard = 1
-text = "To Course 2"
-
-[node name="Label3D4" type="Label3D" parent="Labels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.11661, 4.05265, -25.9451)
-billboard = 1
-text = "To Course 3"
-
 [node name="LevelTransition" type="Area3D" parent="."]
 transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -7.74206, 2.84927, -6.98871)
 collision_mask = 128

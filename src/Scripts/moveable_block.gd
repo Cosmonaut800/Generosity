@@ -12,6 +12,7 @@ func _ready():
 	last_position = position
 
 func _physics_process(delta):
+	last_position.y = position.y
 	if !is_on_floor():
 		velocity.y -= delta * gravity
 		if sfx.playing:

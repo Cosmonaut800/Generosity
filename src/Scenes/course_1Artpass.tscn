@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://1i4lx1t8c653"]
+[gd_scene load_steps=51 format=3 uid="uid://1i4lx1t8c653"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_oofx1"]
 [ext_resource type="Environment" uid="uid://dh6qujnbw0ffl" path="res://assets/Envlvl1.tres" id="2_w8ggu"]
@@ -29,17 +29,28 @@
 [ext_resource type="PackedScene" uid="uid://bnt0auahi0h13" path="res://assets/Models/Roots.fbx" id="24_ybjnu"]
 [ext_resource type="PackedScene" uid="uid://dg0tlbor7atts" path="res://assets/Models/Axe.fbx" id="29_ge0i3"]
 [ext_resource type="PackedScene" uid="uid://dn45mcmbvf2a8" path="res://assets/Models/Doorway.fbx" id="29_w8ggu"]
-[ext_resource type="Script" uid="uid://bbtk6x56blpc1" path="res://src/Scripts/music_loop.gd" id="31_nqe4l"]
-[ext_resource type="PackedScene" uid="uid://bllt8odmykx0g" path="res://assets/Materials/Particles/Dust.tscn" id="31_py842"]
-[ext_resource type="AudioStream" uid="uid://v5qa1ta006rt" path="res://assets/Audio/BGM_Serene_Intro.ogg" id="31_uynjs"]
-[ext_resource type="AudioStream" uid="uid://c7rs76xs4ydm0" path="res://assets/Audio/BGM_Serene_Loop.ogg" id="32_nqe4l"]
 [ext_resource type="PackedScene" uid="uid://bllt8odmykx0g" path="res://assets/Materials/Particles/Dust.tscn" id="31_py842"]
 [ext_resource type="PackedScene" uid="uid://c0type32q1fqs" path="res://assets/Materials/Particles/god_ray.tscn" id="32_uynjs"]
 [ext_resource type="Material" uid="uid://qh4av6x4nd2b" path="res://assets/Materials/interactable_tree.tres" id="34_am6rt"]
+[ext_resource type="Script" uid="uid://cwjl3j6s8tl16" path="res://src/Scripts/c1_cutscene.gd" id="34_ja0lu"]
 [ext_resource type="PackedScene" uid="uid://ckhsp37mhgajp" path="res://src/Scenes/death_plane.tscn" id="34_k06x0"]
+[ext_resource type="PackedScene" uid="uid://b6vb4ak58jaby" path="res://src/Scenes/text_box.tscn" id="34_rkk31"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w8ggu"]
 size = Vector3(6.17487, 7.96558, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nqe4l"]
+height = 1.64624
+radius = 1.06055
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_am6rt"]
+size = Vector3(11.8741, 9.04681, 2.88806)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rkk31"]
+size = Vector3(1.19836, 3.12878, 4.60184)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ja0lu"]
+size = Vector3(2.06021, 5.62598, 10.7081)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nqe4l"]
 radius = 2.49585
@@ -87,6 +98,9 @@ size = Vector3(1, 0.791504, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_nqe4l"]
 size = Vector3(1, 9.52979, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_cjj5c"]
+size = Vector3(8.57007, 0.379883, 15.6174)
+
 [node name="Course1" type="Node3D"]
 script = ExtResource("1_oofx1")
 
@@ -113,8 +127,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0169, 2.54761, 30.6428)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.704498, 1.8241, 0)
 shape = SubResource("BoxShape3D_w8ggu")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="course_1_blockout/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.53406, -1.97131, -3.02896)
+shape = SubResource("CylinderShape3D_nqe4l")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="course_1_blockout/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4607, -2.44908, -20.017)
+shape = SubResource("CylinderShape3D_nqe4l")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="course_1_blockout/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99072, 1.75889, -22.7252)
+shape = SubResource("BoxShape3D_am6rt")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="course_1_blockout/StaticBody3D"]
+transform = Transform3D(0.283932, 0, 0.958845, 0, 1, 0, -0.958845, 0, 0.283932, -18.218, 1.06439, -22.4182)
+shape = SubResource("BoxShape3D_rkk31")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="course_1_blockout/StaticBody3D"]
+transform = Transform3D(0.675217, 0, 0.737619, 0, 1, 0, -0.737619, 0, 0.675217, -18.6984, 1.06439, -23.7073)
+shape = SubResource("BoxShape3D_rkk31")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="course_1_blockout/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.830625, -0.556832, 0, 0.556832, 0.830625, -26.0046, -4.72279, -21.9966)
+shape = SubResource("BoxShape3D_ja0lu")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="course_1_blockout/StaticBody3D"]
+transform = Transform3D(0.931812, 9.31323e-09, -0.362942, -0.202098, 0.830625, -0.518863, 0.301469, 0.556832, 0.773986, -24.1501, -4.36058, -22.5369)
+shape = SubResource("BoxShape3D_ja0lu")
+
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("4_q66gl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9547, 6.17085, 22.6268)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.96633, 1.38585, 27.4278)
 
 [node name="InteractableTreeBot" parent="." instance=ExtResource("6_mp5ou")]
 transform = Transform3D(0.0367309, 0, -0.999325, 0, 1, 0, 0.999325, 0, 0.0367309, -22.4683, 4.01106, 13.7328)
@@ -133,9 +175,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0439802, 2.97136, 8.1561)
 [node name="MoveableBlock2m3" parent="." instance=ExtResource("6_ip7ft")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93948, 2.97136, 10.0968)
 
-[node name="Kodama" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_n0bhd")]
+[node name="KodamaPosition" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -25.9079, 4.67494, 17.0546)
+
+[node name="Kodama" parent="." node_paths=PackedStringArray("player", "world") instance=ExtResource("8_n0bhd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.357, 2.67752, 17.0546)
 player = NodePath("../ThirdPersonPlayer")
+world = NodePath("..")
 
 [node name="Area3D" type="Area3D" parent="Kodama"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.653675)
@@ -861,9 +907,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9639, 8.88882, 18.6417)
 [node name="GodRay" parent="." instance=ExtResource("32_uynjs")]
 transform = Transform3D(-5.85889, 3.26896, -34.5951, -5.25018, 46.7889, 15.7692, 7.12885, 37.1452, -16.8187, -22.6162, 9.6228, 17.7601)
 
+[node name="Cutscene" type="Node3D" parent="."]
+script = ExtResource("34_ja0lu")
+
+[node name="TextBox" parent="Cutscene" instance=ExtResource("34_rkk31")]
+visible = false
+mouse_filter = 2
+
+[node name="Area3D" type="Area3D" parent="Cutscene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.0133, 5.0059, 17.4953)
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cutscene/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.310059, 0)
+shape = SubResource("BoxShape3D_cjj5c")
+
+[node name="Timer" type="Timer" parent="Cutscene"]
+one_shot = true
+
 [connection signal="body_entered" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_exited"]
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
+[connection signal="finished" from="Cutscene/TextBox" to="Cutscene" method="_on_text_box_finished"]
+[connection signal="body_entered" from="Cutscene/Area3D" to="Cutscene" method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="Cutscene/Timer" to="Cutscene" method="_on_timer_timeout"]
 
 [editable path="Tree/Stump/InteractableTreeBot"]
 [editable path="Tree/Trunk/InteractableTreeTop"]

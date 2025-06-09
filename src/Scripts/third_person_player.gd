@@ -20,6 +20,7 @@ const JUMP_VELOCITY = 4.5
 @onready var pushable_ray := $PushableRay
 @onready var crosshair := $UI/Crosshair
 @onready var blackout := $UI/Black
+@onready var kodama_text := $UI/KodamaText
 @onready var footsteps: Array[AudioStreamPlayer3D] =\
 [	$Audio/Step1,
 	$Audio/Step2,
@@ -34,6 +35,7 @@ var pushable : RigidBody3D = null
 var push_force := 1000.0
 var respawn_position := Vector3.ZERO
 var kodama_count := 0
+var can_anything := true
 
 func _ready():
 	accel = ground_accel
@@ -46,6 +48,7 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	direction = (camera.yaw_pivot.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	direction.y = 0.0
+	if !can_anything: direction = Vector3.ZERO
 	if direction:
 		velocity.x = move_toward(velocity.x, speed * direction.x, (abs(direction.x) if abs(direction.x) > 0.3 else 0.3) * accel * delta)
 		velocity.z = move_toward(velocity.z, speed * direction.z, (abs(direction.z) if abs(direction.z) > 0.3 else 0.3) * accel * delta)

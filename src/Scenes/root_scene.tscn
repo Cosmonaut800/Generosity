@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d18iy1ybkm65a"]
+[gd_scene load_steps=13 format=3 uid="uid://d18iy1ybkm65a"]
 
 [ext_resource type="Script" uid="uid://b3qg3ybr0eti0" path="res://src/Scripts/root_scene.gd" id="1_ygj5l"]
 [ext_resource type="AudioStream" uid="uid://v5qa1ta006rt" path="res://assets/Audio/BGM_Serene_Intro.ogg" id="2_32ear"]
@@ -12,11 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://dym0n4mgtqv6q" path="res://assets/Audio/BGM_Village_4.ogg" id="5_n6n6h"]
 [ext_resource type="AudioStream" uid="uid://cnqv7q8h7foxo" path="res://assets/Audio/BGM_Choral_Intro.ogg" id="7_droxx"]
 [ext_resource type="AudioStream" uid="uid://idaykai5h2t8" path="res://assets/Audio/BGM_Choral_Loop.ogg" id="8_w6wrb"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_u54ix"]
-font_size = 12
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
 
 [node name="RootScene" type="Node3D"]
 script = ExtResource("1_ygj5l")
@@ -43,22 +38,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
-
-[node name="Label" type="Label" parent="UI"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -99.0
-offset_right = 222.0
-grow_vertical = 0
-text = "[P] - Toggle Mouse Capture
-[R] - Restart Current Level
-[Right Click] - Aim Grappling Hook
-[Left Click] While Aiming - Fire Grappling Hook
-[W] [A] [S] [D] - Move
-[Space] - Jump"
-label_settings = SubResource("LabelSettings_u54ix")
 
 [node name="Music" type="Node3D" parent="."]
 

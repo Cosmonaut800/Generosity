@@ -46,13 +46,11 @@
 [ext_resource type="Material" uid="uid://n6mhxn7dkdtg" path="res://assets/Materials/TriplanarGrass.tres" id="37_lfq00"]
 [ext_resource type="PackedScene" uid="uid://dxjxppqfmxodb" path="res://assets/Models/QuestFlower.fbx" id="45_vp5nb"]
 [ext_resource type="PackedScene" uid="uid://ckhsp37mhgajp" path="res://src/Scenes/death_plane.tscn" id="46_upwhy"]
-[ext_resource type="Script" path="res://src/Scripts/checkpoint.gd" id="47_nfc8t"]
-[ext_resource type="Script" uid="uid://bbtk6x56blpc1" path="res://src/Scripts/music_loop.gd" id="48_lfq00"]
-[ext_resource type="AudioStream" uid="uid://bx407ohk7a380" path="res://assets/Audio/BGM_Erhu_Intro.ogg" id="49_lfq00"]
-[ext_resource type="AudioStream" uid="uid://x4jp1b5yjh5t" path="res://assets/Audio/BGM_Erhu_Loop.ogg" id="50_fhqsr"]
+[ext_resource type="Script" uid="uid://drkko5ju77rpw" path="res://src/Scripts/checkpoint.gd" id="47_nfc8t"]
 [ext_resource type="PackedScene" uid="uid://c0type32q1fqs" path="res://assets/Materials/Particles/god_ray.tscn" id="51_pxuoj"]
 [ext_resource type="PackedScene" uid="uid://bllt8odmykx0g" path="res://assets/Materials/Particles/Dust.tscn" id="52_dsaln"]
-[ext_resource type="Script" uid="uid://drkko5ju77rpw" path="res://src/Scripts/checkpoint.gd" id="47_nfc8t"]
+[ext_resource type="Script" uid="uid://ewcd11nnkn6r" path="res://src/Scripts/c2_cutscene.gd" id="53_dsaln"]
+[ext_resource type="PackedScene" uid="uid://b6vb4ak58jaby" path="res://src/Scenes/text_box.tscn" id="54_ci0dj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nfc8t"]
 size = Vector3(5.13049, 0.599243, 1.26917)
@@ -98,6 +96,9 @@ radius = 2.31779
 [sub_resource type="BoxShape3D" id="BoxShape3D_7rn27"]
 size = Vector3(1.5332, 27.999, 16.9182)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_pjnui"]
+size = Vector3(11.2336, 1.44873, 8.63037)
+
 [node name="Course2" type="Node3D"]
 script = ExtResource("1_xe87j")
 
@@ -111,7 +112,6 @@ shadow_enabled = true
 directional_shadow_mode = 0
 
 [node name="Course_2_Floor" parent="." instance=ExtResource("3_ryhiu")]
-metadata/_edit_lock_ = true
 
 [node name="course2_collision" parent="." instance=ExtResource("4_nfc8t")]
 visible = false
@@ -200,7 +200,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90043, 17.2093, -0.112793)
 shape = SubResource("BoxShape3D_jtpj6")
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("4_ynt0j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53238, 7.91524, 6.53724)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.4736, 1.09878, 21.6059)
 
 [node name="MovingPlatform" parent="." node_paths=PackedStringArray("waypoints") instance=ExtResource("5_f7rrn")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -30.6028, 1.5, 16.5)
@@ -397,9 +397,10 @@ transform = Transform3D(-3.0598e-08, -3.0598e-08, -0.7, -0.52034, 0.468237, 2.27
 [node name="GrapplePoint3" parent="." instance=ExtResource("12_yfmkw")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 7.88519, 5.7774, -22.849)
 
-[node name="Kodama" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_ttu8j")]
+[node name="Kodama" parent="." node_paths=PackedStringArray("player", "world") instance=ExtResource("13_ttu8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.065, 0.352443, -2.26072)
 player = NodePath("../ThirdPersonPlayer")
+world = NodePath("..")
 
 [node name="Area3D" type="Area3D" parent="Kodama"]
 collision_mask = 128
@@ -418,9 +419,10 @@ metadata/_custom_type_script = "uid://barah8wamrx8j"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00463867, 0.155334, 0)
 shape = SubResource("BoxShape3D_oouk5")
 
-[node name="Kodama2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_ttu8j")]
+[node name="Kodama2" parent="." node_paths=PackedStringArray("player", "world") instance=ExtResource("13_ttu8j")]
 transform = Transform3D(0.999107, 0, 0.0422418, 0, 1, 0, -0.0422418, 0, 0.999107, 6.63152, -5.43999, -8.86636)
 player = NodePath("../ThirdPersonPlayer")
+world = NodePath("..")
 
 [node name="Area3D" type="Area3D" parent="Kodama2"]
 collision_mask = 128
@@ -1640,24 +1642,6 @@ debug_color = Color(0.126704, 0.647552, 3.85046e-07, 1)
 [node name="Checkpoint3Pos" type="Node3D" parent="Checkpoint3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.230469, 0, 6.89122)
 
-[node name="Audio" type="Node3D" parent="."]
-script = ExtResource("48_lfq00")
-
-[node name="MusicIntro" type="AudioStreamPlayer3D" parent="Audio"]
-stream = ExtResource("49_lfq00")
-attenuation_model = 3
-autoplay = true
-panning_strength = 0.0
-bus = &"Music"
-attenuation_filter_cutoff_hz = 20500.0
-
-[node name="MusicLoop" type="AudioStreamPlayer3D" parent="Audio"]
-stream = ExtResource("50_fhqsr")
-attenuation_model = 3
-panning_strength = 0.0
-bus = &"Music"
-attenuation_filter_cutoff_hz = 20500.0
-
 [node name="GodRay" parent="." instance=ExtResource("51_pxuoj")]
 transform = Transform3D(-6.00096, 17.3777, -8.92225, 3.15847, 35.9263, 1.20973, 2.17346, -4.22802, -26.3923, 8.6015, 12.1917, 5.59516)
 
@@ -1671,6 +1655,21 @@ spot_angle = 28.7557
 [node name="Fragment" parent="." instance=ExtResource("52_dsaln")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.91933, 12.1944, 6.00737)
 
+[node name="Cutscene" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.46867, 9.20731, 6.60631)
+script = ExtResource("53_dsaln")
+
+[node name="TextBox" parent="Cutscene" instance=ExtResource("54_ci0dj")]
+visible = false
+
+[node name="Area3D" type="Area3D" parent="Cutscene"]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cutscene/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.247192, -2.96127, 1.59851)
+shape = SubResource("BoxShape3D_pjnui")
+
 [connection signal="activated" from="BoxButton" to="MovingPlatform" method="_on_switch_activated"]
 [connection signal="activated" from="Switch" to="MovingPlatform2" method="_on_switch_activated"]
 [connection signal="activated" from="BoxButton2" to="MovingPlatform5" method="_on_switch_activated"]
@@ -1681,3 +1680,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.91933, 12.1944, 6.00737)
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
 [connection signal="body_entered" from="Kodama2/Area3D" to="Kodama2" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Kodama2/Area3D" to="Kodama2" method="_on_area_3d_body_exited"]
+[connection signal="finished" from="Cutscene/TextBox" to="Cutscene" method="_on_text_box_finished"]
+[connection signal="body_entered" from="Cutscene/Area3D" to="Cutscene" method="_on_area_3d_body_entered"]

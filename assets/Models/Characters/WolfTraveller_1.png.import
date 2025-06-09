@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cbs0njjpaeo8j"
+path.s3tc="res://.godot/imported/WolfTraveller_1.png-6ba9131324c0c6d193ec3bcba8cc70d3.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "a5e5c8f26d1ab849d7a16da226b613bf"
+}
+
+[deps]
+
+source_file="res://assets/Models/Characters/WolfTraveller_1.png"
+dest_files=["res://.godot/imported/WolfTraveller_1.png-6ba9131324c0c6d193ec3bcba8cc70d3.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

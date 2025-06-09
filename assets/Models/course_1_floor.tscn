@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4wb0t8d5espv"]
+
+[ext_resource type="PackedScene" uid="uid://bexskv6q1yooh" path="res://assets/Models/Course_1_Floor.fbx" id="1_7ul7f"]
+[ext_resource type="Material" uid="uid://n6mhxn7dkdtg" path="res://assets/Materials/TriplanarGrass.tres" id="2_px7fy"]
+[ext_resource type="Material" uid="uid://b7tvka2xigdkr" path="res://assets/Materials/TriplanarStone.tres" id="3_20ldf"]
+[ext_resource type="Material" uid="uid://b8guiyaoi17mk" path="res://assets/Materials/Leaf3Dead.tres" id="4_px7fy"]
+
+[node name="Course_1_Floor" instance=ExtResource("1_7ul7f")]
+
+[node name="Course_1_Floor_002" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_px7fy")
+surface_material_override/1 = ExtResource("2_px7fy")
+surface_material_override/2 = ExtResource("3_20ldf")
+surface_material_override/3 = ExtResource("4_px7fy")

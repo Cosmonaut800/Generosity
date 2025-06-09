@@ -1,0 +1,268 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dvysfu5fuad6k"
+path="res://.godot/imported/sample_map.glb-f5b8468a6e851590ce58f4d22789167f.scn"
+
+[deps]
+
+source_file="res://assets/Models/sample_map.glb"
+dest_files=["res://.godot/imported/sample_map.glb-f5b8468a6e851590ce58f4d22789167f.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"checker_32x.001": {
+"use_external/enabled": true,
+"use_external/path": "uid://fwdgib7583jy"
+},
+"checker_cyan_32x.001": {
+"use_external/enabled": true,
+"use_external/path": "uid://fwdgib7583jy"
+},
+"checker_green_32x.001": {
+"use_external/enabled": true,
+"use_external/path": "uid://d22sp4h08cija"
+},
+"checker_purple_32x.001": {
+"use_external/enabled": true,
+"use_external/path": "uid://dcsxiv0pbir3c"
+},
+"grass1tex.001": {
+"use_external/enabled": true,
+"use_external/path": "uid://bgf5gc0dxl8qg"
+},
+"paintergrasstex.001": {
+"use_external/enabled": true,
+"use_external/path": "uid://7apuuancxi3p"
+},
+"rocktex.001": {
+"use_external/enabled": true,
+"use_external/path": "uid://h2tct0nkwhps"
+}
+},
+"nodes": {
+"PATH:Node_0/Box": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_001": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_002": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_003": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_004": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_005": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_006": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_007": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_008": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_009": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_010": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_011": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_012": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_013": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_014": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_015": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_016": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_017": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_018": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_019": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_020": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_021": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_022": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_023": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_024": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_025": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_026": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_027": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_028": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_029": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_030": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_031": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_032": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_033": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Box_034": {
+"generate/physics": true
+},
+"PATH:Node_0/Cone": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Wedge": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Wedge_001": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Wedge_002": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+},
+"PATH:Node_0/Wedge_003": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 255
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

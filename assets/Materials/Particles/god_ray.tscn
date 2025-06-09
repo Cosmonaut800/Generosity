@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0type32q1fqs"]
+
+[ext_resource type="Material" uid="uid://dxc0gp22nilcw" path="res://assets/Materials/Particles/Godray.tres" id="1_na7vw"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_nqe4l"]
+
+[node name="GodRay" type="MeshInstance3D"]
+transform = Transform3D(-5.85889, 3.26896, -34.5951, -5.25018, 46.7888, 15.7692, 7.12885, 37.1452, -16.8186, 0, 0, 0)
+mesh = SubResource("QuadMesh_nqe4l")
+surface_material_override/0 = ExtResource("1_na7vw")

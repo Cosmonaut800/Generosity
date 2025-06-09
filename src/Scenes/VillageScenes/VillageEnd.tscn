@@ -1,0 +1,148 @@
+[gd_scene load_steps=10 format=3 uid="uid://bs835xu2koieu"]
+
+[ext_resource type="Script" uid="uid://des8xe3t7ejar" path="res://src/Scripts/subworld.gd" id="1_6ueuw"]
+[ext_resource type="Environment" uid="uid://c5qu6qq326wkt" path="res://assets/VillageNight.tres" id="2_4q1n6"]
+[ext_resource type="PackedScene" uid="uid://v5s1gch7apbr" path="res://assets/Models/Characters/SquirrelNPC.fbx" id="3_ghma3"]
+[ext_resource type="PackedScene" uid="uid://br27m7mb1g3r2" path="res://assets/Models/Characters/DogNPC.fbx" id="4_q5dge"]
+[ext_resource type="PackedScene" uid="uid://b47nmpt8vhlg3" path="res://assets/Models/Characters/BunnyNPC.fbx" id="5_lq32b"]
+[ext_resource type="FontFile" uid="uid://c1ot76kbac2wm" path="res://assets/Fragmentcore.otf" id="7_khjv2"]
+[ext_resource type="Script" uid="uid://c5yeog5w6yfhn" path="res://src/Scenes/VillageScenes/score.gd" id="7_oputj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_khjv2"]
+font = ExtResource("7_khjv2")
+font_size = 46
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8gwd7"]
+font = ExtResource("7_khjv2")
+font_size = 32
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="VillageNight" type="Node3D"]
+script = ExtResource("1_6ueuw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_4q1n6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.788015, -0.597778, 0.147291, -0.612131, -0.786316, 0.0836779, 0.0657966, -0.156101, -0.985547, -6.46218, 14.4702, -10.0908)
+light_color = Color(0.426261, 0.812573, 0.88243, 1)
+light_energy = 0.665
+light_indirect_energy = 0.0
+shadow_enabled = true
+directional_shadow_mode = 0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3543, 2.31099, -1.01485)
+light_energy = 0.5
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9705, 2.69278, 3.32922)
+light_energy = 0.5
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5736, 0.666612, 19.212)
+light_energy = 0.5
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.0409, 2.76734, 20.8212)
+light_energy = 0.5
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8968, 2.73985, -0.954289)
+light_energy = 0.5
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8968, 0.949005, -0.983081)
+light_energy = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3543, 2.31099, -3.01485)
+light_energy = 0.5
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3032, 5.35386, -2.02558)
+light_energy = 0.5
+
+[node name="SquirrelNPC" parent="." instance=ExtResource("3_ghma3")]
+transform = Transform3D(-0.28132, 0, 0.959614, 0, 1, 0, -0.959614, 0, -0.28132, 25.1857, 0, -1.42794)
+
+[node name="DogNPC" parent="." instance=ExtResource("4_q5dge")]
+transform = Transform3D(0.775253, 0, -0.631651, 0, 1, 0, 0.631651, 0, 0.775253, 26.3359, 0, -1.95467)
+
+[node name="BunnyNPC" parent="." instance=ExtResource("5_lq32b")]
+transform = Transform3D(-0.984941, 0, 0.172892, 0, 1, 0, -0.172892, 0, -0.984941, 30.5199, 0, -0.512013)
+
+[node name="BunnyNPC2" parent="." instance=ExtResource("5_lq32b")]
+transform = Transform3D(0.288564, 0, 0.957461, 0, 1, 0, -0.957461, 0, 0.288564, 12.9752, 0, 4.07873)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.354422, 0.00417795, 0.935076, 1.86265e-09, 0.99999, -0.00446798, -0.935086, 0.00158355, 0.354418, 34.9525, 3.4006, 14.3996)
+fov = 65.2473
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_oputj")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -24.0
+offset_right = 29.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.0980392)
+
+[node name="Label" type="Label" parent="Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 71.0
+offset_top = -186.0
+offset_right = 564.0
+offset_bottom = -122.0
+grow_vertical = 0
+text = "Thank you for playing!"
+label_settings = SubResource("LabelSettings_khjv2")
+
+[node name="Label2" type="Label" parent="Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 71.0
+offset_top = -122.0
+offset_right = 564.0
+offset_bottom = -58.0
+grow_vertical = 0
+text = "Total spirits found:"
+label_settings = SubResource("LabelSettings_8gwd7")
+
+[node name="Score" type="Label" parent="Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 323.0
+offset_top = -122.0
+offset_right = 614.0
+offset_bottom = -58.0
+grow_vertical = 0
+text = "#/6"
+label_settings = SubResource("LabelSettings_8gwd7")

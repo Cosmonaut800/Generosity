@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddmgktx8k2o6"]
+
+[ext_resource type="PackedScene" uid="uid://cd735g1fmsl7b" path="res://assets/Models/Characters/WolfTraveller.fbx" id="1_iaafw"]
+[ext_resource type="PackedScene" uid="uid://bw8pq6pfyihem" path="res://assets/Models/Characters/SquirrelLumberjack.fbx" id="2_w2t46"]
+[ext_resource type="PackedScene" uid="uid://scfgyp04kbwj" path="res://assets/Models/Characters/OldHare.fbx" id="3_8v0xu"]
+[ext_resource type="PackedScene" uid="uid://cyue5e3unmbst" path="res://assets/Models/Characters/DogMother.fbx" id="4_uhdhc"]
+[ext_resource type="PackedScene" uid="uid://dn03o2jn2cpih" path="res://assets/Models/Characters/DogKid.fbx" id="5_2wuir"]
+[ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="6_hcyw6"]
+[ext_resource type="PackedScene" uid="uid://d1yjgnsebeeto" path="res://assets/Models/Characters/Kodama.fbx" id="7_odn4x"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SquirrelLumberjack" parent="." instance=ExtResource("2_w2t46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73432, 0, 1.13893)
+
+[node name="OldHare" parent="." instance=ExtResource("3_8v0xu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.188651, 0, 1.01976)
+
+[node name="DogMother" parent="." instance=ExtResource("4_uhdhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.602463, 0, 1.16297)
+
+[node name="DogKid" parent="." instance=ExtResource("5_2wuir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23724, 0, 1.11539)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("6_hcyw6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.983447, -0.12641, -0.12982, -0.0706124, -0.392447, 0.91706, -0.166873, 0.911047, 0.377025, -4.41074e-06, 12.1901, 9.9659e-05)
+light_color = Color(0.89, 0.862707, 0.4806, 1)
+shadow_enabled = true
+
+[node name="Kodama" parent="." instance=ExtResource("7_odn4x")]
+transform = Transform3D(0.489524, 0, 0, 0, 0.489524, 0, 0, 0, 0.489524, -1.72823, 0, 1.23025)
+
+[node name="WolfTraveller" parent="." instance=ExtResource("1_iaafw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.983896, 0, 0.980278)

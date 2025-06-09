@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bim86qlbgmnce"]
+
+[ext_resource type="Material" uid="uid://do46e7gcogx5f" path="res://assets/Materials/Particles/FragBurst.tres" id="1_8xl3p"]
+[ext_resource type="Material" uid="uid://5plshxwpcb28" path="res://assets/Materials/Particles/FragmentMat.tres" id="2_thyg2"]
+[ext_resource type="Script" uid="uid://d3obbsvib7sqw" path="res://assets/Materials/Particles/fragment_burst.gd" id="3_0n76w"]
+[ext_resource type="PackedScene" uid="uid://0an3vhevx8eh" path="res://assets/Materials/Particles/fragment.tscn" id="3_thyg2"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_wqyi8"]
+material = ExtResource("2_thyg2")
+
+[node name="FragmentBurst" type="GPUParticles3D"]
+transform = Transform3D(0.995972, 0, 0, 0, 0.995972, 0, 0, 0, 0.995972, 0, 0, 0)
+emitting = false
+lifetime = 0.8
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 1.0
+process_material = ExtResource("1_8xl3p")
+draw_pass_1 = SubResource("QuadMesh_wqyi8")
+script = ExtResource("3_0n76w")
+
+[node name="Floaty" parent="." instance=ExtResource("3_thyg2")]
+transform = Transform3D(0.466967, 0, 0, 0, 0.105043, 0, 0, 0, 0.382264, 0, 0, 0)
+emitting = false
+amount = 2
+speed_scale = 0.8

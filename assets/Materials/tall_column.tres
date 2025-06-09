@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b4crjv4lhym8i"]
+
+[ext_resource type="Texture2D" uid="uid://dv653gp3wydng" path="res://assets/Materials/Textures/TallColRockTex.png" id="1_g3tpg"]
+
+[resource]
+albedo_texture = ExtResource("1_g3tpg")
+rim = 0.0
+texture_filter = 0

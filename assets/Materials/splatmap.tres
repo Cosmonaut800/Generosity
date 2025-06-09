@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bs0ogmlacf30k"]
+
+[ext_resource type="Shader" uid="uid://ca825mcm7nx7q" path="res://src/Shaders/splatmapped.gdshader" id="1_ml8m7"]
+[ext_resource type="Texture2D" uid="uid://b7nebkq0v782x" path="res://assets/Materials/Textures/checker_dgreen.png" id="2_clli2"]
+[ext_resource type="Texture2D" uid="uid://bduev6f1fixx1" path="res://assets/Materials/Textures/checker_red.png" id="3_sdxek"]
+[ext_resource type="Texture2D" uid="uid://b6boin1tixr20" path="res://assets/Materials/Textures/test_splatmap.png" id="4_mcryb"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ml8m7")
+shader_parameter/background = ExtResource("2_clli2")
+shader_parameter/detail = ExtResource("3_sdxek")
+shader_parameter/splatmap = ExtResource("4_mcryb")
+shader_parameter/SplatScale = Vector2(30, 30)
+shader_parameter/SplatOffset = Vector2(-5.8025, -6.89675)

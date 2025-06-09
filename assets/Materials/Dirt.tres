@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://pyva4u4016cn"]
+
+[ext_resource type="Texture2D" uid="uid://cq6rs4q48byao" path="res://assets/Materials/Textures/DirtTex.png" id="1_aym57"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_aym57")
+backlight = Color(0.974766, 0.970123, 0.99364, 1)
+texture_filter = 0

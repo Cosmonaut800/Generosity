@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkglvypeexyb4"]
+
+[ext_resource type="Script" uid="uid://cs6qjglciutn3" path="res://src/Scripts/moveable_block.gd" id="1_osgdk"]
+[ext_resource type="PackedScene" uid="uid://bmc1g0j1wjvqu" path="res://assets/Models/InteractableBox2.fbx" id="3_atonl"]
+[ext_resource type="AudioStream" uid="uid://bko0vsxx2hxjj" path="res://assets/Audio/rock_push.ogg" id="3_qm2p5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_osgdk"]
+size = Vector3(2, 2, 2)
+
+[node name="MoveableBlock2m" type="CharacterBody3D"]
+process_priority = -8
+process_physics_priority = -8
+collision_layer = 48
+collision_mask = 721
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_osgdk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_osgdk")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.20513, 0)
+stream = ExtResource("3_qm2p5")
+pitch_scale = 0.75
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="InteractableBox2" parent="." instance=ExtResource("3_atonl")]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, -1.015, 0)

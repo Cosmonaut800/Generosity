@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://gx1ku8ict8y2"]
+
+[ext_resource type="PackedScene" uid="uid://dxjxppqfmxodb" path="res://assets/Models/QuestFlower.fbx" id="1_ud7f7"]
+[ext_resource type="Material" uid="uid://cdkdq36di0pdq" path="res://assets/Materials/Flowers.tres" id="2_0htf3"]
+
+[node name="QuestFlower" instance=ExtResource("1_ud7f7")]
+
+[node name="QuestFlower" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_0htf3")

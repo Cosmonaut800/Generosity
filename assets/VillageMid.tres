@@ -1,0 +1,26 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://wsy8fj751nfs"]
+
+[ext_resource type="Texture2D" uid="uid://b4i13cl3oltjs" path="res://assets/Materials/Textures/midday_color_correction.tres" id="1_oa45p"]
+[ext_resource type="Sky" uid="uid://d1ti1l4kqywul" path="res://assets/middaysky.tres" id="2_oteje"]
+
+[resource]
+background_mode = 2
+sky = ExtResource("2_oteje")
+ambient_light_source = 2
+ambient_light_color = Color(0.56961, 0.797003, 1, 1)
+reflected_light_source = 2
+tonemap_white = 8.35
+glow_enabled = true
+glow_intensity = 1.28
+glow_bloom = 0.3
+fog_enabled = true
+fog_light_color = Color(0.488462, 0.620332, 0.649377, 1)
+fog_light_energy = 0.13
+fog_sun_scatter = 1.0
+fog_density = 0.03
+fog_sky_affect = 0.0
+fog_height_density = 0.1
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_saturation = 1.1
+adjustment_color_correction = ExtResource("1_oa45p")

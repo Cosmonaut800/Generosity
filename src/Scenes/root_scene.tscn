@@ -1,0 +1,127 @@
+[gd_scene load_steps=13 format=3 uid="uid://d18iy1ybkm65a"]
+
+[ext_resource type="Script" uid="uid://b3qg3ybr0eti0" path="res://src/Scripts/root_scene.gd" id="1_ygj5l"]
+[ext_resource type="AudioStream" uid="uid://v5qa1ta006rt" path="res://assets/Audio/BGM_Serene_Intro.ogg" id="2_32ear"]
+[ext_resource type="Script" uid="uid://bbtk6x56blpc1" path="res://src/Scripts/music_loop.gd" id="2_f3qny"]
+[ext_resource type="AudioStream" uid="uid://caqdk5lk2hs4h" path="res://assets/Audio/BGM_Village_1.ogg" id="2_m0m26"]
+[ext_resource type="AudioStream" uid="uid://crip1fo4hk8cq" path="res://assets/Audio/BGM_Village_2.ogg" id="3_llbdi"]
+[ext_resource type="AudioStream" uid="uid://c7rs76xs4ydm0" path="res://assets/Audio/BGM_Serene_Loop.ogg" id="3_ymp4i"]
+[ext_resource type="AudioStream" uid="uid://bx407ohk7a380" path="res://assets/Audio/BGM_Erhu_Intro.ogg" id="4_s1684"]
+[ext_resource type="AudioStream" uid="uid://1lffblq3jgi3" path="res://assets/Audio/BGM_Village_3.ogg" id="4_ya6ju"]
+[ext_resource type="AudioStream" uid="uid://x4jp1b5yjh5t" path="res://assets/Audio/BGM_Erhu_Loop.ogg" id="5_co5oy"]
+[ext_resource type="AudioStream" uid="uid://dym0n4mgtqv6q" path="res://assets/Audio/BGM_Village_4.ogg" id="5_n6n6h"]
+[ext_resource type="AudioStream" uid="uid://cnqv7q8h7foxo" path="res://assets/Audio/BGM_Choral_Intro.ogg" id="7_droxx"]
+[ext_resource type="AudioStream" uid="uid://idaykai5h2t8" path="res://assets/Audio/BGM_Choral_Loop.ogg" id="8_w6wrb"]
+
+[node name="RootScene" type="Node3D"]
+script = ExtResource("1_ygj5l")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Black" type="ColorRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -36.0
+offset_right = 64.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Music" type="Node3D" parent="."]
+
+[node name="Village" type="Node3D" parent="Music"]
+
+[node name="MusicK0" type="AudioStreamPlayer3D" parent="Music/Village"]
+stream = ExtResource("2_m0m26")
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"MusicVillage"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="MusicK1" type="AudioStreamPlayer3D" parent="Music/Village"]
+stream = ExtResource("3_llbdi")
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"MusicVillage"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="MusicK2" type="AudioStreamPlayer3D" parent="Music/Village"]
+stream = ExtResource("4_ya6ju")
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"MusicVillage"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="MusicK3" type="AudioStreamPlayer3D" parent="Music/Village"]
+stream = ExtResource("5_n6n6h")
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"MusicVillage"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="Course1" type="Node3D" parent="Music"]
+script = ExtResource("2_f3qny")
+
+[node name="MusicIntro" type="AudioStreamPlayer3D" parent="Music/Course1"]
+stream = ExtResource("2_32ear")
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"MusicCourse1"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="MusicLoop" type="AudioStreamPlayer3D" parent="Music/Course1"]
+stream = ExtResource("3_ymp4i")
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"MusicCourse1"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="Course2" type="Node3D" parent="Music"]
+script = ExtResource("2_f3qny")
+
+[node name="MusicIntro" type="AudioStreamPlayer3D" parent="Music/Course2"]
+stream = ExtResource("4_s1684")
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"MusicCourse2"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="MusicLoop" type="AudioStreamPlayer3D" parent="Music/Course2"]
+stream = ExtResource("5_co5oy")
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"MusicCourse2"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="Course3" type="Node3D" parent="Music"]
+script = ExtResource("2_f3qny")
+
+[node name="MusicIntro" type="AudioStreamPlayer3D" parent="Music/Course3"]
+stream = ExtResource("7_droxx")
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"MusicCourse3"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="MusicLoop" type="AudioStreamPlayer3D" parent="Music/Course3"]
+stream = ExtResource("8_w6wrb")
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"MusicCourse3"
+attenuation_filter_cutoff_hz = 20500.0
+
+[connection signal="finished" from="Music/Course1/MusicIntro" to="Music/Course1" method="_on_music_intro_finished"]
+[connection signal="finished" from="Music/Course2/MusicIntro" to="Music/Course2" method="_on_music_intro_finished"]
+[connection signal="finished" from="Music/Course3/MusicIntro" to="Music/Course3" method="_on_music_intro_finished"]

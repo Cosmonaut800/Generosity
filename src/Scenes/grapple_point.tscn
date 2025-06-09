@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b671mbiaxfrdb"]
+
+[ext_resource type="PackedScene" uid="uid://oh8j8gbhtsfl" path="res://assets/Models/Interactive Hook Down.fbx" id="1_pmijg"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dkqms"]
+radius = 0.55879
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pmijg"]
+height = 0.785889
+radius = 0.125
+
+[node name="GrapplePoint" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.470599, -1.04823, 0)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_dkqms")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.463964, 0.637469, 0)
+shape = SubResource("CylinderShape3D_pmijg")
+
+[node name="Interactive Hook Down" parent="." instance=ExtResource("1_pmijg")]

@@ -1,0 +1,18 @@
+[gd_resource type="CurveXYZTexture" load_steps=4 format=3 uid="uid://f0qt0dp4nmwt"]
+
+[sub_resource type="Curve" id="Curve_hbqwk"]
+_data = [Vector2(0.0881459, 0), 0.0, 0.0, 0, 0, Vector2(0.512727, 0.725904), 0.439513, 0.439513, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_dmnc3"]
+_data = [Vector2(0, 0.167922), 0.0, -2.56965, 0, 0, Vector2(0.247273, 0.207078), 1.44215, 1.44215, 0, 0, Vector2(1, 1), 0.538404, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_aa8bh"]
+_data = [Vector2(0, 0.260291), 0.0, -0.517696, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+curve_x = SubResource("Curve_hbqwk")
+curve_y = SubResource("Curve_dmnc3")
+curve_z = SubResource("Curve_aa8bh")

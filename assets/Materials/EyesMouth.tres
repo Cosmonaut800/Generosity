@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cbevk7upxx2ei"]
+
+[ext_resource type="Texture2D" uid="uid://dbwhnfyfujx0j" path="res://assets/Materials/Textures/EyesMouthTex.png" id="1_2066k"]
+
+[resource]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = ExtResource("1_2066k")
+texture_filter = 0

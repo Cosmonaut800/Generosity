@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://br0427kfsv6ke"]
+[gd_scene load_steps=12 format=3 uid="uid://eq44jxd47ect"]
 
 [ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="1_0doxx"]
 [ext_resource type="Script" uid="uid://des8xe3t7ejar" path="res://src/Scripts/subworld.gd" id="1_r3too"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="5_bcfbh"]
 [ext_resource type="PackedScene" uid="uid://bacgrc823sjog" path="res://src/Scenes/box_button.tscn" id="6_3nj88"]
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="9_suvuj"]
-[ext_resource type="AudioStream" uid="uid://bq2irrtftwrsc" path="res://assets/Audio/birds_loop.ogg" id="11_ppsmn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8y2gh"]
 size = Vector3(2.34766, 1, 3.48267)
@@ -83,14 +82,6 @@ transform = Transform3D(0.900395, 0, 0.435074, 0, 1, 0, -0.435074, 0, 0.900395, 
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("9_suvuj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71468, 1.16127, 17.9823)
-
-[node name="Ambiance" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("11_ppsmn")
-attenuation_model = 3
-volume_db = 6.0
-autoplay = true
-panning_strength = 0.0
-attenuation_filter_cutoff_hz = 20500.0
 
 [connection signal="activated" from="BoxButton" to="DoorFrames/Doorway2/MovingPlatform" method="_on_switch_activated"]
 

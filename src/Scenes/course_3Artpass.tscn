@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://fgefl2sohcrl"]
+[gd_scene load_steps=79 format=3 uid="uid://fgefl2sohcrl"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_48aqv"]
 [ext_resource type="Material" uid="uid://sxxsxlut4a4d" path="res://assets/Materials/TriplanarGrass2.tres" id="2_35xuu"]
@@ -10,10 +10,10 @@
 [ext_resource type="Environment" uid="uid://cu2xs3e5kkbc1" path="res://assets/Envlvl3.tres" id="3_25knx"]
 [ext_resource type="PackedScene" uid="uid://dwem4d1j0m7o4" path="res://assets/Models/SpinRing.fbx" id="3_r81ws"]
 [ext_resource type="PackedScene" uid="uid://brdh8um8v542x" path="res://src/Scenes/moving_platform.tscn" id="4_72rq4"]
-[ext_resource type="PackedScene" uid="uid://ca8rmwlmq6ejx" path="res://assets/Models/course_3_blockout_elevator.glb" id="5_r81ws"]
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="6_w2hi7"]
 [ext_resource type="Script" uid="uid://bqdr72a5tcp3w" path="res://src/Scripts/platform_waypoint.gd" id="7_ac6rh"]
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="8_q4ojf"]
+[ext_resource type="PackedScene" uid="uid://b7i15ocqbu6by" path="res://assets/Models/PlatformColumn.fbx" id="9_e8yj5"]
 [ext_resource type="PackedScene" uid="uid://lp2ym1sutkha" path="res://src/Scenes/bridge.tscn" id="9_eudii"]
 [ext_resource type="PackedScene" uid="uid://b671mbiaxfrdb" path="res://src/Scenes/grapple_point.tscn" id="10_62jce"]
 [ext_resource type="PackedScene" uid="uid://bkglvypeexyb4" path="res://src/Scenes/moveable_block_2m.tscn" id="11_b7raa"]
@@ -49,11 +49,12 @@
 [ext_resource type="PackedScene" uid="uid://dx808g8j6rl6m" path="res://assets/Models/BushDark.tscn" id="41_8w2d0"]
 [ext_resource type="PackedScene" uid="uid://duptw1xs14d14" path="res://assets/Models/GrassBlades.tscn" id="45_xtobq"]
 [ext_resource type="PackedScene" uid="uid://biwueiqpaoc0r" path="res://assets/Models/Toy.fbx" id="47_xtobq"]
-[ext_resource type="Script" uid="uid://bbtk6x56blpc1" path="res://src/Scripts/music_loop.gd" id="48_eo58d"]
-[ext_resource type="AudioStream" uid="uid://cnqv7q8h7foxo" path="res://assets/Audio/BGM_Choral_Intro.ogg" id="49_dgk8n"]
-[ext_resource type="AudioStream" uid="uid://idaykai5h2t8" path="res://assets/Audio/BGM_Choral_Loop.ogg" id="50_pp5jt"]
 [ext_resource type="PackedScene" uid="uid://ckhsp37mhgajp" path="res://src/Scenes/death_plane.tscn" id="51_dgk8n"]
-[ext_resource type="Script" uid="uid://drkko5ju77rpw" path="res://src/Scripts/checkpoint.gd" id="52_pp5jt"]
+[ext_resource type="Script" path="res://src/Scripts/checkpoint.gd" id="52_pp5jt"]
+[ext_resource type="PackedScene" uid="uid://c0type32q1fqs" path="res://assets/Materials/Particles/god_ray.tscn" id="55_nxs1f"]
+[ext_resource type="PackedScene" uid="uid://0an3vhevx8eh" path="res://assets/Materials/Particles/Fragment.tscn" id="56_e8yj5"]
+[ext_resource type="Material" uid="uid://nca0crobrmxs" path="res://assets/Materials/Particles/fragmentfallParticleProc.tres" id="57_gqih6"]
+[ext_resource type="Texture2D" uid="uid://bqoqweij6c4mc" path="res://assets/Materials/Textures/Fragments.png" id="58_e8yj5"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5efmu"]
 
@@ -112,6 +113,25 @@ size = Vector3(10.0114, 32.6349, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_noxx6"]
 size = Vector3(1, 4.72778, 4.5293)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqih6"]
+transparency = 1
+cull_mode = 2
+specular_mode = 2
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("58_e8yj5")
+emission_enabled = true
+emission = Color(0.3102, 0.94, 0.46765, 1)
+emission_energy_multiplier = 4.0
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_77kaj"]
+material = SubResource("StandardMaterial3D_gqih6")
+
 [node name="Course3" type="Node3D"]
 script = ExtResource("1_48aqv")
 
@@ -160,11 +180,14 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.6425, 14.5597, 10.66
 waypoints = [NodePath("../ElevatorWaypoint")]
 loop_path = false
 
-[node name="course_3_blockout_elevator" parent="Elevator" instance=ExtResource("5_r81ws")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.45519e-11, 1.45519e-11, 1.45519e-11)
+[node name="TravelColOrigin" type="Node3D" parent="Elevator"]
+transform = Transform3D(6.43824, 0, -4.57085, 0, 5.53359, 0, 4.57085, 0, 6.43824, 1.17582, -1.65326, 0.111717)
+
+[node name="PlatformColumn" parent="Elevator/TravelColOrigin" instance=ExtResource("9_e8yj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.02995, -11.1199, 0.0154423)
 
 [node name="Switch" parent="Elevator" instance=ExtResource("6_w2hi7")]
-transform = Transform3D(0.330061, 0, 1.97258, 0, 2, 0, -1.97258, 0, 0.330061, -4.41649, 1.23113, 0)
+transform = Transform3D(-0.765336, 0, 1.84777, 0, 2, 0, -1.84777, 0, -0.765336, -2.45096, 0.863222, 1.62189)
 
 [node name="ElevatorWaypoint" type="Node3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.6425, -5.91867, 10.6621)
@@ -173,7 +196,7 @@ transit_time = 7.5
 metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("8_q4ojf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0353657, -9.25325, 15.7219)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6909, 17.0538, -1.54802)
 
 [node name="Bridge" parent="." instance=ExtResource("9_eudii")]
 transform = Transform3D(-0.975447, 0, -0.220234, 0, 1, 0, 0.220234, 0, -0.975447, 7.35772, -3.99778, -6.2005)
@@ -341,7 +364,7 @@ shape = SubResource("SphereShape3D_qb5rw")
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 15.1952, -4.96328, 15.1512)
 collision_mask = 128
 script = ExtResource("14_jok3q")
-config = 1
+config = 7
 metadata/_custom_type_script = "uid://barah8wamrx8j"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LevelTransition"]
@@ -454,7 +477,7 @@ transform = Transform3D(0.00850087, 0.000226204, -0.0170808, 0.000257628, -0.015
 transform = Transform3D(0.00850087, 0.000226204, -0.0234997, 0.000257628, -0.0151386, -0.000184831, -0.0125268, -0.000157837, -0.015951, -0.0980179, -0.0420581, 0.141964)
 
 [node name="Vine13" parent="OutdoorGroundDeco" instance=ExtResource("23_cjc1j")]
-transform = Transform3D(0.014301, -0.00100191, 0.0271392, 0.000433406, 0.0254516, 0.00118172, -0.0210738, -0.000156472, 0.0184413, -0.0999807, 0.282179, 0.141658)
+transform = Transform3D(0.014301, -0.00100191, 0.0271392, 0.000433406, 0.0254516, 0.00118172, -0.0210738, -0.000156472, 0.0184413, -0.100418, 0.282166, 0.142303)
 
 [node name="Vine14" parent="OutdoorGroundDeco" instance=ExtResource("23_cjc1j")]
 transform = Transform3D(-0.0118911, -0.000546811, -0.0290176, 7.80674e-05, 0.0174386, -0.00121644, 0.0225257, -0.000349092, -0.0153139, -0.0893831, 0.282719, 0.15531)
@@ -580,7 +603,7 @@ transform = Transform3D(0.0353216, 0, -0.0167319, 0, 0.0390841, 0, 0.0167319, 0,
 transform = Transform3D(0.0182528, 0, 0, 0, 0.0182528, 0, 0, 0, 0.0182528, -0.406303, -0.137945, 0.428964)
 
 [node name="Tower4" parent="OutdoorGroundDeco" instance=ExtResource("22_t7jn1")]
-transform = Transform3D(0.0182528, 0, 0, 0, 0.0182528, 0, 0, 0, 0.0182528, 0.438004, -0.137945, 0.449326)
+transform = Transform3D(0.0135954, -0.012022, -0.00194991, 0.0047925, 0.00259425, 0.0174203, -0.0111965, -0.0134873, 0.00508881, 0.417775, -0.185241, 0.426918)
 
 [node name="Tower5" parent="OutdoorGroundDeco" instance=ExtResource("22_t7jn1")]
 transform = Transform3D(0.0182528, 0, 0, 0, 0.0182528, 0, 0, 0, 0.0182528, -0.406303, -0.137945, 0.895585)
@@ -613,7 +636,7 @@ transform = Transform3D(0.0304933, 0, 0, 0, 0.0304933, 0, 0, 0, 0.0304933, -0.34
 transform = Transform3D(0.0089451, 0, 0.0157373, 0, 0.0181018, 0, -0.0157373, 0, 0.0089451, -0.360447, -0.157533, 0.51481)
 
 [node name="RuneGateFull2" parent="OutdoorGroundDeco" instance=ExtResource("26_8yxmq")]
-transform = Transform3D(-0.000814338, 0.00425577, 0.0075637, 0.00271045, 0.00734166, -0.00383902, -0.00824468, 0.00199323, -0.00200916, 0.341866, -0.127765, 0.441594)
+transform = Transform3D(-0.00522624, 0.00697224, 0.000242342, 0.00271045, 0.00230827, -0.00795674, -0.0064284, -0.00469513, -0.00355188, 0.339332, -0.133007, 0.432767)
 
 [node name="ColumnDeco2" parent="OutdoorGroundDeco" instance=ExtResource("21_jok3q")]
 transform = Transform3D(0.034085, -0.0195864, 0.0101743, -0.00504057, 0.0113163, 0.0386713, -0.021488, -0.0337232, 0.0070675, 0.552127, -0.157292, 1.16945)
@@ -634,7 +657,7 @@ transform = Transform3D(0.052395, -0.0164508, 0.0231323, 0, 0.048562, 0.0345355,
 transform = Transform3D(0.0214701, 0, -0.0360276, 0, 0.00764796, 0, 0.0446296, 0, 0.0173319, -0.356172, -0.153177, 0.233161)
 
 [node name="RuneStoneSingle2" parent="OutdoorGroundDeco" instance=ExtResource("34_r3kkp")]
-transform = Transform3D(0.0129864, 0, 0, 0, 0.00389578, -0.0123882, 0, 0.0123882, 0.00389578, 0.340792, -0.135797, 0.455485)
+transform = Transform3D(0.00396039, 0.0117981, 0.0037102, 0, 0.00389578, -0.0123882, -0.0123678, 0.00377796, 0.00118807, 0.260344, -0.135797, 0.356825)
 
 [node name="RuneStoneSingle3" parent="OutdoorGroundDeco" instance=ExtResource("34_r3kkp")]
 transform = Transform3D(0.00365811, 0.00373802, -0.0118866, -0.0124605, 0.00109739, -0.00348962, 0, 0.0123882, 0.00389578, 0.367834, -0.135797, 0.374357)
@@ -972,7 +995,7 @@ transform = Transform3D(0.343562, 0, -0.762787, 0, 0.836588, 0, 0.762787, 0, 0.3
 transform = Transform3D(0.836588, 0, 0, 0, 0.836588, 0, 0, 0, 0.836588, 8.86005, 1.13919, -55.7524)
 
 [node name="Stump2" parent="Trees" instance=ExtResource("25_gstkf")]
-transform = Transform3D(1.9472, 0, 0, 0, 1.9472, 0, 0, 0, 1.9472, -1.4826, 1.44844, -34.3142)
+transform = Transform3D(1.9472, 0, 0, 0, 1.9472, 0, 0, 0, 1.9472, -1.04621, 1.44844, -33.9588)
 
 [node name="Bush" parent="Trees" instance=ExtResource("41_8w2d0")]
 transform = Transform3D(3.2299, 0, 0, 0, 3.2299, 0, 0, 0, 3.2299, -6.51599, 31.1564, -58.4635)
@@ -1822,24 +1845,6 @@ transform = Transform3D(0.272485, 0, -0.158253, 0, 0.315107, 0, 0.158253, 0, 0.2
 transform = Transform3D(-0.783097, 0.2739, -0.558335, 1.49012e-08, 0.897789, 0.440425, 0.6219, 0.344895, -0.703056, -7.27987, 26.41, -8.90676)
 shape = SubResource("BoxShape3D_lkxph")
 
-[node name="Audio" type="Node3D" parent="."]
-script = ExtResource("48_eo58d")
-
-[node name="MusicIntro" type="AudioStreamPlayer3D" parent="Audio"]
-stream = ExtResource("49_dgk8n")
-attenuation_model = 3
-autoplay = true
-panning_strength = 0.0
-bus = &"Music"
-attenuation_filter_cutoff_hz = 20500.0
-
-[node name="MusicLoop" type="AudioStreamPlayer3D" parent="Audio"]
-stream = ExtResource("50_pp5jt")
-attenuation_model = 3
-panning_strength = 0.0
-bus = &"Music"
-attenuation_filter_cutoff_hz = 20500.0
-
 [node name="DeathPlane" parent="." instance=ExtResource("51_dgk8n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.9489, 0)
 
@@ -1861,6 +1866,7 @@ shape = SubResource("BoxShape3D_dgk8n")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9461, -5.11931, 14.0322)
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
 transform = Transform3D(0.573891, 0, -0.818932, 0, 1, 0, 0.818932, 0, 0.573891, -4.04456, 9.28427, 1.16632)
@@ -1882,11 +1888,23 @@ shape = SubResource("BoxShape3D_pp5jt")
 transform = Transform3D(0.913034, 0, 0.407884, 0, 1, 0, -0.407884, 0, 0.913034, 12.4108, 16.5686, -4.10331)
 script = ExtResource("52_pp5jt")
 respawn_position = NodePath(".")
-metadata/_custom_type_script = "uid://drkko5ju77rpw"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.906128, 0)
 shape = SubResource("BoxShape3D_noxx6")
+
+[node name="GodRay" parent="." instance=ExtResource("55_nxs1f")]
+transform = Transform3D(-4.59735, -17.9783, 27.2334, -8.52087, 17.2257, -1.10543, -3.82056, -16.7843, -30.3052, -8.08866, 26.7264, -9.24792)
+
+[node name="GodRay2" parent="." instance=ExtResource("55_nxs1f")]
+transform = Transform3D(-8.99568, -19.4964, 3.52972, -5.60155, 18.6802, -28.8028, 3.88673, -18.2016, -33.3411, -8.08866, 26.7264, -9.24792)
+
+[node name="Fragment" parent="." instance=ExtResource("56_e8yj5")]
+transform = Transform3D(1.91985, 0, 0, 0, 0.761984, 0, 0, 0, 1.89277, 0.129827, 29.0571, 0)
+amount = 10
+speed_scale = 0.2
+process_material = ExtResource("57_gqih6")
+draw_pass_1 = SubResource("QuadMesh_77kaj")
 
 [connection signal="activated" from="Elevator/Switch" to="Elevator" method="_on_switch_activated"]
 [connection signal="activated" from="MovingPlatform2/BoxButton" to="MovingPlatform2" method="_on_switch_activated"]
@@ -1898,4 +1916,3 @@ shape = SubResource("BoxShape3D_noxx6")
 [connection signal="body_entered" from="Kodama3/Area3D" to="Kodama3" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Kodama3/Area3D" to="Kodama3" method="_on_area_3d_body_exited"]
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
-[connection signal="finished" from="Audio/MusicIntro" to="Audio" method="_on_music_intro_finished"]

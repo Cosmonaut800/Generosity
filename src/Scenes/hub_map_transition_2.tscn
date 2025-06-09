@@ -1,28 +1,31 @@
-[gd_scene load_steps=12 format=3 uid="uid://ca0pgttl62l8"]
+[gd_scene load_steps=13 format=3 uid="uid://bbxm80lbac7yd"]
 
-[ext_resource type="Environment" uid="uid://q0v8u0vbiwpp" path="res://assets/Envlvl2.tres" id="1_346ag"]
 [ext_resource type="Script" uid="uid://des8xe3t7ejar" path="res://src/Scripts/subworld.gd" id="1_w6hak"]
+[ext_resource type="Environment" uid="uid://dh6qujnbw0ffl" path="res://assets/Envlvl1.tres" id="2_4d7gy"]
 [ext_resource type="PackedScene" uid="uid://dn45mcmbvf2a8" path="res://assets/Models/Doorway.fbx" id="2_vbk3l"]
 [ext_resource type="PackedScene" uid="uid://5id56smrjsja" path="res://assets/Models/Interactable Door.fbx" id="3_ecrvf"]
-[ext_resource type="PackedScene" uid="uid://brdh8um8v542x" path="res://src/Scenes/moving_platform.tscn" id="4_ecrvf"]
 [ext_resource type="Material" uid="uid://di6ptsrj0yeha" path="res://assets/Materials/DoorDoorwayOff.tres" id="4_y0wjf"]
-[ext_resource type="Script" uid="uid://bqdr72a5tcp3w" path="res://src/Scripts/platform_waypoint.gd" id="5_l8khe"]
 [ext_resource type="PackedScene" uid="uid://cr2yco61lrasy" path="res://src/Scenes/switch.tscn" id="6_8y2gh"]
 [ext_resource type="PackedScene" uid="uid://bacgrc823sjog" path="res://src/Scenes/box_button.tscn" id="7_y0wjf"]
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="9_4d7gy"]
+[ext_resource type="AudioStream" uid="uid://bq2irrtftwrsc" path="res://assets/Audio/birds_loop.ogg" id="10_w6hak"]
+[ext_resource type="Script" uid="uid://barah8wamrx8j" path="res://src/Scripts/level_transition.gd" id="11_2t3c5"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8y2gh"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_3edl0"]
 size = Vector3(2.34766, 1, 3.48267)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_11dxg"]
+size = Vector3(16.4883, 7.17395, 2.2832)
 
 [node name="HubMapTransition2" type="Node3D"]
 script = ExtResource("1_w6hak")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_346ag")
+environment = ExtResource("2_4d7gy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.836114, -0.529839, 0.14207, -0.0486009, 0.186421, 0.981267, -0.546398, -0.827356, 0.130119, 0, 12.1965, 0)
-light_color = Color(0.89, 0.89, 0.4806, 1)
+transform = Transform3D(0.649923, 0.588573, -0.480813, 0.688147, -0.187218, 0.701002, 0.322574, -0.786468, -0.526701, 8.96191, 11.2622, -2.73886)
+light_color = Color(0.76565, 0.754838, 0.714615, 1)
 shadow_enabled = true
 directional_shadow_mode = 0
 directional_shadow_blend_splits = true
@@ -38,38 +41,45 @@ transform = Transform3D(-0.55, 0, -0.952628, 0, 1.1, 0, 0.952628, 0, -0.55, -7.2
 [node name="Interactable Door" parent="DoorFrames/Doorway/Interactable Door" index="0"]
 material_override = ExtResource("4_y0wjf")
 
-[node name="Doorway2" parent="DoorFrames" instance=ExtResource("2_vbk3l")]
-transform = Transform3D(-0.777817, 0, 0.777817, 0, 1.1, 0, -0.777817, 0, -0.777817, 24.8722, 2.23172, -16.6188)
-
-[node name="MovingPlatform" parent="DoorFrames/Doorway2" node_paths=PackedStringArray("waypoints") instance=ExtResource("4_ecrvf")]
-transform = Transform3D(1, -2.98023e-08, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.44089e-16, 1.64811, 9.9341e-09)
-waypoints = [NodePath("../PlatformWaypoint")]
-loop_path = false
-
-[node name="Interactable Door" parent="DoorFrames/Doorway2/MovingPlatform" instance=ExtResource("3_ecrvf")]
-transform = Transform3D(1, 0, -5.96046e-08, 2.98023e-08, -4.37114e-08, -1, 1.77636e-15, 1, -4.37114e-08, 0, 0, -1.64811)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="DoorFrames/Doorway2/MovingPlatform/Interactable Door"]
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorFrames/Doorway/Interactable Door"]
 transform = Transform3D(1, -8.9407e-08, -1.77636e-15, -4.73656e-16, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.64811, 0)
 collision_mask = 128
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorFrames/Doorway2/MovingPlatform/Interactable Door/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorFrames/Doorway/Interactable Door/StaticBody3D"]
 transform = Transform3D(1, 2.98023e-08, 2.4869e-14, 2.98023e-08, 1, -3.33955e-13, 1.77636e-15, 6.21725e-15, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_8y2gh")
+shape = SubResource("BoxShape3D_3edl0")
 
-[node name="PlatformWaypoint" type="Node3D" parent="DoorFrames/Doorway2"]
-transform = Transform3D(1, -2.98023e-08, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.17637e-22, -2.7892, 1.93961e-07)
-script = ExtResource("5_l8khe")
-transit_time = 2.0
-metadata/_custom_type_script = "uid://bqdr72a5tcp3w"
+[node name="Doorway2" parent="DoorFrames" instance=ExtResource("2_vbk3l")]
+transform = Transform3D(-0.777817, 0, 0.777817, 0, 1.1, 0, -0.777817, 0, -0.777817, 24.8722, 2.23172, -16.6188)
+
+[node name="Interactable Door" parent="DoorFrames/Doorway2" instance=ExtResource("3_ecrvf")]
+
+[node name="Interactable Door" parent="DoorFrames/Doorway2/Interactable Door" index="0"]
+material_override = ExtResource("4_y0wjf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorFrames/Doorway2/Interactable Door"]
+transform = Transform3D(1, -8.9407e-08, -1.77636e-15, -4.73656e-16, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.64811, 0)
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorFrames/Doorway2/Interactable Door/StaticBody3D"]
+transform = Transform3D(1, 2.98023e-08, 2.4869e-14, 2.98023e-08, 1, -3.33955e-13, 1.77636e-15, 6.21725e-15, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_3edl0")
 
 [node name="Doorway3" parent="DoorFrames" instance=ExtResource("2_vbk3l")]
-transform = Transform3D(-1.1, 0, -9.61651e-08, 0, 1.1, 0, 9.61651e-08, 0, -1.1, 9.13672, 2.23172, -26.8732)
+transform = Transform3D(-1.1, 0, 9.61651e-08, 0, 1.1, 0, -9.61651e-08, 0, -1.1, 9.13672, 2.23172, -26.8732)
 
 [node name="Interactable Door" parent="DoorFrames/Doorway3" instance=ExtResource("3_ecrvf")]
 
 [node name="Interactable Door" parent="DoorFrames/Doorway3/Interactable Door" index="0"]
 material_override = ExtResource("4_y0wjf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorFrames/Doorway3/Interactable Door"]
+transform = Transform3D(1, -8.9407e-08, -1.77636e-15, -4.73656e-16, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.64811, 0)
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorFrames/Doorway3/Interactable Door/StaticBody3D"]
+transform = Transform3D(1, 2.98023e-08, 2.4869e-14, 2.98023e-08, 1, -3.33955e-13, 1.77636e-15, 6.21725e-15, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_3edl0")
 
 [node name="Switch" parent="." instance=ExtResource("6_8y2gh")]
 transform = Transform3D(-0.170777, 0, -0.98531, 0, 1, 0, 0.98531, 0, -0.170777, -6.96287, 2, -4.3446)
@@ -81,9 +91,79 @@ transform = Transform3D(0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, 0.353553
 transform = Transform3D(0.900395, 0, 0.435074, 0, 1, 0, -0.435074, 0, 0.900395, 7.26967, 2.42474, -25.4771)
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("9_4d7gy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71468, 1.16127, 17.9823)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.43186, 3.2718, -5.19003)
 
-[connection signal="activated" from="BoxButton" to="DoorFrames/Doorway2/MovingPlatform" method="_on_switch_activated"]
+[node name="Graphics" parent="ThirdPersonPlayer" index="2"]
+transform = Transform3D(-0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, 0, 0, 0)
+
+[node name="Skeleton3D" parent="ThirdPersonPlayer/Graphics/WolfTraveller/root" index="0"]
+bones/1/rotation = Quaternion(-0.0026536, -0.0158629, -0.00438431, 0.999861)
+bones/2/rotation = Quaternion(0.714934, 0.0655058, 0.696061, 0.00878298)
+bones/3/rotation = Quaternion(6.6782e-08, -1.69226e-08, 0.217865, 0.975979)
+bones/4/rotation = Quaternion(0.617464, 0.220137, -0.417648, 0.629165)
+bones/6/rotation = Quaternion(-1.63034e-07, -0.426797, -1.16865e-07, 0.904347)
+bones/7/rotation = Quaternion(2.85704e-08, -0.187195, 5.61726e-08, 0.982323)
+bones/8/rotation = Quaternion(0.72295, -0.0763326, -0.686079, 0.0285008)
+bones/9/rotation = Quaternion(-7.55667e-08, -1.13113e-08, -0.227446, 0.973791)
+bones/10/rotation = Quaternion(-0.558627, 0.280591, -0.449873, -0.637824)
+bones/12/rotation = Quaternion(-1.34207e-07, 0.357284, 8.30394e-08, 0.933996)
+bones/13/rotation = Quaternion(-1.4293e-07, 0.179598, 7.5562e-08, 0.98374)
+bones/17/rotation = Quaternion(0.131013, -0.0176857, -0.0021422, 0.991221)
+bones/18/rotation = Quaternion(-0.0299284, 0.0881652, -0.0026502, 0.995653)
+bones/19/rotation = Quaternion(-0.465085, 0.440915, 0.549943, 0.535586)
+bones/20/rotation = Quaternion(-0.547165, -0.162024, -0.151778, 0.807045)
+bones/21/rotation = Quaternion(-3.82913e-08, 7.15669e-08, 0.423591, 0.905854)
+bones/22/rotation = Quaternion(0.00464313, -0.191374, -0.0106593, 0.981448)
+bones/33/rotation = Quaternion(-2.12136e-07, -0.191359, 1.05599e-09, 0.98152)
+bones/34/rotation = Quaternion(-8.92231e-08, 0.125525, -5.45817e-08, 0.99209)
+bones/35/rotation = Quaternion(-0.462455, -0.45113, -0.522464, 0.55646)
+bones/36/rotation = Quaternion(-0.477094, 0.374054, 0.109447, 0.787709)
+bones/37/rotation = Quaternion(1.62852e-07, 7.32118e-08, -0.520709, 0.853734)
+bones/38/rotation = Quaternion(0.052785, -0.129573, 0.111444, 0.983872)
+bones/49/rotation = Quaternion(1.59506e-08, -0.136999, -3.52458e-09, 0.990571)
+bones/50/rotation = Quaternion(2.26429e-07, -0.347071, 1.27563e-07, 0.937839)
+bones/51/rotation = Quaternion(-0.737288, 0.0278453, 0.0304404, 0.674318)
+bones/52/rotation = Quaternion(0.458385, -0.0221107, 0.0348255, 0.887796)
+
+[node name="BoneAttachment3D" parent="ThirdPersonPlayer/Graphics/WolfTraveller/root/Skeleton3D" index="1"]
+transform = Transform3D(-0.519036, -0.285114, -0.805799, 0.827731, -0.402823, -0.390633, -0.213219, -0.869738, 0.445078, -0.0017893, -0.000172567, 0.00375375)
+
+[node name="YawPivot" parent="ThirdPersonPlayer/OrbitCamera" index="0"]
+transform = Transform3D(-0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, 0, 0, 0)
+
+[node name="Black" parent="ThirdPersonPlayer/UI" index="1"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="LevelTransition" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.87061, 0, 23.4032)
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("11_2t3c5")
+level_index = 4
+config = 2
+metadata/_custom_type_script = "uid://barah8wamrx8j"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelTransition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.08698, -0.641602)
+shape = SubResource("BoxShape3D_11dxg")
+
+[node name="Ambiance" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_w6hak")
+attenuation_model = 3
+volume_db = 6.0
+autoplay = true
+panning_strength = 0.0
+attenuation_filter_cutoff_hz = 20500.0
+
+[connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
 
 [editable path="DoorFrames/Doorway/Interactable Door"]
+[editable path="DoorFrames/Doorway2/Interactable Door"]
 [editable path="DoorFrames/Doorway3/Interactable Door"]
+[editable path="ThirdPersonPlayer"]
+[editable path="ThirdPersonPlayer/Graphics/WolfTraveller"]
+[editable path="ThirdPersonPlayer/OrbitCamera"]
+[editable path="ThirdPersonPlayer/OrbitCamera/YawPivot/PitchPivot/Camera3D/GrapplingHook"]

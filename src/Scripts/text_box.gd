@@ -36,6 +36,7 @@ func show_text(text_index: String):
 		stop_image.hide()
 	self.show()
 	var tween = create_tween()
+	speech_label.set_visible_ratio(0.0)
 	tween.tween_property(speech_label, "visible_ratio", 1.0, 1.0)
 
 func hide_text():
@@ -43,7 +44,8 @@ func hide_text():
 	speech_label.visible_ratio = 0.0
 
 func display_text_box(text_index: String):
-	can_advance = true
+	can_advance = false
+	filter_timer.start()
 	text_queue.push_back(text_index)
 	if !visible:
 		show_text(text_queue.pop_front())

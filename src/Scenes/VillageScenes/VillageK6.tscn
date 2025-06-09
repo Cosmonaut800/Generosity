@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ckgxr4l2gm7i4"]
+[gd_scene load_steps=28 format=3 uid="uid://ckgxr4l2gm7i4"]
 
 [ext_resource type="PackedScene" uid="uid://dtj0ym1dddhvx" path="res://assets/Models/TreeDead.tscn" id="1_kjven"]
 [ext_resource type="PackedScene" uid="uid://cwyfx4j75o5ry" path="res://assets/Models/Tree.fbx" id="2_e7lcl"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://iqyrgeai3d53" path="res://assets/WavyCurve.tres" id="8_61kcn"]
 [ext_resource type="Texture2D" uid="uid://bqoqweij6c4mc" path="res://assets/Materials/Textures/Fragments.png" id="9_i5rxb"]
 [ext_resource type="PackedScene" uid="uid://b55bhyvjnvrwf" path="res://assets/Models/Flower 2.fbx" id="9_wqyi8"]
-[ext_resource type="PackedScene" uid="uid://0an3vhevx8eh" path="res://assets/Materials/Particles/fragment.tscn" id="10_jg4yq"]
+[ext_resource type="PackedScene" uid="uid://0an3vhevx8eh" path="res://assets/Materials/Particles/Fragment.tscn" id="10_jg4yq"]
 [ext_resource type="PackedScene" uid="uid://b5fx24blmtvls" path="res://assets/Models/Flower 3.fbx" id="10_noif7"]
 [ext_resource type="Material" uid="uid://b0brdkq045t6t" path="res://assets/Materials/Glow.tres" id="10_op7od"]
 [ext_resource type="PackedScene" uid="uid://br27m7mb1g3r2" path="res://assets/Models/Characters/DogNPC.fbx" id="14_jg4yq"]
@@ -1281,7 +1281,7 @@ transform = Transform3D(-0.971301, 0, 0.237855, 0, 1, 0, -0.237855, 0, -0.971301
 transform = Transform3D(0.157779, 0, -0.987475, 0, 1, 0, 0.987475, 0, 0.157779, 26.1676, 0.359114, 15.256)
 
 [node name="Kodama" parent="." instance=ExtResource("16_jg4yq")]
-transform = Transform3D(-0.920811, 0, -0.390008, 0, 1, 0, 0.390008, 0, -0.920811, 26.2127, 1.46063, -4.46439)
+transform = Transform3D(-0.588223, 0, -0.808699, 0, 1, 0, 0.808699, 0, -0.588223, 30.6346, 1.84402, 9.63726)
 
 [node name="Kodama6" parent="." instance=ExtResource("16_jg4yq")]
 transform = Transform3D(0.300939, 0, -0.953644, 0, 1, 0, 0.953644, 0, 0.300939, 18.2922, 7.31635, 19.2489)

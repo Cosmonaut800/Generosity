@@ -48,8 +48,6 @@ func _on_world_reset():
 	tween.tween_property(blackout, "color", Color(0.0, 0.0, 0.0, 0.0), 0.5)
 
 func _on_world_changed(index: int, config: int):
-	print("old index: "+str(current_index))
-	print("new index: "+str(index))
 	if current_index == 0 and index != 4:
 		Utility.evaluate_kodama_level()
 		var tween = create_tween()
@@ -98,6 +96,5 @@ func change_village_volume(value):
 	music_village[Utility.kodama_level].volume_db = linear_to_db(value)
 
 func change_course_volume(value):
-	print(value)
 	music_intro[music_index].volume_db = linear_to_db(value)
 	music_loop[music_index].volume_db = linear_to_db(value)

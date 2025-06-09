@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cdh1ocyf230o1"]
+[gd_scene load_steps=43 format=3 uid="uid://cdh1ocyf230o1"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_vmk3n"]
 [ext_resource type="Environment" uid="uid://dh6qujnbw0ffl" path="res://assets/Envlvl1.tres" id="2_80kfx"]
@@ -25,6 +25,12 @@
 [ext_resource type="PackedScene" uid="uid://bim86qlbgmnce" path="res://assets/Materials/Particles/FragmentBurst.tscn" id="27_qed0i"]
 [ext_resource type="PackedScene" uid="uid://0an3vhevx8eh" path="res://assets/Materials/Particles/Fragment.tscn" id="28_5kho7"]
 [ext_resource type="PackedScene" uid="uid://c80vmfej6t7mp" path="res://assets/Models/vinepurp.tscn" id="28_u8xcf"]
+[ext_resource type="FontFile" uid="uid://bv4apx5sfgs4g" path="res://assets/Pencilized Demo.otf" id="30_dhpjw"]
+[ext_resource type="FontFile" uid="uid://c1ot76kbac2wm" path="res://assets/Fragmentcore.otf" id="31_vmk3n"]
+[ext_resource type="Material" uid="uid://dgvyo5kfwwu0a" path="res://assets/Materials/Fade.tres" id="32_80kfx"]
+[ext_resource type="PackedScene" uid="uid://b55bhyvjnvrwf" path="res://assets/Models/Flower 2.fbx" id="33_kmw88"]
+[ext_resource type="PackedScene" uid="uid://bn8xr3g26vfww" path="res://assets/Models/Flower 1.fbx" id="34_ti5nv"]
+[ext_resource type="PackedScene" uid="uid://c8y3hocvm1b8j" path="res://assets/Models/RuneGateFull.fbx" id="35_2578l"]
 [ext_resource type="PackedScene" uid="uid://bllt8odmykx0g" path="res://assets/Materials/Particles/Dust.tscn" id="35_kkngt"]
 [ext_resource type="PackedScene" uid="uid://duptw1xs14d14" path="res://assets/Models/GrassBlades.tscn" id="35_vmk3n"]
 [ext_resource type="PackedScene" uid="uid://b5fx24blmtvls" path="res://assets/Models/Flower 3.fbx" id="36_80kfx"]
@@ -64,6 +70,10 @@ uv1_triplanar = true
 uv1_world_triplanar = true
 texture_filter = 0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hnns3"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_8up7q"]
+
 [node name="Course1" type="Node3D"]
 script = ExtResource("1_vmk3n")
 
@@ -89,6 +99,9 @@ transform = Transform3D(0.681028, 0, 0.732258, 0, 1, 0, -0.732258, 0, 0.681028, 
 
 [node name="MoveableBlock2m3" parent="." instance=ExtResource("8_nh8h0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93948, 2.97136, 10.0968)
+
+[node name="Flower 4" parent="." instance=ExtResource("36_80kfx")]
+transform = Transform3D(0.915803, 0, 0.401628, 0, 1, 0, -0.401628, 0, 0.915803, -26.4983, 4.67494, 18.0791)
 
 [node name="Kodama" parent="." instance=ExtResource("9_7dayv")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -25.9079, 4.67494, 17.0546)
@@ -567,6 +580,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8398, -2.46857, 17.6301)
 [node name="Bush25" parent="Ground Deco" instance=ExtResource("21_sh4ca")]
 transform = Transform3D(0.997415, 0, -0.071863, 0, 1, 0, 0.071863, 0, 0.997415, -35.2472, 3.21245, 0.907938)
 
+[node name="Bush26" parent="Ground Deco" instance=ExtResource("21_sh4ca")]
+transform = Transform3D(0.997415, 0, -0.071863, 0, 1, 0, 0.071863, 0, 0.997415, -35.009, 3.21245, 15.3941)
+
 [node name="Bush30" parent="Ground Deco" instance=ExtResource("21_sh4ca")]
 transform = Transform3D(0.382846, 0, 1.34855, 0, 1.40184, 0, -1.34855, 0, 0.382846, -47.5009, 3.6033, 12.6104)
 
@@ -663,6 +679,12 @@ transform = Transform3D(-0.0191662, 0, 1.72293, 0, 2.54186, 0, -1.49807, 0, -0.0
 [node name="Tree16" parent="Ground Deco" instance=ExtResource("24_xl8xq")]
 transform = Transform3D(-0.0199163, 0, 1.55669, 0, 2.63633, 0, -1.55669, 0, -0.0199163, -40.7808, 2.3182, 10.9419)
 
+[node name="Tree20" parent="Ground Deco" instance=ExtResource("24_xl8xq")]
+transform = Transform3D(-0.0199163, 0, 1.55669, 0, 2.63633, 0, -1.55669, 0, -0.0199163, -40.7808, 2.3182, 14.2507)
+
+[node name="Tree21" parent="Ground Deco" instance=ExtResource("24_xl8xq")]
+transform = Transform3D(-0.0199163, 0, 1.55669, 0, 2.63633, 0, -1.55669, 0, -0.0199163, -40.7808, 2.3182, 16.6121)
+
 [node name="Tree19" parent="Ground Deco" instance=ExtResource("24_xl8xq")]
 transform = Transform3D(-0.0199163, 0, 1.55669, 0, 2.63633, 0, -1.55669, 0, -0.0199163, -49.5794, 2.3182, 16.5499)
 
@@ -710,6 +732,12 @@ transform = Transform3D(0.561075, 0, 3.5084, 0, 3.60868, 0, -3.5084, 0, 0.561075
 
 [node name="BushRound12" parent="Ground Deco" instance=ExtResource("26_wm3u4")]
 transform = Transform3D(0.197457, 0.020202, 1.40058, 0.0769722, 1.43427, -0.0309061, -1.3986, 0.0817876, 0.196035, -33.5127, 2.726, 17.7038)
+
+[node name="BushRound13" parent="Ground Deco" instance=ExtResource("26_wm3u4")]
+transform = Transform3D(-1.3951, 0.0722832, -0.222801, 0.0769722, 1.43427, -0.0309061, 0.220861, -0.043272, -1.39657, -38.6861, 2.726, 16.0799)
+
+[node name="BushRound14" parent="Ground Deco" instance=ExtResource("26_wm3u4")]
+transform = Transform3D(-0.836579, 0.0209629, -1.14049, 0.0769722, 1.43427, -0.0309061, 1.13807, -0.0815959, -0.836264, -37.8777, 2.726, 16.2347)
 
 [node name="BushRound3" parent="Ground Deco" instance=ExtResource("26_wm3u4")]
 transform = Transform3D(-2.42823, 0, 0.427332, 0, 2.50419, 0, -0.427332, 0, -2.42823, -6.43414, -2.4551, -6.40646)
@@ -832,6 +860,125 @@ amount = 2
 
 [node name="Vine" parent="." instance=ExtResource("28_u8xcf")]
 transform = Transform3D(0.266823, 0, -0.45092, 0, 0.341435, 0, 0.213033, 0, 0.564776, -27.3894, 6.52418, 15.739)
+
+[node name="Start menu" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Start menu"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Start menu/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Start menu/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Start menu/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("30_dhpjw")
+theme_override_font_sizes/font_size = 100
+text = "The Giving Well"
+
+[node name="MarginContainer" type="MarginContainer" parent="Start menu/Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Start Button" type="Button" parent="Start menu/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_hover_color = Color(0.419813, 0.419813, 0.419813, 1)
+theme_override_colors/font_pressed_color = Color(0.129558, 0.129558, 0.129558, 1)
+theme_override_fonts/font = ExtResource("31_vmk3n")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hnns3")
+text = "Start Game"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Start menu/Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Level Select" type="Button" parent="Start menu/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_hover_color = Color(0.419813, 0.419813, 0.419813, 1)
+theme_override_colors/font_pressed_color = Color(0.129558, 0.129558, 0.129558, 1)
+theme_override_fonts/font = ExtResource("31_vmk3n")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hnns3")
+text = "Level Select"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Start menu/Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Options" type="Button" parent="Start menu/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_hover_color = Color(0.419813, 0.419813, 0.419813, 1)
+theme_override_colors/font_pressed_color = Color(0.129558, 0.129558, 0.129558, 1)
+theme_override_fonts/font = ExtResource("31_vmk3n")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hnns3")
+text = "Options
+"
+
+[node name="MarginContainer4" type="MarginContainer" parent="Start menu/Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="Start menu/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_hover_color = Color(0.419813, 0.419813, 0.419813, 1)
+theme_override_colors/font_pressed_color = Color(0.129558, 0.129558, 0.129558, 1)
+theme_override_fonts/font = ExtResource("31_vmk3n")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hnns3")
+text = "Quit
+"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+size = Vector2i(1280, 720)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-0.0855356, 0.00641466, 0.996315, 0.00515506, 0.999969, -0.00599561, -0.996322, 0.00462322, -0.085566, -24.6622, 5.47439, 17.0206)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.3828, -4.9298, 17.3203, -11.9511, 14.1308, 0.997817, -13.4709, -10.9326, -6.52045, -24.9303, 4.34933, 18.9798)
+visible = false
+mesh = SubResource("QuadMesh_8up7q")
+skeleton = NodePath("../Flower 2")
+surface_material_override/0 = ExtResource("32_80kfx")
+
+[node name="Flower 2" parent="." instance=ExtResource("33_kmw88")]
+transform = Transform3D(0.82915, 0, 0.294399, 0, 0.879864, 0, -0.294399, 0, 0.82915, -27.3575, 4.28392, 17.9758)
+
+[node name="Flower 1" parent="." instance=ExtResource("34_ti5nv")]
+transform = Transform3D(-0.0813348, 0, 0.876097, 0, 0.879864, 0, -0.876097, 0, -0.0813348, -27.018, 4.44332, 17.5552)
+
+[node name="RuneGateFull" parent="." instance=ExtResource("35_2578l")]
+transform = Transform3D(0.672823, -0.00141003, -0.739802, -0.0298761, 0.999131, -0.0290755, 0.7392, 0.041665, 0.672196, -27.5537, 3.26759, 19.7886)
 
 [connection signal="body_entered" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_exited"]

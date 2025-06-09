@@ -13,5 +13,4 @@ albedo_texture = ExtResource("1_4eppr")
 disable_receive_shadows = true
 billboard_keep_scale = true
 proximity_fade_distance = 2675.44
-distance_fade_mode = 1
 distance_fade_max_distance = 30.0

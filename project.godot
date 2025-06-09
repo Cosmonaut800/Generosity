@@ -25,6 +25,10 @@ Utility="*res://src/Scripts/game_manager.gd"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 
+[editor]
+
+movie_writer/movie_file="D:/WIP/Projects/Generosity/Videos/GeneRender.avi"
+
 [input]
 
 move_forward={

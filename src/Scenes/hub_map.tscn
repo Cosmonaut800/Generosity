@@ -39,8 +39,8 @@
 [ext_resource type="PackedScene" uid="uid://bq84lhd64qyhs" path="res://assets/Models/Rock1.fbx" id="34_3lcd8"]
 [ext_resource type="PackedScene" uid="uid://crwsk8qekur3g" path="res://assets/Models/ColArray.fbx" id="36_wekah"]
 [ext_resource type="Material" uid="uid://cbig5cxb6id47" path="res://assets/Materials/Stone.tres" id="37_bbxme"]
-[ext_resource type="Material" uid="uid://sxxsxlut4a4d" path="res://assets/Materials/TriplanarGrass2.tres" id="38_5ebop"]
 [ext_resource type="PackedScene" uid="uid://b6r1ca0y07d5j" path="res://assets/Models/Tower3.fbx" id="39_xci5b"]
+[ext_resource type="Material" uid="uid://duntw1xajuew1" path="res://assets/Materials/hub_grass_path.tres" id="40_bbfow"]
 [ext_resource type="PackedScene" uid="uid://c8y3hocvm1b8j" path="res://assets/Models/RuneGateFull.fbx" id="40_eb2ja"]
 [ext_resource type="PackedScene" uid="uid://b34i5ibw2xra7" path="res://assets/Models/RuneStoneSingle2.fbx" id="41_bbfow"]
 [ext_resource type="PackedScene" uid="uid://cipdpwiiajt75" path="res://assets/Models/RuneGateBroken.fbx" id="42_eshdi"]
@@ -298,7 +298,10 @@ transform = Transform3D(-0.858815, 0, 0.773647, 0, 1.15589, 0, -0.773647, 0, -0.
 transform = Transform3D(-0.520737, 0, 0.970379, 0, 1.10127, 0, -0.970379, 0, -0.520737, 29.6077, -3.74103, 67.4652)
 
 [node name="Tree40" parent="Trees" instance=ExtResource("12_8r58n")]
-transform = Transform3D(1.05351, 0, -0.320796, 0, 1.10127, 0, 0.320796, 0, 1.05351, 4.25722, -3.74103, 54.2786)
+transform = Transform3D(1.05351, 0, -0.320796, 0, 1.10127, 0, 0.320796, 0, 1.05351, -2.90393, -3.74103, 59.354)
+
+[node name="Tree58" parent="Trees" instance=ExtResource("12_8r58n")]
+transform = Transform3D(1.05351, 0, -0.320796, 0, 1.10127, 0, 0.320796, 0, 1.05351, -2.90393, -3.74103, 59.354)
 
 [node name="Tree11" parent="Trees" instance=ExtResource("12_8r58n")]
 transform = Transform3D(-0.808893, 0, -1.17074, 0, 1.423, 0, 1.17074, 0, -0.808893, 22.3803, 9.53674e-07, -27.6249)
@@ -1223,7 +1226,7 @@ surface_material_override/0 = ExtResource("37_bbxme")
 [node name="Grassfloor" type="MeshInstance3D" parent="."]
 transform = Transform3D(54.1519, 0, 0, 0, -6.04971e-06, 81.724, 0, -138.401, -3.57227e-06, 11.9358, -0.681177, 90.9897)
 mesh = SubResource("QuadMesh_r6s7g")
-surface_material_override/0 = ExtResource("38_5ebop")
+surface_material_override/0 = ExtResource("40_bbfow")
 
 [node name="Stump5" parent="." instance=ExtResource("33_xsjg0")]
 transform = Transform3D(3.10386, 0, -4.06101, 0, 5.11133, 0, 4.06101, 0, 3.10386, 2.68774, -0.500054, 129.712)
@@ -1291,7 +1294,7 @@ collision_layer = 2
 collision_mask = 255
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01181, 3.55782)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01181, 5.60847)
 shape = SubResource("BoxShape3D_bbxme")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D2"]

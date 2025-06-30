@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://duntw1xajuew1"]
+
+[ext_resource type="Shader" uid="uid://ca825mcm7nx7q" path="res://src/Shaders/splatmapped.gdshader" id="1_jorxw"]
+[ext_resource type="Texture2D" uid="uid://bt52vidkrdntt" path="res://assets/Materials/Textures/Grass1Tex.png" id="2_ug2mj"]
+[ext_resource type="Texture2D" uid="uid://cq6rs4q48byao" path="res://assets/Materials/Textures/DirtTex.png" id="3_wt6sx"]
+[ext_resource type="Texture2D" uid="uid://dlbjboi6ibeng" path="res://assets/Materials/Textures/path.png" id="4_ppfff"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_jorxw")
+shader_parameter/background = ExtResource("2_ug2mj")
+shader_parameter/detail = ExtResource("3_wt6sx")
+shader_parameter/splatmap = ExtResource("4_ppfff")
+shader_parameter/SplatScale = Vector2(128, 128)
+shader_parameter/SplatOffset = Vector2(-54.28, -28.485)
+shader_parameter/texScale = Vector2(8, 8)

@@ -7,13 +7,14 @@ uniform sampler2D splatmap : repeat_disable;
 varying vec2 worldUV;
 uniform vec2 SplatScale = vec2(1.0f, 1.0f);
 uniform vec2 SplatOffset = vec2(0.0f, 0.0f);
+uniform vec2 texScale = vec2(1.0f, 1.0f);
 
 void vertex() {
 	worldUV = VERTEX.xz;
 }
 
 void fragment() {
-	ALBEDO = mix(texture(background,UV).rgb, texture(detail, UV).rgb, texture(splatmap, (worldUV-SplatOffset)/SplatScale).r);
+	ALBEDO = mix(texture(background,worldUV/texScale).rgb, texture(detail, worldUV/texScale).rgb, texture(splatmap, (worldUV-SplatOffset)/SplatScale).r);
 }
 
 //void light() {

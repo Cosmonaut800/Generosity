@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cfdpexhwuwrmg" path="res://src/Scenes/third_person_player.tscn" id="10_pa3tr"]
 [ext_resource type="AudioStream" uid="uid://bq2irrtftwrsc" path="res://assets/Audio/birds_loop.ogg" id="11_ocpr6"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_721m0"]
-size = Vector3(2.34766, 1, 3.48267)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ocpr6"]
+size = Vector3(5.06445, 1.35522, 3.48267)
 
 [node name="HubMapTransition5" type="Node3D"]
 script = ExtResource("1_mkyr1")
@@ -39,6 +39,14 @@ transform = Transform3D(-0.55, 0, -0.952628, 0, 1.1, 0, 0.952628, 0, -0.55, -7.2
 [node name="Interactable Door" parent="DoorFrames/Doorway/Interactable Door" index="0"]
 material_override = ExtResource("5_tx3sn")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorFrames/Doorway"]
+transform = Transform3D(1, -8.9407e-08, -1.77636e-15, -4.73656e-16, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.64811, 0)
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorFrames/Doorway/StaticBody3D"]
+transform = Transform3D(1, 2.98023e-08, 2.4869e-14, 2.98023e-08, 1, -3.33955e-13, 1.77636e-15, 6.21725e-15, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_ocpr6")
+
 [node name="Doorway2" parent="DoorFrames" instance=ExtResource("3_bcq46")]
 transform = Transform3D(-0.777817, 0, 0.777817, 0, 1.1, 0, -0.777817, 0, -0.777817, 24.8722, 2.23172, -16.6188)
 
@@ -46,6 +54,14 @@ transform = Transform3D(-0.777817, 0, 0.777817, 0, 1.1, 0, -0.777817, 0, -0.7778
 
 [node name="Interactable Door" parent="DoorFrames/Doorway2/Interactable Door" index="0"]
 material_override = ExtResource("5_tx3sn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorFrames/Doorway2"]
+transform = Transform3D(1, -8.9407e-08, -1.77636e-15, -4.73656e-16, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.64811, 0)
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorFrames/Doorway2/StaticBody3D"]
+transform = Transform3D(1, 2.98023e-08, 2.4869e-14, 2.98023e-08, 1, -3.33955e-13, 1.77636e-15, 6.21725e-15, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_ocpr6")
 
 [node name="Doorway3" parent="DoorFrames" instance=ExtResource("3_bcq46")]
 transform = Transform3D(-1.1, 0, 9.61651e-08, 0, 1.1, 0, -9.61651e-08, 0, -1.1, 9.13672, 2.23172, -26.8732)
@@ -64,7 +80,7 @@ collision_mask = 128
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorFrames/Doorway3/MovingPlatform/Interactable Door/StaticBody3D"]
 transform = Transform3D(1, 2.98023e-08, 2.4869e-14, 2.98023e-08, 1, -3.33955e-13, 1.77636e-15, 6.21725e-15, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_721m0")
+shape = SubResource("BoxShape3D_ocpr6")
 
 [node name="PlatformWaypoint" type="Node3D" parent="DoorFrames/Doorway3"]
 transform = Transform3D(1, -2.98023e-08, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.17637e-22, -2.7892, 1.93961e-07)

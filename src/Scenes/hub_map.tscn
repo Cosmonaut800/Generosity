@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://gf1pipuob658"]
+[gd_scene load_steps=63 format=3 uid="uid://gf1pipuob658"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_ow2xx"]
 [ext_resource type="PackedScene" uid="uid://ce2kl2udxtysh" path="res://src/Scenes/hub_map_transition_0.tscn" id="2_i8y87"]
@@ -46,6 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://cipdpwiiajt75" path="res://assets/Models/RuneGateBroken.fbx" id="42_eshdi"]
 [ext_resource type="PackedScene" uid="uid://qeu2x1tie4gi" path="res://assets/Models/RuneStoneSingle.fbx" id="43_5ebop"]
 [ext_resource type="PackedScene" uid="uid://dqsxp3ra85lpv" path="res://assets/Models/RuneFragment.fbx" id="44_xci5b"]
+[ext_resource type="Material" uid="uid://mgpfiu1dy1cx" path="res://assets/Materials/ArcaneGateGreen.tres" id="47_bbfow"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_23as8"]
 size = Vector3(2.71094, 3.1626, 1)
@@ -94,6 +95,9 @@ size = Vector3(4.55566, 10.2978, 8.49219)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bbxme"]
 size = Vector3(22.835, 10.1725, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eshdi"]
+size = Vector3(2.81372, 10.1893, 3.06509)
 
 [node name="HubMap" type="Node3D"]
 script = ExtResource("1_ow2xx")
@@ -1297,6 +1301,10 @@ collision_mask = 255
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01181, 5.60847)
 shape = SubResource("BoxShape3D_bbxme")
 
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -4.36835, 7.93262)
+shape = SubResource("BoxShape3D_bbxme")
+
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D2"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.62687, 1.01181, 8.23405)
 shape = SubResource("BoxShape3D_bbxme")
@@ -1305,6 +1313,22 @@ shape = SubResource("BoxShape3D_bbxme")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.75655, 1.01181, 8.23405)
 shape = SubResource("BoxShape3D_bbxme")
 
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.68684, 1.00342, 0.175955)
+shape = SubResource("BoxShape3D_eshdi")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07242, 1.00342, 0.175955)
+shape = SubResource("BoxShape3D_eshdi")
+
+[node name="RuneGateFull3" parent="." instance=ExtResource("40_eb2ja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.59216, 0.805647, 20.1595)
+
+[node name="RuneGateFull" parent="RuneGateFull3" index="0"]
+surface_material_override/0 = ExtResource("47_bbfow")
+
 [connection signal="level_changed" from="LevelTransition" to="." method="_on_level_transition_level_changed"]
 [connection signal="level_changed" from="LevelTransition2" to="." method="_on_level_transition_level_changed"]
 [connection signal="level_changed" from="LevelTransition3" to="." method="_on_level_transition_level_changed"]
+
+[editable path="RuneGateFull3"]

@@ -10,6 +10,8 @@ var time := 0.0
 @onready var particles := $FragmentBurst
 @onready var graphics := $Kodama
 
+var noise : Resource = preload("res://assets/Materials/Textures/kodama_noise_func.tres")
+
 func _ready():
 	true_position = position
 
@@ -22,6 +24,7 @@ func _process(delta):
 			#player.kodama_text.hide()
 	time += delta
 	position = Vector3(true_position.x, true_position.y + 0.1 * sin(time), true_position.z)
+	noise.offset.y -= 8.0*delta
 
 func _input(event):
 	if player:

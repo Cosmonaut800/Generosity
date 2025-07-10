@@ -48,9 +48,11 @@ void fragment() {
 	vec4 col = vec4(0.0f);
 	float iter = 0.0f;
 	float t = 0.0f; //total distance travelled
+	float dist = distance(ro, NODE_POSITION_WORLD);
 	
+	ro = ro + (dist - 0.25f) * rd;
 	//Raymarching
-	for (int i = 0; i < 200; i++)
+	for (int i = 0; i < 50; i++)
 	{
 		iter += 1.0f;
 		vec3 p = ro + rd * t; //position along the ray
@@ -60,7 +62,7 @@ void fragment() {
 		if (d > 0.1f)
 		{
 			vec4 c = vec4(texture(curve, vec2(d, 0.5f)).rgb, d);
-			c.a *= 0.6 * min(dot(rd, NODE_POSITION_WORLD+offset-ro), 1.0f); //Change this line
+			c.a *= 0.6; //Change this line
 			c.rgb *= c.a;
 			col += c * (1.0 - col.a);
 		}

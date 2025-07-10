@@ -4,8 +4,8 @@
 [ext_resource type="NoiseTexture3D" uid="uid://cp2ggyhrbf5rq" path="res://assets/Materials/Textures/kodama_noise_tex.tres" id="2_88m12"]
 
 [sub_resource type="Gradient" id="Gradient_prxrj"]
-offsets = PackedFloat32Array(0.092827, 0.177215)
-colors = PackedColorArray(0.290196, 0, 0.133333, 1, 0.345098, 0.917647, 0.705882, 1)
+offsets = PackedFloat32Array(0, 0.0337553, 0.590717)
+colors = PackedColorArray(0.290196, 0, 0.133333, 1, 0.345098, 0.917647, 0.705882, 1, 0.717647, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_88m12"]
 gradient = SubResource("Gradient_prxrj")
@@ -17,4 +17,4 @@ shader = ExtResource("1_prxrj")
 shader_parameter/noise = ExtResource("2_88m12")
 shader_parameter/curve = SubResource("GradientTexture1D_88m12")
 shader_parameter/scale = 2.75715
-shader_parameter/offset = Vector3(1.45519e-11, 0.22545, 1.45519e-11)
+shader_parameter/offset = Vector3(1.45519e-11, 0.14085, 1.45519e-11)

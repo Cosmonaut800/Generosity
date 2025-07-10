@@ -17,13 +17,14 @@ func _ready():
 
 func _process(delta):
 	if player:
-		look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z))
+		pass
+		#look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z))
 		#if player.can_anything:
 			#player.kodama_text.visible = player_nearby
 		#else:
 			#player.kodama_text.hide()
 	time += delta
-	position = Vector3(true_position.x, true_position.y + 0.1 * sin(time), true_position.z)
+	graphics.position.y = 0.1 * sin(time) #Vector3(true_position.x, true_position.y + 0.1 * sin(time), true_position.z)
 	noise.offset.y -= 8.0*delta
 
 func _input(event):

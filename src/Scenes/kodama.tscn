@@ -13,8 +13,11 @@ height = 1.0
 size = Vector3(0.125, 0.125, 0.125)
 
 [sub_resource type="SphereMesh" id="SphereMesh_mcl1q"]
+custom_aabb = AABB(1.45519e-11, 1.45519e-11, 1.45519e-11, 1.45519e-11, 1.45519e-11, 1.45519e-11)
 radius = 0.18
-height = 0.78
+height = 0.495
+radial_segments = 8
+rings = 6
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3g3ex"]
 animation = &"Movement"
@@ -31,65 +34,70 @@ mesh = SubResource("CapsuleMesh_e20ym")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -0.25)
 mesh = SubResource("BoxMesh_5lu2l")
 
-[node name="Head" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, -6.3573e-08, 0, 1, 0, 6.3573e-08, 0, 1, 1.45519e-11, 0.861387, 1.45519e-11)
-mesh = SubResource("SphereMesh_mcl1q")
-surface_material_override/0 = ExtResource("3_3g3ex")
-
 [node name="Kodama" parent="." instance=ExtResource("2_teu5t")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Kodama/Rig" index="0"]
 bones/0/position = Vector3(0, 0, 0.00724604)
 bones/1/position = Vector3(0.00077614, -0.000782475, 0.000536432)
-bones/1/rotation = Quaternion(-0.696279, 0.107616, 0.692426, -0.155436)
+bones/1/rotation = Quaternion(-0.692686, 0.108642, 0.69458, -0.161066)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/position = Vector3(-9.9222e-11, 0.00156392, -5.05586e-11)
-bones/2/rotation = Quaternion(0.0389411, 0.0086636, -0.0676046, 0.996914)
+bones/2/rotation = Quaternion(0.0421867, 0.00870074, -0.0737558, 0.996346)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/position = Vector3(7.88784e-11, 0.0014649, 5.83847e-11)
-bones/3/rotation = Quaternion(0.0417956, -0.000603856, -0.0855389, 0.995458)
+bones/3/rotation = Quaternion(0.0423485, -0.000550541, -0.0843548, 0.995535)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/position = Vector3(-8.38165e-11, 0.00143345, -8.85852e-11)
-bones/4/rotation = Quaternion(0.049041, -0.0070256, -0.112437, 0.992423)
+bones/4/rotation = Quaternion(0.0480326, -0.00698316, -0.105326, 0.993253)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/position = Vector3(1.41851e-10, 0.00144323, 8.84029e-11)
-bones/5/rotation = Quaternion(0.0118387, -8.42777e-05, -0.0354142, 0.999303)
+bones/5/rotation = Quaternion(0.0083898, -6.0746e-05, -0.0247424, 0.999659)
 bones/5/scale = Vector3(1, 1, 1)
 bones/7/position = Vector3(-1.3481e-08, -0.000501655, -0.000620038)
-bones/7/rotation = Quaternion(-0.697218, -0.117242, 0.697408, 0.117322)
+bones/7/rotation = Quaternion(-0.69507, -0.129311, 0.69528, 0.12939)
 bones/7/scale = Vector3(1, 1, 0.999999)
 bones/8/position = Vector3(-1.14922e-10, 0.00161211, -9.3054e-14)
-bones/8/rotation = Quaternion(6.65128e-08, 3.05859e-08, 0.0468764, 0.998901)
+bones/8/rotation = Quaternion(6.60079e-08, 3.16608e-08, 0.0630743, 0.998009)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/position = Vector3(-2.46639e-10, 0.00168159, 2.14014e-14)
-bones/9/rotation = Quaternion(0.000494695, -0.00246806, 0.134286, 0.990939)
+bones/9/rotation = Quaternion(0.000324109, -0.00161726, 0.155279, 0.987869)
 bones/9/scale = Vector3(1, 1, 1)
 bones/10/position = Vector3(1.41343e-10, 0.00169583, 5.67337e-14)
-bones/10/rotation = Quaternion(1.47661e-07, -3.63442e-08, 0.0875054, 0.996164)
+bones/10/rotation = Quaternion(1.4851e-07, -3.27062e-08, 0.111948, 0.993714)
 bones/10/scale = Vector3(1, 1, 1)
 bones/11/position = Vector3(1.34035e-10, 0.00110107, -1.07088e-13)
-bones/11/rotation = Quaternion(9.32441e-11, 3.30467e-10, -0.00143901, 0.999999)
+bones/11/rotation = Quaternion(9.31985e-11, 3.3048e-10, -0.00130101, 0.999999)
 bones/11/scale = Vector3(1, 1, 1)
 bones/13/position = Vector3(-0.00077614, -0.000782475, 0.000536432)
-bones/13/rotation = Quaternion(0.702868, 0.0563039, 0.698083, 0.124448)
+bones/13/rotation = Quaternion(0.697168, 0.071159, 0.699197, 0.141482)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/position = Vector3(9.9222e-11, 0.00156392, -5.05586e-11)
-bones/14/rotation = Quaternion(0.0210989, -0.00910237, 0.0455333, 0.998699)
+bones/14/rotation = Quaternion(0.0297969, -0.00900252, 0.0584362, 0.997806)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(-7.88784e-11, 0.0014649, 5.83847e-11)
-bones/15/rotation = Quaternion(0.0376179, 0.001594, 0.0366158, 0.99862)
+bones/15/rotation = Quaternion(0.0402841, 0.00132867, 0.0481503, 0.998027)
 bones/15/scale = Vector3(1, 1, 1)
 bones/16/position = Vector3(8.38165e-11, 0.00143345, -8.85852e-11)
-bones/16/rotation = Quaternion(0.0221023, 0.00707551, 0.0375581, 0.999025)
+bones/16/rotation = Quaternion(0.0275162, 0.00709017, 0.0475685, 0.998464)
 bones/16/scale = Vector3(1, 1, 1)
 bones/17/position = Vector3(-1.41851e-10, 0.00144323, 8.84029e-11)
-bones/17/rotation = Quaternion(-0.000137656, -2.92001e-06, -0.00010439, 1)
+bones/17/rotation = Quaternion(-0.000109419, -2.58846e-06, -8.29471e-05, 1)
 bones/17/scale = Vector3(1, 1, 1)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.879502, 0)
-light_color = Color(1.11663e-05, 0.978411, 0.533741, 1)
+[node name="Head" type="MeshInstance3D" parent="Kodama"]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -1.45519e-11, 0.954979, -1.45519e-11)
+mesh = SubResource("SphereMesh_mcl1q")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("3_3g3ex")
+
+[node name="Camera3D" type="Camera3D" parent="Kodama/Head"]
+transform = Transform3D(-0.907201, 0, -0.420698, 0, 1, 0, 0.420698, 0, -0.907201, -0.458151, -0.0857127, -0.967658)
+fov = 36.244
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Kodama"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.879502, 0)
+light_color = Color(0, 0.976471, 0.8, 1)
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../Kodama")
@@ -97,9 +105,5 @@ tree_root = SubResource("AnimationNodeAnimation_3g3ex")
 anim_player = NodePath("../Kodama/AnimationPlayer")
 
 [node name="FragmentBurst" parent="." instance=ExtResource("4_mcl1q")]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.907201, 0, -0.420698, 0, 1, 0, 0.420698, 0, -0.907201, -0.458151, 0.869266, -0.967658)
-fov = 36.244
 
 [editable path="Kodama"]

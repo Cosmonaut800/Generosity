@@ -1,0 +1,11 @@
+[gd_resource type="NoiseTexture3D" load_steps=2 format=3 uid="uid://cp2ggyhrbf5rq"]
+
+[ext_resource type="FastNoiseLite" uid="uid://nmdrjuibwrs1" path="res://assets/Materials/Textures/kodama_noise_func.tres" id="1_lcfsr"]
+
+[resource]
+width = 32
+height = 32
+depth = 32
+seamless = true
+seamless_blend_skirt = 0.736
+noise = ExtResource("1_lcfsr")

@@ -30,6 +30,7 @@ var kodama_templates : Array[Resource] =\
 var world : Node3D
 var subworld : Node3D
 var kodamaworld : Node3D
+var prev_index := 0
 var current_index := 5
 var current_config := 0
 
@@ -48,32 +49,17 @@ func _input(event):
 
 func _on_world_reset():
 	var tween = create_tween()
+	tween.tween_callback(end_music)
 	tween.tween_property(blackout, "color", Color(0.0, 0.0, 0.0, 1.0), 0.5)
 	tween.tween_callback(world.queue_free)
 	tween.tween_interval(0.25)
 	tween.tween_callback(load_world.bind(world_templates[current_index]))
 	tween.tween_interval(0.25)
 	tween.tween_property(blackout, "color", Color(0.0, 0.0, 0.0, 0.0), 0.5)
+	tween.tween_callback(start_music)
 
 func _on_world_changed(index: int, config: int):
-	if (current_index == 0 or current_index == 5) and index != 4:
-		Utility.evaluate_kodama_level()
-		var tween = create_tween()
-		tween.tween_method(change_village_volume, 1.0, 0.0, 3.0)
-		tween.tween_callback(music_village[Utility.kodama_level].stop)
-		tween.tween_property(music_village[Utility.kodama_level], "volume_db", 0.0, 0.0)
-		if index >= 1 and index <=3:
-			music_intro[index-1].play()
-		
-	if current_index >= 1 and current_index <= 3:
-		music_index = current_index - 1
-		var tween = create_tween()
-		tween.tween_method(change_course_volume, 1.0, 0.0, 3.0)
-		tween.tween_callback(music_intro[music_index].stop)
-		tween.tween_callback(music_loop[music_index].stop)
-		tween.tween_property(music_intro[music_index], "volume_db", 0.0, 0.0)
-		tween.tween_property(music_loop[music_index], "volume_db", 0.0, 0.0)
-	
+	prev_index = current_index
 	current_index = index
 	current_config = config
 	_on_world_reset()
@@ -97,7 +83,8 @@ func load_world(world_template: Resource):
 		kodamaworld = kodama_templates[Utility.kodama_level].instantiate()
 		kodamaworld.set_process_mode(Node.PROCESS_MODE_PAUSABLE)
 		world.add_child(kodamaworld)
-		music_village[Utility.kodama_level].play()
+		if !music_village[Utility.kodama_level].playing:
+			music_village[Utility.kodama_level].play()
 		
 
 func change_village_volume(value):
@@ -106,3 +93,26 @@ func change_village_volume(value):
 func change_course_volume(value):
 	music_intro[music_index].volume_db = linear_to_db(value)
 	music_loop[music_index].volume_db = linear_to_db(value)
+
+func end_music():
+	if (prev_index == 0 or prev_index == 5) and current_index != 4:
+		Utility.evaluate_kodama_level()
+		var tween = create_tween()
+		tween.tween_method(change_village_volume, 1.0, 0.0, 3.0)
+		tween.tween_callback(music_village[Utility.kodama_level].stop)
+		tween.tween_property(music_village[Utility.kodama_level], "volume_db", 0.0, 0.0)
+		#if current_index >= 1 and current_index <=3:
+			#music_intro[current_index-1].play()
+		
+	if prev_index >= 1 and prev_index <= 3:
+		music_index = prev_index - 1
+		var tween = create_tween()
+		tween.tween_method(change_course_volume, 1.0, 0.0, 3.0)
+		tween.tween_callback(music_intro[music_index].stop)
+		tween.tween_callback(music_loop[music_index].stop)
+		tween.tween_property(music_intro[music_index], "volume_db", 0.0, 0.0)
+		tween.tween_property(music_loop[music_index], "volume_db", 0.0, 0.0)
+
+func start_music():
+	if current_index >= 1 and current_index <=3:
+		music_intro[current_index-1].play()

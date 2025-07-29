@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxds7ovmlomj5"]
+
+[ext_resource type="Script" uid="uid://ddmpipham8nq1" path="res://freecam.gd" id="1_kcg3h"]
+
+[node name="FreeCam" type="Node3D"]
+script = ExtResource("1_kcg3h")
+
+[node name="YawPivot" type="Node3D" parent="."]
+
+[node name="PitchPivot" type="Node3D" parent="YawPivot"]
+
+[node name="Camera3D" type="Camera3D" parent="YawPivot/PitchPivot"]
+current = true

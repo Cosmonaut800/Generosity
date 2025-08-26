@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://1i4lx1t8c653"]
+[gd_scene load_steps=52 format=3 uid="uid://1i4lx1t8c653"]
 
 [ext_resource type="Script" uid="uid://dtuv5kq5hvrc" path="res://src/Scripts/world.gd" id="1_oofx1"]
 [ext_resource type="Environment" uid="uid://dh6qujnbw0ffl" path="res://assets/Envlvl1.tres" id="2_w8ggu"]
@@ -35,6 +35,7 @@
 [ext_resource type="Script" uid="uid://cwjl3j6s8tl16" path="res://src/Scripts/c1_cutscene.gd" id="34_ja0lu"]
 [ext_resource type="PackedScene" uid="uid://ckhsp37mhgajp" path="res://src/Scenes/death_plane.tscn" id="34_k06x0"]
 [ext_resource type="PackedScene" uid="uid://b6vb4ak58jaby" path="res://src/Scenes/text_box.tscn" id="34_rkk31"]
+[ext_resource type="PackedScene" uid="uid://cxds7ovmlomj5" path="res://src/Scenes/free_cam.tscn" id="36_rkk31"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w8ggu"]
 size = Vector3(6.17487, 7.96558, 1)
@@ -156,6 +157,7 @@ transform = Transform3D(0.931812, 9.31323e-09, -0.362942, -0.202098, 0.830625, -
 shape = SubResource("BoxShape3D_ja0lu")
 
 [node name="ThirdPersonPlayer" parent="." instance=ExtResource("4_q66gl")]
+process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.96633, 1.38585, 27.4278)
 
 [node name="InteractableTreeBot" parent="." instance=ExtResource("6_mp5ou")]
@@ -926,6 +928,8 @@ shape = SubResource("BoxShape3D_cjj5c")
 
 [node name="Timer" type="Timer" parent="Cutscene"]
 one_shot = true
+
+[node name="FreeCam" parent="." instance=ExtResource("36_rkk31")]
 
 [connection signal="body_entered" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Kodama/Area3D" to="Kodama" method="_on_area_3d_body_exited"]
